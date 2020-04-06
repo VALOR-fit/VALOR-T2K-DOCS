@@ -1,0 +1,77 @@
+\clearpage
+
+\section {Systematic effects in the prediction of energy spectra}
+\label{sec:systematics}
+
+The description of the systematic parameters in this analysis can be found in \cite{OurRun18JointAnalysis3Flavour} (Sec. 3), this section will present the pre- and post-BANFF flux and cross-section covariance matrices and the SK detector covariance matrix and SK FSI, SI and PN covariance matrix. A summary of the best-fit values and pre- and post-BANFF errors of all systematics can be found in \cref{app:systematics}.
+
+\begin{figure*}[htb]
+	\center
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{images/banff/xsec_prefit}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{images/banff/xsec_postfit}
+	\end{subfigure}
+	\caption{The pre-BANFF (left) and post-BANFF (right) cross-section covariance matrix, with the values shown as the sign of the element times the square root of the absolute value of the element.}
+	\label{fig:xsec_corr}
+\end{figure*}
+
+\begin{figure*}[htb]
+	\center
+	\begin{subfigure}[b]{0.7\textwidth}
+		\includegraphics[width=\textwidth]{images/banff/flux_prefit}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.7\textwidth}
+		\includegraphics[width=\textwidth]{images/banff/flux_postfit}
+	\end{subfigure}
+	\caption{The pre-BANFF (top) and post-BANFF (bottom) flux covariance matrix, with the values shown as the sign of the element times the square root of the absolute value of the element.}
+	\label{fig:flux_corr}
+\end{figure*}
+
+\begin{figure*}[htb]
+	\center
+	\begin{subfigure}[b]{0.7\textwidth}
+		\includegraphics[width=\textwidth]{images/skdetfsi/skmatrix_det}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.7\textwidth}
+		\includegraphics[width=\textwidth]{images/skdetfsi/skmatrix_fsi}
+	\end{subfigure}
+	\caption{The SK detector (top) and SK FSI+SI+PN (bottom) covariance matrices, with the values shown as the sign of the element times the square root of the absolute value of the element. Note that $z$ scaling is different in the two plots.}
+	\label{fig:sk_corr}
+\end{figure*}
+
+\FloatBarrier
+\clearpage
+
+\subsection{Oscillation parameters and mass hierarchy (7 parameters)}
+
+The 3-flavour oscillation probability is used.  All the nuisance oscillation parameters, i.e. those parameters which are not shown in a given contour, are marginalised except the mass hierarchy, which is fixed to either normal or inverted hierarchy.
+
+For $\sin^2 \theta_{13}$ two different priors can be used, depending on whether the reactor constraint is applied, denoted as ``reactors", when applied and ``T2K only" when not applied.
+
+\input{tables/osc_param_priors}
+
+\subsection{Systematic error on Super-K predictions}
+\label{sec:systematics:errortables}
+
+The effect of each category of systematic parameter on the expected event rate for Super-K sample is given in \cref{tab:sk_errors_summary}. The mean and RMS of \NumToysSmall throws of the respective systematics (with correlations taken into account) is computed for each sample and in the case of pre-BANFF and post-BANFF errors. When not measuring the effect of oscillation parameters variations, the oscillation parameters are fixed at Asimov A values (see \cref{sec:asimov_definition}).
+
+For the measurement of $\delta_{CP}$ it is important to understand the effect of the systematic uncertainties on the ratio of the number of events between neutrino and antineutrino mode samples. If correlations do not reproduce the physics correctly, a fake asymmetry between neutrino and antineutrino oscillations can be seen. Furthermore, if correlations exist but are not taken into account, the measurement of $\delta_{CP}$ could be biased. The true value of $\delta_{CP}$ determines whether correlations or anti-correlations between systematic parameters have the greatest effect in hiding any oscillation asymmetry. In particular, if true $\delta_{CP} = \pm \pi/2$ then anti-correlation in the $e$-like samples could hide any oscillation asymmetry. Alternatively, in the case that true $\delta_{CP} \sim 0$ it is uncorrelated parameters that reduce the sensitivity to $\delta_{CP}$. The uncertainties on the ratios between neutrino and antineutrino mode events due to the systematic parameters are shown in \cref{tab:sk_errors_summary}. The most critical systematic parameters are $\sigma_{\nu_e}$ and $\sigma_{\bar{\nu}_e}$ which are applied respectively to $\nu_e$ and $\bar{\nu}_e$ events. Their fractional error from the BANFF covariance matrix is $\sim2.8$\% (see \cref{tab:sys_xsec_err}) and they are partially anti-correlated with non-diagonal elements in the covariance matrix of -0.0004.
+
+% TODO: Update the numbers in this paragraph
+It can be seen in \crefrange{tab:sk_errors_1Rmu}{tab:sk_errors_MultiRe} (\Cref{app:systematics}) that the reduction in the error on flux and constrained cross-section systematics achieved through the BANFF fit reduces the fractional error due to all systematics from $\sim 15\%$ to $\sim 5\%$ and $\sim 13\%$ to $\sim 4\%$ in the neutrino- and antineutrino-mode $\mu$-like samples respectively, from $\sim 17\%$ to $\sim 9\%$ and $\sim 14\%$ to $\sim 7\%$ in the neutrino- and antineutrino-mode $e$-like samples respectively, and from $\sim 22\%$ to $\sim 18\%$ in the \nueCConepi{}-like sample.
+
+\input{tables/sk_errors}
+
+The error envelopes corresponding to \cref{tab:sk_errors_summary} are shown in \cref{app:systematics}.
+
+\clearpage
+
+
+%..................
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../TN327"
+%%% End:

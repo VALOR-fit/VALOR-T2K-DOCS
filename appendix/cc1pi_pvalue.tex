@@ -1,0 +1,39 @@
+\section{$\nu_e$ CC$1\pi^{+}$ sample p-value}
+\label{app:cc1pi_pvalue}
+
+It is evident from the predicted event rate (see \cref{tab:num_events_run19c}) that the observed number of events in the \nueCConepi sample is rather extreme when compared to the expected event rate. Given this observation, we compute p-values for the \nueCConepi sample to quantify this observation.
+
+Two methods are used to compute p-values, one using only information from the \nueCConepi sample and a second method in which the p-value is calculated within the framework of the 5 sample fit.
+
+\subsection{\nueCConepi p-value using only the \nueCConepi sample}
+
+The method used to compute the p-value follows a similar approach to that used to compare the full 5-sample \deltacp versus mass hierarchy result with sensitivity (see \cref{sec:results:brazilian}). The key differences in the method come from the fact that the Feldman-Cousins toys are generated using only the \nueCConepi sample and the data contour is produced by fitting \deltacp in normal ordering with the reactor constraint applied, using only the \nueCConepi sample, which pulls the fit towards the maximally CP-violating point $\pi/2$, as should be expected given the excess of observed events relative to the prediction.
+
+\Cref{fig:cc1pi_brazilian_v2} shows the comparison of the data contour with the $\Delta\chi^2$ distributions corresponding to 68.27\% and 95.45\% of the toy experiments to illustrate the extreme nature of the \nueCConepi sample. The p-value is computed for each of the 101 bins of \deltacp by considering the fraction of toys where $\Delta\chi^2_\text{toy} > \Delta\chi^2_\text{data}$. The minimum value from this set is then taken to be the p-value for the \nueCConepi sample. For the \RunPeriod data we find $p = 0.0062$, corresponding to $2.50\sigma$.
+
+\begin{figure*}[htb]
+	\center
+	\includegraphics[width=0.7\textwidth]{images/cc1pi/v2/deltacp_bestfit_onesided_brazilian_nh}
+	\caption {
+		The one-sided distribution of $\Delta\chi^2$ vs \deltacp obtained with \num{2e4} toy experiments generated with $\delta_{CP} = \BestFitDeltacpwRC$ and normal hierarchy is shown. The $\Delta\chi^2$ distributions obtained by fixing the mass ordering to normal is shown, along with the $\Delta\chi^2$ values corresponding to 68.27\% and 95.45\% of the toy experiments.
+	}
+	\label{fig:cc1pi_brazilian_v2}
+\end{figure*}
+\FloatBarrier
+
+\subsection{\nueCConepi p-value within the framework of the 5-sample fit}
+When retaining input from all 5 samples, the method used to compute the p-value also follows a similar approach to that used to compare the full 5-sample \deltacp versus mass hierarchy result with sensitivity (see \cref{sec:results:brazilian}). The key difference to the method in this case is solely in the generation of the Feldman-Cousins toys. Rather than the standard approach of generating toy spectra for all 5 SK samples, the 4 non-\nueCConepi samples are replaced with the corresponding data samples, while the \nueCConepi sample is generated using the standard Feldman-Cousins procedure. The data contour is that produced by the fit of \deltacp in normal ordering with the reactor constraint applied and therefore exhibits no shift towards the maximally CP-violating value of $-\pi/2$.
+
+\Cref{fig:cc1pi_brazilian_v1} shows the comparison of the data contour with the $\Delta\chi^2$ distributions corresponding to 68.27\% and 95.45\% of the toy experiments to illustrate the extreme nature of the \nueCConepi sample. The p-value is computed for each of the 101 bins of \deltacp by considering the fraction of toys where $\Delta\chi^2_\text{toy} > \Delta\chi^2_\text{data}$. The minimum value from this set is then taken to be the p-value for the \nueCConepi sample. For the \RunPeriod data we find $p = 0.0098$, corresponding to $2.33\sigma$.
+
+\begin{figure*}[htb]
+	\center
+	\includegraphics[width=0.7\textwidth]{images/cc1pi/v1/deltacp_bestfit_onesided_brazilian_nh}
+	\caption {
+		The one-sided distribution of $\Delta\chi^2$ vs \deltacp obtained with \num{2e4} toy experiments generated with $\delta_{CP} = \BestFitDeltacpwRC$ and normal hierarchy is shown. The $\Delta\chi^2$ distributions obtained by fixing the mass ordering to normal is shown, along with the $\Delta\chi^2$ values corresponding to 68.27\% and 95.45\% of the toy experiments.
+	}
+	\label{fig:cc1pi_brazilian_v1}
+\end{figure*}
+\FloatBarrier
+
+\clearpage
