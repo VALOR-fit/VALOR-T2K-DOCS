@@ -7,3 +7,4 @@ Please name each directory as TNxxx, where xxx is the ID of the technical note.
 
 | Technical note | Description                                              |
 |----------------|----------------------------------------------------------|
+| TN036          | 2010 (Run 1) 2-flavour muon-neutrino disappearance       |
