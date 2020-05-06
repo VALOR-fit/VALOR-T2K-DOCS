@@ -6,7 +6,9 @@ In this technical note, we report the results of a 3-flavour $\nu/\bar{\nu}$ joi
 
 % TODO: Write about the changes since the last analysis, incuding the xsec model, POT, osc param priors, flux tuning etc.
 %M: I was not sure if  there should be any detailed description in this section. Hope this version is fine 
-Compared to the previous analysis,there were some changes in the implementation of the cross-section model related to a new nuclear model used, replacement and correction of some parameters and  introduction of the Coulomb correction for the CCQE events reconstructed energy. As for the flux tuning, the flux version used in the current analysis is based on the 2009 replica target tuning with the improvement method  of treating run-by-run correlations of p beam profile systematic.Since the last last analysis oscillation priors for the \ssqthonethree and \ssqthonetwo were changed according to the PDG19  release. 
+
+Compared to the previous analysis, random phase approximation  (BeRPA) was replaced with 8 Q2 parameters. Instead of having one CCOther shape parameter we moved to CCDIS_BY(based on Bodek-Yang model), CCMpi_BY, CCmisc, CCDIS nu and nubar normalizations. Also, a Coulomb shift correction was introduced for calculation of the Ereco for CCQE events. Implemented 4 (2 for nu and 2 for nubar) energy dependent 2p2h parameters as well as 2(nu and nubar) CC normalization parameters.  This analysis includes new nuclear model. FSI parameters were moved  from SK detector covariance matrix to BANFF matrix  All these changes are further described in the section \cref {sec:systematics}
+As for the flux tuning, the flux version used in the current analysis is based on the 2009 replica target tuning with the improvement method  of treating run-by-run correlations of p beam profile systematic.Since the last last analysis oscillation priors for the \ssqthonethree and \ssqthonetwo were changed according to the PDG19  release. 
 
 
 
