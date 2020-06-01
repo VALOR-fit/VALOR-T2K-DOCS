@@ -1,0 +1,80 @@
+\clearpage
+
+{\color{red} 
+
+\section {Updated Analysis Using the Full T2K Run 1-9 Dataset} \label{sec:run1-9d_update}
+
+A statistical update to the Run 1-9c results has been performed with the addition of the Run 9d dataset. The analysis procedure is identical to that of the Run 1-9c analysis, but there has been the following changes to the analysis inputs:
+
+\begin{itemize}
+	\item An increase of $\nub$ mode exposure of $\SI{46}{\%}$ from $\TotalPotNuBarRunOneNineC$ POT to $\TotalPotNuBarRunOneNine$ POT
+	\item Updated the Gaussian reactor constraint on $\sin^{2} 2 \theta_{13}$ from the 2016 PDG value of $0.0857 \pm 0.0046$ to the 2018 PDG value of $0.0830 \pm 0.0031$, as shown in the updated prior table \ref{tab:osc_param_priors_nuebarapp_Run1-9d}
+	\item Updated the Asimov A true value of $\sin^{2} 2 \theta_{13}$ to 0.0830, to match the central value of the above 2018 PDG reactor constraint
+	\item An updated flux tuning using an updated version of FLUKA and nuclear interaction model \cite{flux_tuning_Run1-9d}
+\end{itemize}
+
+\input{tables/osc_param_priors_nuebarapp_R1-9d}
+
+As part of the validation process two additional studies have been performed: An updated test of the p-value stability (see appendix \ref{app:pval_stability_Run1-9d}), and a comparison of the toy generation methods used by the VALOR and P-theta groups (see appendix \ref{app:sampling_vs_reweighting}).
+
+
+
+\subsection{Sensitivity to $\nueb$ Appearance} \label{sec:run1-9d_sensitivity}
+
+The sensitivity study is performed as described for the Run 1-9c analysis (see sec \ref{sec:sensitivity}). The expected event rates for all five Super-K event samples using the updated Asimov A parameters are shown in \Crefrange{tab:event_rates_exp_1Rmu_R1-9d}{tab:event_rates_exp_MultiRe_Run1-9d}. Although there has been no change in the neutrino mode exposure, the event rates in the neutrino mode samples have changed slightly compared to the Run 1-9c values due to the updated flux tuning.
+
+\input{tables/event_rates_AsimovA_Run1-9d_PDG2018_postfit}
+
+The distributions of the event-rate in the antineutrino mode single-ring e-like sample for both hypotheses are shown in Fig \ref{fig:sensitivity_rate-only_Run1-9d} and the $\Delta \chi^2$ distributions for both hypotheses are shown in Fig \ref{fig:sensitivity_rate+shape_Run1-9d}. The corresponding Asimov A p-values are shown in Tab \ref{tab:sensitivity_AsimovA_R1-9d}. A comparison to the sensitivity study produced by the P-theta group is shown in appendix \ref{app:compare_sensitivity_valor_ptheta}.
+
+\input{sensitivity/pvalues_AsimovA_Run1-9d_2018-01-21}
+
+For both rate-only and rate+shape analyses, the Asimov A sensitivity using the full Run 1-9 dataset gives a $\sim \SI{0.3}{\sigma}$ stronger exclusion of the $\beta=0$ hypothesis compared to the sensitivity using the Run 1-9c dataset. There is approximately no change in the exclusion of the $\beta=1$ hypothesis. A more detailed comparison of the full Run 1-9 results to the Run 1-9c results can be found in appendix \ref{app:compare_R1-9d_R1-9c}.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.65]{sensitivity/plots_Run1-9d/sensitivity_weighted_2019-01-18/nuebarapp_graphs_nmargtoys_200k_nexp_20k_rate-only_MCsampling_PDG2018_VALOR_Nevents_logscale}
+	\caption{The distribution of the total number of events in the antineutrino mode single-ring e-like sample from each of the \NToysFakeDataRateOnly\ toy experiments for both the $\beta = 0$ and $\beta = 1$ hypotheses using full Run 1 - 9 statistics. The distributions were produced using the method outlined in section \ref{sec:method_rate-only} using the Asimov A spectra to calculate the 4-sample likelihood. The dashed line corresponds to the total number of events given by the Asimov A data set.}
+	\label{fig:sensitivity_rate-only_Run1-9d}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.65]{sensitivity/plots_Run1-9d/sensitivity_weighted_2019-01-18/nuebarapp_graphs_nmargtoys_200k_nexp_20k_rate+shape_MCsampling_PDG2018_VALOR_Deltachisq_logscale}
+	\caption{The distribution of $\Delta \chi^2$ values from each of the \NToysFakeDataRatePlusShape\ toy experiments for both the $\beta = 0$ and $\beta = 1$ hypotheses using full Run 1 - 9 statistics. The distributions were produced using the method outlined in section \ref{sec:method_rate+shape} using the Asimov A spectra to calculate the 4-sample likelihood. The dashed line corresponds to the $\Delta \chi^2$ value given by the Asimov A data set.}
+	\label{fig:sensitivity_rate+shape_Run1-9d}
+\end{figure}
+
+
+
+\FloatBarrier
+
+\subsection{Results of the $\nueb$ Appearance Analysis} \label{sec:run1-9d_results}
+
+The rate-only and rate+shape p-values for $\nueb$ appearance are performed on the full Run 1-9 data set following the same procedure as in Sec \ref{sec:method}. 1-sided p-values are computed on the right tail of the test statistic expected distribution to exclude $\beta = 0$ and the left tail to exclude $\beta = 1$. Fig \ref{fig:asimova_spectra_all_Run1-9d} shows the data in the 5 Super-K event samples overlaid with the expected event rates for Asimov data set A. In Figs \ref{fig:data_rate-only_Run1-9d} and \ref{fig:data_rate+shape_Run1-9d} the distributions of the test statistic, for rate-only and rate+shape analyses, are shown and compared with the data. The  observed number of events in the antineutrino mode single-ring e-like sample in Super-K was \NskObservedNueBarRunOneNineD. The observed $\Delta \chi^2$ value was \DeltachisqDataRunOneNineD. The p-values resulting from these distributions and test statistic values are shown in Tab \ref{tab:data_pvals_R1-9d}. A comparison to observed p-values produced by the P-theta group is shown in appendix \ref{app:compare_data_valor_ptheta}..
+
+As shown in Tab \ref{tab:data_pvals_R1-9d}, both the rate-only and rate+shape analyses disfavour the $\beta = 0$ hypothesis more than the $\beta = 1$ hypothesis. The Jeffreys scale indicates that the Bayes factor (see eq. \ref{eq:bayes_factor}) of \BayesFactorDataRunOneNineD\ corresponds to a substantial preference for the $\beta = 1$ hypothesis over $\beta = 0$. This preference is in contrast to the earlier Run 1-9c and Run 1-7 analyses, which both had a poor preference for the $\beta = 0$ hypothesis over $\beta = 1$. The comparison between the full Run 1-9 and Run 1-9c analyses is discussed in more detail in Appendix \ref{app:compare_R1-9d_R1-9c}.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.65]{data/Run1-9d/nuebarapp_graphs_nmargtoys=200k_nexp=20k_data_rate-only_MCsampling_VALOR_Nevents_logscale}
+	\caption{The distribution of the total number of events in the antineutrino mode single-ring e-like sample from each of the \NToysFakeDataRateOnly\ toy experiments for both the $\beta = 0$ and $\beta = 1$ hypotheses. The distributions were produced using the method outlined in section \ref{sec:method_rate-only} using the Run 1-9d data spectra to calculate the likelihood. The dashed line corresponds to the total number of events given by the Run 1-9d data set.
+	}
+	\label{fig:data_rate-only_Run1-9d}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.65]{data/Run1-9d/nuebarapp_graphs_nmargtoys=200k_nexp=20k_data_rate+shape_MCsampling_VALOR_Deltachisq_logscale}
+	\caption{The distribution of $\Delta \chi^2$ values from each of the \NToysFakeDataRatePlusShape\ toy experiments for both the $\beta = 0$ and $\beta = 1$ hypotheses. The distributions were produced using the method outlined in section \ref{sec:method_rate+shape} using the Run 1-9d data spectra to calculate the likelihood. The dashed line corresponds to the $\Delta \chi^2$ value given by the Run 1-9d data set.
+	}
+	\label{fig:data_rate+shape_Run1-9d}
+\end{figure}
+
+\input{data/pvalues_data_Run1-9d}
+
+\input{spectra/asimova_spectra_all_Run1-9d}
+
+} % \colour{red}
+

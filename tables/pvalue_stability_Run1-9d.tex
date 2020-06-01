@@ -1,0 +1,20 @@
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline
+    Analysis                    & $\beta$ & Most Extreme p-value & $\bar{p}$ & $G$  & $\text{H}_0$ Rejected if $G >$ & Is Outlier? \\
+	\hline
+	\multirow{2}{*}{rate+shape} & 0       & $0.0046 \pm 0.0005$  & 0.0040    & 2.54 & 4.12             & No \\
+	\cline{2-7}
+	                            & 1       & $0.436 \pm 0.004$    & 0.441     & 2.49 & 3.95             & No \\
+	\hline
+	\multirow{2}{*}{rate-only}  & 0       & $0.0101 \pm 0.0007$  & 0.0103    & 2.42 & 3.95             & No \\
+	\cline{2-7}
+	                            & 1       & $0.467 \pm 0.004$    & 0.464     & 3.25 & 4.12             & No \\
+	\hline
+\end{tabular}
+\caption{
+	Assessment of whether the most extreme p-values from Tab \ref{tab:pval_stability_Run1-9d_values} are considered to be outliers at a significance of $\alpha = 0.05$ using Grubbs' test for outliers
+}
+\label{tab:pval_stability_Run1-9d}
+\end{table}

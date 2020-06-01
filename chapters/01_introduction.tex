@@ -1,0 +1,89 @@
+%\clearpage
+
+\section {Introduction}
+\label{sec:intro}
+
+In this technical note, we report the results of the $\nueb$ appearance analysis using the 3-flavour $\nu$/$\bar{\nu}$ joint analysis, performed by the VALOR group, on the combined \RunPeriod data set, using data taken in both neutrino mode (\TotalPotNuRunOneNineC), with the polarity set to forward horn current (FHC), and antineutrino (\TotalPotNuBarRunOneNineC) mode with polarity set to reverse horn current (RHC). The same procedure used in the 2016 $\nueb$ appearance analysis \cite{OurRun16AntiNueBarAppearanceAnalysis3Flavour} is used, whilst working in the analysis framework outlined in \cite{OurRun18CC1piJointAnalysis3Flavour}. A parameter $\beta$, that multiplies by either 0 or 1 the $\numub \rightarrow \nueb$ oscillation probability, is used in order to obtain the significance to $\nueb$ appearance. %All of the oscillation and systematic parameters, mass hierarchy included, are marginalised. 
+The priors used to marginalise the oscillation parameters and generate fake-data toys can be found in Tab \ref{tab:osc_param_priors_nuebarapp_optimised}. 
+
+\input{tables/osc_param_priors_nuebarapp_optimised}
+
+The significance to $\nueb$ appearance is given as a p-value. Two different test statistics are used. The total number of observed events ($N_{obs}$) in the antineutrino mode e-like sample, without using any information from the reconstructed energy shape, is used to calculate the rate-only p-value. {\color{red}$\Delta \chi^2 = \chi^2 \left( \beta = 0 \right) - \chi^2 \left( \beta = 1 \right)$ is used calculate the rate+shape p-value, where both rate and shape information from the RHC mode single-ring e-like sample and a constraint on the oscillation parameters from the other four samples (single-ring $\mu$-like and single-ring e-like, both in FHC and RHC modes and FHC $\nue CC1\pi$-like) are used.} Where the $\chi^2$ values are calculated by marginalising over all systematic and oscillation parameters, including the mass hierarchy (see section \ref{sec:marg})
+
+
+%$\Delta \chi^2 = \chi^2 \left( \beta = 0 \right) - \chi^2 \left( \beta = 1 \right)$ using both rate and shape information from the five available samples (single-ring $\mu$-like and single-ring e-like, both in FHC and RHC modes and FHC $\nue CC1\pi$-like) is used to calculate the rate+shape p-value.
+%$\Delta \chi^2 = \chi^2 \left( \beta = 0 \right) - \chi^2 \left( \beta = 1 \right)$ using a hybrid of data and pseudo-data and both rate and shape information from the five available samples (single-ring $\mu$-like and single-ring e-like, both in FHC and RHC modes and FHC $\nue CC1\pi$-like is used to calculate the rate+shape p-value.
+
+
+\subsection{Improvements to the Previous Analysis}
+
+There have been a number of improvements since this analysis was previously performed, in 2016 \cite{OurRun16AntiNueBarAppearanceAnalysis3Flavour}:
+
+\begin{itemize}
+	\item The FHC exposure has increased by $\SI{113}{\%}$ from \TotalPotNuRunOneSevenB\ to \TotalPotNuRunOneNineC
+	\item The RHC exposure has increased by $\SI{50}{\%}$ from \TotalPotNuBarRunOneSevenB\ to \TotalPotNuBarRunOneNineC
+	\item An additional Super-K event sample has been added, neutrino mode $\nu_{e}\textrm{CC}1\pi$-like
+	\item The Super-K event reconstruction algorithm has changed from using APFit to FitQun \cite{fiTQunAlgo}
+	\item New cross-section model parameters are implemented, as detailed in \cite{OurRun18CC1piJointAnalysis3Flavour}
+\end{itemize}
+
+
+
+\subsection{Construction of Nominal Super-K Monte Carlo Templates}
+The Monte Carlo templates (predicted event spectra for each reaction mode produced by Monte Carlo simulation and binned in kinematic variables) used in this analysis were constructed in an analogous way to the procedure used for the 3-flavour joint analysis in \cite{OurRun18CC1piJointAnalysis3Flavour}. The parameter of interest $\beta$ which reweights the $\nueb$ appearance signal component is kept fixed to either 0 (corresponding to no appearance) or 1 (corresponding to appearance consistent with the current best knowledge of the PMNS matrix given by the simultaneous T2K+reactor Run 1-8 joint fit result) and is applied to all the Super-K samples, though its impact is negligible in all the samples except the antineutrino mode e-like sample. 
+
+In this analysis a comparison of the reconstructed energy ($E_{r}$) and reconstructed lepton angle ($\theta$) spectrum of single ring events, including the \nueCConepi{}-like sample, observed at Super-K with the predicted spectrum is used to build the test statistic to calculate the significance to $\nueb$ appearance. For $\mu$-like samples the templates are built as a function of the reconstructed neutrino energy, as in previous analyses, and a single $\theta$ bin is used. The predicted number $N_{SK;r,\theta}$ of RHC single-ring e-like events in the $r$-th and $\theta$-th bin is computed for each selected sample as follows:
+
+\begin{equation}
+\displaystyle
+N_{SK;r,\theta} = 
+\sum_{m} \sum_{t} \sum_{r\prime}
+%\beta \cdot
+\left[ \delta \left( m - m_{\numub \rightarrow \nueb} \right) (\beta - 1) + 1 \right] \cdot
+P_{m;t} \cdot
+T_{r;r\prime;f_{E; r}^{SK}} \cdot
+S_{m;t;r\prime,\theta;\vec{f}} \cdot
+N_{SK;m;r\prime,\theta;t}^{MC} 
+\label{eq:far_prediction}
+\end{equation}
+
+In equation \ref{eq:far_prediction}, $N_{SK;m;r\prime,\theta;t}^{MC}$ is the input Super-K Monte Carlo (MC) template containing the number of events in the single ring MC sample with true reaction mode $m$ in the true energy bin t, the reconstructed energy bin $r\prime$ and reconstructed lepton angle bin $\theta$. $\delta \left( m - m_{\numub \rightarrow \nueb} \right)$ is the Dirac delta function, equal to one when the reaction mode corresponds to the $\numub \rightarrow \nueb$ oscillation and zero otherwise. $S_{m;t;r\prime,\theta;\vec{f}}$ is an overall, multiplicative, systematic error factor depending on a vector of nuisance (systematic) parameters $\vec{f}$, which is function of the reaction mode $m$, the true energy bin $t$, the reconstructed energy bin $r\prime$, and the reconstructed lepton angle bin $\theta$. $T_{r;r\prime;f_{E; r}^{SK}}$ is a transfer function describing the migration of events between the reconstructed energy bins $r$ and $r\prime$ due to uncertainty in the Super-K reconstructed energy scale, expressed here in terms of the nuisance parameter $f_{E; r}^{SK}$. Finally, $P_{m;t}$ is the 3-flavour oscillation probability applied to the true energy bin \(t\) of the Super-K MC template which corresponds to mode $m$; This is exactly how the analysis templates are built in the joint fit analysis, with the only difference that the $\numub \rightarrow \nueb$ component can be switched on or off by the parameter $\beta$ in each Super-K sample. In Fig \ref{fig:asimova_spectra_all} the predicted spectra are compared with the observed data. Also the 2-dimensional spectrum of the $\numub \rightarrow \nueb$ component, that can be switched on or off by the parameter $\beta$ is shown.
+
+
+
+\subsection{Calculation of the Likelihood} \label{sec:like}
+In the analyses presented here both the likelihood and the marginal likelihood are used. {\color{red}The marginal likelihood calculation uses details of the $\nueb$ appearance methodology so is explained separately, see section \ref{sec:marg}. } %\color{red}
+
+First the log-likelihood function is calculated for each sample, $s$ as follows:
+
+\begin{equation} \label{eq:chisquare}
+-2 \; \textrm{ln} \; \lambda_s \left(Data; Toy\right) = 2 \cdot \sum_{i=0}^{N-1} 
+\Big( 
+n^{obs}_{s,i} \cdot \textrm{ln} \left( n^{obs}_{s,i} / n^{exp}_{s,i}  \right) +
+\left( n^{exp}_{s,i}-n^{obs}_{s,i} \right)
+\Big) 
+\end{equation}
+where $n^{obs}_{s,i}$ is the observed number of {\color{red} data } events in the $i^{th}$ bin in reconstructed energy and lepton angle of sample $s$ and $n^{exp}_{s,i} = n^{exp}_{s,i}(\beta; {\bf a})$ is the corresponding expected number of events {\color{red} in a toy, } $N$ is the number of reconstructed energy and lepton angle bins and ${\bf a}$ is a vector of systematic parameters. {\color{red} A `toy' is a simulated pseudo-data set containing a particular set of $\beta$ and ${\bf a}$ values and with non-integer $n^{exp}$ generated from these values.}
+
+The total likelihood is then given by the sum of {\color{red} $-2 \; \textrm{ln} \; \lambda_s \left(Data; Toy\right)$ } from all of the Super-K samples
+
+{\color{red}
+	
+\begin{equation} \label{eq:totlike_2}
+-2 \; \textrm{ln} \; \lambda \left(Data; Toy\right) = \sum_{s=1}^{N_{samples}} -2 \; \textrm{ln} \; \lambda_s \left(Data; Toy\right)
+\end{equation}
+
+}
+
+{\color{red} 
+where $N_{samples}$ corresponds to the number of Super-K samples used in the analysis.
+}%\color{red}
+
+
+
+%\clearpage
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../TN327"
+%%% End:

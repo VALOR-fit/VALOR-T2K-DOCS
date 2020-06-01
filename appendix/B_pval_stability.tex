@@ -1,0 +1,41 @@
+\section{p-value Stability}\label{app:pval_stability}
+In order to assess whether the number of fake-data toys used is sufficient, the stability of the generated p-values is assessed. This is done by generating four independent sets of \NToysFakeDataRatePlusShape\ AsimovA-{\color{red}constrained} toys and calculating their corresponding rate-only and rate+shape p-values, following the method described in section \ref{sec:method}, and shown in Tab \ref{tab:pval_stability}. Qualitatively, these p-values are roughly consistent with each other as the observed variation is not large enough to change the conclusions made; however, as more data is collected it is possible that the variation in p-value could affect the conclusions made on the physics, for example if the p-value was close to the threshold for discovery. Therefore, it is important for future analyses to ensure that enough toys are used to keep the variation in p-value small enough that the p-values are quantitatively consistent with each other.
+
+Additionally, the p-value is dependant on the ensemble of nuisance parameters used. As each of the four sets of fake-data toys correspond to different sets of \NToysFakeDataRatePlusShape\ nuisance parameter throws, the p-values will not be drawn from the same underlying distribution and therefore may not be directly comparable, although the size of this effect is currently unknown. Therefore studies need to be performed during future analyses to characterise this effect.
+
+\input{tables/pvalue_stability}
+
+
+
+
+{\color{red} 
+
+\subsection{Improved p-value Stability Study using the Full Run 1-9 Sensitivity}\label{app:pval_stability_Run1-9d}
+
+To assess the stability of the p-values in a more quantitative manner and with a larger set of p-values, the p-value stability study  was redone during the full Run 1-9 analysis using the earlier true value of $\sin^2(\theta_{13})$ in Tab \ref{tab:osc_params_joint_asimovA}. Now the stability of the p-values for each test statistic and value of $\beta$ are assessed by searching for outliers in sets of 10 independent p-values. Whether a p-value is considered an outlier is determined by applying a two-sided Grubbs' test for outliers, which makes use of Student's t-distribution to search for outliers in an approximately normal data set \cite{Grubbs}:
+
+For each test statistic and value of $\beta$, $N=10$ independent sets of \NToysFakeDataRatePlusShape\ AsimovA-constrained toys are generated and fluctuated (marginalised) to obtain rate-only (rate+shape) p-values, $p$.
+
+Grubbs' test statistic, $G$ is defined as
+
+\begin{equation} \label{eq:Grubbs_statistic}
+G = \frac{ ^{ \quad \text{max}}_{i=1,...,N} |p_i - \bar{p}| }{ s }
+\end{equation}
+
+Where $\bar{p}$ is the mean p-value and $s$ is the sample standard deviation of the p-values calculated with the tested p-value, $p_i$, removed.
+
+The null hypothesis of Grubbs' test, $\text{H}_{0}$, is that none of the p-values are outliers. The alternative hypothesis, $\text{H}_{\text{a}}$, is that there is exactly one outlier. $\text{H}_{0}$ is then rejected and $p_i$ is considered to be an outlier if the following condition is met:
+
+\begin{equation} \label{eq:Grubbs_condition}
+G > \frac{N - 1}{N} \sqrt{\frac{ t^2_{\alpha/(2N), N-2} }{ N - 2 + t^2_{\alpha/(2N), N-2} }}
+\end{equation}
+
+Where $t^2_{\alpha/(2N), N-2}$ is the critical value of Student's t-distribution with $N-2$ d.o.f and significance level $\alpha$.
+
+The p-values for each of the 10 toy sets, calculated for both rate-only and rate+shape analyses under both the $\beta = 0$ and $\beta = 1$ hypotheses, are shown in Tab \ref{tab:pval_stability_Run1-9d_values}. The most extreme p-values from this table are assessed in Tab \ref{tab:pval_stability_Run1-9d} and it is shown that, at a significance level of $\alpha = 0.05$, none of the p-values are considered to be outliers. Therefore \NToysFakeDataRatePlusShape\ fake data toy sets is considered to be sufficient at this significance level.
+
+\input{tables/pvalue_stability_Run1-9d_values}
+\input{tables/pvalue_stability_Run1-9d}
+
+
+} % \colour{red}

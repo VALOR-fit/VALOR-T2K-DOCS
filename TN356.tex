@@ -1,0 +1,195 @@
+%
+% ---------------------------------------------------------------------------------------
+% VALOR T2K 5 sample nuebar appearance analysis, Run 1-9c with Run 1-9d update
+% ---------------------------------------------------------------------------------------
+%
+\documentclass[11pt]{elsarticle}
+
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{\centerline{\thepage}}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+
+\usepackage{adjustbox}
+\usepackage[toc,page]{appendix}       	% Appendix
+\usepackage{amsfonts}                 	% Extra symbols
+\usepackage{amsmath}
+\usepackage{appendix}
+\usepackage{booktabs}
+\usepackage{caption}					% Use when minipaging figures & tables together
+\usepackage{color}
+\usepackage{dcolumn}					% align table columns on decimal point
+\usepackage[figuresright]{rotating}		% if you have landscape tables
+\usepackage{float}
+\usepackage[margin=2.50cm]{geometry}  	% Tweak margins
+\usepackage{graphicx}                 	% PostScript figures
+\usepackage{hyperref} 					% Linkable contents and reference without colour
+\usepackage{lineno}                   	% For printing the line numbers
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{multirow}                 	% Fancy tables
+\usepackage{natbib}                   	% For building bibliography with \cite{}
+\usepackage{pdflscape}                  % allow page to be landscape for large tables
+\usepackage{rotate}                     % rotate text in tables
+\usepackage{siunitx}					% Easier units exponentials etc
+\usepackage{subcaption}					% Allows use of subfigure
+\usepackage[table,dvipsnames]{xcolor}	% Fancy tables and colors
+\usepackage{xspace}		        		% Appropriate insertion of spaces after commands
+\usepackage{cleveref}                   % Load after the hyperref package
+\usepackage{pdflscape}
+\usepackage{setspace}
+\usepackage{color,soul}   				% For highlighting with \hl{}
+\onehalfspacing
+\DeclareSIUnit\POT{POT}
+
+\usepackage{placeins}					% For float barriers
+
+%\let\Oldsection\section
+%\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+%\let\Oldsubsection\subsection
+%\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+%\let\Oldsubsubsection\subsubsection
+%\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
+\crefname{appsec}{Appendix}{Appendices}
+
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+
+
+\lstset{language=C++}
+
+% Particle aliases
+\newcommand{\nue}{\nu_{e}}
+\newcommand{\numu}{\nu_{\mu}}
+\newcommand{\nutau}{\nu_{\tau}}
+\newcommand{\nueb}{\bar{\nu}_{e}}
+\newcommand{\numub}{\bar{\nu}_{\mu}}
+\newcommand{\nutaub}{\bar{\nu}_{\tau}}
+\newcommand{\nub}{\bar{\nu}}
+\newcommand{\nua}{\nu_{\alpha}}
+\newcommand{\nuab}{\bar{\nu_{\alpha}}}
+
+\newcommand{\numuany}{\overset{(-)}{\nu}_{\mu}}
+\newcommand{\nueany}{\overset{(-)}{\nu_e}}
+
+\newcommand{\CCzeropi}{CC \( 0\pi \)}
+\newcommand{\nueCConepi}{\(\nue\) CC\( 1\pi^{+} \)}
+\newcommand*{\pbar}[1]{\accentset{(-)}{#1}}
+
+% Fit variables
+\newcommand{\ssqthonethree}{$\sin^2\theta_{13}$\xspace}
+\newcommand{\ssqthtwothree}{$\sin^2\theta_{23}$\xspace}
+\newcommand{\ssqthonetwo}{$\sin^2\theta_{12}$\xspace}
+\newcommand{\deltacp}{$\delta_{CP}$\xspace}
+\newcommand{\dmsqtwothree}{$\Delta m^2_{32}$\xspace}
+\newcommand{\dmsqonetwo}{$\Delta m^2_{21}$\xspace}
+\newcommand{\dmsqonethree}{$\Delta m^2_{13}$\xspace}
+
+\newcommand{\RunPeriod}{Run 1-9c\xspace}
+
+%2D fits
+\newcommand{\appearance}{\deltacp vs \ssqthonethree\xspace}
+\newcommand{\disappearance}{\dmsqtwothree vs \ssqthtwothree}
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\makeatletter % Remove preprint footer
+\def\ps@pprintTitle{%
+	\let\@oddhead\@empty
+	\let\@evenhead\@empty
+	\def\@oddfoot{}%
+	\let\@evenfoot\@oddfoot}
+\makeatother
+
+%define new fonts, smaller than tiny (for showing large covariance matrices in a page)
+\makeatletter
+\ifcase \@ptsize \relax% 10pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{4}{5}}% \tiny: 5/6
+  \newcommand{\verytiny}{\@setfontsize\miniscule{3}{4}}% \tiny: 5/6
+\or% 11pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\or% 12pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\fi
+\makeatother
+
+\linenumbers
+%\bibliographystyle{elsart-num}
+
+\begin{document}
+
+%Numbers used in this tech note
+\input{numbers/numbers}
+\input{numbers/inputparameters}
+
+% Title, authors, abstract and table of contents
+\input{chapters/front}
+
+\newpage
+
+{\color{red}
+\textbf{Updates to TN from Run 1-9c (TN-356 v4) to Full Run 1-9 (TN-356 v5)}
+\begin{itemize}
+	\item Updated the description of the marginal likelihood calculation to include a description of the separate treatment of the RHC1Re sample and the control samples used in both Run 1-9c and Run 1-9d analyses
+	\item Split up the section describing the calculation of marginal likelihood (previously sec \ref{sec:like}) into calculation of likelihood (sec \ref{sec:like}) and weighted marginal likelihood (sec \ref{sec:marg})
+	\item Added a section on the full Run 1-9 update (sec \ref{sec:run1-9d_update})
+	\item Updated the optimised priors used to generate fake data distribution toys (appendix \ref{app:priors_Run1-9d})
+	\item Updated the p-value stability test (appendix \ref{app:pval_stability_Run1-9d})
+	\item Added a comparison of the different toy generation methods used by VALOR and P-theta (appendix \ref{app:sampling_vs_reweighting})
+	\item Added an appendix comparing the sensitivity and data results obtained using full Run 1-9 statistics against those obtained using only Run 1-9c statistics (appendix \ref{app:compare_R1-9d_R1-9c})
+\end{itemize}
+} %\color{red}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+% Main body
+\input{chapters/01_introduction}
+\input{chapters/02_method}
+\input{chapters/03_sensitivity}
+\input{chapters/04_data_fit}
+\input{chapters/05_conclusion}
+\input{chapters/06_Run_1-9d_update}
+
+% References
+\input{chapters/references}
+
+%Appendices
+\clearpage
+\begin{appendices}
+	\crefalias{section}{appsec}
+	\input{appendix/A_priors}
+	\input{appendix/B_pval_stability}
+	\input{appendix/C_sampling_vs_reweighting}
+	\input{appendix/D_compare_Run1-9d_Run1-9c}
+	\input{appendix/E_compare_valor_ptheta}
+\end{appendices}
+
+\clearpage
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

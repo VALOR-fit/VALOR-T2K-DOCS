@@ -1,0 +1,41 @@
+\section{Optimisation of Oscillation Parameter Priors}\label{app:priors}
+When generating fake-data toys that are {\color{red} constrained} by the \RunPeriod real-data (see section \ref{sec:method}), it was found that the amount of CPU time required to generate these toys was $\sim 80\times$ the CPU time required to generate toys {\color{red} constrained} by Asimov A fake-data.
+
+The reason for this is that the constraints on the oscillation parameters given by the \RunPeriod data are substantially stronger than the Asimov A constraints \cite{OurRun18CC1piJointAnalysis3Flavour}. This results in a larger fraction of the oscillation parameters being generated at more unlikely values and therefore the mean probability of accepting each fake-data toy decreased by a factor of 138. 
+
+The large increase in CPU time meant that the toy generation process would require an unreasonably large amount of time and the majority of fake-data toys generated would be immediately rejected. In order to increase the efficiency of the fake-data toy generation process, the oscillation parameter priors ranges were reduced from the ranges used to generate marginalization and fake-data toys in the \RunPeriod joint analysis \cite{OurRun18CC1piJointAnalysis3Flavour}, these ranges will be referred to as the \emph{nominal priors} and are shown in the \emph{Range for marginalisation toys} column of Tab \ref{tab:osc_param_priors_nuebarapp_optimised}.
+
+By restricting the range of the each oscillation parameter prior to the region close to the \RunPeriod best-fit point \cite{OurRun18CC1piJointAnalysis3Flavour}, a larger fraction of fake-data toys generated will have a higher likelihood compared to toys generated using the nominal prior ranges (referred to as the \emph{nominal set}), resulting in a reduction in the required CPU time. However, there is a danger that by reducing the prior range, a toy that would have been accepted from the nominal set would no longer be generated and so would be excluded from the new set of accepted toys. This could cause a change in the measured p-values, which would be undesirable.
+
+To quantify this effect on the p-values, the maximum possible change in p-value is calculated as follows. Equations \ref{eq:pval_right} and \ref{eq:pval_left} for the calculation of the p-value can be re-written as
+
+\begin{equation} \label{eq:pval_ntoys}
+\textrm{p-value} = p = \frac{n}{N}
+%\frac{\textrm{number of toys in tail of interest}}{\textrm{total accepted toys}}
+\end{equation}
+
+Where $n$ is the number of accepted toys in the tail of interest and $N$ is the total number of accepted toys in the test-statistic distribution. At worst, all toys that were excluded from the nominal set could have been in the tail of interest, but when using the reduced prior, these excluded toys would have been re-thrown (to keep the total number of accepted toys constant). At worst, all of these re-thrown toys would be outside of the tail of interest (or vice-versa). Using equation \ref{eq:pval_ntoys}, this gives a maximum possible p-value change, $|\Delta p|_{\textrm{max}}$ of
+
+\begin{equation} \label{eq:dpmax}
+|\Delta p|_{\textrm{max}} 
+= \left| p_{\textrm{nominal}} - p \right|
+= \left| \frac{n_{\textrm{nominal}}}{N} - \frac{n_{\textrm{nominal}} \pm n_{\textrm{excluded}}}{N} \right|
+= \frac{n_{\textrm{excluded}}}{N}
+\end{equation}
+
+Therefore, by reducing the prior ranges successively for a number of oscillation parameters and calculating $|\Delta p|_{\textrm{max}}$ for various potential prior ranges, the CPU time required can be minimised whilst keeping $|\Delta p|_{\textrm{max}}$ smaller than the minimum error on the p-values observed in the Asimov A sensitivity study (see section \ref{sec:sensitivity}), which was \minPvalErrorAsimovA. This is demonstrated for a number of different $\sin^2 \theta_{23}$ prior ranges in Tab \ref{tab:vary_prior_mixing23}, from which a new prior of $[0.42, 0.62]$ is chosen. Using the same method with this new prior range, $\Delta m^2_{23}$ and subsequently $\delta_{CP}$ have their prior ranges optimised, the results of which are shown in Tab \ref{tab:vary_prior_all}.
+
+\input{tables/mixing23_prior_range_vary.tex}
+\input{tables/all_flat_prior_range_vary.tex}
+
+{\color{red} 
+
+\subsection{Updated Priors for the Full Run 1-9 Analysis}\label{app:priors_Run1-9d}
+As shown by the full Run 1-9 sensitivity study (see Tab \ref{tab:sensitivity_AsimovA_R1-9d}), the smallest p-value error has reduced from \minPvalErrorAsimovA\ to \minPvalErrorAsimovABetaZeroRunOneNineD\ so the prior ranges must be changed accordingly. The $\Delta m^2_{23}$ prior was changed from $[2.30, 2.70]$ to $[2.30, 2.67]$ to decrease the maximum possible change in p-value to $\SI{5.30e-4}{}$, which is equal to the min. p-value error. This increases the required CPU time to $41\%$ of the nominal time. The other to priors were not changed from the values in Tab \ref{tab:vary_prior_all}.
+
+} % \colour{red}
+
+% Run 1-9d priors: --prior-mixing12 gaus,0.846,0.021,sinsq2th --prior-mixing23 flat,0.42,0.62,sinsqth --prior-mixing13 gaus,0.0830,0.0031,sinsq2th --prior-dmsq12 gaus,7.53E-5,0.18E-5 --prior-dmsq23 flat,2.3E-3,2.67E-3 --prior-deltacp flat,-4.4831853072,1.1
+%For beta = 0, the combined prior changes for all parameters gives a total maximum change in p-value of 5.30e-4 (contributions: 5.51e-05 from mixing23, 1.16e-4 from deltacp and  3.59e-4 from dmsq)
+%For beta = 1, the combined prior changes for all parameters gives a total maximum change in p-value of 5.69e-4 (contributions: 5.70e-05 from mixing23, 1.34e-4 from deltacp and  3.78e-4 from dmsq)
+

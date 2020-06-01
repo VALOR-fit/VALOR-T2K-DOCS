@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Cambria Math;}{\f2\fnil\fcharset128 DejaVuSerifCondensed;}}
+{\colortbl ;\red255\green255\blue0;}
+{\*\generator Riched20 10.0.16299}{\*\mmathPr\mmathFont1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+Note: All suggestions from comments recived before 2018/05/21 that are not mentioned in this document have been implemented.\b\par
+\par
+Response to Benjamin's comments\line\ul\b0 1) Comment:\line\ulnone\i L39 : Taking nuebar appearance according to the best knowledge of PMNS matrix\lang2057 ...\f1\u8594?\f0\lang2057  \line\lang9 This sentence implicitly indicates that PMNS parameter values are fixed to the best fit\lang2057  \lang9 value in your analysis, which is not true: you are exploring the whole PMNS scenario\lang2057  \lang9 (constrained by your other samples of course). You may re-write your sentence as \f2\'81\'e1\f0  If\lang2057  \lang9 we assume the PMNS scenario as a null hypothesis ... \f2\'81\'e2\i0\f0\par
+
+\pard\ul 1) Response:\line\ulnone\par
+I agree that this sentence is unclear in that it implies that PMNS parameter values are fixed to best fit values; however, I do not think it would be correct to say that I'm exploring the whole PMNS scenario as the oscillation parameter priors offer a constraint (which is additional, but related to the constraint from the four control samples) which keeps their values close to the best fit points. \line I think writing that I "explore the whole PMNS scenario" would give the impression that I was throwing parameters across the full space of each oscillation parameter. Instead, I will still write "Taking nuebar appearance according to the best knowledge of the PMNS matrx", but I will also mention that "by throwing a large number of toys, both hypotheses account for uncertainties in the values of the oscillation parameters". Do you think this will be sufficiently clear?\par
+\par
+\par
+\ul 2) Comment:\ulnone\par
+\i Table 8 : why the Asimov test statistics for beta=0 are \f2\'81\'e1\f0  N.A \f2\'81\'e2\f0  ? Can we have the\par
+expected number please ?\par
+\ul\i0\par
+2) Response:\par
+\ulnone The Asimov A dataset explictly assumes that the true hypothesis is beta = 1, therefore there are no Asimov A predictions for beta = 0. I have added an explination of this in the table's caption.\par
+\par
+\par
+\par
+\b Response to Phill's comments\b0\par
+\ul 1) Comment:\par
+\ulnone\i L28: Bit odd to talk about the analysis predicting 11.8 nuebar-like events when that is the entire question we are investigating...\par
+\i0\par
+\ul 1) Response:\par
+\ulnone This is the Asimov A predicted event rate for the RHC 1Re sample, which includes both background events and true numubar to nuebar oscillated events. The question we are investigating is not how many events are there in this sample, but is whether the data event rate for this sample is consistent with having come from either PMNS or no nuebar appearance hypotheses. I have clarified this statment, I now mention that this is the prediction for the Asimov A parameters. Is this clear enough?\par
+\par
+\par
+\ul 2) Comment:\par
+\ulnone\i L42: "poor preference" => "weak evidence preferring"\par
+\i0\par
+\ul 2) Response:\par
+\ulnone "poor preference" is the same wording as used in table 1 of TN247, which I have used as a reference for interpreting the Bayes factor with the Jeffreys scale. However, I have clarifed this statement by changing "indicating a poor preference for no nuebar appearance." to "indicating a poor preference for the no nuebar appearance hypothesis over the PMNS nuebar appearance hypothesis.". Is this better?\par
+\par
+\par
+\ul 3) Comment:\par
+\ulnone\i Table 1:\par
+I am a little concerned that the marginalisation in dm2 is not broad enough, as this seems to be within the marginalised 2 sigma for the main PMNS-fitting analysis.  It shouldn't matter much numerically, but might explain some of the difference seen between this and TN-353.\par
+\i0\par
+\ul 3) Response:\par
+\ulnone Koga-san ran the analysis with Dmsq23 priors (for generating both marginalisation and fake-data toys) of [2.3, 2.7] and a wider prior of [2.0, 3.0]. The p-values were compared and no significant difference was found, so it was concluded that it is acceptable to use the prior of [2.3, 2.7].\par
+\par
+\par
+\ul 4) Comment:\par
+\ulnone\i L134:\par
+Presumably this is the best-fit likelihood to the other four samples?  You don't know the oscillation parameters for data after all.\par
+\i0\par
+\ul 4) Response:\par
+\ulnone This is the likelihood of a single toy, calculated by comparing the event-rates of the 4 control samples in the toy to the data. No fitting is done here, so no data oscillation parameters are needed.\par
+\par
+\par
+\ul 5) Comment:\par
+\ulnone\i L141 (and elsewhere):\par
+I think it is important to distinguish "nuisance parameter sets", meaning a random drawing of nuisance parameters consistent with our other data, from "toys" which include a statistical throw of the detector data based on the prediction with a set of nuisance parameters.  The usage here appears to be a nuisance parameter set.\par
+\i0\par
+and\par
+\par
+\i L173:\par
+Again i'm a bit confused about the toys.  These are 20k sets of nuscance paramters converted into toys by doing a statistcal throw one time?\par
+\i0\par
+\ul 5) Response:\par
+\ulnone Statistical flucctuations are applied when generating each toy. I have clarified this in the tech note\par
+\par
+\par
+\ul 6) Comment:\par
+\ulnone\i L165:\par
+Not quite sure where this goes since it applies to both analyses, but you do know that Poisson parobabilites can be calculated analytically?  There's no need to roll them in the rate analysis...\par
+\i0\par
+\ul 6) Response:\par
+\ulnone Correct, this could be done analytically. I think the only reason that this done by performing 10k throws is that it is what was done in the previous iteration of the analysis. Due to the large number of throws used, this should be very close to the analytic result.\highlight1\par
+\highlight0\par
+\par
+\par
+\ul 7) Comment:\par
+\ulnone\i L174:\par
+"marginalised, using"  are these marginalised using the posterior from the other for samples? My notes say that they 'must presumably be' but I'm not sure now.\par
+\i0\par
+\ul 7) Response:\par
+\ulnone The marginalisation toys are not generated using the MC sampling proceedure, so do not use the posterior from the four control samples.\par
+\par
+\par
+\ul 8) Comment:\par
+\ulnone\i L189f:\par
+"It is worth pointing out... as out sensitivity"\par
+In general the two can be different, sure.  The unspoke assumption here is that the rate-only p-value should normally be higher, presumably because there is information encoded into the shape+rate fit.\par
+\par
+However if some hypothesis H is true then the distribution of both statistics under H is uniform and the rate-only p-value should be larger/smaller half the time.  What may differ is the p-value if H is *not* true.\par
+\par
+I'm not totally sure what this paragraph really intended to say, but perhaps try re-writing in more detail.\par
+\i0\par
+\ul 8) Response:\par
+\ulnone\par
+Yes, the rate+shape analysis uses information that the rate-only analysis does not have access to. I have now clarified this in the tech note.\par
+\par
+I am not sure about why "if some hypothesis H is true then the distribution of both statistics under H is uniform". The test-statistic distributions are all generated under the assumption that their corresponding value of beta is the true value and this has not resulted in uniform distributions.\par
+\par
+This paragraph is intended to justify quoting both a rate-only and a rate+shape p-value\par
+\par
+\par
+\par
+\ul 9) Comment:\ulnone\par
+\i Eqn 4:\par
+Shouldn't there be a prior term here for the BANFF constraint & SK detector pearmeters? (but not oscillation parameters)  No need to write it out in full, just indicate schematically.\par
+\i0\par
+\ul 9) Response:\par
+\ulnone When calculating the likelihood (without marginalisation), a term from the BANFF & SK parameters can be included (see e.g. eq. 4 on p42 of TN266); however, when calculating the marginal likelihood this term is not used at all because "During  the  marginalization  process,  random values  of  the  nuisance  parameters  are  drawn  according  to  the  prior  constraints  which  come  from  fits  to near detector data and control samples at Super-K. Therefore, each throw is already weighted based on the prior information, and as a result the nuisance parameter values are not included in the calculation of the likelihood."\par
+\par
+\par
+\par
+\b Response to Yokoyama's Comments\b0\par
+\ul 1) Comment:\par
+\ulnone\i Most of references are not cited in the text. Could you clean them up in future?\par
+\i0\par
+\ul 1) Response:\par
+\ulnone I agree with this. As this will take some time to do, I will modify the technote with this change later during the collaboration comment period.\par
+\par
+\par
+\par
+}
+ 

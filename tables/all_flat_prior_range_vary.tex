@@ -1,0 +1,33 @@
+\begin{table}[H]
+\centering
+\begin{tabular}{| c | c | c | c | c |}
+	\hline
+	Parameter            & Nominal Prior  & Optimised Prior               & Maximum possible           & CPU time \\
+	                     &                &                               & p-value change $(10^{-4})$ & (Optimised / Nominal) \\
+	\hline
+	$\sin^2 \theta_{23}$ & $[0.30, 0.70]$ & $[0.42, 0.62]$                & $2.5$                      & 0.52 \\
+	$\Delta m^2_{23}$    & $[2.30, 2.70]$ & $[2.30, 2.65]$                & $4.6$                      & 0.45 \\
+	$\delta_{CP}$        & $[-\pi, \pi]$  & $[-\pi, 1.1]$ \& $[1.8, \pi]$ & $7.8$                      & 0.39 \\
+	\hline
+\end{tabular}
+\caption{
+	Optimised priors for the oscillation parameters that are randomised according to flat prior probability distributions. The maximum possible effect on the p-values and the expected reduction on CPU time are shown. These are calculated assuming 20,000 accepted toys will be generated.
+}
+\label{tab:vary_prior_all}
+\end{table}
+
+% with Dmsq23 optimisation, cpu time / nominal = 0.4375
+% with deltaCP optimisation, cpu time / nominal = awaiting data
+
+% expected CPU time / nominal for:
+% mixing23 = 0.52 %0.34
+% dm23sq = 0.45 %0.31
+% dcp = 0.39 %0.28
+
+% Observed CPU time / nominal (with 90k total toys, so low statistics on the accepted toys) for:
+% mixing23 = 0.47
+% dm23sq = 0.44
+% dcp = 0.27
+
+% Observed acceptance rate (from 6490719 total toys with 1776 accepted toys) = 0.0002736214585780096. So for 20,000 accepted toys, need 73093682.43243243 total toys
+% Expected number of nominal toys required is 180106303.473, so actual optimised CPU time / expected nominal CPU time is 0.41, which is close to the predicted 0.39, so my calculations are justified

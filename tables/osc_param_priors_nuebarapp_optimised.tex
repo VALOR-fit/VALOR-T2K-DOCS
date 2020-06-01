@@ -1,0 +1,21 @@
+\begin{table}
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+ 	\hline
+Parameter(s)													& Prior		& Range for marginalisation toys			              & Range for fake-data toys \\
+\hline
+$\sin^{2}\theta_{23}$											&  Uniform 	& $[0.3; 0.7]$     							 			  & $[0.42; 0.62]$	\\
+$\sin^{2} 2 \theta_{13}$ ($\sin^{2} \theta_{13}$) reactors		&  Gaussian & $0.0857 \pm 0.0046$ 									  &	$0.0857 \pm 0.0046$ \\
+%$\sin^{2} 2 \theta_{13}$ ($\sin^{2} \theta_{13}$) T2K only	   	&  Uniform	& $[0; 0.4]$ 	\\
+$\sin^{2} 2 \theta_{12}$  										&  Gaussian & $0.846 \pm 0.021$ 									  &	$0.846 \pm 0.021$ \\
+$|\Delta m^{2}_{32}|$ (NH) / $|\Delta m^{2}_{13}|$ (IH)      	&  Uniform	& $ [2.3; 2.7] \times 10^{-3}~\mbox{eV}^2/\mbox{c}^4$	  & $[2.30, 2.65] \times 10^{-3}~\mbox{eV}^2/\mbox{c}^4$ \\
+$\Delta m^{2}_{21}$      										&  Gaussian & $(7.53 \pm 0.18) \times 10^{-5}~\mbox{eV}^2/\mbox{c}^4$ &	$(7.53 \pm 0.18) \times 10^{-5}~\mbox{eV}^2/\mbox{c}^4$\\
+$\delta_{CP}$                                               	&  Uniform 	& $[-\pi; +\pi]$ 										  & $[-\pi, 1.1] \& [1.8, \pi]$\\
+Mass Hierarchy													&  Bernoulli& 0.5 normal, 0.5 inverted 								  &	0.5 normal, 0.5 inverted\\  
+\hline
+\end{tabular}
+\caption{
+Treatment of the oscillation parameters in the $\nueb$ appearance analysis. All the gaussian priors are from \cite{pdg_2018}. The parameter $\sin^{2} 2 \theta_{13}$ is constrained with the measurement of reactor experiments using the Gaussian prior \cite{pdg_2018}. The nominal values of $\sin^2 2 \theta_{13}$, $\sin^2 2 \theta_{12}$ and $\Delta m^2_{21}$ are from \cite{pdg_2018}, while all the other oscillation parameter values corresponds to the most probable values obtained by the Bayesian analysis on the T2K run 1-4 neutrino mode data \cite{T2KLongPaper}. When generating fake-data toys used to fill the test-statistic distributions, the parameters that are thrown according to flat prior probability distributions have a restricted range compared to the priors used when generating marginalisation toys. This is purely to decrease the required CPU time when generating fake-data toys whilst having minimal impact on the p-values produced. This is detailed in appendix \ref{app:priors}.
+}
+\label{tab:osc_param_priors_nuebarapp_optimised}
+\end{table}

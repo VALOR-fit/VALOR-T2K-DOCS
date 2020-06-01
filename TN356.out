@@ -1,0 +1,31 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Improvements to the Previous Analysis}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Construction of Nominal Super-K Monte Carlo Templates}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Calculation of the Likelihood}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{bare Appearance Methodology}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Rate-only Analysis Method}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Rate+shape Analysis Method}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Calculation of the Marginal Likelihood}{subsection.2.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Calculation of the Test Statistic and p-value}{subsection.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.3}{Differences Between the Rate-only and Rate+shape Analysis Methods}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.4}{Comparison to the P-theta Analysis}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.5}{Statistical Uncertainty on the p-values}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.6}{Bayes Factor}{section.2}% 13
+\BOOKMARK [1][-]{section.3}{Sensitivity to bare Appearance}{}% 14
+\BOOKMARK [1][-]{section.4}{Results of the bare Appearance Analysis}{}% 15
+\BOOKMARK [1][-]{section.5}{Summary}{}% 16
+\BOOKMARK [1][-]{section.6}{Updated Analysis Using the Full T2K Run 1-9 Dataset}{}% 17
+\BOOKMARK [2][-]{subsection.6.1}{Sensitivity to bare Appearance}{section.6}% 18
+\BOOKMARK [2][-]{subsection.6.2}{Results of the bare Appearance Analysis}{section.6}% 19
+\BOOKMARK [1][-]{section*.30}{Appendices}{}% 20
+\BOOKMARK [1][-]{Appendix .alph1.A}{Optimisation of Oscillation Parameter Priors}{}% 21
+\BOOKMARK [2][-]{subsection.alph1.A.1}{Updated Priors for the Full Run 1-9 Analysis}{Appendix .alph1.A}% 22
+\BOOKMARK [1][-]{Appendix .alph1.B}{p-value Stability}{}% 23
+\BOOKMARK [2][-]{subsection.alph1.B.1}{Improved p-value Stability Study using the Full Run 1-9 Sensitivity}{Appendix .alph1.B}% 24
+\BOOKMARK [1][-]{Appendix .alph1.C}{Toy Generation Method Comparison}{}% 25
+\BOOKMARK [1][-]{Appendix .alph1.D}{Comparison of Full Run 1-9 vs. Run 1-9c Results}{}% 26
+\BOOKMARK [2][-]{subsection.alph1.D.1}{Comparison of Expected Sensitivities}{Appendix .alph1.D}% 27
+\BOOKMARK [2][-]{subsection.alph1.D.2}{Comparison of Data Results}{Appendix .alph1.D}% 28
+\BOOKMARK [1][-]{Appendix .alph1.E}{Comparison Between VALOR and P-theta Results using Full Run 1-9 Statistics}{}% 29
+\BOOKMARK [2][-]{subsection.alph1.E.1}{Comparison of Expected Sensitivities}{Appendix .alph1.E}% 30
+\BOOKMARK [2][-]{subsection.alph1.E.2}{Comparison of Data Results}{Appendix .alph1.E}% 31

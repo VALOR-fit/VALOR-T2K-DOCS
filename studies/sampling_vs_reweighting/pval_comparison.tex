@@ -1,0 +1,43 @@
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	Analysis                    & Fake data $\beta$   & Toy Gen. Method         & p-value              & $\sigma$               \\
+	\hline
+	
+	
+	\multirow{4}{*}{rate-only}  & \multirow{ 2}{*}{0} & MC sampling             & $0.010 \pm 0.001$    & $2.56 \pm 0.04$          \\
+	\cline{3-5}
+	                            &                     & re-weighting            & $0.01028 \pm 0.00005$& $2.566 \pm 0.002$        \\
+	%\cline{3-5}                
+	%                           &                     & re-weighting (accepted) & $0.011 \pm 0.001$    & $2.53^{+0.04}_{-0.03}$   \\
+	\cline{2-5}
+	                            & \multirow{ 2}{*}{1} & MC sampling             & $0.465 \pm 0.005$    & $0.730 \pm 0.009$        \\
+	\cline{3-5}
+	                            &                     & re-weighting            & $0.4645 \pm 0.0003$  & $0.7315 \pm 0.0004$      \\
+	%\cline{3-5}
+	%                           &                     & re-weighting (accepted) & $0.482 \pm 0.005$    & $0.703 \pm 0.008$        \\
+	\hline
+	
+	
+	\multirow{4}{*}{rate+shape} & \multirow{ 2}{*}{0} & MC sampling             & $0.0040 \pm 0.0007$  & $2.87^{+0.06}_{-0.05}$   \\
+	\cline{3-5}
+	                            &                     & re-weighting            & $0.0038 \pm 0.0003$  & $2.90 \pm 0.02$          \\
+	%\cline{3-5}                
+	%                           &                     & re-weighting (accepted) & $0.004 \pm 0.001$    & $2.86^{+0.08}_{-0.07}$   \\
+	\cline{2-5}
+	                            & \multirow{ 2}{*}{1} & MC sampling             & $0.436 \pm 0.005$    & $0.78 \pm 0.009$         \\
+	\cline{3-5}
+	                            &                     & re-weighting            & $0.438 \pm 0.002$    & $0.778^{+0.004}_{-0.003}$\\
+	%\cline{3-5}
+	%                           &                     & re-weighting (accepted) & $0.449 \pm 0.008$    & $0.76 \pm 0.01$          \\
+	\hline
+	
+	
+\end{tabular}
+\caption{
+	Comparison of the p-values obtained using two different toy generation methods, MC sampling and re-weighting.
+}
+\label{tab:sampling_vs_reweighting_pvals}
+\end{table}
+

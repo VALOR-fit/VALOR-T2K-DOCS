@@ -1,0 +1,18 @@
+\begin{table}
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		$\beta$				& Analysis		& p-value                		& $\sigma$ 						    & Asimov A Test Statistic\\
+		\hline
+		\multirow{ 2}{*}{0} & rate-only		& \pvalRateOnlyBetaZeroAsimovARunOneNineD  & \sigmaRateOnlyBetaZeroAsimovARunOneNineD    & \multirow{ 2}{*}{N.A.}    \\
+		\cline{2-4}
+			   				& rate+shape	& \pvalRateShapeBetaZeroAsimovARunOneNineD & \sigmaRateShapeBetaZeroAsimovARunOneNineD   &    \\
+		\hline
+		\multirow{ 2}{*}{1} & rate-only		& \pvalRateOnlyBetaOneAsimovARunOneNineD   & \sigmaRateOnlyBetaOneAsimovARunOneNineD     & $N_{events} = \NskOscExpectationNueBarRunOneNineD \pm \NskOscExpectationNueBarErrorRunOneNineD$ (syst) \\
+		\cline{2-5}
+			   				& rate+shape	& \pvalRateShapeBetaOneAsimovARunOneNineD  & \sigmaRateShapeBetaOneAsimovARunOneNineD    & $\Delta \chi^2 = \DeltachisqAsimovARunOneNineD$ \\
+		\hline
+	\end{tabular}
+	\caption{Asimov A p-values and event-rates for the $\beta = 0$ and $\beta = 1$ hypotheses using both the rate-only and rate+shape analyses and the full Run 1 - 9 dataset. There are no Asimov A expectations for the $\beta = 0$ hypothesis, as the Asimov A dataset assumes that $\beta = 1$ is true.}
+	\label{tab:sensitivity_AsimovA_R1-9d}
+\end{table}

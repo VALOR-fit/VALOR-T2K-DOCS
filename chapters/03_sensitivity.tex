@@ -1,0 +1,43 @@
+\clearpage
+
+\section {Sensitivity to $\nueb$ Appearance}
+\label{sec:sensitivity}
+Since there are no fitted parameters in the analysis, the validation can be performed by checking for agreement between the oscillation analyses from both the VALOR and P-theta groups. This is done by performing a sensitivity study to $\nueb$ appearance data given the Asimov A data set, which is treated as we would treat the data. The Asimov A data set consists of the most probable data set (obtained by the Bayesian analysis on the T2K run 1-4 neutrino mode data \cite{T2KLongPaper}) that is the nominal expected $E_{reco}$ vs $\theta$ distribution \cite{Asimov} and the corresponding parameters are listed in Tab \ref{tab:osc_params_joint_asimovA}. The expected event rates for all five Super-K event samples using Asimov A parameters are shown in \Crefrange{tab:event_rates_exp_1Rmu}{tab:event_rates_exp_MultiRe}.  %A further check is performed by comparing the distribution of p-values found for \NToysFakeDataRateOnly\ toys data sets.
+%TODO: Only uncomment this last sentace if I produce p-value distributions...
+%comparing the rate-only with rate+shape p-values and checking if the corresponding distributions are reasonable
+
+%\FloatBarrier
+
+\input{tables/asimov_A_definitions}
+
+\input{tables/event_rates_AsimovA_postfit_input}
+
+%\FloatBarrier
+
+The significance to $\nueb$ appearance is quoted by producing p-values using the procedure described in Sec \ref{sec:method}. The suitability of the \NToysFakeDataRatePlusShape\ toys used in this analysis is assessed by considering stability of the p-values, in appendix \ref{app:pval_stability}. %In addition, the mean p-value is also computed by considering the distribution of p-values for the rate-only analysis. 
+%TODO: Only uncomment this last sentace if I produce p-value distributions...
+The expected \RunPeriod statistics sensitivity studies were performed for \TotalPotNuRunOneNineC\ POT and \TotalPotNuBarRunOneNineC\ POT in neutrino mode and antineutrino mode respectively. The distributions of the event-rate in the antineutrino mode single-ring e-like sample for both hypotheses are shown in Fig \ref{fig:sensitivity_rate-only} and the $\Delta \chi^2$ distributions for both hypotheses are shown in Fig \ref{fig:sensitivity_rate+shape}. The corresponding Asimov A p-values are shown in Tab \ref{tab:sensitivity_AsimovA}.
+
+\input{sensitivity/pvalues_AsimovA_2018-03-31}
+
+From the study of the Asimov data set A, which expects approximately \NeventsAsimovASignalRounded\ signal and \NeventsAsimovABackgroundRounded\ background events in the antineutrino mode e-like sample, we expect a p-value of about $1-\SI{2}{\%}$ for the $\beta = 0$ hypothesis, corresponding to an exclusion of about $2.3-\SI{2.6}{\sigma}$, where the conversion to $\sigma$ is done using equation \ref{eq:sigma}. We find a very large p-value of about $\SI{30}{\%}$ in both analyses for the $\beta = 1$ hypothesis, corresponding to an exclusion of $<\SI{1}{\sigma}$, which is expected as Asimov data set A was generated using the $\beta = 1$ hypothesis. This is supported by the Bayes factor, which was found to be \BayesFactorAsimovA, indicating a substantial preference for the $\beta = 1$ hypothesis over the $\beta = 0$ hypothesis. The P-theta rate-only p-values for the Asimov A sensitivity study are \PthetaPvalAsimovARateOnlyBetaZero\ and \PthetaPvalAsimovARateOnlyBetaOne\ for $\beta = 0$ and $\beta = 1$, respectively and the rate+shape p-values (using $E_{reco}-\theta$) are \PthetaPvalAsimovARateShapeErecThetaBetaZero\ and \PthetaPvalAsimovARateShapeErecThetaBetaOne\ for $\beta = 0$ and $\beta = 1$, respectively \cite{PthetaR19cNuebarAppearance}. The p-values produced by the VALOR and P-theta groups are considered to be within acceptable agreement. {\color{red} During the Run1-9c analysis,} the reason for the remaining differences between the VALOR and P-theta p-values {\color{red}were} thought to be due to differences in the toy generation methods. {\color{red} A comparison of the toy generation methods is shown in appendix \ref{app:sampling_vs_reweighting} using full Run 1-9 statistics.}
+
+\begin{equation} \label{eq:sigma}
+\sigma = \sqrt{2}\ \textrm{erf}^{-1} \left( 1 - p \right)
+\end{equation}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.65]{sensitivity/plots_weighted_2018-04-06/rate-only_20ktoys/nuebarapp_graphs_nmargtoys=200k_nexp=20k_rate-only_posterior-predictive_VALORonly_nevents}
+	\caption{The distribution of the total number of events in the antineutrino mode single-ring e-like sample from each of the \NToysFakeDataRateOnly\ toy experiments for both the $\beta = 0$ and $\beta = 1$ hypotheses. The distributions were produced using the method outlined in section \ref{sec:method_rate-only} using the Asimov A spectra to calculate the 4-sample likelihood. The dashed line corresponds to the total number of events given by the Asimov A data set.}
+	\label{fig:sensitivity_rate-only}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.65]{sensitivity/plots_weighted_2018-04-06/rate+shape_20ktoys/nuebarapp_graphs_nmargtoys=200k_nexp=20k_rate+shape_posterior-predictive_VALORonly_Deltachisq_logscale}
+	\caption{The distribution of $\Delta \chi^2$ values from each of the \NToysFakeDataRatePlusShape\ toy experiments for both the $\beta = 0$ and $\beta = 1$ hypotheses. The distributions were produced using the method outlined in section \ref{sec:method_rate+shape} using the Asimov A spectra to calculate the 4-sample likelihood. The dashed line corresponds to the $\Delta \chi^2$ value given by the Asimov A data set.}
+	\label{fig:sensitivity_rate+shape}
+\end{figure}
+

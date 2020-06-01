@@ -1,0 +1,159 @@
+%\clearpage
+\section {$\nueb$ Appearance Methodology}
+\label{sec:method}
+
+%The significance of $\nueb$ appearance is given as a p-value by introducing a parameter $\beta$ in order to compare the data to two null hypotheses: a) No $\nueb$ appearance and b) $\nueb$ appearance according to the current best knowledge of the PMNS matrix. Marginalisation is used to incorporate the uncertainty on nuisance parameters on the measurement. The oscillation parameters priors used for the marginalisation are shown in Tab \ref{tab:osc_param_priors_nuebarapp}. Two different test statistics were used: rate-only and rate+shape. In each case the p-value is calculated in the following way:
+
+The significance of $\nueb$ appearance is given as a p-value by introducing the parameter $\beta$ in order to compare the data to two null hypotheses: a) No $\nueb$ appearance and b) $\nueb$ appearance according to the current best knowledge of the PMNS matrix. Two different test statistics are used: rate-only and rate+shape. 
+
+An ensemble of toys are generated for each null hypothesis, randomising nuisance parameters according to the priors in Tab \ref{tab:osc_param_priors_nuebarapp_optimised}. In order to constrain the oscillation and systematic model parameters using T2K data from the ``control samples" (neutrino mode single-ring and multi-ring e-like and both neutrino and antineutrino mode single-ring $\mu$-like), the toy distributions are weighted according to the following method, which ensures that the test-statistic distributions are filled with only the most likely toys and maintains correlations between all nuisance parameters in the 4 ``control samples":
+
+\begin{enumerate}
+	\item A large number ($>1M$) of toy experiments are produced taking random parameters from the distributions in Tab \ref{tab:osc_param_priors_nuebarapp_optimised}.
+	\item The 4 sample (i.e. excluding antineutrino mode single-ring e-like) likelihood is calculated for each toy using equation \ref{eq:likelihood_4sample}. Then the maximum likelihood, $\lambda_{max}$, is stored.
+	\item A toy experiment is produced taking random parameters from the distributions in Tab \ref{tab:osc_param_priors_nuebarapp_optimised} to form the proposed distribution, $T_{proposed}$.
+	\item The 4 sample likelihood of $T_{proposed}$ is found: $\lambda_{proposed}$.
+	\item A random number $R$ is drawn uniformly from $\{0:1\}$.
+	\item If $\frac{\lambda_{proposed}}{\lambda_{max}}$ is greater than $R$, $T_{proposed}$ is accepted and used in the distribution.
+	\item The procedure is repeated from step 3 until \NToysFakeDataRatePlusShape\ of $T_{proposed}$ toys have been accepted, denoted $T_{accepted}$.
+	\item The statistic is calculated according to sections \ref{sec:method_rate-only} and \ref{sec:method_rate+shape} for each $T_{accepted}$ to produce test-statistic distributions.
+\end{enumerate}
+
+\begin{equation} \label{eq:likelihood_4sample}
+\lambda \left( Toy; Data \right) =
+\prod_{s=1}^{N_{samples} = 4} \lambda_s \left( Toy; Data \right)
+\end{equation}
+
+It is worth noting that this method of weighting the toy distributions is mathematically equivalent to performing a likelihood ratio fit of the ``control samples" and using the posterior distribution of the nuisance parameters as a prior to extract the systematic parameters for a toy experiment.
+
+At this point, the rate-only and rate+shape analysis methods diverge.
+
+%\begin{enumerate}
+%	\item Define a test statistic
+%	\item Evaluate the expected distribution of the test statistic given the null hypothesis from MC toy data sets
+%	\item Evaluate the test statistic for the data
+%	\item Calculate the p-value as the fraction of the null hypothesis test statistic distribution with a more extreme value of the statistic than observed in the data
+%\end{enumerate}
+
+
+
+\subsection{Rate-only Analysis Method}
+\label{sec:method_rate-only}
+
+The total number of observed events, $N_{obs}$, in the antineutrino mode e-like sample, without using any information from the reconstructed energy and angle distribution, is used to quote the rate-only p-value. 
+
+The expected distribution of antineutrino mode e-like events, under statistical and systematic fluctuations, is produced using \NToysFakeDataRateOnly\ (throws of nuisance parameters) x \NStatThrows\ (throws of statistical fluctuations) toy data sets to ensure the nuisance parameter space was scanned effectively. In this method, the toy experiments used for the \NToysFakeDataRateOnly\ nuisance parameter throws are the weighted toys described in section \ref{sec:method}. For each of these toys, $i_{toy}$, \NStatThrows\ statistical throws are performed using a Poisson distribution with mean equal to the number of antineutrino mode single-ring e-like events in the toy. The result of each statistical throw, $N_{exp}$, is stored in a rate-only test-statistic distribution for each toy, $f_{itoy} \left( N_{exp} \right)$. 
+
+After performing statistical throws, a p-value is calculated for each $f_{itoy} \left( N_{exp} \right)$. For the $\beta = 0$ null hypothesis, a right-tailed p-value is used (see equation \ref{eq:pval_mean}), while for the $\beta = 1$ null hypothesis, a left-tailed p-value is used (see equation \ref{eq:pval_left}). For each null hypothesis, the mean of all p-values is quoted as the result:
+
+\begin{equation} \label{eq:pval_right}
+\textrm{p-value}_{itoy} \textrm{(right tail)} = 
+\frac{\int_{N_{obs}}^{+\infty} f_{itoy} \left( N_{exp} \right) dN_{exp}}{ \int_{-\infty}^{+\infty} f_{itoy} \left( N_{exp} \right) dN_{exp}}
+\end{equation}
+
+\begin{equation} \label{eq:pval_left}
+\textrm{p-value}_{itoy} \textrm{(left tail)} = 
+\frac{\int^{N_{obs}}_{-\infty} f_{itoy} \left( N_{exp} \right) dN_{exp}}{ \int_{-\infty}^{+\infty} f_{itoy} \left( N_{exp} \right) dN_{exp}}
+\end{equation}
+
+\begin{equation} \label{eq:pval_mean}
+\textrm{p-value} = \frac{1}{n_{toys}} \sum_{itoy = 0}^{n_{toys}-1} \textrm{p-value}_{itoy}
+\end{equation}
+
+As the distribution of the statistic is populated with such a large sample, the statistical uncertainty on the p-value is very small.
+
+%\NToysFakeDataRateOnly\ fake-data toys were produced and weighted according to the likelihood of the control samples by the following method:
+
+%The neutrino mode single-ring e-like, neutrino mode multi-ring e-like, neutrino mode single-ring $\mu$-like and antineutrino mode single-ring $\mu$-like data sets (defined "other samples") are used to weight each MC toy data set so that the distribution of toys are constrained by the T2K data
+
+
+
+
+\subsection{Rate+shape Analysis Method}
+\label{sec:method_rate+shape}
+The rate+shape analysis method uses log-likelihood ratio between the $\beta = 0$ and $\beta = 1$ $\nueb$ appearance null hypotheses as the test-statistic:
+
+\begin{equation} \label{eq:Delta_chisq}
+\Delta \chi^2 = \chi_{marg}^2 \left( \beta = 0 \right) - \chi_{marg}^2 \left( \beta = 1 \right)
+\end{equation}
+
+This test statistic simply compares the oscillation with the non-oscillation hypothesis but does not use the best-fit $\chi^2$ value. For this reason the distribution of $\Delta \chi^2$ is expected to take both negative and positive values. It is worth noting that the parameter $\beta$ is not fit, but is fixed either to 0 or 1. It is also worth noting that marginal $\chi^2$ is calculated by using all 5 Super-K samples.
+
+The $\Delta \chi^2$ distribution is produced by first generating \NToysFakeDataRatePlusShape\ toys produced using the method described in section \ref{sec:method}. It is worth noting that this takes into account only systematic fluctuations not statistical fluctuations. The toys are then marginalised using \NToysMarg\ marginalisation toys generated from the priors in Tab \ref{tab:osc_param_priors_nuebarapp_optimised} and $\chi^2_{marg} \left( \beta \right)$ is calculated according to equation \ref{eq:marginal_likelihood}. This incorporates the uncertainty on nuisance parameters on the measurement and distributions of the test-statistic.
+
+%TODO: If both the rate-only and rate+shape methods of calculating p-values are mathematically identical. Is there any point in complicating matters by showing the rate-only p-value method? Answer: Yes, but only if we show p-value distributions for each Nobs (but I'm not yet sure whether I'll need to show that) - Find out!
+Once a $\Delta \chi^2$ value is calculated for each toy, it is stored in a single test-statistic distribution, $f \left( \Delta \chi^2 \right)$, which is integrated to obtain p-values, for example the right-tailed p-value for the $\beta = 0$ null hypothesis shown in equation \ref{eq:pval_rate+shape_right}. Although this is in contrast to the rate-only analysis, where there is one test-statistic distribution per toy, both methods for calculating the p-value are mathematically identical. The method used to calculate the rate-only p-value is used in order to produce distributions of the toy p-value.
+
+\begin{equation} \label{eq:pval_rate+shape_right}
+\textrm{p-value} \textrm{(right tail)} = 
+\frac{\int_{\Delta \chi^2_{obs}}^{+\infty} f \left( \Delta \chi^2 \right) d\Delta \chi^2}{\int_{-\infty}^{+\infty} f \left( \Delta \chi^2 \right) d\Delta \chi^2}
+\end{equation}
+
+The number of statistical throws from each toy data set is different between the rate-only and rate+shape analyses. The rate+shape analysis only uses a single statistical fluctuation upon generating each fake-data toy. The reason for this is because the limiting factor in the rate+shape analysis is the calculation of the marginal likelihood. \NToysMarg\ marginalisation toys were used to determine the marginal likelihood in order to explore the whole space of the systematic parameters. More marginalisation toys are used compared to the joint fit analysis, because in this analysis the mass hierarchy, $\delta_{CP}$ and all other oscillation parameters are marginalised at the same time whereas they were not in the joint analysis. Furthermore these parameters have a large impact on the $\numu \rightarrow \nue$ component which is a significant background in the null hypotheses.
+
+It is worth pointing out that sometimes the rate-only p-value can be smaller than the rate+shape. This can be due to both the discreteness of the rate-only p-value or to the shape information which can discredit the $\nueb$ appearance hypothesis. For this reason it is important to quote both the p-values as our sensitivity.
+
+%TODO: Want some statement about the agreement with P-Theta somewhere
+\hl{[Statements about the agreement with P-Theta - waiting for the weighted analysis]}
+
+%\subsection{P-value}
+
+\subsection{Statistical Uncertainty on the p-values}
+The statistical uncertainty on the p-value is calculated assuming that the number of entries in each bin of the expected distribution of the test statistic follow a Poisson distribution. The p-value uncertainty is then derived from the statistical uncertainty of the population. As the p-value is calculated from the fraction of trials which fall to the right of the data statistic, the p-value is expected to be binomially distributed. Given a sufficiently large number of trials ($N$), the p-value is expected to take a gaussian distribution with a mean of the p-value and a variance $\sqrt{p(1-p)/N}$. %For a p-value of 0.01 and 10k trials $np = 100$.
+%TODO: What is the relevance of this last statement?
+
+The uncertainty is calculated from the first order Taylor series expansion assuming no correlation between bins in the test-statistic distribution and the number of events in each bin follows a Poisson distribution. The calculation of the uncertainty summing over all toy experiments, for the right sided rate-only p-value, is shown as an example and is as follows:
+
+The p-value calculation shown in equation \ref{eq:pval_right} is written in terms of an integral over the test-statistic distribution. This is re-written as a sum of all bins that contribute to the right-tail of the distribution
+
+\begin{equation} \label{eq:pval_pn_pd}
+\textrm{p-value} \textrm{(right tail)} = p =
+\frac{\int_{N_{obs}}^{+\infty} f \left( N_{exp} \right) dN_{exp}}{ \int_{-\infty}^{+\infty} f \left( N_{exp} \right) dN_{exp}} =
+\frac{\sum_{i=0}^{n(right-tail)} n_{i}}{\sum_{i=0}^{n(total)} n_{i}}
+\end{equation}
+
+Where $n_{i}$ is the the number of times each toy, $i$, appears. The total uncertainty as a result of the statistical uncertainty on each sample is given by
+
+\begin{equation} 
+\left( \sigma_p \right)^2 = 
+\sum_{i} \left( \frac{\partial p}{\partial n_i} \sigma_{n_i} \right)
+\end{equation}
+
+Expanding and using the Poisson uncertainty on the toys $\sigma_{n_i} = \sqrt{n_i}$ before taking the limit where each toy appears only once gives
+
+\begin{equation} \label{eq:pval_error}
+\left( \sigma_p \right)^2 = 
+\frac{p(1-p)}{N_{tot}}
+\end{equation}
+
+Where $N_{tot}$ is the integral of the test-statistic distribution. This is the expected result for a binomial process with a success rate $p$.
+
+
+
+%The uncertainty in p given uncertainty in events per bin. Considering bins to the right and left of the data statistic independently:
+
+%\begin{equation}
+%\left( \sigma_p \right)^2 = 
+%\sum_{i}^{n(right-tail)} \left( \frac{p_d - p_n}{p_d^2} \sigma_{n_i} \right)^2 + 
+%\sum_{i}^{n(left-tail)} \left( \frac{p_n}{p_d^2} \sigma_{n_i} \right)^2
+%\end{equation}
+
+%Where we have used the Poisson uncertainty on the toys $\sigma_{n_i} = \sqrt{n_i}$. Which, when using the definition of $p$, becomes:
+
+
+
+\subsection{Bayes Factor} \label{sec:bayes}
+As in this analysis the $\Delta \chi^2$ statistic considered is marginalised over all nuisance parameters, the statistic can be interpreted in a Bayesian framework as a Bayes factor. The Bayes factor is another statistic (fully defined by the rate+shape analysis $\Delta \chi^2$ statistic) and gives an indication of which hypothesis gives the best fit to the data. The Bayes factor is defined as the marginal likelihood ratio of the two hypotheses in question.
+
+\begin{equation} \label{eq:bayes_factor}
+B_{01} = \frac{e^{-\chi^2_{\beta = 0}/2}}{e^{-\chi^2_{\beta = 1}/2}} = e^{-\frac{1}{2}\Delta \chi^2}
+\end{equation}
+
+The Jeffreys scale \cite{JeffreysScale} is used to interpret the Bayes factor to show whether there is a preference for one hypothesis over the other. A more detailed discussion of Bayes factors can be found in \cite{MaCH3NuebarAppearance2015}.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../TN327"
+%%% End:
+

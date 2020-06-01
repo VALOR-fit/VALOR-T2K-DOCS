@@ -1,0 +1,23 @@
+\begin{table}[H]
+\centering
+\begin{tabular}{| c | c | c | c |}
+	\hline
+	$\sin^2 \theta_{23}$          & Toys excluded from the nominal  & Maximum possible    & CPU time \\
+	Prior range                   & set (of 20,000 accepted toys)   & p-value change      & (current / nominal) \\
+	\hline
+	$[ 0.300 , 0.700 ]$ (nominal) & 0                                   & 0               & 1       \\
+	$[ 0.355 , 0.680 ]$           & \SI{1.32e-08}{}                     & \SI{6.64e-13}{} & 0.85\\%0.64 \\
+	$[ 0.375 , 0.660 ]$           & \SI{2.40e-5}{}                      & \SI{1.20e-9}{}  & 0.71\\%0.58\\
+	$[ 0.390 , 0.650 ]$           & \SI{7.34e-4}{}                      & \SI{3.97e-8}{}  & 0.66\\%0.54     \\
+	$[ 0.410 , 0.625 ]$           & 1.25                                & \SI{6.24e-5}{}  & 0.55\\%0.50     \\
+	$[ 0.420 , 0.620 ]$           & 5.04                                & \SI{2.52e-4}{}  & 0.52\\%0.47   \\
+	$[ 0.430 , 0.610 ]$           & 52.5                                & \SI{2.62e-3}{}  & no data  \\
+	$[ 0.440 , 0.605 ]$           & 134                                 & \SI{6.74e-3}{}  & no data  \\
+	\hline
+\end{tabular}
+\caption{
+Maximum possible effect on the p-values obtained by varying the $\sin^2 2 \theta_{23}$ prior range used to generate toys to fill the test-statistic distributions. \emph{Toys excluded from the nominal set} are the number of toys that would have been accepted (using the MC sampling method) if the nominal prior range had been used but lie outside of the range of the tighter prior under consideration. These are calculated assuming 20,000 accepted toys will be generated.
+%toys generated using oscillation parameter priors set to their nominal ranges.
+}
+\label{tab:vary_prior_mixing23}
+\end{table}
