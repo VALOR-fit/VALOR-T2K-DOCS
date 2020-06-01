@@ -24,4 +24,4 @@ Please name each branch as TNxxx, where xxx is the ID of the technical note.
 | TN327 | 2017 (Run 1-8) 3-flavour joint (5 sample) nu_mu/nu_mu_bar disappearance and nu_e/nu_e_bar appearance | PRL 121 (2018) no.17, 171802 |
 | TN356 | 2018 (Run 1-9) nu_e_bar  appearance | PRL 124 (2020) no. 124, 161802 |
 | TN360 | 2018 (Run 1-9) 3-flavour joint (5 sample) nu_mu/nu_mu_bar disappearance and nu_e/nu_e_bar appearance | Nature 580, 339–344 (2020) |
-
+| TN394 | 2020 (Run 1-10) 3-flavour joint (5 sample) nu_mu/nu_mu_bar disappearance and nu_e/nu_e_bar appearance | |
