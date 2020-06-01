@@ -1,0 +1,186 @@
+%
+% ---------------------------------------------------------------------------------------
+% NuMu Disappearance Analysis - 1st Year
+% ---------------------------------------------------------------------------------------
+%
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.50cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{color} 
+
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ttbs}{\char'134}
+\newcommand{\AmS}{{\protect\the\textfont2
+  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+%\linenumbers
+\bibliographystyle{elsart-num}
+
+\begin{document}
+
+% Title, authors, abstract and table of contents
+\input{numuosc_front}
+
+% main body
+\input{numuosc_introduction}
+\input{numuosc_spectrum_prediction}
+\input{numuosc_oscillation_fitting}
+\input{numuosc_systematics}
+\input{numuosc_runI_fit}
+%\input{numuosc_prospects}
+\input{numuosc_summary}
+
+%
+% Appendix
+%
+\clearpage
+\appendix
+\addappheadtotoc
+\input{numuosc_appendix_sample_mock_fits}
+\clearpage
+\input{numuosc_appendix_tweaked_spectra}
+
+
+\clearpage
+
+%
+% References
+%
+
+\begin{thebibliography}{9}
+
+\bibitem{SuperKAnalysisInputs}
+  J.Kameda and R.Wendell,
+  Study on Super-K events and systematic errors relevant for the $\nu_\mu$
+  disappearance analysis with T2K 3.23$\times$10$^{19}$ POT data,
+  T2K internal note T2K-TN-034.
+%
+% GENIE
+%
+\bibitem{Genie:NIM}
+  C. Andreopoulos, et~al., {The GENIE Neutrino Monte Carlo Generator}, 
+  Nucl. Instrum. Meth. A614 (2010) 87--104;
+  arXiv:0905.2517[hep-ph];
+  FERMILAB-PUB-09-418-CD; http://www.genie-mc.org
+%
+% NEUT 
+%
+\bibitem{Neut:ActaP}
+  Y.Hayato, A neutrino interaction simulation program library NEUT,
+  Acta Phys.Polon.B40:2477-2489,2009.
+%
+% Flux 10a
+%
+\bibitem{BeamFlux10a}
+  Beam WG, Flux release 10a, http://www.t2k.org/beam/NuFlux/FluxRelease/10a
+%
+% MINOS & K2K analyses
+%
+\bibitem{MinosDisappearanceAnalysis}
+  D. G. Michael et al. (MINOS Collaboration), 
+  Observation of muon neutrino disappearance with the MINOS detectors and the NuMI neutrino beam,
+  Phys.Rev.Lett.97:191801,2006;
+  hep-ex/0607088;
+  FERMILAB-PUB-06-243.
+\bibitem{K2KDisappearanceAnalysis} 
+  M. H. Ahn et al. (K2K Collaboration)
+  Measurement of neutrino oscillation by the K2K experiment, 
+  Phys.Rev.D74:072003,2006;
+  hep-ex/0606032.
+%
+% Statistics etc
+%
+\bibitem{StatAnalysisCowan} 
+  G. Cowan (1998) Statistical data analysis, 
+  Oxford University Press, ISBN 0-19-850155-2.
+\bibitem{NumRecipCholesky}
+  Numerical Recipes: The art of scientific computing, 
+  Cambridge University Press, 3rd Edition, ISBN 978-0-521-88068-0, pp. 100-102.
+\bibitem{RevPartPhys}
+  C. Amsler et al. (Particle Data Group),
+  Review of Particle Physics, Phys.Lett.B667:1,2008 
+\bibitem{FeldmanCousins}
+  G.J. Feldman and R.D. Cousins,
+  A Unified approach to the classical statistical analysis of small signals,
+  Phys.Rev.D57:3873-3889,1998; physics/9711021
+%
+% Priv.comm.
+%
+\bibitem{PatrickPrivComm}
+  P. de Perio, Private communication.
+\bibitem{KamedaPrivComm}
+  J.Kameda, Private communication.
+\bibitem{SuperKFC}
+   K. Iyogi, S. Nakayama, and Y. Obayashi,
+   T2K data acquisition and FC event selection at Super-Kamiokande,
+   T2K-TN-027
+%
+% ND280 analysis inputs
+%
+\bibitem{ND280AnalysisInputs}
+  Claudio Giganti, http://www.t2k.org/asg/oagroup/nd280-offaxis
+\bibitem{ND280ClaudioThesis}
+  Claudio Giganti, PhD thesis, T2K-THESIS-005.
+%
+% Beam analysis inputs
+%
+\bibitem{BeamNuFluxPrediction}
+  Beam WG (N.Abgrall et al.), Neutrino Flux Prediction, T2K internal note T2K-TN-038
+\bibitem{BeamNuFluxUncertainty}
+  Beam WG (V.Galymov et al.), Neutrino Flux Uncertainty for 10a Data Analysis, T2K internal note T2K-TN-039
+\bibitem{BeamInputs2010a}
+  Beam WG (V.Galymov et al.), Beam Inputs to the 2010a Oscillation Analysis, T2K internal note T2K-TN-040
+\bibitem{BeamShapeErr}
+  Beam WG, http://www.t2k.org/beam/NuFlux/FluxRelease/10d/shapeerrorv22
+\bibitem{BeamNormErrCode}
+  Beam WG, http://www.t2k.org/beam/NuFlux/FluxRelease/10d/norm\_error\_v22/norm\_error\_calc\_v22/view
+\bibitem{BeamWeights10dv2}
+  Beam WG, Flux 10dv2 weights, http://www.t2k.org/beam/NuFlux/FluxRelease/10d/10dtunev2
+%
+% Generator inputs
+%
+\bibitem{Genie:Systematics}
+  C. Andreopoulos, T. Dealtry, J. Dobson, N. Grant, M. Haigh, J. Ilic, G. Pearce and A. Weber,
+  Neutrino Generator (GENIE) Uncertainties and 2010a 
+  $\nu_{\mu}$-Disappearance / $\nu_{e}$-Appearance Oscillation Analysis Systematics,
+  T2K internal note T2K-TN-035.
+\bibitem{Neut:Systematics}
+  P.de Perio, NEUT Parameter Variation Studies for 2010a Analysis,
+  T2K internal note T2K-TN-032.
+\bibitem{NIWGErr}
+  NIWG, 2010a Neutrino Interaction Systematic Uncertainty Choices, T2K internal note T2K-TN-030;
+  http://www.t2k.org/asg/oagroup/oa\_niwg
+%
+% Alternative hypotheses
+%
+%\bibitem{Decay}
+%  Barger et.al., astro-ph/9810121v1
+%\bibitem{Decoherence}
+%  Fogli et.al., Phys.Rev.D67, 093006 (2003)
+%
+\bibitem{Mauro}
+  Mauro Mezzetto, http://www.t2k.org/asg/meeting/20110217/mauro-comments.pdf/view
+\bibitem{DeanAndNick}
+  Dean Karlen, http://www.t2k.org/asg/meeting/20110217/civ/view
+
+\end{thebibliography}
+
+\end{document}
+

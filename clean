@@ -1,0 +1,10 @@
+rm ./*.pdf
+rm ./*.ps
+rm ./*.dvi
+rm ./*.aux
+rm ./*.log
+rm ./*.lof
+rm ./*.lot
+rm ./*.toc
+rm ./*.spl
+
