@@ -1,0 +1,247 @@
+\section {Summary of changes to analysis inputs compared with T2K-TN-036 (v4) }
+\label{sec:analysis_modifications}
+
+The following changes have been implemented compared with the $\nu_{\mu}$-disappearance analysis 
+described in \cite{OurRun1DisappAnalysis}:
+
+\begin{itemize}
+\item
+  The SuperK flux has been upgraded from 10d(v2) to 10d(v3) \cite{UpdatedFlux}.
+  When fitting the reconstructed energy spectrum of the combined Run1+2 single $\mu$-like ring event sample,
+  we used a POT-weighted Run1+Run2 flux in order to take into account the different conditions of Run1 and Run2.
+\item
+  The flux normalisation ($N_{sk}/N_{nd}$) error has been updated. 
+  The updated error calculation code (v3.1) was obtained from \cite{UpdatedFluxNormError}.
+  Typical errors used in Ref.\ \cite{OurRun1DisappAnalysis} were
+  $\sim$9.7\% without oscillations and
+  $\sim$6.3\% for oscillations with 
+  $sin^{2}2\theta_{23}$ = 1.0 and $|\Delta m^{2}_{23}|$ = 2.32$\times10^{-3}$ $eV^{2}/c^{4}$.
+  The updated flux normalisation errors used in this analysis for these two characteristic cases are 
+  $\sim$7.3\% and $\sim$4.7\% respectively.
+\item
+  The flux shape error has been updated, and
+  the updated flux fractional covariance matrix (v3.1) was obtained from \cite{UpdatedFluxNormError}.
+\item
+  An updated ND280 event rate normalisation correction was used, and it was calculated using the 10d(v3) flux.
+  The updated ND280 correction factor and energy spectra for various CC-like event categories 
+  were obtained from \cite{UpdatedND280Histograms}.
+  The ND280 normalisation correction was based on an analysis of the Run1 data only and,
+  as before, it is energy independent.
+\item
+  The ND280 efficiency error was increased from $\pm$5\% to +5.6\% -5.2\%. The statistical error of the
+  observed number of CC-like events was also propagated to SuperK.
+\item
+  The SuperK ring-counting (RC) efficiency errors have been revised \cite{UpdatedSuperkEfficiencyErrors}.
+  The CCQE RC error has been revised from 7.6\% (no energy dependence) to
+  1.7\% for $E_{reco}<$ 0.4 GeV, 3.5\% for  0.4 GeV $\leq E_{reco} \leq$ 1.1GeV
+  and 9.3\% for  $E_{reco}>$ 1.1 GeV. The bin-to-bin correlations in the RC efficiency error in
+  the three reconstructed neutrino energy bins have also been taken into account, and
+  the covariance matrix is given in Tab.\ \ref{tab:input_uncertainties}.
+  For CCnonQE the RC efficiency error has been revised from 25.4\% to 19.9\% (no energy dependence) 
+  and for NC the RC efficiency error has been revised from 57.0\% to 48.2\% (no energy dependence).
+  All other SuperK efficiency errors were unchanged.
+\item
+  The SuperK energy scale error has been revised from 1\% to 2.3\% \cite{UpdatedSuperkEnergyScaleError}.
+\end{itemize}
+
+
+A summary of all the sources of systematic error considered in this
+analysis is given in Tab.\ \ref{tab:input_uncertainties}; this is an
+update of Tab.\ 6 in Ref.\ \cite{OurRun1DisappAnalysis}.
+The treatment of these uncertainties is largely unchanged and is
+described in detail in Sec.\ 4.1 and Eq.\ 31 of Ref.\ \cite{OurRun1DisappAnalysis}. 
+The only technical complication is that the SuperK
+CCQE efficiency error (which was 7.8\% independent of energy in
+\cite{OurRun1DisappAnalysis}) 
+has been split into two parts: these are the RC efficiency error and the
+`other' efficiency error (i.e.\ fiducial volume, reduction, OD cut, PID, momentum cut and decay
+electron cut). The CCQE RC efficiency
+error now has a dependence on the reconstructed
+neutrino energy and the bin-to-bin correlations are taken into account.
+The oscillation analysis code has been updated to include these changes.
+The bin-to-bin correlations in the RC efficiency error are propagated using the Cholesky 
+method \cite{NumRecipCholesky}; this method was employed in the earlier analysis to propagate
+the correlated systematic errors in the flux shape (see Sec.\ 4.5 of Ref.\ \cite{OurRun1DisappAnalysis}).
+
+%
+% Table with systematic parameters
+%
+
+\begin{table*}[htb]
+\center
+\renewcommand{\arraystretch}{1.75} % enlarge line spacing
+\begin{tabular}{p{0.12\textwidth}p{0.88\textwidth}}
+%
+% SuperK
+%
+\hline
+\multicolumn {2}{l} { {\bf SuperK detector uncertainties} } \\
+\hline
+\parbox{0.12\textwidth}
+{
+   $f_{\epsilon;r}^{SK}$  
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Combined uncertainty in efficiency due to uncertainties in fiducial volume, reduction chain, 
+    OD cut, RC cut, PID cut, momentum cut and decay electron cut \cite{UpdatedSuperkEfficiencyErrors}.
+    Applied to corresponding SuperK MC templates:
+    \begin{itemize}
+     \item CCQE: 
+         \begin{itemize}
+            \item RC: 1.7\% ($E_{reco}<$ 0.4 GeV), 3.5\% (0.4 GeV $\leq E_{reco} \leq$ 1.1 GeV), 9.3\% ($E_{reco}>$ 1.1 GeV). 
+                  Error covariance matrix is
+                  $
+                   \left[
+                     {\begin{array}{ccc}
+                       (1.7\%)^2  &   0.59 * 1.7\% * 3.5\%  &  0.33 * 1.7\% * 9.3\% \\
+                                  &   (3.5\%)^2             &  0.61 * 3.5\% * 9.3\% \\
+                                  &                         &  (9.3\%)^2            \\
+                      \end{array} }
+                   \right]
+                  $
+            \item other: 1.7\% (energy-independent)
+         \end{itemize}
+     \item CCnonQE: 19.9\% RC + 1.7\% other $\sim$20\% (energy-independent)
+     \item NC: 48.2\% RC + 100\% PID + 1.7\% other  $\sim$111\% (energy-independent)
+     \item $\nu_{e}$ CC: $\sim$100\% (energy-independent)
+    \end{itemize}
+}\\
+\parbox{0.12\textwidth}
+{
+   $f_{E}^{SK}$  
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Reconstructed energy scale error is 2.3\% \cite{UpdatedSuperkEnergyScaleError}. 
+    Applied to SuperK MC templates by scaling bin edges and,
+    assuming uniform distribution of events within the 50 MeV bins, calculating the number of events 
+    gained from / lost to neighbouring bins.\\
+}\\
+\hline
+%
+% nd280 detector systematics
+%
+\multicolumn {2}{l} { {\bf ND280 detector uncertainties} } \\
+\hline
+\parbox{0.12\textwidth}
+{ 
+   $f_{\epsilon}^{ND280}$  
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Efficiency error is +5.6\% -5.2\% \cite{UpdatedND280Histograms}.
+    Applied to ND280 MC templates.\\
+}\\
+\hline
+%
+% Beam systematics
+%
+\multicolumn {2}{l} { {\bf Flux uncertainties} } \\
+\hline
+\parbox{0.12\textwidth}
+{ 
+   $f_{norm}$ 
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Flux normalization uncertainty.
+    This uncertainty, expressed relative to the $N_{SK}/N_{ND280}$ ratio predicted by the MC,
+    was calculated for oscillation and other systematic parameters 
+    using code provided by the Beam WG \cite{UpdatedFluxNormError}.
+    The value obtained for nominal MC and oscillations with parameters
+    $sin^{2}2\theta_{23}$ = 1.00 and $|\Delta m^{2}_{23}|$ = 2.32$\times10^{-3}$ $eV^{2}/c^{4}$
+    was $\sim$4.7\% ($\sim$7.3\% without oscillations).\\
+}\\
+\hline
+\parbox{0.12\textwidth}
+{ 
+    ${\bf \rho^{\Phi_{SK}}}$ 
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Flux shape uncertainty. Expressed in terms of true energy bin-to-bin 
+    correlation matrix for SuperK $\nu_{\mu}$ flux provided by the Beam WG \cite{UpdatedFluxShapeError}.
+    Uncertainty was propagated using the Choleskly method \cite{NumRecipCholesky}.\\
+}\\
+\hline
+%
+% Neutrino Generator
+%
+\multicolumn {2}{l} { {\bf Neutrino Generator (GENIE/NEUT) model uncertainties} } \\
+\hline
+\parbox{0.12\textwidth}
+{ 
+    \vspace{0.2cm}
+    $f_{\sigma_{CCQE};t}$ 
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    CCQE cross section uncertainty. This respresents only the ``residual'' CCQE cross section uncertainty 
+    that is not cancelled in the near-to-far extrapolation; this residual uncertainty is due to the 
+    different flux energy ranges sampled by the near and far detectors and the different compositions 
+    of their nuclear targets. Therefore the uncertainty is applied to the SuperK MC templates only.
+    This uncertainty has dependence on true neutrino energy \cite{NIWGErr}.\\
+   
+}\\
+\parbox{0.12\textwidth}
+{ 
+    \vspace{0.2cm}
+    $f_{\sigma_{CC1\pi}/\sigma_{CCQE};t}$ 
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Uncertainty in CC1$\pi$/CCQE cross section ratio:
+    30\% for true energy $<$  2 GeV and 20\% for true energy $>$ 2 GeV \cite{NIWGErr}.
+    Applied to both corresponding SuperK and ND280 MC templates.\\
+}\\
+\parbox{0.12\textwidth}
+{ 
+    \vspace{0.2cm}
+    $f_{\sigma_{CCoth}/\sigma_{CCQE};t}$ 
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Uncertainty in CCother/CCQE cross section ratio:
+    30\% for true energy $<$ 2 GeV and 25\% for true energy $>$ 2 GeV \cite{NIWGErr}.
+    Applied to both corresponding SuperK and ND280 MC templates.\\ 
+}\\
+\parbox{0.12\textwidth}
+{ 
+    \vspace{0.2cm}
+    $f_{\sigma_{NC}/\sigma_{CCQE}}$ 
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Uncertainty in NC/CCQE cross section ratio: 36\% \cite{NIWGErr}.
+    Applied to both corresponding SuperK and ND280 MC templates.\\   
+}\\
+\parbox{0.12\textwidth}
+{ 
+    \vspace{0.2cm}
+    $f_{FSI;r}$ 
+}&
+\parbox{0.88\textwidth}
+{
+    \vspace{0.2cm}
+    Uncertainty in effect of FSI (final state interaction / intranuclear hadron transport)
+    to exclusive CCQE-like (1 $\mu$-like ring) SuperK measurement (e.g.\ effect of pion absorption in oxygen).
+    Applied to SuperK MC templates.
+    The error has dependence on reconstructed energy \cite{NIWGErr}.\\
+}\\
+\hline
+\end{tabular}\\[2pt]
+\caption{
+  Inputs for $\nu_{\mu}$-disappearance systematic error evaluation (this is an updated version of Tab.\ 6 shown in Ref.\ \cite{OurRun1DisappAnalysis}).
+}
+\label{tab:input_uncertainties}
+\end{table*}

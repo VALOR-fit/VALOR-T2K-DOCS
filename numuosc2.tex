@@ -1,0 +1,148 @@
+%
+% ---------------------------------------------------------------------------------------
+% 2010 / 1.431E+20 POT Muon-Neutrino Disappearance Analysis 
+% ---------------------------------------------------------------------------------------
+%
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.00cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{color} 
+
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ttbs}{\char'134}
+\newcommand{\AmS}{{\protect\the\textfont2
+  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+%\linenumbers
+\bibliographystyle{elsart-num}
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. Change this behaviour:
+\renewcommand\floatpagefraction{.95}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+
+\begin{document}
+
+% Title, authors, abstract and table of contents
+\input{numuosc2_front}
+
+% Main body
+\input{numuosc2_introduction}
+\input{numuosc2_modifications}
+\input{numuosc2_updated_predictions}
+\input{numuosc2_fits}
+\input{numuosc2_contours}
+\input{numuosc2_summary}
+
+%
+% Appendix
+%
+%\clearpage
+%\appendix
+%\addappheadtotoc
+%\input{numuosc2_appendix_mockfits}
+%\clearpage
+%\input{numuosc2_appendix_systematics}
+
+%\clearpage
+
+%
+% References
+%
+
+\begin{thebibliography}{9}
+
+\bibitem{Genie:NIM}
+  C. Andreopoulos, et~al., {The GENIE Neutrino Monte Carlo Generator},
+  Nucl. Instrum. Meth. A614 (2010) 87--104;
+  arXiv:0905.2517[hep-ph];
+  FERMILAB-PUB-09-418-CD; http://www.genie-mc.org
+\bibitem{Neut:ActaP}
+  Y.Hayato, A neutrino interaction simulation program library NEUT,
+  Acta Phys.Polon.B40:2477-2489,2009.
+\bibitem{Minos2011}
+  MINOS collaboration (P. Adamson et al.),
+  Measurement of the neutrino mass splitting and flavor mixing by MINOS,
+  Phys.Rev.Lett.106:181801,2011.
+\bibitem{OurRun1DisappAnalysis}
+   C.Andreopoulos et al.,
+   T2K 3.23$\times10^{19}$-POT Muon-Neutrino Disappearance Analysis,
+   T2K-TN-036(v4),\\
+   http://www.t2k.org/docs/technotes/036
+\bibitem{Run1DisappAnalysisReview}
+   M.Nakahata et al.,
+   NuMu analysis review committee documents,\\
+   http://www.t2k.org/comm/pubboard/2010a/numu
+\bibitem{StatAnalysisCowan} 
+  G. Cowan (1998) Statistical data analysis, 
+  Oxford University Press, ISBN 0-19-850155-2.
+\bibitem{NumRecipCholesky}
+  Numerical Recipes: The art of scientific computing, 
+  Cambridge University Press, 3rd Edition, ISBN 978-0-521-88068-0, pp. 100-102.
+\bibitem{FeldmanCousins}
+  G.J. Feldman and R.D. Cousins,
+  A Unified approach to the classical statistical analysis of small signals,
+  Phys.Rev.D57:3873-3889,1998; physics/9711021
+\bibitem{OurSensitivityStudy}
+   C.Andreopoulos et al.,
+   T2K Muon-Neutrino Disappearance Sensitivity Study with Run1+2 Exposure\\
+   http://www.t2k.org/asg/meeting/2011/20110331/Costas20110331-DisappSensitivity1p459E20POT/view
+\bibitem{OurPreliminaryResults}
+   C.Andreopoulos et al.,
+   T2K 1.431$\times10^{20}$-POT Muon-Neutrino Disappearance Analysis,
+   Preliminary results presented on May 20th 2011
+   at the T2K collaboration meeting at KEK,\\
+   http://www.t2k.org/meet/collab/201105/talks/friam/numu1/view	
+\bibitem{UpdatedFlux}
+   Beam WG, Updated flux (10d v3), http://www.t2k.org/beam/NuFlux/FluxRelease/10d/10dtunev3
+\bibitem{UpdatedFluxNormError}
+   Beam WG, Updated $N_{sk}/N_{nd}$ normalisation error (v3.1),\\
+   http://www.t2k.org/beam/NuFlux/FluxRelease/10d/nsknnderrv3
+\bibitem{UpdatedFluxShapeError}
+   Beam WG, Updated flux shape error (v3.1), http://www.t2k.org/beam/NuFlux/FluxRelease/10d/shapeerrorv31 \\
+   See also T2K-TN-66, http://www.t2k.org/docs/technotes/066
+\bibitem{UpdatedND280Histograms}
+  C.Giganti for the ND280 NuMu WG,\\
+  http://www.t2k.org/asg/oagroup/nd280-offaxis/
+\bibitem{UpdatedSuperkEfficiencyErrors}
+   M.Otani and J.Kameda,
+   T2K-TN-65,
+   http://www.t2k.org/docs/technotes/065
+\bibitem{UpdatedSuperkEnergyScaleError}
+   Y.Obayashi, Report at May 2011 T2K collaboration meeting at KEK,
+   T2K-TN-??
+\bibitem{NIWGErr}
+  NIWG, 2010a Neutrino Interaction Systematic Uncertainty Choices, T2K internal note T2K-TN-030;
+  http://www.t2k.org/asg/oagroup/oa\_niwg
+\bibitem{OldDisappSuperK}
+  Y. Ashie et al., Phys. Rev. Lett. 93, 101801 (2004);
+  Y. Ashie et al., Phys. Rev. D71, 112005 (2005); 
+  J. Hosaka et al., Phys. Rev. D 74, 032002 (2006).
+
+\end{thebibliography}
+
+\end{document}
+
