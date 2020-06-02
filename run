@@ -1,0 +1,5 @@
+latex numuosc3.tex
+latex numuosc3.tex
+latex numuosc3.tex
+dvips -t a4 -o numuosc3.ps numuosc3.dvi
+ps2pdf14 numuosc3.ps

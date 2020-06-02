@@ -1,0 +1,166 @@
+%
+% ---------------------------------------------------------------------------------------
+% 2010 / 1.431E+20 POT Muon-Neutrino Disappearance Analysis (3-Flavour)
+% ---------------------------------------------------------------------------------------
+%
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.00cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{color} 
+
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ttbs}{\char'134}
+\newcommand{\AmS}{{\protect\the\textfont2
+  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+%\linenumbers
+\bibliographystyle{elsart-num}
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. Change this behaviour:
+\renewcommand\floatpagefraction{.95}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+
+\begin{document}
+
+% Title, authors, abstract and table of contents
+\input{numuosc3_front}
+
+% Main body
+\input{numuosc3_introduction}
+\input{numuosc3_3flavour_osc_prob}
+\input{numuosc3_updated_predictions}
+\input{numuosc3_fits}
+\input{numuosc3_contours}
+\input{numuosc3_summary}
+
+\section*{Acknowledgement}
+
+We would like to thank Terry Sloan for assistance with writing and validating the 3-flavour neutrino 
+oscillation code.
+
+%
+% References
+%
+
+\begin{thebibliography}{9}
+
+\bibitem{OurRun1and2Analysis2F}
+  C. Andreopoulos, et~al.,
+   T2K 1.431$\times10^{20}$-POT Muon-Neutrino Disappearance Analysis,
+   T2K-TN-064(v3),\\
+   http://www.t2k.org/docs/technotes/064
+\bibitem{OurRun1DisappAnalysis2F}
+   C.Andreopoulos et al.,
+   T2K 3.23$\times10^{19}$-POT Muon-Neutrino Disappearance Analysis,
+   T2K-TN-036(v4),\\
+   http://www.t2k.org/docs/technotes/036
+
+\bibitem{Genie:NIM}
+  C. Andreopoulos, et~al., {The GENIE Neutrino Monte Carlo Generator},
+  Nucl. Instrum. Meth. A614 (2010) 87--104;
+  arXiv:0905.2517[hep-ph];
+  FERMILAB-PUB-09-418-CD; http://www.genie-mc.org
+\bibitem{Neut:ActaP}
+  Y.Hayato, A neutrino interaction simulation program library NEUT,
+  Acta Phys.Polon.B40:2477-2489,2009.
+
+\bibitem{LisiNeuTel11}
+  See E.Lisi's talk (page 9) in NeuTel-2011 conference,\\
+  http://agenda.infn.it/conferenceOtherViews.py?view=standard\&confId=3101
+\bibitem{T2KNuMuContourCom}
+  K. McFarland for the T2K $\nu_{\mu}$-disappearance contour committee, 
+  Report to ASG conveners meeting, 17 May 2011,
+  http://www.t2k.org/asg/contour/ASG-Conveners-Report/view
+
+\bibitem{Run1and2DisappAnalysisReview}
+  M.Nakahata et~al., 
+  T2K 1.431$\times10^{20}$-POT Muon-Neutrino Disappearance Analysis Review,
+  SOME URL
+
+\bibitem{LisiGlobalAnalysis}
+  G.L.Fogli, E.Lisi et~al.,
+  Evidence of theta(13)$>$0 from global neutrino data analysis,
+  arXiv:1106.6028 [hep-ph]
+
+\bibitem{kayser2005} 
+  B. Kayser (2005), Neutrino physics, hep-ph 0506165
+\bibitem{giunti}
+  C Giunti and C.W. Kim (2007) Fundamentals of neutrino physics and astrophysics, Oxford Uninversity Press
+\bibitem{pdgreview} 
+  K. Nakamura and S.T. Petcov (2010) Neutrino mass, mixing and oscillations,
+  http://pdg.lbl.gov/2010/reviews/rpp2010-rev-neutrino-mixing.pdf
+\bibitem{kopp} 
+  J. Kopp (2006), Efficient numerical diagonalisation of Hermitian 3x3 matrices, arXiv:physics/0610206
+\bibitem{sloan} 
+  T. Sloan, private communication (June-July 2011)
+
+
+\bibitem{StatAnalysisCowan} 
+  G. Cowan (1998) Statistical data analysis, 
+  Oxford University Press, ISBN 0-19-850155-2.
+\bibitem{NumRecipCholesky}
+  Numerical Recipes: The art of scientific computing, 
+  Cambridge University Press, 3rd Edition, ISBN 978-0-521-88068-0, pp. 100-102.
+\bibitem{FeldmanCousins}
+  G.J. Feldman and R.D. Cousins,
+  A Unified approach to the classical statistical analysis of small signals,
+  Phys.Rev.D57:3873-3889,1998; physics/9711021
+
+\bibitem{Minos2011}
+  MINOS collaboration (P. Adamson et al.),
+  Measurement of the neutrino mass splitting and flavor mixing by MINOS,
+  Phys.Rev.Lett.106:181801,2011.
+\bibitem{OldDisappSuperK}
+  Y. Ashie et al., Phys. Rev. Lett. 93, 101801 (2004);
+  Y. Ashie et al., Phys. Rev. D71, 112005 (2005); 
+  J. Hosaka et al., Phys. Rev. D 74, 032002 (2006).
+
+\bibitem{Kamland}
+  S. Abe et al.,
+  Precision measurements of neutrino oscillation parameters with KamLAND
+  Phys.Rev.Lett.100:221803,2008
+\bibitem{DayaBay}
+  F.P. An et al.,
+  Observation of electron-antineutrino disappearance at Daya Bay
+  Phys.Rev.Lett.108:171803,2012
+\bibitem{Reno}
+  J.K. Ahn et al.,
+  Observation of reactor electron antineutrinos disappearance in the Reno experiment
+  Phys.Rev.Lett.108:191802,2012
+
+\bibitem{Prob3}
+  Prob3++ 3-flavour oscillation probability software,
+  http://www.phy.duke.edu/~raw22/public/Prob3++/
+
+\bibitem{Compwithprob3}
+  Comparisons of 3-flavour oscillation probabilities with those from Prob3++,
+  http://mural.uv.es/loesan/OscProb/
+
+\end{thebibliography}
+
+\end{document}
+
