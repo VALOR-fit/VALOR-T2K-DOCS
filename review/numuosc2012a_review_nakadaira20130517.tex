@@ -1,0 +1,56 @@
+\subsection{Replies to comments received from Nakadaira-san - May 17, 2013}
+
+\begin{enumerate}
+%........................................................................................................
+\vspace{5 mm}
+\item
+{\em
+  I have one comment on the updated part.
+
+  P.49 L852: "The constant $\Delta\chi^2$ method ..." 
+
+  You have described the fitter performance at Appendix H.
+  In page 329, the size of the bias for $sin^2(2 \theta_{23})$ is 0.025.
+  It is the half of the obtaind 95\% region.
+  And the width of the pull of $sin^2(2 \theta_{23})$ is 0.9 and smaller than 1. 
+
+  So, it is difficult to judge the 95\% region obrained from the constant $\Delta\chi^2$ method is reasonable, I think.
+  We can not avoid to do F-C method to obtain the reliable contour for $sin^2(2 \theta_{23})$.
+
+  On the other hand, there is no bias for $|\Delta m^2_{23}|$. So, I think that the 1 sigma region for $|\Delta m^2_{23}|$ is reasonable, I think.
+
+  P.49 L852: " .... there is a problem in using the Feldman-Cousins
+  method. There is no obvious way of choosing the true
+  value(s) of $|\Delta m^2_{23}|$ as inputs to the toy MC
+  experiments to find the critical values of $\Delta\chi^2$ for
+  the 1D confidence interval in $sin^2(2 \theta_{23})$."
+
+  I think that you can do the 1D F-C method for $sin^2(2 \theta_{23})$ by assuming the best fit value of $|\Delta m^2_{32}|$ for toy MC input.
+
+  Fortunately, the obtained 2D allowed region is not tilted, and it means that there is no correlation between $sin^2(2 \theta_{23})$ and
+  $|\Delta m^2_{32}|$ estimation. So, it is expeceted that the results of 1D
+  F-C method for $sin^2(2 \theta_{23})$ is not depends on $|\Delta m^2_{32}|$ assumption very much.
+
+  I think that the allowed region the 1D F-C method is more reliable than the region obtained by constant $\Delta\chi^2$ method,
+  even 1D F-C method is assuming some $|\Delta m^2_{32}|$ value.
+}\\
+\\
+This reply is also addressed to Anselmo, Kate, Boris and Neil, who requested clarification on the same point.
+
+We agree that Feldman-Cousins is better than the constant-$\Delta \chi^{2}$ method if the best fit is near a physical boundary. 
+However there is a problem in the practical implementation of Feldman-Cousins to obtain 1D confidence intervals: there is no 
+standard procedure for choosing the true input value(s) of $|\Delta m^{2}_{32}|$ to the toy experiments when obtaining the 
+critical values of $\Delta \chi^{2}$ for the interval in $\sin^{2} 2 \theta_{23}$ (and vice versa). Your suggestion of using 
+the T2K best-fit values appears at first sight to be the obvious choice, but there are two problems with it. First, a 1D interval 
+in $\sin^{2} 2 \theta_{23}$ should be constructed so that the true unknown value is contained in 90\% of all confidence intervals, 
+irrespective of the true value of $|\Delta m^{2}_{32}|$. If the value of $|\Delta m^{2}_{32}|$ is fixed, the uncertainty in that 
+parameter is not taken into account, and this would give an incorrect confidence interval in $\sin^{2} 2 \theta_{23}$. Second, the 
+1D confidence interval in $|\Delta m^{2}_{32}|$ definitely depends on the choice of the true input value of $\sin^{2} 2 \theta_{23}$ 
+to the toy experiments. A choice of $\sin^{2} 2 \theta_{23}$ = 1.0 would give considerably greater pile-up at the physical boundary 
+when fitting the toy experiments than $\sin^{2} 2 \theta_{23}$ = 0.9, and this would result in a different confidence interval in 
+$|\Delta m^{2}_{32}|$.
+
+For these reasons, it is not straightforward to choose the true input values of the ``other'' parameter. Two members of the VaLOR 
+group used to work on MINOS, and we know that MINOS came across this same problem. The collaboration spent several weeks trying to 
+resolve it but was unable to find a satisfactory solution.
+\end{enumerate}

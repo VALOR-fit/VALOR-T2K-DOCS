@@ -1,0 +1,77 @@
+\subsection{
+  Replies to comments received from Scott Oser - Feb 11, 2013 }
+
+\begin{enumerate}
+
+%........................................................................................................
+\vspace{5 mm}
+\item
+{\em
+  ``SIGNIFICANT COMMENT: Table 6: In the table of BANFF parameters and best-fit values, the numbers listed for the 
+  CCQE axial mass and resonant axial mass do not match what is in v8 of the BANFF technical note (see TN-106 Table 12).  
+  This immediately raised a concern in my mind that you may have used the wrong numbers as inputs.  
+  I'm hoping instead that the table is just in error and that you used the correct values as given in TN-106v8..  
+  Please clarify this confusion.''
+}\\
+\\
+The two notes are quoting different numbers.
+TN-106 is quoting the actual value of $M_A$, whereas TN-141 is
+quoting a multiplicative factor describing how $M_A$ moves away from
+nominal: $M_A$ $\rightarrow$ $x M_A$.
+This muliplicative factor is calculated by: 
+postfit value / NEUT nominal MC value,
+i.e., $x_{MAQE} = 1.049 = 1.269 / 1.21$,
+and $x_{MARES} = 1.011 = 1.22 / 1.21$ (note that there is a typo in v8
+of TN-106).
+This has been clarified in v4 of the note.
+
+%........................................................................................................
+\vspace{5 mm}
+\item
+{\em
+  ``MINOR REQUEST FOR CLARIFICATION: Table 10: Could you briefly state the method used to derive the numbers in this table?  
+  Is it the same method used to produce the "star plots" described in Section 4.4?''
+}\\
+\\
+%The same method is used as in the calculation of Table 9, and Figs. 19-23: 
+For each systematic parameter, 20k toy-MC experiments were generated, with randomized values of that systematic
+parameter generated from a gaussian distribution\footnote{
+Except for the spectral function systematic, which was, as always,
+thrown uniformly between 0 and 1.}, and the 1 standard deviation of the total number of events was calculated.
+%For pure normalisation systematics,
+%the result is the same (except from very small statistical
+%fluctuations) as the top row of the corresponding table in Appendix E.
+%However, for systematics described by response functions, differences do occur.
+
+%........................................................................................................
+\vspace{5 mm}
+\item
+{\em
+  ``COMMENT ON SECTION 5.6: I understand that the oscillation group has recommended that the VaLOR '2+N' 
+  fit be T2K's primary result.  I am happy with that choice, and think it is the correct one.  However, 
+  I am bewildered that you guys are still advocating for the '2+8' as our primary result even after you've 
+  successfully implemented '2+N'.  Although you claim that the '2+8' method is simpler, the exact opposite is true: 
+  it is never simple to explain why we would choose to present a statistically incomplete, and technically incorrect, 
+  treatment (such as '2+8') when we have actually done a statistically correct one ('2+N'). Quite simply, the 2+N 
+  method is statistically correct, and the 2+8 method is only acceptable to the extent that it gave the same result 
+  as the correct method.  I am relieved that the oscillation group as a whole has selected the 2+N method as our primary result, 
+  which at least means we don't really have to fight about this now, but had the '2+8' method been selected I would now be 
+  loudly advocating for KIT or MUSIC as our primary result.  
+  (Let me take a moment however to thank you all for having listened to our concerns about 
+  this aspect of your analysis and having taken the time to do the 2+N method!)''
+}\\
+\\
+Our opinion on the choice of the primary analysis is unchanged.
+Lots of discussions took place during the last collaboration meeting, where various arguments were heard against, 
+or in favour, of both `2+N' and `2+8' fits. We do not wish to re-iterate the arguments here.
+In the end, it must be recognised that `statistical correctness' should be judged taking into account 
+both the intrinsic uncertainty of the systematic error evaluation and
+the accuracy limit of the analysis, due to the various approximations made.
+We recognize that whether to fit for 8 or 48 systematics is a matter of taste, especially since the two
+methods give nearly identical results. 
+We produced both `2+8' and `2+N' results and, although our own preference is for the `2+8' one, 
+we are satisfied with the selection of any of our results as the primary T2K one.
+
+%........................................................................................................
+
+\end{enumerate}

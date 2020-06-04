@@ -1,0 +1,5 @@
+latex numuosc2012a.tex
+latex numuosc2012a.tex
+latex numuosc2012a.tex
+dvips -t a4 -o numuosc2012a.ps numuosc2012a.dvi
+ps2pdf14 numuosc2012a.ps

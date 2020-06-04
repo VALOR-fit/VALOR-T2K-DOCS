@@ -1,0 +1,5 @@
+latex numuosc2012a_review.tex
+latex numuosc2012a_review.tex
+latex numuosc2012a_review.tex
+dvips -t a4 -o numuosc2012a_review.ps numuosc2012a_review.dvi
+ps2pdf14 numuosc2012a_review.ps

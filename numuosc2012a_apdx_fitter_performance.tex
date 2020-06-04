@@ -1,0 +1,718 @@
+\clearpage
+
+\section{Fitter performance}
+\label{sec:appendix:fitter_performance}
+
+The performance of the fitter has been evaluated at various oscillation points, using various POT, various levels of throwing systematics, and various fitters.
+For each study, 10000 toy datasets were created, and were fitted using MINUIT.
+Residual and pull distributions are presented in the following sections.
+The following three pull definitions are used:
+\begin{equation}
+\textrm{Pull}_{\textrm{\footnotesize{1}}} = \frac{\textrm{(best-fit parameter) - (input parameter)}}{\sigma_{\textrm{\small{fit}}}}
+\end{equation}
+\begin{equation}
+\textrm{Pull}_{\textrm{\footnotesize{2}}} = \frac{\textrm{(best-fit parameter) - (input parameter)}}
+{\sqrt{\sigma_{\textrm{\small{prior}}}^{2} - \sigma_{\textrm{\small{fit}}}^{2}}},
+\end{equation}
+and
+\begin{equation}
+\textrm{Pull}_{\textrm{\footnotesize{3}}} = \frac{\textrm{(best-fit parameter) - (nominal parameter)}}{\sigma_{\textrm{\small{fit}}}}
+\end{equation}
+where 
+$\sigma_{\textrm{\small{fit}}}$ is output MINUIT/HESSE error and
+$\sigma_{\textrm{\small{prior}}}$ is the prior assumed error.
+When $\textrm{Pull}_{\textrm{\footnotesize{2}}}$ is shown for a correlated systematic parameter, 
+$\sigma_{\textrm{\small{prior}}}$ is defined as the square root of the corresponding diagonal element of the covariance matrix.
+
+The various pull definitions are used as shown below
+
+\begin{itemize}
+\item
+Definition 1 is used for the pulls of both oscillation and systematic parameters in toy-MC studies.
+\item
+Definition 2 is used for the pulls of systematic parameters in toy-MC studies.
+\item
+Definition 3 is used for the pulls of systematic parameters both in toy-MC studies and for the fit to the actual data.
+\end{itemize}
+
+\clearpage
+\subsection{'2+0' fit, no systematic fluctations}
+
+Figs.\ \ref{fig:pulls:20:nosyst:mix23pull}-\ref{fig:pulls:20:nosyst:mix23} show the pull and fitted values of
+$\sin^22\theta_{23}$.
+Figs.\ \ref{fig:pulls:20:nosyst:dm23pull}-\ref{fig:pulls:20:nosyst:dm23} show the corresponding plots for 
+$|\Delta m^2_{32}|$.
+The input values are $\sin^22\theta_{23}$ = 0.9, $|\Delta m^2_{32}|$ = $2.4 \times 10^{-3}$ $eV^2/c^4$.
+A bias towards higher $\sin^22\theta_{23}$ can be seen, which is present even when the pileup near the physical boundary is removed.
+This bias is due to low statistics at 3.01$\times$20 POT. When Poisson fluctuations are made of a small number of events in a bin of 
+the reconstructed energy distribution, a downward fluctuation is more likely than an upward fluctuation. For example, a Poisson 
+distribution with mean 3 has P(1) = 0.149 and P(2) = 0.224, whereas P(4) = 0.168 and P(5) = 0.101. A downward fluctuation in a few 
+bins around the oscillation maximum increases the fitted value of $\sin^{2}(2\theta_{23})$, and this is the reason for the bias 
+towards high values of this parameter.
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/20_non_0.900000_mixing23_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of sin$^22\theta_{23}$ for a 2+0 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:20:nosyst:mix23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/20_non_0.900000_mixing23}.eps}
+\caption {
+  Fitted value of sin$^22\theta_{23}$ for a 2+0 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:20:nosyst:mix23}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/20_non_0.900000_dm23sq_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of $|\Delta m^2_{32}|$ for a 2+0 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:20:nosyst:dm23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/20_non_0.900000_dm23sq}.eps}
+\caption {
+  Fitted value of $|\Delta m^2_{32}|$ for a 2+0 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:20:nosyst:dm23}
+\end{minipage}
+\end{figure*}
+
+
+% \clearpage
+% \subsection{'2+0' fit, systematic fluctations}
+
+% Figs.\ \ref{fig:pulls:20:allsyst:mix23pull}-\ref{fig:pulls:20:allsyst:mix23} show the pull and fitted values of
+% $\sin^22\theta_{23}$.
+% Figs.\ \ref{fig:pulls:20:allsyst:dm23pull}-\ref{fig:pulls:20:allsyst:dm23} show the corresponding plots for 
+% $\Delta m^2_{32}$.
+% The input values are $\sin^22\theta_{23}$ = 0.9, $\Delta m^2_{32}$ = $2.4 \times 10^{-3}$.
+% A bias towards higher $\sin^22\theta_{23}$ can be seen, which is present even when the pileup near the physical boundary is removed.
+
+% \begin{figure*}[htb]
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/20_all_0.900000_mixing23_pull}.eps}
+% \caption {
+%   \textrm{Pull}_{\textrm{\footnotesize{1}}} of sin$^22\theta_{23}$ for a 2+0 fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+% }
+% \label{fig:pulls:20:allsyst:mix23pull}
+% \end{minipage}
+% \hspace{0.06\linewidth}
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/20_all_0.900000_mixing23}.eps}
+% \caption {
+%   Fitted value of sin$^22\theta_{23}$ for a 2+0 fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+% }
+% \label{fig:pulls:20:allsyst:mix23}
+% \end{minipage}
+% \vfill
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/20_all_0.900000_dm23sq_pull}.eps}
+% \caption {
+%   \textrm{Pull}_{\textrm{\footnotesize{1}}} of $\Delta m^2_{32}$ for a 2+0 fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+% }
+% \label{fig:pulls:20:allsyst:dm23pull}
+% \end{minipage}
+% \hspace{0.06\linewidth}
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/20_all_0.900000_dm23sq}.eps}
+% \caption {
+%   Fitted value of $\Delta m^2_{32}$ for a 2+0 fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+% }
+% \label{fig:pulls:20:allsyst:dm23}
+% \end{minipage}
+% \end{figure*}
+
+
+\clearpage
+\subsection{'2+0' fit, no systematic fluctations, 100$\times$ RunI-III POT}
+
+Figs.\ \ref{fig:pulls:20:highPOT:nosyst:mix23pull}-\ref{fig:pulls:20:highPOT:nosyst:mix23} show the pull and fitted values of
+$\sin^22\theta_{23}$.
+Figs.\ \ref{fig:pulls:20:highPOT:nosyst:dm23pull}-\ref{fig:pulls:20:highPOT:nosyst:dm23} show the corresponding plots for 
+$|\Delta m^2_{32}|$.
+The input values are $\sin^22\theta_{23}$ = 0.9, $|\Delta m^2_{32}|$ = $2.4 \times 10^{-3}$ $eV^2/c^4$.
+The bias in $\sin^22\theta_{23}$ seen at current POT has gone.
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/20_non_highpot_0.900000_mixing23_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of sin$^22\theta_{23}$ for a 2+0 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{22}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:20:highPOT:nosyst:mix23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/20_non_highpot_0.900000_mixing23}.eps}
+\caption {
+  Fitted value of sin$^22\theta_{23}$ for a 2+0 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{22}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:20:highPOT:nosyst:mix23}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/20_non_highpot_0.900000_dm23sq_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of $|\Delta m^2_{32}|$ for a 2+0 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{22}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:20:highPOT:nosyst:dm23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/20_non_highpot_0.900000_dm23sq}.eps}
+\caption {
+  Fitted value of $|\Delta m^2_{32}|$ for a 2+0 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{22}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:20:highPOT:nosyst:dm23}
+\end{minipage}
+\end{figure*}
+
+
+\clearpage
+\subsection{'2+8' fit, no systematic fluctations}
+
+Figs.\ \ref{fig:pulls:28:nosyst:mix23pull}-\ref{fig:pulls:28:nosyst:mix23} show the pull and fitted values of
+$\sin^22\theta_{23}$.
+Figs.\ \ref{fig:pulls:28:nosyst:dm23pull}-\ref{fig:pulls:28:nosyst:dm23} show the corresponding plots for 
+$|\Delta m^2_{32}|$.
+The input values are $\sin^22\theta_{23}$ = 0.9, $|\Delta m^2_{32}|$ = $2.4 \times 10^{-3}$ $eV^2/c^4$.
+The results are similar to the '2+0' case
+(a bias towards higher $\sin^22\theta_{23}$ can be seen, which is present even when the pileup near the physical boundary is removed)
+but no additional biases are present.
+Therefore, adding systematics to the fit does not cause significant changes to the performance of the
+oscillation part of the fit.
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_non_0.900000_mixing23_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of sin$^22\theta_{23}$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:28:nosyst:mix23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_non_0.900000_mixing23}.eps}
+\caption {
+  Fitted value of sin$^22\theta_{23}$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:28:nosyst:mix23}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_non_0.900000_dm23sq_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of $|\Delta m^2_{32}|$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:28:nosyst:dm23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_non_0.900000_dm23sq}.eps}
+\caption {
+  Fitted value of $|\Delta m^2_{32}|$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+}
+\label{fig:pulls:28:nosyst:dm23}
+\end{minipage}
+\end{figure*}
+
+\clearpage
+\subsection{'2+8' fit, dominant systematic fluctations}
+
+Figs.\ \ref{fig:pulls:28:selsyst:mix23pull}-\ref{fig:pulls:28:selsyst:mix23} show the pull and fitted values of
+$\sin^22\theta_{23}$.
+Figs.\ \ref{fig:pulls:28:selsyst:dm23pull}-\ref{fig:pulls:28:selsyst:dm23} show the corresponding plots for 
+$|\Delta m^2_{32}|$.
+The input values are $\sin^22\theta_{23}$ = 0.9, $|\Delta m^2_{32}|$ = $2.4 \times 10^{-3}$ $eV^2/c^4$.
+The bias in $\sin^22\theta_{23}$ is still present.
+
+Fig.\ \ref{fig:pulls:28:selsyst:sysresidual} shows the residuals of the systematic parameters.
+Figs.\ \ref{fig:pulls:28:selsyst:syspull}-\ref{fig:pulls:28:selsyst:sysaltpull2} show the pulls distributions of the systematic parameters.
+Some of the distributions are wide, but there are no unexpected features in the plots.
+$f_{E; r}^{SK}$ in Fig. \ref{fig:pulls:28:selsyst:syspull} is non-Gaussian, but this in not unexpected;
+the energy scale systematic has a discontinuous derivative, leading to issues with the Hesse error.
+It should be noted that the spectral function is not expected to give a Gaussian distribution
+since the throws are uniform between 0 and 1, and the fitted value is strictly confined to the range [0,1].
+The plots show that a best-fit value of 0 is favoured.
+%Fig.\ \ref{fig:pulls:28:selsyst:syssum} gives a summary of the mean and sigma of the fitted pulls.
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_sel_0.900000_mixing23_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of sin$^22\theta_{23}$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. The 8 dominant systematics are fluctuated.
+}
+\label{fig:pulls:28:selsyst:mix23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_sel_0.900000_mixing23}.eps}
+\caption {
+  Fitted value of sin$^22\theta_{23}$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. The 8 dominant systematics are fluctuated.
+}
+\label{fig:pulls:28:selsyst:mix23}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_sel_0.900000_dm23sq_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of $|\Delta m^2_{32}|$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. The 8 dominant systematics are fluctuated.
+}
+\label{fig:pulls:28:selsyst:dm23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_sel_0.900000_dm23sq}.eps}
+\caption {
+  Fitted value of $|\Delta m^2_{32}|$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. The 8 dominant systematics are fluctuated.
+}
+\label{fig:pulls:28:selsyst:dm23}
+\end{minipage}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{{./images/pulls/28_sel_0.900000_important}.eps}
+\caption {
+  Residuals of the systematic parameters for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT.  The 8 dominant
+  systematics are fluctuated.
+  The plots correspond to (line by line, left to right):
+  $f_{E; r}^{SK}$;  $f_{CCnonQE; r}^{SK}$; $f_{NC; r}^{SK}$;
+  $f_{16; t; r}^{banff}$ (M$_A$QE); $f_{18; t, r}^{banff}$ (CCQE norm $<$ 1.5 GeV);
+  $f_{SF; t, r}$; $f_{bindE; t, r}$; $f_{\pi-less\Delta; t, r}$.
+}
+\label{fig:pulls:28:selsyst:sysresidual}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{{./images/pulls/28_sel_0.900000_important_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{2}}}$  of the systematic parameters for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT.  The 8 dominant
+  systematics are fluctuated.
+  The plots correspond to (line by line, left to right):
+  $f_{E; r}^{SK}$;  $f_{CCnonQE; r}^{SK}$; $f_{NC; r}^{SK}$;
+  $f_{16; t; r}^{banff}$ (M$_A$QE); $f_{18; t, r}^{banff}$ (CCQE norm $<$ 1.5 GeV);
+  $f_{SF; t, r}$; $f_{bindE; t, r}$; $f_{\pi-less\Delta; t, r}$.
+}
+\label{fig:pulls:28:selsyst:syspull}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{{./images/pulls/28_sel_0.900000_important_altpull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$  of the systematic parameters for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT.  The 8 dominant
+  systematics are fluctuated.
+  The plots correspond to (line by line, left to right):
+  $f_{E; r}^{SK}$;  $f_{CCnonQE; r}^{SK}$; $f_{NC; r}^{SK}$;
+  $f_{16; t; r}^{banff}$ (M$_A$QE); $f_{18; t, r}^{banff}$ (CCQE norm $<$ 1.5 GeV);
+  $f_{SF; t, r}$; $f_{bindE; t, r}$; $f_{\pi-less\Delta; t, r}$.
+}
+\label{fig:pulls:28:selsyst:sysaltpull}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{{./images/pulls/28_sel_0.900000_important_altpull2}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{3}}}$  of the systematic parameters for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024$eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT.  The 8 dominant
+  systematics are fluctuated.
+  The plots correspond to (line by line, left to right):
+  $f_{E; r}^{SK}$;  $f_{CCnonQE; r}^{SK}$; $f_{NC; r}^{SK}$;
+  $f_{16; t; r}^{banff}$ (M$_A$QE); $f_{18; t, r}^{banff}$ (CCQE norm $<$ 1.5 GeV);
+  $f_{SF; t, r}$; $f_{bindE; t, r}$; $f_{\pi-less\Delta; t, r}$.
+}
+\label{fig:pulls:28:selsyst:sysaltpull2}
+\end{figure*}
+
+% \begin{figure*}[htb]
+% \center
+% \includegraphics[width=30pc]{{./images/pulls/28_sel_0.900000_summary_pull}.eps}
+% \caption {
+%   Summary of the fitted systematics (mean and sigma of pull) for a 2+8 fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+%   and for an exposure of 3.010$\times$10$^{20}$ POT.  The 8 dominant systematics are fluctuated.
+% }
+% \label{fig:pulls:28:selsyst:syssum}
+% \end{figure*}
+
+
+\clearpage
+\subsection{'2+8' fit, all systematic fluctations}
+
+Figs.\ \ref{fig:pulls:28:allsyst:mix23pull}-\ref{fig:pulls:28:allsyst:mix23} show the pull and fitted values of
+$\sin^22\theta_{23}$.
+Figs.\ \ref{fig:pulls:28:allsyst:dm23pull}-\ref{fig:pulls:28:allsyst:dm23} show the corresponding plots for 
+$|\Delta m^2_{32}|$.
+The input values are $\sin^22\theta_{23}$ = 0.9, $|\Delta m^2_{32}|$ = $2.4 \times 10^{-3}$ $eV^2/c^4$.
+The bias in $\sin^22\theta_{23}$ is still present.
+
+Fig.\ \ref{fig:pulls:28:allsyst:sysresidual} shows the residuals of the systematic parameters.
+Figs.\ \ref{fig:pulls:28:allsyst:sys}-\ref{fig:pulls:28:allsyst:sysaltpull2} show the pull distributions of the systematic parameters.
+The distributions have widened, but this is as to be expected
+(the parameters that are thrown but not fitted are \emph{absorbed} by the parameters that are fitted).
+There are still no unexpected features.
+%Fig. \ref{fig:pulls:28:allsyst:syssum} gives a summary of the mean and sigma of the fitted pulls.
+
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_all_0.900000_mixing23_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of sin$^22\theta_{23}$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+}
+\label{fig:pulls:28:allsyst:mix23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_all_0.900000_mixing23}.eps}
+\caption {
+  Fitted value of sin$^22\theta_{23}$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+}
+\label{fig:pulls:28:allsyst:mix23}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_all_0.900000_dm23sq_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of $|\Delta m^2_{32}|$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+}
+\label{fig:pulls:28:allsyst:dm23pull}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/pulls/28_all_0.900000_dm23sq}.eps}
+\caption {
+  Fitted value of $|\Delta m^2_{32}|$ for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+}
+\label{fig:pulls:28:allsyst:dm23}
+\end{minipage}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{{./images/pulls/28_all_0.900000_important}.eps}
+\caption {
+  Residual of the systematic parameters for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT.  All systematic
+  fluctuations are included.
+  The plots correspond to (line by line, left to right):
+  $f_{E; r}^{SK}$;  $f_{CCnonQE; r}^{SK}$; $f_{NC; r}^{SK}$;
+  $f_{16; t; r}^{banff}$ (M$_A$QE); $f_{18; t, r}^{banff}$ (CCQE norm $<$ 1.5 GeV);
+  $f_{SF; t, r}$; $f_{bindE; t, r}$; $f_{\pi-less\Delta; t, r}$.
+}
+\label{fig:pulls:28:allsyst:sysresidual}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{{./images/pulls/28_all_0.900000_important_pull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{2}}}$  of the systematic parameters for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT.  All systematic
+  fluctuations are included.
+  The plots correspond to (line by line, left to right):
+  $f_{E; r}^{SK}$;  $f_{CCnonQE; r}^{SK}$; $f_{NC; r}^{SK}$;
+  $f_{16; t; r}^{banff}$ (M$_A$QE); $f_{18; t, r}^{banff}$ (CCQE norm $<$ 1.5 GeV);
+  $f_{SF; t, r}$; $f_{bindE; t, r}$; $f_{\pi-less\Delta; t, r}$.
+}
+\label{fig:pulls:28:allsyst:sys}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{{./images/pulls/28_all_0.900000_important_altpull}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{1}}}$ of the systematic parameters for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT.  All systematic
+  fluctuations are included.
+  The plots correspond to (line by line, left to right):
+  $f_{E; r}^{SK}$;  $f_{CCnonQE; r}^{SK}$; $f_{NC; r}^{SK}$;
+  $f_{16; t; r}^{banff}$ (M$_A$QE); $f_{18; t, r}^{banff}$ (CCQE norm $<$ 1.5 GeV);
+  $f_{SF; t, r}$; $f_{bindE; t, r}$; $f_{\pi-less\Delta; t, r}$.
+}
+\label{fig:pulls:28:allsyst:sysaltpull}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{{./images/pulls/28_all_0.900000_important_altpull2}.eps}
+\caption {
+  $\textrm{Pull}_{\textrm{\footnotesize{3}}}$ of the systematic parameters for a 2+8 fit, with oscillation parameters
+  $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{21} = $    7.5e-05 $eV^2/c^4$; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+  and for an exposure of 3.010$\times$10$^{20}$ POT.  All systematic
+  fluctuations are included.
+  The plots correspond to (line by line, left to right):
+  $f_{E; r}^{SK}$;  $f_{CCnonQE; r}^{SK}$; $f_{NC; r}^{SK}$;
+  $f_{16; t; r}^{banff}$ (M$_A$QE); $f_{18; t, r}^{banff}$ (CCQE norm $<$ 1.5 GeV);
+  $f_{SF; t, r}$; $f_{bindE; t, r}$; $f_{\pi-less\Delta; t, r}$.
+}
+\label{fig:pulls:28:allsyst:sysaltpull2}
+\end{figure*}
+
+% \begin{figure*}[htb]
+% \center
+% \includegraphics[width=30pc]{{./images/pulls/28_all_0.900000_summary_pull}.eps}
+% \caption {
+%   Summary of the fitted systematics (mean and sigma of pull) for a 2+8 fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $|\Delta m^2_{32}| = $    0.0024 $eV^2/c^4$
+%   and for an exposure of 3.010$\times$10$^{20}$ POT.  All systematic fluctuations are included.
+% }
+% \label{fig:pulls:28:allsyst:syssum}
+% \end{figure*}
+
+
+
+
+% \clearpage
+% \subsection{'2+N' fit, no systematic fluctuations}
+
+% Figs.\ \ref{fig:pulls:2N:nosyst:mix23pull}-\ref{fig:pulls:2N:nosyst:mix23} show the pull and fitted values of
+% $\sin^22\theta_{23}$.
+% Figs.\ \ref{fig:pulls:2N:nosyst:dm23pull}-\ref{fig:pulls:2N:nosyst:dm23} show the corresponding plots for 
+% $\Delta m^2_{32}$.
+% The input values are $\sin^22\theta_{23}$ = 0.9, $\Delta m^2_{32}$ = $2.4 \times 10^{-3}$.
+% The bias in $\sin^22\theta_{23}$ is still present, but there is no significant change after including the parameters
+% that are not fit for in the systematic throws.
+
+% Fig.\ \ref{fig:pulls:2N:nosyst:sys} shows the pulls of the systematic parameters.
+% The distributions have widened, but this is as to be expected
+% (the parameters that are thrown but not fitted are \emph{absorbed} by the parameters that are fitted).
+% There are still no strange features.
+% Fig.\ \ref{fig:pulls:2N:nosyst:syssum} gives a summary of the mean and sigma of the fitted pulls.
+
+
+% \begin{figure*}[htb]
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/2all_all_0.900000_mixing23_pull}.eps}
+% \caption {
+%   \textrm{Pull}_{\textrm{\footnotesize{1}}} of sin$^22\theta_{23}$ for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included. 
+% }
+% \label{fig:pulls:2N:nosyst:mix23pull}
+% \end{minipage}
+% \hspace{0.06\linewidth}
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/2all_all_0.900000_mixing23}.eps}
+% \caption {
+%   Fitted value of sin$^22\theta_{23}$ for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:nosyst:mix23}
+% \end{minipage}
+% \vfill
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/2all_all_0.900000_dm23sq_pull}.eps}
+% \caption {
+%   \textrm{Pull}_{\textrm{\footnotesize{1}}} of $\Delta m^2_{32}$ for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:nosyst:dm23pull}
+% \end{minipage}
+% \hspace{0.06\linewidth}
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/2all_all_0.900000_dm23sq}.eps}
+% \caption {
+%   Fitted value of $\Delta m^2_{32}$ for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. No systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:nosyst:dm23}
+% \end{minipage}
+% \end{figure*}
+
+
+% \clearpage
+% \subsection{'2+N' fit, all systematic fluctuations}
+
+
+% Figs.\ \ref{fig:pulls:2N:allsyst:mix23pull}-\ref{fig:pulls:2N:allsyst:mix23} show the pull and fitted values of
+% $\sin^22\theta_{23}$.
+% Figs.\ \ref{fig:pulls:2N:allsyst:dm23pull}-\ref{fig:pulls:2N:allsyst:dm23} show the corresponding plots for 
+% $\Delta m^2_{32}$.
+% The input values are $\sin^22\theta_{23}$ = 0.9, $\Delta m^2_{32}$ = $2.4 \times 10^{-3}$.
+% The bias in $\sin^22\theta_{23}$ is still present, but there is no significant change after including the parameters
+% that are not fit for in the systematic throws.
+
+% Fig.\ \ref{fig:pulls:2N:allsyst:sys1}-\ref{fig:pulls:2N:allsyst:sys2} show the pulls of the systematic parameters.
+% Fig.\ \ref{fig:pulls:2N:allsyst:syssum} gives a summary of the mean and sigma of the fitted pulls.
+
+
+% \begin{figure*}[htb]
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/2all_all_0.900000_mixing23_pull}.eps}
+% \caption {
+%   \textrm{Pull}_{\textrm{\footnotesize{1}}} of sin$^22\theta_{23}$ for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:allsyst:mix23pull}
+% \end{minipage}
+% \hspace{0.06\linewidth}
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/2all_all_0.900000_mixing23}.eps}
+% \caption {
+%   Fitted value of sin$^22\theta_{23}$ for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:allsyst:mix23}
+% \end{minipage}
+% \vfill
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/2all_all_0.900000_dm23sq_pull}.eps}
+% \caption {
+%   \textrm{Pull}_{\textrm{\footnotesize{1}}} of $\Delta m^2_{32}$ for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:allsyst:dm23pull}
+% \end{minipage}
+% \hspace{0.06\linewidth}
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=20pc]{{./images/pulls/2all_all_0.900000_dm23sq}.eps}
+% \caption {
+%   Fitted value of $\Delta m^2_{32}$ for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT. All systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:allsyst:dm23}
+% \end{minipage}
+% \end{figure*}
+
+% \begin{figure*}[htb]
+% \center
+% \includegraphics[width=40pc]{{./images/pulls/2all_all_0.900000_banff_pull}.eps}
+% \caption {
+%   Pull of the systematic parameters for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT.  All systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:allsyst:sys1}
+% \end{figure*}
+
+% \begin{figure*}[htb]
+% \center
+% \includegraphics[width=40pc]{{./images/pulls/2all_all_0.900000_other_pull}.eps}
+% \caption {
+%   Pull of the systematic parameters for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT.  All systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:allsyst:sys2}
+% \end{figure*}
+
+% \begin{figure*}[htb]
+% \center
+% \includegraphics[width=30pc]{{./images/pulls/2all_all_0.900000_summary_pull}.eps}
+% \caption {
+%   Summary of the fitted systematics (mean and sigma of pull) for a 2+N fit, with oscillation parameters
+%   $\sin^22\theta_{12} = $0.857; $\sin^22\theta_{13} = $0.098; $\sin^22\theta_{23} = $0.9; $\delta_{CP} = $        0; $\Delta m^2_{12} = $    7.5e-05; $\Delta m^2_{32} = $    0.0024
+%   and for an exposure of 3.010$\times$10$^{20}$ POT.  All systematic fluctuations are included.
+% }
+% \label{fig:pulls:2N:allsyst:syssum}
+% \end{figure*}

@@ -1,0 +1,32 @@
+\clearpage
+
+\section{Detailed study of the effect of systematics on the predicted number of 1 $\mu$-like ring events}
+\label{appendix:nsk_systematics}
+
+In this section, the effect of systematics on the predicted number of events in SuperK is presented in a number of tables. 
+Each table shows the pre- and post-BANFF tuning nominal $N_{SK}$ for every SuperK MC mode considered in the analysis, and 
+the BANFF-tuned $N_{SK}$ for $\pm$1$\sigma$ deviations of a single systematic parameter. For correlated systematic parameters, 
+$\sigma$ is defined as the square root of the corresponding diagonal entry in the covariance matrix.
+For certain systematics, the modes are broken into $E_{reco}$ or $E_{true}$ bins, to show the energy dependence of that systematic 
+(where relevant).
+Tabs.\ \ref{tab:num_sk_energy_scale_1RmuT_3f_osc_t13:0_spectralreco_spectraltrue}-\ref{tab:num_fsi_005_1RmuT_3f_osc_t13:0_spectralreco_spectraltrue} 
+show the effect of systematics on the unoscillated $N_{SK}$.
+Tabs.\ \ref{tab:num_sk_energy_scale_1RmuT_3f_osc_t13:0.098_spectralreco_spectraltrue}-\ref{tab:num_fsi_005_1RmuT_3f_osc_t13:0.098_spectralreco_spectraltrue} 
+show the effect of systematics on the $N_{SK}$ with 3-flavour oscillations in matter, using the following values of the oscillation parameters:
+\begin{itemize}
+\item $\sin^22\theta_{12} = $ 0.857
+\item $\sin^22\theta_{13} = $ 0.098
+\item $\sin^22\theta_{23} = $ 1.0
+\item $\delta_{CP} = $        0
+\item $\Delta m^2_{21} = $    7.5$\times$10$^{-5}$ eV$^{2}$/c$^{4}$
+\item $|\Delta m^2_{32}| = $  2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$
+\end{itemize}
+The percentage uncertainties in the systematic parameters are summarised in Tab.\ \ref{tab:nsk_expectations} (parameters whose effects 
+are evaluated using splines are not included in this table).
+
+
+\input{tables/spectrum_tweaked/systematic_tables-expectation.tex}
+
+\input{tables/spectrum_tweaked/systematic_tables-sinsq2theta[12_0.000,13_0.000,23_0.000],dcp_0.000,dmsq[12_0.00000000,23_0.000000]eV2.tex}
+
+\input{tables/spectrum_tweaked/systematic_tables-sinsq2theta[12_0.857,13_0.098,23_1.000],dcp_0.000,dmsq[12_0.00007500,23_0.002400]eV2.tex}

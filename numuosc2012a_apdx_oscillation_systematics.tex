@@ -1,0 +1,40 @@
+\clearpage
+
+\section{Detailed study of the effect of systematics on the best-fit oscillation parameters}
+\label{appendix:systematics_bestfit_oscillations}
+
+
+This section describes a study into the effect of systematics on the best-fit oscillation parameters.
+It was used to determine which systematic parameters to include in the 2+8 fit. Before doing the study, it was decided to include a systematic 
+if its effect on the best-fit oscillation parameters is greater than one-quarter the size of the statistical error at one or more oscillation 
+parameter points. The statistical error was evaluated using 2+0 fits of 10000 toy experiments with no systematic fluctuations at each 
+oscillation parameter point. The oscillation parameter points used in this study are shown in Fig.\ \ref{fig:apdx:starplot_points}.
+
+In the study, a 2+0 fit was done on a toy MC experiment created without statistical fluctuations and with a single systematic parameter 
+tweaked by $\pm$1$\sigma$.
+For correlated systematic parameters, $\sigma$ was defined as the square root of the corresponding covariance matrix diagonal entry.
+The best-fit values of the oscillation parameters from the 2+0 fit are plotted as an arrow whose origin is at the input point of the study.
+For ease of reading, no more than 11 systematics are included on a single plot; for this reason, the plots are split into the following categories:
+\begin{itemize}
+\item parameters used in the 2+8 fit, Figs. \ref{fig:apdx_star_important_0.80_0.0020}-\ref{fig:apdx_star_important_1.00_0.0030};
+\item SuperK detector parameters, Figs. \ref{fig:apdx_star_sk_0.80_0.0020}-\ref{fig:apdx_star_sk_1.00_0.0030};
+\item BANFF $\nu_\mu$ flux parameters, Figs. \ref{fig:apdx_star_banffnumu_0.80_0.0020}-\ref{fig:apdx_star_banffnumu_1.00_0.0030};
+\item BANFF $\bar{\nu_\mu}$ flux parameters, Figs. \ref{fig:apdx_star_banffnumubar_0.80_0.0020}-\ref{fig:apdx_star_banffnumubar_1.00_0.0030};
+\item BANFF cross section parameters, Figs. \ref{fig:apdx_star_banffxsec_0.80_0.0020}-\ref{fig:apdx_star_banffxsec_1.00_0.0030};
+\item uncorrelated cross section parameters, Figs. \ref{fig:apdx_star_xsec_0.80_0.0020}-\ref{fig:apdx_star_xsec_1.00_0.0030};
+\item FSI+SI parameters, Figs. \ref{fig:apdx_star_fsi_0.80_0.0020}-\ref{fig:apdx_star_fsi_1.00_0.0030};
+\item non-23 sector oscillation parameters, Figs. \ref{fig:apdx_star_osc_0.80_0.0020}-\ref{fig:apdx_star_osc_1.00_0.0030}.
+\end{itemize}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=25pc]{./images/star_plot/star_study_points}
+\caption {
+ True oscillation parameter points used in the study on the effect of systematics
+ on the best-fit oscillation parameters.
+}
+\label{fig:apdx:starplot_points}
+\end{figure*}
+
+
+\input{images/star_plot/star_plots.tex}
