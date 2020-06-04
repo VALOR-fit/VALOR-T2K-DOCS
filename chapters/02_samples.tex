@@ -1,0 +1,53 @@
+%\clearpage
+
+\section {Super-K samples used in the analysis}
+\label{sec:samples}
+
+This analysis is comprised of five samples based on the fiTQun selection algorithm, which has improved reconstruction capabilities and can therefore reduce the background components of the selected samples. The five samples are:
+\begin{itemize}
+	\item neutrino mode single $\mu$-like ring sample
+	\item antineutrino mode single $\mu$-like ring sample
+	\item neutrino mode single $e$-like ring sample
+	\item antineutrino mode single $e$-like ring sample
+	\item neutrino mode single $e$-like ring sample with one decay electron (referred to as \nueCConepi{})
+\end{itemize}
+The Super-K MC templates contain events from the $\nu_{\mu}$, $\bar{\nu}_{\mu}$, $\nu_{e}$, $\bar{\nu}_{e}$, oscillated $\nu_{e}$ and oscillated $\bar{\nu}_{e}$ samples passing the Super-K selection cuts. Details of the selection cuts can be found in \cite{Superk_run8}.
+
+\subsection {Predicted event rates}
+\label{sec:spectrum_prediction}
+Predicted event rates for this analysis are determined for the case of two different sets of oscillation parameters based on previous best fit results from T2K and NOvA. These parameter sets are referred to as Asimov A and B, with their definitions and associated event rates given in the following sections.
+
+\subsubsection{Definition of Asimov A and B}
+\label{sec:asimov_definition}
+%\Cref{tab:asimov_definition1} shows the definitions used for the Asimov data sets. Asimov A represents parameter values close to the T2K best fit for Run 1-7, whilst Asimov B modifies these parameters such that CP is conserved and uses NOvA's non-maximal mixing best fit value for \ssqthtwothree \cite{Adamson:2017nova}.
+\Cref{tab:asimov_definition1} shows the definitions used for the Asimov data sets. Asimov A represents parameter values close to the T2K best fit for Run 1-7, whilst Asimov B modifies these parameters such that CP is conserved and changes the \ssqthtwothree octant.
+\input{tables/asimov_definitions1}
+
+\subsubsection{Event rates}
+\label{sec:event_rates}
+\Cref{tab:events_asimov_a_dcp_var_1re} shows the expected event rates in Super-K for the Asimov A data set, but with \deltacp varied at $-\pi/2$, 0, $\pi/2$ and $\pi$.
+\input{tables/rates/asimova_deltacp_var}
+
+\Crefrange{tab:events_1rmu_Asimov_A}{tab:events_cconepi_Asimov_A} present the expected event rates in Super-K corresponding to the Asimov A data set. Event rates in other oscillation scenarios can be found in \cref{app:event_rates}. In each case the normal hierarchy is assumed and all rates are generated for an integrated exposure corresponding to \RunPeriod.
+
+\input{tables/rates/validation_1rmu_Asimov_A}
+\input{tables/rates/validation_rhc1rmu_Asimov_A}
+\input{tables/rates/validation_1re_Asimov_A}
+\input{tables/rates/validation_rhc1re_Asimov_A}
+\input{tables/rates/validation_cconepi_Asimov_A}
+
+\subsubsection{Predicted and observed spectra}
+\label{sec:selection:predicted_spectra}
+
+In this section, we present the expected spectra in Super-K for Asimov A and unoscillated scenarios, assuming normal hierarchy. All plots are generated for an integrated exposure corresponding to \RunPeriod.
+
+Predicted single ring Super-K spectra are shown in \cref{fig:unosc_spectra_all,fig:asimova_spectra_all}. 
+By comparing neutrino and antineutrino mode $e$-like plots it is clear that $\theta$ vs $E_{reco}$ distributions are differently populated by $\nu_{\mu} \rightarrow \nu_e$ and $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_e$ events.
+
+\input{spectra/unosc_spectra_all}
+\input{spectra/asimova_spectra_all}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../TN327.tex"
+%%% End:

@@ -1,0 +1,169 @@
+\section{Fitter details}
+\label{app:details}
+
+\subsection {Spectra prediction methodology}
+\label{app:details:spectra_methodology}
+
+In this analysis a comparison of the reconstructed energy ($E_{r}$) and reconstructed lepton angle ($\theta$) spectrum of single ring events, including the \nueCConepi{}-like sample, observed at Super-K with the predicted spectrum is used to build the test statistic to quote confidence intervals for neutrino oscillation parameters. For $\mu$-like samples the templates are built as a function of the reconstructed neutrino energy, as in previous analyses, and a single $\theta$ bin is used. The predicted number $N_{SK;r,\theta}$ of single ring events in the $r$-th and $\theta$-th bin is computed for each selected sample as follows:
+
+\begin{equation}
+\displaystyle
+  N_{SK;r,\theta} = 
+    \sum_{m} \sum_{t} \sum_{r\prime}
+    	%\beta \cdot
+        P_{m;t} \cdot
+        T_{r;r\prime;f_{E; r}^{SK}} \cdot
+        S_{m;t;r\prime,\theta;\vec{f}} \cdot
+        N_{SK;m;r\prime,\theta;t}^{MC} 
+         \label{eq:far_prediction}
+\end{equation}
+
+In \ref{eq:far_prediction}, $N_{SK;m;r\prime,\theta;t}^{MC}$ is the input Super-K Monte Carlo (MC) template containing the number of events in the single ring MC sample with true reaction mode $m$ in the true energy bin t, the reconstructed energy bin $r\prime$ and reconstructed lepton angle bin $\theta$. $S_{m;t;r\prime,\theta;\vec{f}}$ is an overall, multiplicative, systematic error factor depending on a vector of nuisance (systematic) parameters $\vec{f}$, which is function of the reaction mode $m$, the true energy bin $t$, the reconstructed energy bin $r\prime$, and the reconstructed lepton angle bin $\theta$. $T_{r;r\prime;f_{E; r}^{SK}}$ is a transfer function describing the migration of events between the reconstructed energy bins $r$ and $r\prime$ due to uncertainty in the Super-K reconstructed energy scale, expressed here in terms of the nuisance parameter $f_{E; r}^{SK}$. Finally, $P_{m;t}$ is the 3-flavour oscillation probability applied to the true energy
+bin \(t\) of the Super-K MC template which corresponds to mode $m$; application of the term $P_{m;t}$ is discussed in \ref{app:details:applying_oscillations}.
+\subsection {Construction of the nominal Super-K Monte Carlo templates}
+\label{app:details:mc_templates}
+
+The nominal Super-K single ring and \nueCConepi{} MC analysis templates $N_{SK;m;r\prime,\theta;t}^{MC}$ are constructed by applying the single $e$-like ring selection cuts, the \nueCConepi{} selection cuts, or the single $\mu$-like ring selection cuts to the official Super-K MC samples \cite{Superk_run8}. The calculation of the normalisation of each MC sample is described in \cref{app:details:mc_templates:normalization}. The list of MC templates used in this analysis is shown in \cref{app:details:mc_templates:template_list}, while the true and reconstructed energy as well as the reconstructed lepton angle binning of the templates are discussed in \cref{app:details:mc_templates:template_binning}.
+
+\subsubsection {Normalisation of Monte Carlo samples}
+\label{app:details:mc_templates:normalization}
+
+The normalisation (integrated exposure in terms of POT) of each event sample is calculated from the number of events with a MC truth interaction vertex within the 22.5 kt fiducial volume.
+
+\begin{equation}
+\displaystyle
+  N = \int  dS dI dE \cdot
+            \frac{d^{3}\Phi_{SK}}{dS dI dE_{\nu}} \cdot
+            \sigma_{H_{2}O} \cdot
+            \frac{N_{A}}{A} \cdot \rho \cdot L 
+\end{equation}
+where $d^{3}\Phi_{SK}$/$dS dI dE$ is the number of flux particles for the given neutrino species per neutrino energy bin $dE_{\nu}$, per unit area $dS$ and per POT, $\sigma_{H_{2}O}$ is the total interaction cross section on water for the given neutrino species, $I$ is the beam exposure in terms of POT, $N_{A}$ is  Avogadro's number, $A$ is the mass number for water, $\rho$ is the water density and $L$ is the neutrino path length in the water volume.
+
+The Super-K MC samples are normalised to the \RunPeriod POT. Assuming that all the MC files are used, each sample is first normalised to 10$^{21}$ POT by weighting it with the ratio of the number of events per 22.5 kt per $10^{21}$ POT to the number of generated events in the true fiducial volume in all the available MC. Then each sample is normalised to \TotalPotNuRunOneEight{} POT for neutrino and \TotalPotNuBarRunOneEight{} for antineutrino mode, by weighting the result respectively by \TotalPotPerTwentyOneNu{} and \TotalPotPerTwentyOneNuBar{} (the \RunPeriod POT in units of $10^{21}$ POT). 
+
+\subsubsection {List of Monte Carlo templates}
+\label{app:details:mc_templates:template_list}
+
+For each Super-K MC sample, a number of different MC templates is constructed corresponding to different true reaction modes. The template number depends on the type of oscillation analysis and the specific systematic parameters considered in the analysis. \NMCTemplate{} are used for the current analysis, these are the same templates as in our 2016 analysis \cite{OurRun17cCC1piJointAnalysis3Flavour}. In particular
+
+\begin{itemize}
+
+\item  $\bar{\nu}_{\mu}$ CCQE,
+\item  $\bar{\nu}_{\mu}$ CC1$\pi$,
+\item  $\bar{\nu}_{\mu}$ CC coherent,
+\item  $\bar{\nu}_{\mu}$ CC 2p-2h,
+\item  $\bar{\nu}_{\mu}$ CC other,
+
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC1$\pi^{0}$,
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC1$\pi^{\pm}$,
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC coherent,
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC other,
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC $1\gamma$,
+
+\item  $\nu_{\mu}$ CCQE,
+\item  $\nu_{\mu}$ CC1$\pi$, 
+\item  $\nu_{\mu}$ CC coherent, 
+\item  $\nu_{\mu}$ CC 2p-2h,
+\item  $\nu_{\mu}$ CC other, 
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC1$\pi^{0}$,
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC1$\pi^{\pm}$, 
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC coherent,
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC other, 
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC $1\gamma$, 
+
+\item  $\bar{\nu}_{e}$ CCQE,
+\item  $\bar{\nu}_{e}$ CC1$\pi$,
+\item  $\bar{\nu}_{e}$ CC coherent,
+\item  $\bar{\nu}_{e}$ CC 2p-2h,
+\item  $\bar{\nu}_{e}$ CC other,
+
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC1$\pi^{0}$,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC1$\pi^{\pm}$,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC coherent,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC other,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC $1\gamma$,
+
+\item  $\nu_{e}$ CCQE, 
+\item  $\nu_{e}$ CC1$\pi$,
+\item  $\nu_{e}$ CC coherent,
+\item  $\nu_{e}$ CC 2p-2h,
+\item  $\nu_{e}$ CC other,
+
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC1$\pi^{0}$,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC1$\pi^{\pm}$,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC coherent,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC other,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC $1\gamma$,
+
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CCQE,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC1$\pi$,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC coherent,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC 2p-2h,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC other,
+
+\item  oscillated $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{e}$ CCQE,
+\item  oscillated $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{e}$ CC1$\pi$,
+\item  oscillated $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{e}$ CC coherent,
+\item  oscillated $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{e}$ CC 2p-2h,
+\item  oscillated $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{e}$ CC other.
+
+\end{itemize}
+
+\subsubsection {Binning of Monte Carlo templates}
+\label{app:details:mc_templates:template_binning}
+
+The binning scheme for the current analysis remains unchanged from the previous analysis \cite{OurRun17cCC1piJointAnalysis3Flavour}. For $\mu$-like samples the templates are built as a function of the reconstructed neutrino energy, having 84 true energy bins and 73 reconstructed energy bins. $e$-like templates have 84 true energy bins, 25 reconstructed energy bins and 15 reconstructed lepton angle bins.
+
+For all templates the 84 true energy bins of constant width are:
+\begin{itemize}
+	\item 6 50-MeV bins from 0-0.3 GeV, 
+	\item 28 25-MeV bins from 0.3-1 GeV,
+	\item 40 50-MeV bins from 1-3 GeV,
+	\item 5 100-MeV bin from 3-3.5 GeV,
+	\item 1 bin from 3.5-4 GeV,
+	\item 1 bin from 4-5 GeV,
+	\item 1 bin from 5-7 GeV,
+	\item 1 bin from 7-10 GeV and 
+	\item 1 bin from 10-30 GeV
+\end{itemize}
+
+For $\mu$-like samples the 73 reconstructed energy bins are:
+\begin{itemize}
+	\item 60 50-MeV bins from 0-3 GeV, 
+	\item 4 250-MeV bins from 3-4 GeV, 
+	\item 4 500-MeV bins from 4-6 GeV, 
+	\item 4 1000-MeV bins from 6-10 GeV and
+	\item 1 bin from 10-30 GeV.
+\end{itemize}
+
+For $e$-like samples the 25 reconstructed energy bins with constant width are the following:
+\begin{itemize}
+	\item 25 50-MeV bins from 0-1.25 GeV.
+\end{itemize}
+
+The $\theta$ binning used for $e$-like samples is
+\begin{itemize}
+	\item 14 $10^{\circ}$ bins from $0^{\circ}$ to $140^{\circ}$, 
+	\item 1 bin for the range $140^{\circ} - 180^{\circ}$. 
+\end{itemize}
+
+For $\mu$-like samples a single $\theta$ bin, that covers the whole range $0^{\circ}$ - $180^{\circ}$, is used. The predicted $e$-like 2-dimensional spectra were studied in detail in ~\cite{OurRun1617b17cJointAnalysis3Flavour} for each flavour component and were compared with the 1-dimensional reconstructed energy spectra.
+
+A study was performed to decide the optimum binning scheme for reconstructing neutrino energy, balancing the needs for accuracy and speed. Details are given in Appendix I of Ref.\ \cite{OurRun123DisappAnalysis3Flavour}.
+
+\subsection{Applying neutrino oscillations}
+\label{app:details:applying_oscillations}
+
+The MC templates are constructed from the unoscillated MC samples and must be weighted with the appropriate oscillation probability. Oscillations are applied as a function of true energy to the MC templates for all CC interactions.
+
+The MC templates calculated from the $\bar{\nu}_{\mu}$ MC sample are weighted with P($\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{\mu}$), with this survival probability being calculated using the oscillation parameters, namely $\sin^{2} \theta_{23}$, $\sin^{2} \theta_{12}$, $\sin^{2} \theta_{13}$, $|\Delta m^{2}_{32}|$ (normal hierarchy) or $|\Delta m^{2}_{31}|$ (inverted hierarchy), $\Delta m^{2}_{21}$ and $\delta_{CP}$. The $\bar{\nu}_{e}$ templates are weighted with P($\bar{\nu}_{e} \rightarrow \bar{\nu}_{e}$), while the oscillated $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{e}$ templates are weighted with P($\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{e}$) (the sample was generated assuming 100\% of $\bar{\nu}_{\mu}$ transform to $\bar{\nu}_{e}$). All these oscillation probabilities are computed in a 3-flavour framework including matter effects in constant-density matter (assuming an Earth crust density of 2.6 g/cm$^{3}$). Custom oscillation probability calculation code was developed within the {\em VALOR} analysis framework. Details and estimates of the numerical accuracy of this code are first presented in \cite{OurRun12DisappAnalysis3Flavour}, and is also shown in Appendix A of \cite{OurRun123DisappAnalysis3Flavour}.
+Comparisons between the {\em VALOR} oscillation probability calculation code and Prob3++ \cite{Prob3}, which is typically used by the alternative T2K oscillation analyses, are shown in Appendix B of \cite{OurRun123DisappAnalysis3Flavour}.
+
+In the standard 3-flavour oscillation framework, oscillations of $\bar{\nu}_{e}$ and $\bar{\nu}_{\mu}$ can yield $\bar{\nu}_{\tau}$.
+In this analysis, we neglect contributions from $\nu_{\tau}$-CC and $\bar{\nu}_{\tau}$-CC as their energy threshold is around 3.5 GeV and their effect is negligible\footnote{A back-of-the-envelope calculation can be found in the replies to comments and revision history document of \cite{OurRun123DisappAnalysis3Flavour} that gives $\ll 1\%$ $\nu_\tau$ contamination in the 1-ring $\mu$-like Super-K sample. A Super-K MC study is required to determine whether the Super-K efficiency assumptions made there are valid.}. Accordingly, this analysis uses no $\nu_{\tau}$-CC and $\bar{\nu}_{\tau}$-CC MC templates (and, in fact, no $\nu_{\tau}$ and $\bar{\nu}_{\tau}$ Super-K MC samples are available).
+
+It should be emphasized here that the $\nu_{\mu}$ NC MC templates for a mode $m$ contain the NC MC templates for the mixture of $\nu_{e}$+$\nu_{\mu}$+$\nu_{\tau}$ resulting from 3-flavour $\nu_{\mu}$ oscillations for that mode $m$. The same applies to the $\bar{\nu}_{\mu}$, $\nu_{e}$ and $\bar{\nu}_{e}$ NC MC templates. These NC MC templates are unchanged under standard 3-flavour oscillations.
+
+Also it should be noted that there are no explicit NC MC templates made from the oscillated $\bar{\nu}_{e}$ and $\nu_{e}$ samples. If they were used, the oscillated $\bar{\nu}_{e}$ (i.e.\ $\bar{\nu}_{e}$ coming from oscillations of $\bar{\nu}_{\mu}$) would be double counted since they are already included in the $\bar{\nu}_{\mu}$ NC MC templates. The same applies to oscillated $\nu_{e}$.
+
+\clearpage

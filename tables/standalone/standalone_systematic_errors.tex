@@ -1,0 +1,72 @@
+%
+% ---------------------------------------------------------------------------------------
+% VALOR T2K 5 sample joint fit analysis, Run 1-8
+% ---------------------------------------------------------------------------------------
+%
+\documentclass[11pt]{elsarticle}
+
+\usepackage{adjustbox}
+\usepackage[toc,page]{appendix}       	% Appendix
+\usepackage{amsfonts}                 	% Extra symbols
+\usepackage{amsmath}
+\usepackage{appendix}
+\usepackage{booktabs}
+\usepackage{caption}			% Use when minipaging figures & tables together
+\usepackage{color}
+\usepackage{dcolumn}					% align table columns on decimal point
+\usepackage[figuresright]{rotating}		% if you have landscape tables
+\usepackage{float}
+\usepackage[margin=2.50cm]{geometry}  	% Tweak margins
+\usepackage{graphicx}                 	% PostScript figures
+\usepackage{hyperref} 			% Linkable contents and reference without colour
+\usepackage{lineno}                   	% For printing the line numbers
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{multirow}                 	% Fancy tables
+\usepackage{natbib}                   	% For building bibliography with \cite{}
+\usepackage{pdflscape}                   	% allow page to be landscape for large tables
+\usepackage{rotate}                     % rotate text in tables
+\usepackage{siunitx}					% Easier units exponentials etc
+\usepackage{subcaption}					% Allows use of subfigure
+\usepackage[table,dvipsnames]{xcolor}	% Fancy tables and colors
+\usepackage{xspace}		        % Appropriate insertion of spaces after commands
+\usepackage{cleveref}                   % Load after the hyperref package
+\usepackage{pdflscape}
+\usepackage{setspace}
+\onehalfspacing
+\DeclareSIUnit\POT{POT}
+
+\newcommand{\nueCConepi}{\(\nue\) CC\( 1\pi^{+} \)}
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\begin{document}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l||l|l||l|l|l|l|l|}
+		\hline
+		& \multicolumn{2}{c||}{\textbf{1-Ring $\mu$}} & \multicolumn{4}{c|}{\textbf{1-Ring $e$}} \\ \hline
+		Error source & FHC & RHC & FHC & RHC & FHC 1 d.e. & FHC/RHC \\ \hline\hline
+		\input{../../tables/sk_errors/sk_error_table_skdet}
+		\input{../../tables/sk_errors/sk_error_table_skfsi}
+		\input{../../tables/sk_errors/sk_error_table_banff_constrained}
+		\input{../../tables/sk_errors/sk_error_table_xsec_nue}
+		\input{../../tables/sk_errors/sk_error_table_xsec_ncgamma}
+		\input{../../tables/sk_errors/sk_error_table_xsec_ncoth}
+		\input{../../tables/sk_errors/sk_error_table_osc}\hline
+		\input{../../tables/sk_errors/sk_error_table_allsyst}
+		\input{../../tables/sk_errors/sk_error_table_all}
+	\end{tabular}
+\end{table}
+
+
+\end{document}

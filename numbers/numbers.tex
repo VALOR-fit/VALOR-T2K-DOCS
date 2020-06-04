@@ -1,0 +1,348 @@
+% This file is for numbers that appear in several different places in the technical note.
+% First argument of \newcommand can only contain lower case or upper case letters.
+% Numbers and other non-letter characters will cause an error.
+% When using the command in the text, please add {} after it if you want a space after the number.
+% If you don't add {}, there will be no space after the number.
+
+%
+% POT
+%
+\newcommand{\FuturePotNu}{XXX$\times$10$^{20}$}
+\newcommand{\FuturePotNuBar}{XXX$\times$10$^{20}$}
+
+\newcommand{\TotalPotNuRunOneSevenB}{7.002$\times$10$^{20}$} % Run 1-7b
+\newcommand{\TotalPotNuBarRunOneSevenB}{7.471$\times$10$^{20}$} % Run 1-7b
+
+\newcommand{\TotalPotNuRunOneSevenC}{\num{7.482e20}} % Run 1-7c
+\newcommand{\TotalPotNuBarRunOneSevenC}{\num{7.471e20}} % Run 1-7c
+
+\newcommand{\TotalPotNuRunOneEight}{\num{1.4734e21}} % Run 1-8
+\newcommand{\TotalPotNuBarRunOneEight}{\num{7.558e20}} % Run 1-8
+
+\newcommand{\TotalPotNu}{\TotalPotNuRunOneEight} % Current POT
+\newcommand{\TotalPotNuBar}{\TotalPotNuBarRunOneEight} % Current POT
+
+\newcommand{\RunVPot}{0.506$\times$10$^{20}$}
+\newcommand{\RunVIPot}{3.505$\times$10$^{20}$}
+
+%\newcommand{\FakePot}{4.5$\times$10$^{20}$}
+%\newcommand{\FakePotLow}{4.0$\times$10$^{20}$}
+%\newcommand{\FakePotHigh}{4.5$\times$10$^{20}$}
+
+\newcommand{\TargetFullPot}{7.8$\times$10$^{21}$}
+\newcommand{\TargetFullPotNu}{7.8$\times$10$^{21}$}
+\newcommand{\TargetFullPotNuBar}{7.8$\times$10$^{21}$}
+
+\newcommand{\TotalPotPerTwentyOneNu}{1.4734}
+\newcommand{\TotalPotPerTwentyOneNuBar}{0.7558}
+
+\newcommand{\NumToys}{10k~}
+\newcommand{\NumToysLarge}{10k~}
+
+%\newcommand{\PvalueRate}{0.2637}
+%\newcommand{\PvalueShape}{0.1589}
+
+%
+% Number of MCtemplates
+%excluding nuebar->numubar and nue->numu templates
+\newcommand{\NMCTemplate}{50}
+%including nuebar->numubar and nue->numu templates
+%\newcommand{\NMCTemplate}{56}
+
+%
+% Number of systematics
+%
+% 25 FHC flux
+% 25 RHC flux
+% 23 Xsec
+% 18 FHC SKDet FSI
+% 18 RHC SKDet FSI
+% Escale
+% 
+\newcommand{\NFluxSyst}{50\xspace}
+\newcommand{\NXsecSyst}{23\xspace}
+\newcommand{\NFluxAndXsecSyst}{73\xspace}
+\newcommand{\NSKDetSyst}{36\xspace}
+\newcommand{\NSyst}{110\xspace} % Don't include the oscillation parameters
+
+%
+% Number of events in Super K (Run 1-6)
+%
+%\newcommand{\NskOscExpectationNue}{26.594}
+%\newcommand{\NskOscExpectationNueError}{1.808}
+\newcommand{\NskOscExpectationNue}{26.6}
+\newcommand{\NskOscExpectationNueError}{1.8}
+\newcommand{\NskObservedNue}{74}
+\newcommand{\NskExpectedNueNormal}{X}
+\newcommand{\NskExpectedNueInverted}{X}
+\newcommand{\NskRatioNueLowEnergy} {X}  % in percent 
+\newcommand{\NskRatioNueMidEnergy} {X}   % in percent 
+\newcommand{\NskRatioNueHighEnergy}{X}  % in percent 
+
+%\newcommand{\NskOscExpectationNumu}{125.914}
+%\newcommand{\NskOscExpectationNumuError}{6.459}
+\newcommand{\NskOscExpectationNumu}{125.9}
+\newcommand{\NskOscExpectationNumuError}{6.5}
+\newcommand{\NskObservedNumu}{240}
+\newcommand{\NskExpectedNumuNormal}{X}
+\newcommand{\NskExpectedNumuInverted}{X}
+\newcommand{\NskRatioNumuLowEnergy} {X}  % in percent 
+\newcommand{\NskRatioNumuMidEnergy} {X}   % in percent 
+\newcommand{\NskRatioNumuHighEnergy}{X}  % in percent 
+
+%\newcommand{\NskOscExpectationNueBar}{3.218}
+%\newcommand{\NskOscExpectationNueBarError}{0.238}
+\newcommand{\NskOscExpectationNueBar}{3.22}
+\newcommand{\NskOscExpectationNueBarError}{0.24}
+\newcommand{\NskObservedNueBar}{7}
+\newcommand{\NskExpectedNueBarNormal}{X}
+\newcommand{\NskExpectedNueBarInverted}{X}
+\newcommand{\NskRatioNueBarLowEnergy} {X}  % in percent 
+\newcommand{\NskRatioNueBarMidEnergy} {X}   % in percent 
+\newcommand{\NskRatioNueBarHighEnergy}{X}  % in percent 
+
+%\newcommand{\NskOscExpectationNumuBar}{34.284}
+%\newcommand{\NskOscExpectationNumuBarError}{1.755}
+\newcommand{\NskOscExpectationNumuBar}{34.3}
+\newcommand{\NskOscExpectationNumuBarError}{1.8}
+\newcommand{\NskObservedNumuBar}{68}
+\newcommand{\NskExpectedNumuBarNormal}{X}
+\newcommand{\NskExpectedNumuBarInverted}{X}
+\newcommand{\NskRatioNumuBarLowEnergy} {X}  % in percent 
+\newcommand{\NskRatioNumuBarMidEnergy} {X}   % in percent 
+\newcommand{\NskRatioNumuBarHighEnergy}{X}  % in percent 
+
+
+%
+% Number of events in Super K (Run 1-7c)
+%
+\newcommand{\NskOscExpectationNumuRunOneSevenC}{135.8}
+\newcommand{\NskOscExpectationNumuErrorRunOneSevenC}{6.9}
+\newcommand{\NskObservedNumuRunOneSevenC}{135}
+
+\newcommand{\NskOscExpectationNueRunOneSevenC}{26.7}
+\newcommand{\NskOscExpectationNueErrorRunOneSevenC}{1.8}
+\newcommand{\NskObservedNueRunOneSevenC}{32}
+
+\newcommand{\NskOscExpectationNumuBarRunOneSevenC}{64.2}
+\newcommand{\NskOscExpectationNumuBarErrorRunOneSevenC}{3.3}
+\newcommand{\NskObservedNumuBarRunOneSevenC}{66}
+
+\newcommand{\NskOscExpectationNueBarRunOneSevenC}{6.0}
+\newcommand{\NskOscExpectationNueBarErrorRunOneSevenC}{0.4}
+\newcommand{\NskObservedNueBarRunOneSevenC}{4}
+
+\newcommand{\NskOscExpectationNueCConepiRunOneSevenC}{\textbf{3.1}}
+\newcommand{\NskOscExpectationNueCConepiErrorRunOneSevenC}{\textbf{1.47}}
+\newcommand{\NskObservedNueCConepiRunOneSevenC}{\textbf{5}}
+%
+% Number of events in Super K (Run 1-7b)
+%
+\newcommand{\NskOscExpectationNumuRunOneSevenB}{127.5}
+\newcommand{\NskOscExpectationNumuErrorRunOneSevenB}{6.6}
+\newcommand{\NskObservedNumuRunOneSevenB}{125}
+
+\newcommand{\NskOscExpectationNueRunOneSevenB}{26.9}
+\newcommand{\NskOscExpectationNueErrorRunOneSevenB}{1.9}
+\newcommand{\NskObservedNueRunOneSevenB}{32}
+
+\newcommand{\NskOscExpectationNumuBarRunOneSevenB}{64.2}
+\newcommand{\NskOscExpectationNumuBarErrorRunOneSevenB}{3.3}
+\newcommand{\NskObservedNumuBarRunOneSevenB}{66}
+
+\newcommand{\NskOscExpectationNueBarRunOneSevenB}{6.0}
+\newcommand{\NskOscExpectationNueBarErrorRunOneSevenB}{0.4}
+\newcommand{\NskObservedNueBarRunOneSevenB}{4}
+
+%
+% Number of events in Super K (Run 1-8)
+%
+\newcommand{\NskOscExpectationNumuRunOneEight}{268.4}
+\newcommand{\NskOscExpectationNumuErrorRunOneEight}{11.8}
+\newcommand{\NskObservedNumuRunOneEight}{240}
+
+\newcommand{\NskOscExpectationNueRunOneEight}{73.5}
+\newcommand{\NskOscExpectationNueErrorRunOneEight}{5.3}
+\newcommand{\NskObservedNueRunOneEight}{74}
+
+\newcommand{\NskOscExpectationNumuBarRunOneEight}{64.3}
+\newcommand{\NskOscExpectationNumuBarErrorRunOneEight}{2.4}
+\newcommand{\NskObservedNumuBarRunOneEight}{68}
+
+\newcommand{\NskOscExpectationNueBarRunOneEight}{7.9}
+\newcommand{\NskOscExpectationNueBarErrorRunOneEight}{0.6}
+\newcommand{\NskObservedNueBarRunOneEight}{7}
+
+\newcommand{\NskOscExpectationNueCConepiRunOneEight}{6.9}
+\newcommand{\NskOscExpectationNueCConepiErrorRunOneEight}{1.5}
+\newcommand{\NskObservedNueCConepiRunOneEight}{15}
+
+%
+% Best-fit values Run 1-6
+%
+\newcommand{\BestFitMixingNormal}{$0.511$}
+\newcommand{\BestFitDmsqNormal}{$2.318 \times 10^{-3}$}
+\newcommand{\BestFitNormalChisq}{$44.893 / 71$}
+\newcommand{\PValueNormal}{0.40}
+\newcommand{\BestFitMixingInverted}{$0.514$}
+\newcommand{\BestFitDmsqInverted}{$2.291 \times 10^{-3}$}
+\newcommand{\BestFitInvertedChisq}{$44.899 / 71$}
+\newcommand{\PValueInverted}{0.42}
+
+%
+% Best-fit values Run 1-7
+%
+\newcommand{\BestFitMixingNormalRunOneSeven}{$XXX$}
+\newcommand{\BestFitDmsqNormalRunOneSeven}{$XXX \times 10^{-3}$}
+\newcommand{\BestFitNormalChisqRunOneSeven}{$XXX / YYY$}
+\newcommand{\PValueNormalRunOneSeven}{XXX}
+\newcommand{\BestFitMixingInvertedRunOneSeven}{$XXX$}
+\newcommand{\BestFitDmsqInvertedRunOneSeven}{$XXX \times 10^{-3}$}
+\newcommand{\BestFitInvertedChisqRunOneSeven}{$XXX / YYY$}
+\newcommand{\PValueInvertedRunOneSeven}{XXX}
+
+% \newcommand{\RunSevenADatesOne}{01 Feb. 2016 - 03 Feb. 2016}
+% \newcommand{\RunSevenADatesTwo}{03 Feb. 2016 - 17 Feb. 2016}
+% \newcommand{\RunSevenBDatesOne}{20 Feb. 2016 - 29 Mar. 2016} 
+% \newcommand{\RunSevenBDatesTwo}{13 Apr. 2016 - 18 May. 2016}
+% \newcommand{\RunSevenCDatesOne}{19 May. 2016 - 27 May. 2016}
+
+\newcommand{\RunSevenADatesOne}{01-03 Feb. 2016}
+\newcommand{\RunSevenADatesTwo}{03-17 Feb. 2016}
+\newcommand{\RunSevenBDatesOne}{20 Feb.-29 Mar. 2016} 
+\newcommand{\RunSevenBDatesTwo}{13 Apr.-18 May. 2016}
+\newcommand{\RunSevenCDatesOne}{19-27 May. 2016}
+
+
+\newcommand{\RunSevenAPOTOne}{\num{0.88e19}}
+\newcommand{\RunSevenAPOTTwo}{\num{6.42e19}} 
+\newcommand{\RunSevenBPOTOne}{\num{13.66e19}} 
+\newcommand{\RunSevenBPOTTwo}{\num{14.52e19}}
+\newcommand{\RunSevenCPOTOne}{\num{3.92e19}}
+
+\newcommand{\BestFitDeltacpwRC}{-1.833\xspace}
+\newcommand{\BestFitDeltacpwoRC}{-2.083\xspace}
+
+\newcommand{\BestFitMixingOneThreewoRC}{0.0277\xspace}
+
+\newcommand{\BestFitMixingTwoThreewRC}{0.530\xspace}
+\newcommand{\BestFitMixingTwoThreewoRC}{0.510\xspace}
+
+\newcommand{\BestFitDmTwoThreewRC}{2.462\xspace}
+\newcommand{\BestFitDmTwoThreewoRC}{2.466\xspace}
+
+\newcommand{\MOneSigmaDeltacpwRC}{-2.476\xspace}
+\newcommand{\POneSigmaDeltacpwRC}{-1.151\xspace}
+\newcommand{\MOneSigmaDeltacpwoRC}{-2.972\xspace}
+\newcommand{\POneSigmaDeltacpwoRC}{-1.151\xspace}
+
+\newcommand{\MOneMixingOneThreewoRC}{0.0230\xspace}
+\newcommand{\POneMixingOneThreewoRC}{0.0331\xspace}
+
+\newcommand{\MOneMixingTwoThreewRC}{0.493\xspace}
+\newcommand{\POneMixingTwoThreewRC}{0.561\xspace}
+\newcommand{\MOneMixingTwoThreewoRC}{0.475\xspace}
+\newcommand{\POneMixingTwoThreewoRC}{0.551\xspace}
+
+\newcommand{\MOneDmTwoThreewRC}{2.407\xspace}
+\newcommand{\POneDmTwoThreewRC}{2.519\xspace}
+\newcommand{\MOneDmTwoThreewoRC}{2.409\xspace}
+\newcommand{\POneDmTwoThreewoRC}{2.519\xspace}
+
+% IH
+
+\newcommand{\BestFitDeltacpwRCIH}{-1.374\xspace}
+\newcommand{\BestFitDeltacpwoRCIH}{-1.157\xspace}
+
+\newcommand{\BestFitMixingOneThreewoRCIH}{0.0331\xspace}
+
+\newcommand{\BestFitMixingTwoThreewRCIH}{0.530\xspace}
+\newcommand{\BestFitMixingTwoThreewoRCIH}{0.510\xspace}
+
+\newcommand{\BestFitDmTwoThreewRCIH}{2.436\xspace}
+\newcommand{\BestFitDmTwoThreewoRCIH}{2.429\xspace}
+   
+\newcommand{\MOneSigmaDeltacpwRCIH}{-1.947\xspace}
+\newcommand{\POneSigmaDeltacpwRCIH}{-0.886\xspace}
+\newcommand{\MOneSigmaDeltacpwoRCIH}{-1.965\xspace}
+\newcommand{\POneSigmaDeltacpwoRCIH}{-0.403\xspace}
+
+\newcommand{\MOneMixingOneThreewoRCIH}{0.0265\xspace}
+\newcommand{\POneMixingOneThreewoRCIH}{0.0378\xspace}
+
+\newcommand{\MOneMixingTwoThreewRCIH}{0.496\xspace}
+\newcommand{\POneMixingTwoThreewRCIH}{0.559\xspace}
+\newcommand{\MOneMixingTwoThreewoRCIH}{0.474\xspace}
+\newcommand{\POneMixingTwoThreewoRCIH}{0.547\xspace}
+
+\newcommand{\MOneDmTwoThreewRCIH}{2.383\xspace}
+\newcommand{\POneDmTwoThreewRCIH}{2.491\xspace}
+\newcommand{\MOneDmTwoThreewoRCIH}{2.373\xspace}
+\newcommand{\POneDmTwoThreewoRCIH}{2.485\xspace}
+
+% 2017b best fit
+
+\newcommand{\BestFitDeltacpwRCb}{-1.872\xspace}
+\newcommand{\BestFitDeltacpwoRCb}{-2.126\xspace}
+
+\newcommand{\BestFitMixingOneThreewoRCb}{0.0279\xspace}
+
+\newcommand{\BestFitMixingTwoThreewRCb}{0.526\xspace}
+\newcommand{\BestFitMixingTwoThreewoRCb}{0.510\xspace}
+
+\newcommand{\BestFitDmTwoThreewRCb}{2.463\xspace}
+\newcommand{\BestFitDmTwoThreewoRCb}{2.471\xspace}
+
+\newcommand{\MOneSigmaDeltacpwRCb}{-2.480\xspace}
+\newcommand{\POneSigmaDeltacpwRCb}{-1.137\xspace}
+\newcommand{\MOneSigmaDeltacpwoRCb}{-3.048\xspace}
+\newcommand{\POneSigmaDeltacpwoRCb}{-1.129\xspace}
+
+\newcommand{\MOneMixingOneThreewoRCb}{0.0231\xspace}
+\newcommand{\POneMixingOneThreewoRCb}{0.0343\xspace}
+
+\newcommand{\MOneMixingTwoThreewRCb}{0.490\xspace}
+\newcommand{\POneMixingTwoThreewRCb}{0.558\xspace}
+\newcommand{\MOneMixingTwoThreewoRCb}{0.474\xspace}
+\newcommand{\POneMixingTwoThreewoRCb}{0.552\xspace}
+
+\newcommand{\MOneDmTwoThreewRCb}{2.398\xspace}
+\newcommand{\POneDmTwoThreewRCb}{2.528\xspace}
+\newcommand{\MOneDmTwoThreewoRCb}{2.404\xspace}
+\newcommand{\POneDmTwoThreewoRCb}{2.536\xspace}
+
+% IH
+
+\newcommand{\BestFitDeltacpwRCIHb}{-1.428\xspace}
+\newcommand{\BestFitDeltacpwoRCIHb}{-1.174\xspace}
+
+\newcommand{\BestFitMixingOneThreewoRCIHb}{0.0316\xspace}
+
+\newcommand{\BestFitMixingTwoThreewRCIHb}{0.530\xspace}
+\newcommand{\BestFitMixingTwoThreewoRCIHb}{0.506\xspace}
+
+\newcommand{\BestFitDmTwoThreewRCIHb}{2.431\xspace}
+\newcommand{\BestFitDmTwoThreewoRCIHb}{2.445\xspace}
+   
+\newcommand{\MOneSigmaDeltacpwRCIHb}{-1.961\xspace}
+\newcommand{\POneSigmaDeltacpwRCIHb}{-0.880\xspace}
+\newcommand{\MOneSigmaDeltacpwoRCIHb}{-1.988\xspace}
+\newcommand{\POneSigmaDeltacpwoRCIHb}{-0.440\xspace}
+
+\newcommand{\MOneMixingOneThreewoRCIHb}{0.0264\xspace}
+\newcommand{\POneMixingOneThreewoRCIHb}{0.0380\xspace}
+
+\newcommand{\MOneMixingTwoThreewRCIHb}{0.496\xspace}
+\newcommand{\POneMixingTwoThreewRCIHb}{0.560\xspace}
+\newcommand{\MOneMixingTwoThreewoRCIHb}{0.471\xspace}
+\newcommand{\POneMixingTwoThreewoRCIHb}{0.549\xspace}
+
+\newcommand{\MOneDmTwoThreewRCIHb}{2.367\xspace}
+\newcommand{\POneDmTwoThreewRCIHb}{2.496\xspace}
+\newcommand{\MOneDmTwoThreewoRCIHb}{2.377\xspace}
+\newcommand{\POneDmTwoThreewoRCIHb}{2.511\xspace}
+
+%%% Local Variables:
+%%% mode: plain-tex
+%%% TeX-master: "../"
+%%% End:

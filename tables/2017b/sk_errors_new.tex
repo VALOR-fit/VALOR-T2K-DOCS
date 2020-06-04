@@ -1,0 +1,49 @@
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l||l|l||l|l|l|l|l|}
+		\hline
+		& \multicolumn{2}{c||}{\textbf{1-Ring $\mu$}} & \multicolumn{4}{c|}{\textbf{1-Ring $e$}} \\ \hline
+		Error source & FHC & RHC & FHC & RHC & FHC 1 d.e. & FHC/RHC \\ \hline\hline
+		\input{tables/sk_errors/2017b/full/sk_error_table_skdet}
+		\input{tables/sk_errors/2017b/full/sk_error_table_skfsi}
+		\input{tables/sk_errors/2017b/full/sk_error_table_banff_constrained}
+		\input{tables/sk_errors/2017b/full/sk_error_table_xsec_nue}
+		\input{tables/sk_errors/2017b/full/sk_error_table_xsec_ncgamma}
+		\input{tables/sk_errors/2017b/full/sk_error_table_xsec_ncoth}
+		\input{tables/sk_errors/2017b/full/sk_error_table_xsec_eb}
+		\input{tables/sk_errors/2017b/full/sk_error_table_osc}\hline
+		\input{tables/sk_errors/2017b/full/sk_error_table_allsyst}
+		\input{tables/sk_errors/2017b/full/sk_error_table_all}
+	\end{tabular}
+	\caption
+	{
+	Percentage error on event rate by error source and sample. Final column is the percentage error on the ratio of FHC/RHC events in the one-ring $e$ sample.
+	}
+	\label{tab:sk_errors_summary_2017b}
+\end{table}
+
+Looking at the ratio of events with respect to nominal for variations of $\pm0.5\sigma$ and $\pm1.5\sigma$ at the level of individual $E_\text{reco}$ bins (see \cref{fig:eb_variations_2017b}) shows a pattern of larger variations due to $E_b$ in the FHC electron-like sample relative to the corresponding RHC sample. This effect is also apparent in the muon-like samples at lower energies, which can be seen in \cref{tab:sk_errors_summary_2017b_cut}, which applies a cut of $E_\text{reco} < 1.25$ GeV to the muon-like samples.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l||l|l||l|l|l|l|l|}
+		\hline
+		& \multicolumn{2}{c||}{\textbf{1-Ring $\mu$}} & \multicolumn{4}{c|}{\textbf{1-Ring $e$}} \\ \hline
+		Error source & FHC & RHC & FHC & RHC & FHC 1 d.e. & FHC/RHC \\ \hline\hline
+		\input{tables/sk_errors/2017b/cut/sk_error_table_skdet}
+		\input{tables/sk_errors/2017b/cut/sk_error_table_skfsi}
+		\input{tables/sk_errors/2017b/cut/sk_error_table_banff_constrained}
+		\input{tables/sk_errors/2017b/cut/sk_error_table_xsec_nue}
+		\input{tables/sk_errors/2017b/cut/sk_error_table_xsec_ncgamma}
+		\input{tables/sk_errors/2017b/cut/sk_error_table_xsec_ncoth}
+		\input{tables/sk_errors/2017b/cut/sk_error_table_xsec_eb}
+		\input{tables/sk_errors/2017b/cut/sk_error_table_osc}\hline
+		\input{tables/sk_errors/2017b/cut/sk_error_table_allsyst}
+		\input{tables/sk_errors/2017b/cut/sk_error_table_all}
+	\end{tabular}
+	\caption
+	{
+	Percentage error on event rate by error source and sample with a cut of $E_\text{reco} < 1.25$ GeV applied to the muon samples.
+	}
+	\label{tab:sk_errors_summary_2017b_cut}
+\end{table}

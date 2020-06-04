@@ -1,0 +1,189 @@
+%
+% ---------------------------------------------------------------------------------------
+% VALOR T2K 5 sample joint fit analysis, Run 1-8
+% ---------------------------------------------------------------------------------------
+%
+\documentclass[11pt]{elsarticle}
+
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{\centerline{\thepage}}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+
+\usepackage{adjustbox}
+\usepackage[toc,page]{appendix}       	% Appendix
+\usepackage{amsfonts}                 	% Extra symbols
+\usepackage{amsmath}
+\usepackage{appendix}
+\usepackage{booktabs}
+\usepackage{caption}			% Use when minipaging figures & tables together
+\usepackage{color}
+\usepackage{dcolumn}					% align table columns on decimal point
+\usepackage[figuresright]{rotating}		% if you have landscape tables
+\usepackage{float}
+\usepackage[margin=2.50cm]{geometry}  	% Tweak margins
+\usepackage{graphicx}                 	% PostScript figures
+\usepackage{hyperref} 			% Linkable contents and reference without colour
+\usepackage{lineno}                   	% For printing the line numbers
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{multirow}                 	% Fancy tables
+\usepackage{natbib}                   	% For building bibliography with \cite{}
+\usepackage{pdflscape}                   	% allow page to be landscape for large tables
+\usepackage{rotate}                     % rotate text in tables
+\usepackage{siunitx}					% Easier units exponentials etc
+\usepackage{subcaption}					% Allows use of subfigure
+\usepackage[table,dvipsnames]{xcolor}	% Fancy tables and colors
+\usepackage{xspace}		        % Appropriate insertion of spaces after commands
+\usepackage{cleveref}                   % Load after the hyperref package
+\usepackage{pdflscape}
+\usepackage{setspace}
+\onehalfspacing
+\DeclareSIUnit\POT{POT}
+
+%\usepackage{placeins}
+
+%\let\Oldsection\section
+%\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+%\let\Oldsubsection\subsection
+%\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+%\let\Oldsubsubsection\subsubsection
+%\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
+\crefname{appsec}{Appendix}{Appendices}
+
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+
+
+\lstset{language=C++}
+
+% Particle aliases
+\newcommand{\nue}{\nu_{e}}
+\newcommand{\numu}{\nu_{\mu}}
+\newcommand{\nutau}{\nu_{\tau}}
+\newcommand{\nueb}{\bar{\nu}_{e}}
+\newcommand{\numub}{\bar{\nu}_{\mu}}
+\newcommand{\nutaub}{\bar{\nu}_{\tau}}
+\newcommand{\nub}{\bar{\nu}}
+\newcommand{\nua}{\nu_{\alpha}}
+\newcommand{\nuab}{\bar{\nu_{\alpha}}}
+
+\newcommand{\numuany}{\overset{(-)}{\nu}_{\mu}}
+\newcommand{\nueany}{\overset{(-)}{\nu_e}}
+
+\newcommand{\CCzeropi}{CC \( 0\pi \)}
+\newcommand{\nueCConepi}{\(\nue\) CC\( 1\pi^{+} \)}
+\newcommand*{\pbar}[1]{\accentset{(-)}{#1}}
+
+% Fit variables
+\newcommand{\ssqthonethree}{$\sin^2\theta_{13}$\xspace}
+\newcommand{\ssqthtwothree}{$\sin^2\theta_{23}$\xspace}
+\newcommand{\ssqthonetwo}{$\sin^2\theta_{12}$\xspace}
+\newcommand{\deltacp}{$\delta_{CP}$\xspace}
+\newcommand{\dmsqtwothree}{$\Delta m^2_{32}$\xspace}
+\newcommand{\dmsqonetwo}{$\Delta m^2_{21}$\xspace}
+\newcommand{\dmsqonethree}{$\Delta m^2_{13}$\xspace}
+\newcommand{\dmsq}{$\Delta m^2$\xspace}
+
+\newcommand{\RunPeriod}{Run 1-8\xspace}
+
+%2D fits
+\newcommand{\appearance}{\deltacp vs \ssqthonethree\xspace}
+\newcommand{\disappearance}{\dmsq vs \ssqthtwothree}
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\makeatletter % Remove preprint footer
+\def\ps@pprintTitle{%
+	\let\@oddhead\@empty
+	\let\@evenhead\@empty
+	\def\@oddfoot{}%
+	\let\@evenfoot\@oddfoot}
+\makeatother
+
+%define new fonts, smaller than tiny (for showing large covariance matrices in a page)
+\makeatletter
+\ifcase \@ptsize \relax% 10pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{4}{5}}% \tiny: 5/6
+  \newcommand{\verytiny}{\@setfontsize\miniscule{3}{4}}% \tiny: 5/6
+\or% 11pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\or% 12pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\fi
+\makeatother
+
+\linenumbers
+\bibliographystyle{elsart-num}
+
+\begin{document}
+
+%Numbers used in this tech note
+\input{numbers/numbers}
+\input{numbers/inputparameters}
+
+% Title, authors, abstract and table of contents
+\input{chapters/front}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+% Main body
+\input{chapters/01_introduction}
+\input{chapters/02_samples}
+\input{chapters/03_systematics}
+\input{chapters/04_sensitivity}
+\input{chapters/05_data_fit}
+\input{chapters/05b_data_fit_update}
+\input{chapters/06_conclusion}
+
+% References
+\input{chapters/references}
+
+%Appendices
+\clearpage
+\begin{appendices}
+	\crefalias{section}{appsec}
+	\input{appendix/A_fitter_details}
+	\input{appendix/B_event_rates}
+	\input{appendix/C_systematic_variations}
+	\input{appendix/D_marginalisation_studies}
+	\input{appendix/E_sk_errors}
+	\input{appendix/F_sample_comparisons}
+	\input{appendix/G_crust_density}
+	\input{appendix/H_asimovb_spectra}
+	\input{appendix/I_update_systematics}
+	\input{appendix/J_fc_compare}
+%	\input{chapters/appendix_events}
+%	\input{chapters/appendix_syst}
+%	\input{chapters/appendix_significance}
+\end{appendices}
+
+\clearpage
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

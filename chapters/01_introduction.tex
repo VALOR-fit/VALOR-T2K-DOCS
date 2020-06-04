@@ -1,0 +1,123 @@
+%\clearpage
+
+\section {Introduction}
+\label{sec:intro}
+
+In this technical note, we report the results of a 3-flavour $\nu/\bar{\nu}$ joint analysis performed by the {\em VALOR} group, on the combined \RunPeriod dataset, using data taken in both neutrino-enhanced forward horn current (FHC) mode (\TotalPotNuRunOneEight{} POT), and antineutrino-enhanced reverse horn current (RHC) mode (\TotalPotNuBarRunOneEight{} POT).
+
+This analysis updates the previous analyses based on the additional data gathered at Super-K, a new cross-section model and a change in the Super-K reconstruction method.
+
+\Cref{sec:samples} describes the Super-K samples, \cref{sec:systematics} describes the systematic errors considered and their effects on the extrapolated single-ring event spectra, whilst the sensitivity of the various fits is considered in \cref{sec:sensitivity}. \color{blue}Fit results are presented in two sections; preliminary results can be found in \cref{sec:results}, with the final results, following the inclusion of a new systematic parameter and smearing procedure to address biases seen in fake data studies involving binding energy, presented in \cref{sec:results2017b}\color{black}.
+
+In this analysis we move from the APFit reconstruction algorithm to the fiTQun algorithm \cite{fiTQunAlgo}. Selection cuts are revisited and a significant improvement in statistics is achieved by modifying the fiducial volume cuts to allow for a larger interaction mass \cite{fiTQunEvSelOpt}. This analysis includes new cross-section model parameters. A 2p-2h shape parameter is added to the 2p2h normalisation parameters already present in the previous analysis. Furthermore, the Random Phase Approximation (RPA) is parameterised by a Bernstein polynomial (BeRPA) \cite{NIWGUpdate2017}. Each of these new parameters will be described in \cref{sec:systematics}.
+
+Confidence intervals for $\delta_{CP}$ are produced using the Feldman-Cousins method (see \cref{sec:intro:procedure:fc}), while confidence intervals of the other oscillation parameters are set using the constant $\Delta \chi^2$ method. Sensitivity studies are shown in \cref{sec:sensitivity}. The results of the measurement using the \RunPeriod dataset are given in \cref{sec:results} of this note. 
+
+Finally, a summary is given in \cref{sec:summary}.
+
+\subsection{Analysis procedure}
+
+This analysis builds on our previous analysis in \cite{OurRun17cCC1piJointAnalysis3Flavour}. In this analysis we fit Super-K data using a hybrid frequentist-Bayesian method \cite{CousinsHighland}, which consists of marginalising instead of profiling the nuisance parameters. A description of the method can be found in section 4.2 of \cite{OurRun56AntiNueBarAppearanceAnalysis3Flavour}.
+
+The analysis uses a binned likelihood-ratio method \cite{StatAnalysisCowan} where the estimation of the parameters of interest, $\vec{\theta}$, is obtained by comparing the observed and predicted Super-K spectra for 1-ring events. For the two one-ring $\mu$-like samples the binning of data events is in one-dimensional reconstructed neutrino energy space, whilst the three one-ring $e$-like samples bin data events in two-dimensional reconstructed neutrino energy and lepton angle space.
+
+The 2D binning scheme used for the $e$-like samples is to improve the separation of the different reaction / flavour components, in particular $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_e$ and $\nu_{\mu} \rightarrow \nu_e$, fundamental in measuring $\delta_{CP}$. The $\nu_e$ intrinsic beam and NC components can also be better separated from signal.
+
+$\mu$-like templates have 84 true energy bins and 73 reconstructed energy bins. $e$-like templates have 84 true energy bins, 25 reconstructed energy bins and 15 reconstructed lepton angle bins.
+
+For all templates the 84 true energy bins of constant width are the following:
+\begin{itemize}
+	\item 6 50-MeV bins from 0-0.3 GeV, 
+	\item 28 25-MeV bins from 0.3-1 GeV,
+	\item 40 50-MeV bins from 1-3 GeV,
+	\item 5 100-MeV bin from 3-3.5 GeV,
+	\item 1 bin from 3.5-4 GeV,
+	\item 1 bin from 4-5 GeV,
+	\item 1 bin from 5-7 GeV,
+	\item 1 bin from 7-10 GeV and 
+	\item 1 bin from 10-30 GeV
+\end{itemize}
+
+For $\mu$-like samples the 73 reconstructed energy bins are the following:
+\begin{itemize}
+	\item   60 50-MeV bins from 0-3 GeV, 
+	\item   4 250-MeV bins from 3-4 GeV, 
+	\item   4 500-MeV bins from 4-6 GeV, 
+	\item   4 1000-MeV bins from 6-10 GeV and
+	\item   1 bin from 10-30 GeV.
+\end{itemize}
+
+For $e$-like samples the 25 reconstructed energy bins with constant width are the following:
+\begin{itemize}
+	\item   25 50-MeV bins from 0-1.25 GeV.
+\end{itemize}
+
+The $\theta$ binning used for $e$-like samples is
+\begin{itemize}
+	\item 14 $10^{\circ}$ bins from $0^{\circ}$ to $140^{\circ}$, 
+	\item  1 bin for the range $140^{\circ} - 180^{\circ}$. 
+\end{itemize}
+
+The method of calculation of these predicted spectra is presented in \cref{app:details}. This analysis uses flux tuning based on NA61/SHINE 2009 data \cite{FluxTuning}\cite{NA61/SHINET2K}. It also uses a model-based extrapolation from ND280 to Super-K, which is implemented via a fit of flux model and cross-section model parameters to ND280 measurements of the muon momentum-angle distributions of $\bar{\nu}_\mu$ and  $\nu_\mu$ charged current interaction candidates for different event topologies with the neutrino interaction vertex either in FGD1 or FGD2 (BANFF fit) \cite{BANFF2017}.
+
+The log-likelihood function used in the analysis is
+
+\begin{equation} \label{eq:chisquare}
+-2 \; \textrm{ln} \; \lambda (\vec{\theta},{\bf a}) = 2 \cdot \sum_{i=0}^{N-1} 
+\Big( 
+n^{obs}_{i} \cdot \textrm{ln} (n^{obs}_{i}/n^{exp}_{i}) +
+(n^{exp}_{i}-n^{obs}_{i}) 
+\Big) 
+\end{equation}
+where $n^{obs}_{i}$ is the observed number of events in the $i^{th}$ bin and $n^{exp}_{i} = n^{exp}_{i}(\vec{\theta}; {\bf a})$ is the corresponding expected number of events, $N$ is the number of reconstructed energy and lepton angle bins and ${\bf a}$ is a vector of systematic parameters.
+
+The total likelihood is then given by the sum of $-2 \; \textrm{ln} \; \lambda (\vec{\theta},{\bf a})$ from all of the Super-K samples
+
+\begin{equation} \label{eq:totlike_2}
+-2 \; \textrm{ln} \; \lambda (\vec{\theta},{\bf a}) = \sum_{s=1}^{N_{samples}} -2 \; \textrm{ln} \; \lambda_s (\vec{\theta},{\bf a})
+\end{equation}
+
+The postfit errors of covariance matrices which result from the BANFF fit and Super-K fits are used as prior uncertainties. The parameters are thrown using the Cholesky method, which allows throws according the parameters' multivariate distribution and existing correlations. Where systematic parameters have physical boundaries, any toy experiment where such a parameter is generated beyond its physical limits is rejected. Furthermore, values of systematic parameters that give a negative predicted number of events in any reconstructed energy bin in any interaction mode are not allowed. If a systematic throw gives a negative number of events, that toy experiment is rejected. All rejected toys are regenerated.
+
+A single set of oscillation parameters in the 3-flavour framework is used to describe both neutrino and antineutrino data. All 6 oscillation parameters float in the fit, with nuisance oscillation parameters marginalised while the parameters of interest are minimized with respect to the likelihood distribution. Flat priors are used for \ssqthtwothree, \dmsqtwothree and \deltacp in all fits, whereas \ssqthonethree uses a flat prior when not applying constraints from reactor experiments and a gaussian prior when using the measurement found in reactor experiments. \ssqthonetwo and \dmsqonetwo uses gaussian priors in all fits due to the limited sensitivity of T2K to the solar parameters. Fits are performed for each mass hierarchy and both with and without the reactor constraint applied.
+
+Oscillation probabilities include constant-density matter effects, with details of our oscillation probability calculations, estimates of their numerical accuracy and comparisons with calculations used by the alternative T2K oscillation analyses are given in Appendices A and B of Ref. \cite{OurRun123DisappAnalysis3Flavour}.
+
+\subsubsection{Feldman-Cousins}
+\label{sec:intro:procedure:fc}
+
+In the gaussian approximation the constant $\Delta \chi^2$ method can be used. However, the oscillation probability is not linear in oscillation parameters and so in some cases the gaussian approximation is not reliable and the Feldman-Cousins method \cite{FeldmanCousins} must be used. In this method a different critical value for each point of the $\vec{\theta}$ grid, $\Delta \chi^2 (\vec{\theta})_{crit}$, is calculated. Since the most important result of this analysis is the search for CP violation, this method is performed only for the simultaneous fit of \deltacp and mass hierarchy. In particular, critical values are calculated for 9 evenly spaced true values of \deltacp in the range $[-\pi,+\pi]$ for both normal and inverted mass hierarchy, and linearly interpolated between these points.
+
+In the previous analysis the Feldman-Cousins implementation used the disappearance likelihood surface from the best-fit of the data to generate fake data sets during the procedure. However, this approach causes the critical values to become smaller in the vicinity of the best-fit for \deltacp because the generated fake data sets are closer to the real data. The new method \cite{NewFC} instead uses the data best-fit for disappearance parameters, along with the PDG 2016 best-fit values for the remaining oscillation parameters (\cref{tab:asimov_definition1}), to perform additional Asimov fits in normal and inverted hierarchy. It is then the likelihood surfaces from these fits that are used to generate the fake data sets during the procedure. The procedure consists of the following steps:
+
+\begin{enumerate}
+	\item At least \num{1e4} fake data sets are produced assuming the oscillation hypothesis of the grid point $\vec{\theta}$ and taking into account both the statistical and systematic uncertainties (i.e. nuisance parameters, including non-fit oscillation parameters, are marginalised); 
+	\item For each fake data set:
+	\begin{enumerate}
+		\item $\chi^2(\vec{\theta}_{fix})$ is obtained by computing $\chi^2 (\vec{\theta})$ with respect to the marginalisation toys produced for the data fit, with the oscillation parameters $\vec{\theta}$ fixed to the values corresponding to the grid point.
+		\item $\chi^2(\vec{\theta}_{bf})$ is obtained by minimizing $\chi^2 (\vec{\theta})$ with respect to the marginalisation toys produced for the data fit, leaving the oscillation parameters $\vec{\theta}$ free.
+		\item The test statistic is calculated as
+		\begin{equation}
+		\Delta \chi^2 = \chi^2(\vec{\theta}_{fix}) - \chi^2 (\vec{\theta}_{bf})
+		\end{equation} 
+	\end{enumerate} 
+	\item This results in a distribution of $\Delta \chi^2 (\vec{\theta})$, $f(\Delta \chi^2)$.
+	\item Several critical values for $X\%$ CL (e.g. 68\%, 90\%...), $\Delta \chi^2 (\vec{\theta})_{crit}$, can be defined as:
+	\begin{equation} \label{eq:def_crit_val}
+	\Delta \chi^2_{crit}: \int_{0}^{\Delta \chi^2_{crit}} f(\Delta \chi^2) d( \Delta \chi^2) = X\%
+	\end{equation}
+	where $f(\Delta \chi^2)$ is the p.d.f. of $\Delta \chi^2$ and $d( \Delta \chi^2)$ is the differential of the integral.
+	\item This procedure is repeated to produce critical values for all the points of the $\vec{\theta}$ grid.
+\end{enumerate}
+
+Once a critical value, $\Delta \chi^2 (\vec{\theta})_{crit}$, is computed for each oscillation hypothesis in the $\vec{\theta}$ grid, the confidence intervals are set by the condition
+\begin{equation} \label{eq:condition_cl}
+\Delta \chi^2(\vec{\theta}) > \Delta \chi^2_{crit}
+\end{equation}
+with those values of $\Delta \chi^2(\vec{\theta})$ being excluded at the relevant confidence interval.
+\clearpage
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../TN327"
+%%% End:

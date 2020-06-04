@@ -1,0 +1,927 @@
+\clearpage
+
+
+\section{Validation of the $\bar{\nu}/\nu$ joint analysis with Run 1-7c statistics}
+\label{sec:validation}
+
+The major update to the analysis is the number of POT, 
+i.e. 
+\TotalPotNuRunOneSevenC{} POT for neutrino mode
+and
+\TotalPotNuBarRunOneSevenC{} POT for antineutrino mode. 
+
+Other minor updates are the new BANFF covariance matrix.
+The BANFF fit was not performed again on the full ND280 Run 1-7c data set. Instead the Run 1-6
+BANFF fit was used with the additional flux uncertainty due to the extra POT added in quadrature. 
+Furthermore the flux tuning was updated in order to account for the Run 7c.
+However both updates give a very small effect and will not change significantly the systematic
+uncertainties and event rate in the analysis.
+
+%
+% Event rate and systematic uncertainties
+%
+
+\subsection{Prediction of event rate and effect of systematic uncertainties}
+\label{sec:event_rate_syst_run17c}
+
+
+% N.B.: Spectra are in the results section
+
+
+In \cref{tab:events_1rmu_Asimov_A_Run17c,tab:events_1re_Asimov_A_Run17c,tab:events_rhc1rmu_Asimov_A_Run17c,,tab:events_rhc1re_Asimov_A_Run17c} 
+the expected number of events for the Run 1-7c collected statistic is shown for the Asimov data set A.
+%In appendix~\ref{app:events_run17c} the expected event rate for each Super-K samples is shown for the Asimov data set B.
+
+\input{tables/validation_1rmu_Asimov_A.tex}
+\input{tables/validation_1re_Asimov_A.tex}
+\input{tables/validation_rhc1rmu_Asimov_A.tex}
+\input{tables/validation_rhc1re_Asimov_A.tex}
+\input{tables/validation_cconepi_Asimov_A.tex}
+
+\clearpage
+
+\subsection {Evaluation of the effects of systematic parameters on the predicted reconstructed energy spectrum}
+\label{sec:systematics:evaluation}
+
+In this section, we present the effects of the systematics described in \cref{sec:systematics:inputs}
+on the predicted number of single ring events and the predicted spectra in Super-K.
+All results are generated for an integrated exposure 
+corresponding to Run 1-7c.
+%of \TotalPotNu{} POT for neutrino and \TotalPotNuBar{} POT for antineutrino mode 
+and
+the BANFF-tuned MC templates are used.
+
+%In this table, systematic parameters are grouped into five categories and all parameter correlations are taken into account.
+%Percentage uncertainties are given for both the BANFF prefit and postfit errors.
+%~ The individual effect of each parameter is also presented in \cref{tab:nsk_systematic_table}, in which the correlations
+%~ between parameters are necessarily ignored.
+
+
+In \cref{tab:syst_pm1sigma_mulike_fhc},~\cref{tab:syst_pm1sigma_elike_fhc},~\cref{tab:syst_pm1sigma_mulike_rhc},~\cref{tab:syst_pm1sigma_elike_rhc} and \cref{tab:syst_pm1sigma_ccpi}
+the effect of each single systematic parameter
+obtained by varying its value by $\pm 1 \sigma$ is shown.
+
+
+\input{tables/systematic_tables-3f+3fbar-1Rmu}
+\input{tables/systematic_tables-3f+3fbar-1Re}
+\input{tables/systematic_tables-3f+3fbar-RHC1Rmu}
+\input{tables/systematic_tables-3f+3fbar-RHC1Re}
+%\input{tables/systematic_tables-3f+3fbar-MultiRe}
+
+\clearpage
+
+
+\clearpage
+
+The effects of all the combined systematic uncertainties on the reconstructed energy spectrum of events
+is shown in \cref{fig:spectra_systematic_Asimov_A_run17c} 
+for the typical oscillation scenario with parameters of Asimov datasets A.
+These plots show the total error envelope for the reconstructed energy spectra; 
+this is calculated
+as the $\pm$1$\sigma$ spread with respect to the median of bin contents from \NumToys toy MC experiments generated with 
+randomised systematic parameters.
+All systematic parameters are considered and their correlations are taken into account.
+The spectra were tuned with the systematic parameters measured with the ND280 data 
+shown in \cref{tab:banff_uncertainties_flux_fhc,tab:banff_uncertainties_flux_rhc,tab:banff_uncertainties_xsec},
+the nominal Super-K systematic parameters shown in \cref{tab:banff_uncertainties_skdetfsi}
+and the oscillation parameter priors shown in \cref{tab:osc_params_joint_priors}.
+In \cref{fig:Osc_envelope_Asimov_A_run17c_mulike,fig:Osc_envelope_Asimov_A_run17c_elike,fig:SKDet_FSI_envelope_Asimov_A_run17c_mulike,fig:SKDet_FSI_envelope_Asimov_A_run17c_elike,fig:flux_envelope_Asimov_A_run17c_mulike,fig:flux_envelope_Asimov_A_run17c_elike,fig:xsec_envelope_Asimov_A_run17c_mulike,fig:xsec_envelope_Asimov_A_run17c_elike,fig:flux_xsec_envelope_Asimov_A_run17c_mulike,fig:flux_xsec_envelope_Asimov_A_run17c_elike} 
+the error envelopes and fractional errors of reconstructed energy spectra for all the selected samples,
+given respectively by
+oscillations, Super-K detector + FSI/SI, flux only, cross section only, flux+cross section systematics
+are shown. 
+
+The effects of systematic uncertainties on the predicted number of events are summarised in 
+\cref{tab:nsk_systematic_table_summary_joint_asimov_A_fhc_mulike,tab:nsk_systematic_table_summary_joint_asimov_A_fhc_elike,tab:nsk_systematic_table_summary_joint_asimov_A_rhc_mulike,tab:nsk_systematic_table_summary_joint_asimov_A_rhc_elike,tab:nsk_systematic_table_summary_joint_asimov_A_ccpi} 
+with the typical parameter values given in \cref{tab:osc_params_joint_asimov}.
+For the measurement of $\delta_{CP}$ it is important to understand the effect of the systematic uncertainties
+on the ratio of the number of events between neutrino and antineutrino mode samples,
+which is the consequence of correlations between systematic parameters.
+If correlations do not reproduce the physics correctly, a fake asymmetry between neutrino and antineutrino oscillations can be seen.
+On the other hand if correlations exist but are not taken into account, the measurement of $\delta_{CP}$ could be biased.
+Depending on the value of $\delta_{CP}$, correlations or anti-correlations between parameters are more conservative.
+If true $\delta_{CP} = \pm \pi/2$ the most conservative case is given by anti-correlation in the $e$-like samples, 
+since the oscillation asymmetry could be hidden by the systematic uncertainties.
+If true $\delta_{CP} \sim 0$ uncorrelated parameters reduce the sensitivity to $\delta_{CP}$.
+The effect of the systematic parameters on the ratio between neutrino and antineutrino mode events are shown in 
+\cref{tab:ratio_systematic_table_summary_asimov_A}.
+The most critical systematic parameters are $\sigma_{\nu_e}$ and $\sigma_{\bar{\nu}_e}$
+which are applied respectively to $\nu_e$ and $\bar{\nu}_e$ events.
+Their fractional error is 2.83\%
+and are partially anti-correlated with a non-diagonal elements in the covariance matrix of -0.0004 
+\cite{NIWG_reccomandation}.
+
+
+\input{./tables/nsk_systematic_table_summary_Asimov_A_ccpi.tex}
+
+
+\clearpage
+
+
+
+In \cref{fig:spectra_systematic_Asimov_A_run17c} - \ref{fig:flux_xsec_envelope_Asimov_A_run17c}
+the systematic error envelope as well as the fractional error as a function of the
+neutrino reconstructed energy is shown for each source of systematic uncertainty
+as well as for all the systematic uncertainties. 
+The spectra correspond to the oscillation parameters of the Asimov data set A.
+
+\begin{figure*}[htb]
+\center
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_1Rmuoscillated_all_envelope.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_1Rmuoscillated_all_envelope_ratio.eps} \\
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+%rhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_RHC1Rmuoscillated_all_envelope.eps} %\\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_RHC1Rmuoscillated_all_envelope_ratio.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+%fhc e-like
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+for all the systematic parameters.
+Both pre- (blue), assuming the CCQE parameters to be gaussian distributed instead of flat, 
+and post- (red) BANFF fit errors are shown.
+	10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+	with random systematic parameters, taking into account their correlations.
+	Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:spectra_systematic_Asimov_A_prebanff_run17c_mulike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_1Reoscillated_all_envelope.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_1Reoscillated_all_envelope_ratio.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+%rhc e-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_RHC1Reoscillated_all_envelope.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_RHC1Reoscillated_all_envelope_ratio.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+%fhc ccpi-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_MultiReoscillated_all_envelope.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/WithPreBANFF/Asimov_A_MultiReoscillated_all_envelope_ratio.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+for all the systematic parameters.
+Both pre- (blue), assuming the CCQE parameters to be gaussian distributed instead of flat, 
+and post- (red) BANFF fit errors are shown.
+10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+with randomised systematic parameters, taking into account their correlations.
+Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:spectra_systematic_Asimov_A_prebanff_run17c_elike}
+\end{figure*}
+
+
+
+
+\begin{figure*}[htb]
+\center
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_all_envelope.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_all_envelope_ratio.eps} \\
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+%rhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_all_envelope.eps} %\\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_all_envelope_ratio.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+%fhc e-like
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+for all the systematic parameters.
+	10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+	with random systematic parameters, taking into account their correlations.
+	Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:spectra_systematic_Asimov_A_run17c_mulike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_all_envelope.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_all_envelope_ratio.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+%rhc e-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_all_envelope.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_all_envelope_ratio.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+%fhc e-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_all_envelope.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_all_envelope_ratio.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+for all the systematic parameters.
+10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+with randomised systematic parameters, taking into account their correlations.
+Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:spectra_systematic_Asimov_A_run17c_elike}
+\end{figure*}
+
+
+
+%%%% Single systematic sources of Asimov A
+
+
+\begin{figure*}[htb]
+\center
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_Osc_param_envelope.eps}
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_Osc_param_envelope_ratio.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+%rhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_Osc_param_envelope.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_Osc_param_envelope_ratio.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+%fhc e-like
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the oscillation systematic parameters.
+	10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+	with random systematic parameters, taking into account their correlations.
+	Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:Osc_envelope_Asimov_A_run17c_mulike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_Osc_param_envelope.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_Osc_param_envelope_ratio.eps}
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+%rhc e-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_Osc_param_envelope.eps}
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_Osc_param_envelope_ratio.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+%fhc ccpi-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_Osc_param_envelope.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_Osc_param_envelope_ratio.eps}
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the oscillation systematic parameters.
+10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+with randomised systematic parameters, taking into account their correlations.
+Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:Osc_envelope_Asimov_A_run17c_elike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_SKDet_FSI_envelope.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_SKDet_FSI_envelope_ratio.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+%rhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_SKDet_FSI_envelope.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_SKDet_FSI_envelope_ratio.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+%fhc e-like
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the Super-K + FSI + SI + PN systematic parameters.
+	10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+	with random systematic parameters, taking into account their correlations.
+	Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:SKDet_FSI_envelope_Asimov_A_run17c_mulike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_SKDet_FSI_envelope.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_SKDet_FSI_envelope_ratio.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+%rhc e-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_SKDet_FSI_envelope.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_SKDet_FSI_envelope_ratio.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+%fhc ccpi-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_SKDet_FSI_envelope.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_SKDet_FSI_envelope_ratio.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the Super-K + FSI + SI + PN systematic parameters.
+10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+with randomised systematic parameters, taking into account their correlations.
+Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:SKDet_FSI_envelope_Asimov_A_run17c_elike}
+\end{figure*}
+
+
+
+
+\begin{figure*}[htb]
+\center
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_BANFF_flux_envelope.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_BANFF_flux_envelope_ratio.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+%rhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_BANFF_flux_envelope.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_BANFF_flux_envelope_ratio.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+%fhc e-like
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the flux systematic parameters.
+	10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+	with random systematic parameters, taking into account their correlations.
+	Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:flux_envelope_Asimov_A_run17c_mulike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_BANFF_flux_envelope.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_BANFF_flux_envelope_ratio.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+%rhc e-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_BANFF_flux_envelope.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_BANFF_flux_envelope_ratio.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+%fhc ccpi-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_BANFF_flux_envelope.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_BANFF_flux_envelope_ratio.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the flux systematic parameters.
+10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+with randomised systematic parameters, taking into account their correlations.
+Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:flux_envelope_Asimov_A_run17c_elike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_BANFF_xsec_envelope.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_BANFF_xsec_envelope_ratio.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+%rhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_BANFF_xsec_envelope.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_BANFF_xsec_envelope_ratio.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+%fhc e-like
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the cross section systematic parameters. 
+	10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+	with random systematic parameters, taking into account their correlations.
+	Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:xsec_envelope_Asimov_A_run17c_mulike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_BANFF_xsec_envelope.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_BANFF_xsec_envelope_ratio.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+%rhc e-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_BANFF_xsec_envelope.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_BANFF_xsec_envelope_ratio.eps} 
+\caption{Electron-like, antineutrino mode}
+%fhc ccpi-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_BANFF_xsec_envelope.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_BANFF_xsec_envelope_ratio.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\end{subfigure}
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the cross section systematic parameters. 
+10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+with randomised systematic parameters, taking into account their correlations.
+Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:xsec_envelope_Asimov_A_run17c_elike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_BANFF_envelope.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Rmuoscillated_BANFF_envelope_ratio.eps} 
+\caption{Muon-like, neutrino mode}
+\end{subfigure}
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_BANFF_envelope.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Rmuoscillated_BANFF_envelope_ratio.eps} \\ 
+\caption{Muon-like, antineutrino mode}
+\end{subfigure}
+%fhc mu-like
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the flux plus cross section systematic parameters. 
+	10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+	with random systematic parameters, taking into account their correlations.
+	Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:flux_xsec_envelope_Asimov_A_run17c_mulike}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_BANFF_envelope.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_1Reoscillated_BANFF_envelope_ratio.eps} 
+\caption{Electron-like, neutrino mode}
+\end{subfigure}
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_BANFF_envelope.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_RHC1Reoscillated_BANFF_envelope_ratio.eps} 
+\caption{Electron-like, antineutrino mode}
+\end{subfigure}
+%fhc mu-like
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_BANFF_envelope.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth} \centering
+\includegraphics[width=0.9\textwidth]{joint_plots/systematics/Run17c/Asimov_A_MultiReoscillated_BANFF_envelope_ratio.eps} 
+\caption{\nueCConepi{}, neutrino mode}
+\end{subfigure}
+\caption {
+Error envelopes (left) and fractional errors (right) for the reconstructed neutrino energy spectrum
+as a result of the flux plus cross section systematic parameters. 
+10k toy MC experiments are generated for the Asimov data set A shown in \cref{tab:osc_params_joint_asimov}
+with randomised systematic parameters, taking into account their correlations.
+Since the parameters $\delta_{CP}$, $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and mass hierarchy
+will be measured,
+only the uncertainty on 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+BANFF tuned MC templates are used. 
+The distributions correspond to the collected statistics in the full Run 1-7c data set.
+The changes due to the Run 1-7c flux and covariance matrix updates are applied.
+}
+\label{fig:flux_xsec_envelope_Asimov_A_run17c_elike}
+\end{figure*}
+
+
+
+
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%
+%% Posterior predictive method
+%%
+%
+%\subsection{Posterior predictive method for the choice of the prior}
+%\label{sec:posterior_predictive_run17c}
+%
+%The posterior predictive method has been tested for the Run 1-7c statistic as well
+%using the same procedure described in \cref{sec:posterior_predictive}.
+%
+%As shown in \cref{tab:critval_posterior_Asimov_A_run17c} and~\ref{tab:critval_posterior_Asimov_B_run17c}
+%the posterior predictive critical values obtained for Asimov data sets A and B
+%at $1\sigma$, 90\% and $2\sigma$ CL are similar to the prior predictive ones,
+%as for the previous analyses. 
+%
+%\begin{figure*}[htb]
+%\center
+%%\includegraphics[width=0.9\textwidth]{./images/missing_plot-eps-converted-to.pdf}
+%\includegraphics[width=0.49\textwidth]{./joint_plots/coverage_fc/posterior_predictive_run17c/Asimov_A/deltachisq_posterior_Asimov_A.pdf}
+%\caption {
+%$\Delta \chi^2$ distributions with prior (black) and posterior (red) predictive methods.
+%The comparison between the two distributions normalized to 1 is shown.
+%Fake data sets are generated with $\delta_{CP} = 0$ and normal hierarchy.
+%The Asimov data A is used to generate the weights of the fake data sets.
+%50k fake data sets are used.
+%Since the posterior predictive distribution is weighted, the effective number of entries is lower with respect 
+%to the prior predictive case. 
+%}
+%\label{fig:post_Asimov_A_dcp_0_nh_run17c}
+%\end{figure*}
+%
+%
+%\begin{table}
+%\center
+%\begin{tabular}{| c | c | c |}
+%\hline
+%{\bf CL} 				& {\bf Prior} &{\bf Posterior}  \\
+%\hline
+%\hline
+%\multicolumn{3}{| c | }{$\delta^{true}_{CP} = 0$, $MH^{true} = \text{normal}$}  \\
+%\hline
+%$1\sigma$				&1.390  		& $1.360 ^{+0.024}_{-0.024}$	\\ \hline	
+%90\%					&2.592  		& $2.583 ^{+0.053}_{-0.058}$	\\ \hline	
+%$2\sigma$				&3.391 		& $3.413 ^{+0.078}_{-0.049}$	\\ \hline	
+%\hline
+%\multicolumn{3}{| c | }{$\delta^{true}_{CP} = 0$, $MH^{true} = \text{inverted}$}  \\
+%\hline
+%$1\sigma$				&1.356  		& $1.365 ^{+0.019}_{-0.025}$	\\ \hline	
+%90\%					&2.618  		& $2.660 ^{+0.058}_{-0.040}$	\\ \hline	
+%$2\sigma$				&3.430 		& $3.411 ^{+0.088}_{-0.040}$	\\ \hline	
+%\hline
+%\multicolumn{3}{| c | }{$\delta^{true}_{CP} = -1.351$, $MH^{true} = \text{inverted}$}  \\
+%\hline
+%$1\sigma$				&1.180   		& $ 1.171^{+0.021}_{-0.017}$	\\ \hline	
+%90\%					&2.362		& $ 2.249^{+0.036}_{-0.042}$	\\ \hline	
+%$2\sigma$				&3.306 		& $ 3.100^{+0.067}_{-0.084}$	\\ \hline	
+%\end{tabular}
+%\caption{
+%The critical values of $\Delta \chi^2$ computed with Feldman-Cousins
+%for both prior and posterior predictive method are shown.
+%50k toy experiments were used. 
+%%for 
+%%$\delta_{CP} = 0$ and normal hierarchy
+%%and
+%%about 50k toy experiments were used for 
+%%$\delta_{CP} = 0$ and inverted hierarchy
+%%and
+%%$\delta_{CP} = -1.351$ and inverted hierarchy,
+%The weights of the fake data sets were generated with the Asimov data set A.
+%}             
+%\label{tab:critval_posterior_Asimov_A_run17c}                                                                                                                                                                             
+%\end{table}
+%
+%
+%\begin{table}
+%\center
+%\begin{tabular}{| c | c | c |}
+%\hline
+%{\bf CL} 				& {\bf Prior} &{\bf Posterior}  \\
+%\hline
+%\hline
+%\multicolumn{3}{| c | }{$\delta^{true}_{CP} = 0$, $MH^{true} = \text{normal}$}  \\
+%\hline
+%$1\sigma$				& 1.390 		& $1.325 ^{+0.024}_{-0.023}$	\\ \hline	
+%90\%					& 2.592 		& $2.601 ^{+0.041}_{-0.039}$	\\ \hline	
+%$2\sigma$				& 3.391		& $3.448 ^{+0.045}_{-0.047}$	\\ \hline	
+%\hline
+%\multicolumn{3}{| c | }{$\delta^{true}_{CP} = 0$, $MH^{true} = \text{inverted}$}  \\
+%\hline
+%$1\sigma$				&1.356  		& $1.340 ^{+0.020}_{-0.021}$	\\ \hline	
+%90\%					&2.618  		& $2.574 ^{+0.037}_{-0.032}$	\\ \hline	
+%$2\sigma$				&3.430  		& $3.310 ^{+0.039}_{-0.045}$	\\ \hline	
+%\hline
+%\multicolumn{3}{| c | }{$\delta^{true}_{CP} = -1.351$, $MH^{true} = \text{inverted}$}  \\
+%\hline
+%$1\sigma$				&1.180  		& $ 1.196^{+0.014}_{-0.022}$	\\ \hline	
+%90\%					& 2.362 		& $2.383 ^{+0.037}_{-0.042}$	\\ \hline	
+%$2\sigma$				& 3.306		& $3.399 ^{+0.0681}_{-0.102}$	\\ \hline	
+%\end{tabular}
+%\caption{
+%The critical values of $\Delta \chi^2$ computed with Feldman-Cousins
+%for both prior and posterior predictive method are shown.
+%50k toy experiments were used. 
+%%for
+%%$\delta_{CP} = 0$ and normal hierarchy
+%%and
+%%about 50k toy experiments were used for 
+%%$\delta_{CP} = 0$ and inverted hierarchy
+%%and
+%%$\delta_{CP} = -1.351$ and inverted hierarchy,
+%The weights of the fake data sets were generated with the Asimov data set B.
+%}             
+%\label{tab:critval_posterior_Asimov_B_run17c}                                                                                                                                                                             
+%\end{table}
+
+
+\clearpage
+
+
+
+
+%
+% Validation minimization algorithm
+%
+
+
+

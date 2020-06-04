@@ -1,0 +1,127 @@
+\clearpage
+
+\section {Systematic effects in the prediction of the single $\mu$-like ring event energy spectrum}
+\label{sec:systematics}
+
+This analysis considers \NSyst{} flux, cross section and Super-K detector systematic parameters plus 7 oscillation parameters, which can be treated as either nuisance ps or as parameters of interest, depending on the analysis that is performed.
+
+\subsection{Flux and cross-section parameters (\NFluxAndXsecSyst{} parameters)}
+
+In this analysis, all the flux and cross-section systematic parameters are included in the ND280 data (BANFF) fit. However, since ND280 is not sensitive to the electron neutrino cross section and the NC1$\gamma$ parameters they remain unconstrained. The parameters fit are 11 $\nu_{\mu}$, 5 $\bar{\nu}_{\mu}$, 7 $\nu_{e}$ and 2 $\bar{\nu}_{e}$ neutrino mode (FHC) flux parameters, 5 $\nu_{\mu}$, 11 $\bar{\nu}_{\mu}$, 2 $\nu_{e}$ and 7 $\bar{\nu}_{e}$ antineutrino mode (RHC) flux parameters and \NXsecSyst{} cross-section parameters. Best-fit values of these parameters and a covariance matrix giving their correlated uncertainties are obtained by the BANFF group from a fit of the $\bar{\nu}_\mu$ and $\nu_\mu$ ND280 samples as described in Ref~\cite{BANFF2017}. A list of the BANFF parameters, their best-fit values and their prefit and postfit errors can be found in \crefrange{tab:sys_flux_fhc_err}{tab:sys_xsec_err}.
+
+\begin{table}
+	\input{systematics/systematics_flux_fhc}
+	\caption{Summary of neutrino mode flux systematics included in the VALOR joint fit analysis. A description of how the BANFF fit constrained these systematics can be found in \cite{BANFF2017}.}
+	\label{tab:sys_flux_fhc_err}
+\end{table}
+
+\begin{table}
+	\input{systematics/systematics_flux_rhc}
+	\caption{Summary of antineutrino mode flux systematics included in the VALOR joint fit analysis. A description of how the BANFF fit constrained these systematics can be found in \cite{BANFF2017}.}
+	\label{tab:sys_flux_rhc_err}
+\end{table}
+
+
+\begin{table}
+	\begin{adjustbox}{width=\textwidth, totalheight=\textheight, keepaspectratio}
+		\input{systematics/systematics_xsec}
+	\end{adjustbox}
+	\caption{Summary of cross section systematics included in the VALOR joint fit analysis. Parameters with no prefit error were unconstrained. A description of how the BANFF fit constrained these systematics can be found in \cite{BANFF2017}.}
+	\label{tab:sys_xsec_err}
+\end{table}
+
+%Previously the next reference was banff-weights, might want to include more detail
+The best-fit values are used to reweight the templates as described in \Cref{app:details}, and the postfit errors in the covariance matrix are used as prior uncertainties in this analysis. All the cross section parameters set to 1 correspond to the NEUT nominal value, except ``CC other shape'' and ``2p2h shape O'', for which the NEUT nominal value is 0.  For all the normalisation parameters, 1 is the nominal pre-BANFF fit value.
+
+The effects of these correlated uncertainties (see \cref{fig:xsec_corr}) are evaluated using the Cholesky method, that allows throws of the systematic parameters according to their multivariate distribution taking into account existing correlations.
+
+\begin{figure*}[htb]
+	\center
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[angle=-90,width=0.9\textwidth]{systematics/banff_xsec_prefit}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[angle=-90,width=0.9\textwidth]{systematics/banff_xsec_postfit}
+	\end{subfigure}
+	\caption{The pre-BANFF (left) and post-BANFF (right) cross-section covariance matrix, with the values shown as the sign of the element times the square root of the absolute value of the element.}
+\label{fig:xsec_corr}
+\end{figure*}
+
+Many of the cross-section parameters are the same as those used in the previous analysis \cite{OurRun17cCC1piJointAnalysis3Flavour}. However, the binding energy for $^{16}$O is no longer included in this analysis and a number of new parameters have been included, see \cref{sec:systematics:2p2h_berpa}. Five of these new parameters (2p2h, BeRPA A, B, D and E) are implemented using cubic splines, details for which can be found in \cite{OurRun17cCC1piJointAnalysis3Flavour}, while one of the new parameters (BeRPA U) is fixed in the analysis.
+
+\subsubsection{Neutrino-nucleus interaction uncertainties}
+\label{sec:systematics:2p2h_berpa}
+Overall normalisation uncertainties for 2p2h interactions were included in previous analyses, but this analysis includes a 2p2h shape uncertainty (using best-fit value and errors from the BANFF fit) to describe the uncertainty in the cross-section strength between Delta-like, non-Delta-like and interference terms of the 2p2h model, determined by redistributing the cross-section strength of these terms subject to (approximately) maintaining the total 2p2h event rate (see Section 2 of \cite{NewXsecImplementation}). In terms of energy transfer (q0) and three-momentum transfer (q3) kinematics, the distribution of events in this space for neutrino and antineutrino interactions on oxygen are shown in \cref{fig:2p2h_neutrino,fig:2p2h_antineutrino} respectively (see Section 2 of \cite{NewXsecImplementation}).
+
+\begin{figure}
+	\includegraphics[page=1, trim={2cm 7cm 3cm 15.5cm}, clip, scale=1.0]{systematics/2p2h}
+	\caption{Distribution of neutrino events for 2p2h and each 2p2h term in q0-q3 space \cite{NewXsecImplementation}.}
+	\label{fig:2p2h_neutrino}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[page=2, trim={2cm 19cm 3cm 3.5cm}, clip, scale=1.0]{systematics/2p2h}
+	\caption{Distribution of antineutrino events for 2p2h and each 2p2h term in q0-q3 space \cite{NewXsecImplementation}.}
+	\label{fig:2p2h_antineutrino}
+\end{figure}
+
+This analysis also introduces 5 BeRPA parameters (A, B, D, E and U) to describe the collective effects of interactions between neutrinos and nucleons inside nuclei. These effects modify the $Q^2$ dependence of the neutrino-nucleus cross-section and in BeRPA are described by a cubic polynomial transitioning to an exponential above a $Q^2$ threshold, as described in \cite{NIWGUpdate2017}. Neither the 2p2h shape parameter nor the BeRPA parameters apply to interactions on free protons.
+
+\subsection{Super-K efficiencies \& effects of intranuclear and secondary re-interactions (44 parameters)}
+
+The Super-K detector uncertainties include the efficiencies of the fiducial volume and reduction chain, and the OD, ring-counting, PID, momentum and decay-electron cuts. These uncertainties have been evaluated by comparisons between SK-IV atmospheric data and atmospheric neutrino Monte Carlo. Ring counting errors are evaluated using $\nu_\mu$ CCQE, $\nu_\mu$ CCnQE, NC, and $\nu_e$ CC-enriched control samples from atmospheric neutrinos.  The NC PID error is evaluated using a NC-enriched control sample, obtained by not using the PID information during the selection. All the Monte Carlo control samples are fitted simultaneously to the data with a $\chi^2$ function using the selection efficiencies as fit parameters ~\cite{SuperkErrors_numu}~\cite{SuperkErrors_nue}.
+
+Intranuclear final-state interactions (FSI) have significant effects in the T2K energy range and result in event topologies, for scattering from nuclear targets, which are drastically different from those created in neutrino scattering from free nucleons.  Uncertainties due to FSI were estimated by simultaneously varying NEUT parameters that scale interaction probabilities as described in section\ 2 of \cite{NIWGErr}. Uncertainties due to secondary pion interactions (SI) were also evaluated by allowing variations in the interaction probabilities. Details of this are given in \cite{SI}.  Since the same model is used for FSI and SI, it is possible to evaluate the uncertainties in both FSI and SI simultaneously. Details of this procedure are described in section\ 8 of \cite{NEUTnuclear}.
+
+A list of the Super-K parameters and their errors can be found in \cref{tab:sys_sk_err}. We consider the Super-K detector efficiency and FSI+SI+PN systematics together, adding their covariance matrices linearly and evaluating the effects of these uncertainties using the Cholesky method. Details of all parameters can be found in \cite{OurRun17cCC1piJointAnalysis3Flavour}.
+
+\begin{table}
+	\begin{adjustbox}{width=\textwidth, totalheight=\textheight, keepaspectratio}
+		\input{systematics/systematics_sk}
+	\end{adjustbox}
+	\caption{Summary of SK detector + FSI + SI + PN systematics included in the VALOR joint fit analysis.}
+	\label{tab:sys_sk_err}
+\end{table}
+
+\subsection{Super-K energy scale (1 parameter)}
+
+The systematic parameter $f_{E; r}^{SK}$ is included to estimate the effects of uncertainty in the Super-K reconstructed energy scale.  This uncertainty is estimated to be 2.4\% \cite{SuperkEScale2013}; its effects are calculated by scaling the bin edges of the MC templates and, assuming uniform distribution of events within the bins, calculating the number of events gained from/lost to other bins (including bins that are not immediately adjacent). This systematic is applied after all other systematics have been applied, because it affects reconstructed rather than true energy, does not commute with spline-based systematics, which are generated without consideration of energy scale variation and also does not commute with the other Super-K systematics, which are determined from data without any energy scale variation.
+
+\subsection{Oscillation parameters and mass hierarchy (7 parameters)}
+
+The 3-flavour oscillation probability is used.  All the nuisance oscillation parameters, i.e. those parameters which are not shown in a given contour, are marginalised except the mass hierarchy which is fixed to either normal or inverted hierarchy.
+
+For $\sin^2 \theta_{13}$ two different priors can be used, depending on whether the reactor constraint is applied, denoted as ``reactors", when applied and ``T2K only" when not applied.
+
+\input{tables/osc_param_priors}
+\subsection{Systematic error on Super-K predictions}
+\label{sec:systematics:errortables}
+
+The effect of each category of systematic parameter on the expected event rate for Super-K sample is given in \crefrange{tab:sk_errors_1Rmu}{tab:sk_errors_MultiRe} (details of per-sample event rates for $1\sigma$ and $3\sigma$ variations of each independent systematic parameter can be found in \cref{app:sysvar}). The mean and RMS of 10000 throws of the respective systematics (with correlations taken into account) is computed for each sample and in the case of pre-BANFF and post-BANFF errors. When not measuring the effect of oscillation parameters variations, the oscillation parameters are fixed at Asimov A values (see \cref{sec:asimov_definition}).
+
+For the measurement of $\delta_{CP}$ it is important to understand the effect of the systematic uncertainties on the ratio of the number of events between neutrino and antineutrino mode samples. If correlations do not reproduce the physics correctly, a fake asymmetry between neutrino and antineutrino oscillations can be seen. Furthermore, if correlations exist but are not taken into account, the measurement of $\delta_{CP}$ could be biased. The true value of $\delta_{CP}$ determines whether correlations or anti-correlations between systematic parameters have the greatest effect in hiding any oscillation asymmetry. In particular, if true $\delta_{CP} = \pm \pi/2$ then anti-correlation in the $e$-like samples could hide any oscillation asymmetry. Alternatively, in the case that true $\delta_{CP} \sim 0$ it is uncorrelated parameters that reduce the sensitivity to $\delta_{CP}$. The uncertainties on the ratios between neutrino and antineutrino mode events due to the systematic parameters are shown in \cref{tab:sk_errors_summary}. The most critical systematic parameters are $\sigma_{\nu_e}$ and $\sigma_{\bar{\nu}_e}$ which are applied respectively to $\nu_e$ and $\bar{\nu}_e$ events. Their fractional error from the BANFF covariance matrix is 2.83\% (see \cref{tab:sys_xsec_err}) and they are partially anti-correlated with non-diagonal elements in the covariance matrix of -0.0004.
+
+It can be seen in \crefrange{tab:sk_errors_1Rmu}{tab:sk_errors_MultiRe} (\Cref{app:sk_errors}) that the reduction in the error on flux and constrained cross-section systematics achieved through the BANFF fit reduces the fractional error due to all systematics from $\sim 14\%$ to $\sim 4\%$ and $\sim 11\%$ to $\sim 3\%$ in the neutrino- and antineutrino-mode $\mu$-like samples respectively, from $\sim 16\%$ to $\sim 7\%$ and $\sim 13\%$ to $\sim 8\%$ in the neutrino- and antineutrino-mode $e$-like samples respectively, and from $\sim 25\%$ to $\sim 22\%$ in the \nueCConepi{}-like sample. A summary of the effects of the systematic errors is given in \cref{tab:sk_errors_summary}.
+
+\input{tables/sk_errors_new}
+
+The error envelopes corresponding to \crefrange{tab:sk_errors_1Rmu}{tab:sk_errors_MultiRe} are shown in \crefrange{fig:sk_envelopes_all}{fig:sk_envelopes_xsec_ncoth_b}. These error envelopes are determined by performing \num{1e4} correlated throws of the systematic parameter group under consideration and plotting the mean and Gaussian $1\sigma$ error resulting.
+
+\input{systematics/envelopes/sk_envelopes_all}
+\input{systematics/envelopes/sk_envelopes_osc}
+\input{systematics/envelopes/sk_envelopes_skdet}
+\input{systematics/envelopes/sk_envelopes_skfsi}
+\input{systematics/envelopes/sk_envelopes_banff}
+\input{systematics/envelopes/sk_envelopes_xsec_nue}
+\input{systematics/envelopes/sk_envelopes_xsec_ncgamma}
+\input{systematics/envelopes/sk_envelopes_xsec_ncoth}
+
+\clearpage
+
+
+%..................
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../TN327"
+%%% End:
