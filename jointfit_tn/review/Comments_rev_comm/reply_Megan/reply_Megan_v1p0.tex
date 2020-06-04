@@ -1,0 +1,467 @@
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.50cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{blkarray}                 % for correlation matrices
+\usepackage{color}
+\usepackage{rotate}                   % rotate text in tables
+\usepackage{lscape}                   % allow page to be landscape for large tables
+\usepackage{amsfonts}                 % extra symbols
+\usepackage{amsmath}
+%\usepackage{floatpag}                 % \thisfloatpagestyle{empty}, to suppress page numbers
+\usepackage{lmodern}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{caption}% Use captionof to be able to minipage figure's \& tables together, but still get correct captions
+\usepackage{enumitem}
+\usepackage[breaklinks=true,hyperfigures=true]{hyperref} % make contents and references links, but do not colour them
+
+\setenumerate{listparindent=\parindent} % Use paragraph indentation within the enumerate
+\usepackage{cleveref}
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+%\newcommand{\AmS}{{\protect\the\textfont2
+%  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+\usepackage{listings}   
+\lstset{language=C++}
+
+% Particle aliases
+\newcommand{\nue}{\nu_{e}}
+\newcommand{\numu}{\nu_{\mu}}
+\newcommand{\nutau}{\nu_{\tau}}
+\newcommand{\nueb}{\xbar{\nu}_{e}}
+\newcommand{\numub}{\xbar{\nu}_{\mu}}
+\newcommand{\nutaub}{\xbar{\nu}_{\tau}}
+\newcommand{\nub}{\xbar{\nu}}
+\newcommand{\nua}{\nu_{\alpha}}
+\newcommand{\nuab}{\xbar{\nu_{\alpha}}}
+
+\newcommand{\numuany}{\overset{(-)}{\nu_\mu}}
+\newcommand{\nueany}{\overset{(-)}{\nu_e}}
+
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+%define new fonts, smaller than tiny (for showing large covariance matrices in a page)
+\makeatletter
+\ifcase \@ptsize \relax% 10pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{4}{5}}% \tiny: 5/6
+  \newcommand{\verytiny}{\@setfontsize\miniscule{3}{4}}% \tiny: 5/6
+\or% 11pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\or% 12pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\fi
+\makeatother
+
+
+
+
+\linenumbers
+
+\begin{document}
+
+
+
+{\Large \textbf{Comments on TN266v1.0 by Megan}} \\
+
+-- It's hard to think about fitting to reconstructed energy + lepton angle,
+since reconstructed energy is calculated based on the outgoing lepton angle --
+how can you be sure that constraints, errors, etc aren't being double counted?
+$\rightarrow$ Lines 510-513 is enough?  How about showing those results?  Are additional
+bias checks needed?
+
+\textcolor{blue}{
+There is no problem with fitting Ereco and Theta if the correlations between the two variables are correctly taken into account.
+Furthermore since each systematic uncertainty is treated as a different parameter, it is totally safe. 
+The detector error on the lepton angle is negligible compared to the others,
+so the prescription of the T2K-SK group is that the error on the lepton angle has not to be taken into account,
+no matter whether Ereco o the lepton momentum is used.
+So Ereco Vs Theta detector error matrix has only Ereco errors.
+For what concern the cross section parameters, the normalization parameters do not depend on 
+the lepton angle, while the response functions are computed as a function of Ereco and Theta.
+The uncertainty on the total number of events due to the flux + cross section + Super-K-FSI-SI systematic parameters,
+i.e. the systematic uncertainties which have a dependence on Theta,
+are obtained by performing 10k toy experiments estimated as RMS / Mean of the distribution:
+\\ \\
+2D templates Ereco Vs Theta:\\ 
+RHC1Re =   0.046354159\\ 
+1Re =  0.041926195\\
+RHC1Rmu = 0.0329263\\
+1Rmu = 0.028941284\\ \\ 
+1D templates Ereco: \\
+RHC1Re = 0.045866498  \\
+1Re =  0.041055683\\
+RHC1Rmu = 0.0333726\\
+1Rmu = 0.029429303\\
+\\
+The fractional errors are in very good agreement.
+}
+
+-- Although it isn't shown in a note, I saw plots at an analysis meeting where
+this analysis had (somewhat unexpectedly) better constraints on the data fit
+compared to the straight Erec analysis... Do we fully understand that
+difference (since sensitivities were close to being the same)? Do we need
+additional checks to understand the difference...?
+
+\textcolor{blue}{
+The agreement between Mach3, p-Theta and VALOR Asimov sensitivities is pretty good, though the templates are different.
+However we saw that for Run 1-6, a particular data set, which is affected by statistical fluctuations, the 2D templates show a higher significance.
+This is also seen by the analysis performed by the p-theta group.
+This is due to the antineutrino mode e-like sample that in Ereco Vs Theta shows more 
+events likely to be background ($\bar{\nu}_{\mu} \rightarrow \bar{\nu}_e$) rather than Ereco only (see plot below). 
+This was also seen in the Run 5-6 2015 nuebar appearance analysis when the p-theta analysis was 
+more compatible with null nuebar appearance with respect to both VALOR and Mach3, which were using Ereco only.
+We do not think we need additional checks since we understand the source of the difference.
+}
+
+\begin{figure}[htb]
+\center
+\includegraphics[width=0.45\textwidth]{Ereco_ErecoVsTheta.pdf}
+\end{figure}
+
+
+-- line 130 : "unique" $\rightarrow$ "single"
+
+\textcolor{blue}{DONE.}
+
+-- line 134 : "lepton angle bin" -- what's the SK systematic error on
+determining the angle (ie energy scale equivalent)?  Is that taken into account?
+
+\textcolor{blue}{The resolution in angle is between 2-3 degrees. The prescription of T2K-SK group is to neglect it,
+as it has been done so far in all the oscillation analyses involving the lepton angle.}
+
+
+-- Eq1 : what's beta?
+
+\textcolor{blue}{DONE.}
+
+
+-- lines 159-161 : sentence could use a reference or additional info 
+
+\textcolor{blue}{DONE.}
+
+
+-- line 174 : "intensity" $\rightarrow$ "exposure" ? 
+
+\textcolor{blue}{DONE.}
+
+
+-- table 1, line 178-179 : "number of events" = "number of predicted events"?
+w/ what oscillation parameter assumption?
+
+\textcolor{blue}{They are oscillated only for "Oscillated" samples, which are fully oscillated. 
+These numbers are taken directly from 
+http://www.t2k.org/t2ksk/documentation-page/MCWeighting/MCReweighting14a}
+
+
+-- line 217 + later : for this analysis, "MEC" should be changed to "2p-2h" as
+far as I understand
+
+\textcolor{blue}{DONE.}
+
+
+-- lines 293-295 should go below the numu binning description
+
+\textcolor{blue}{DONE.}
+
+-- lines 306-307 : "The same reconstructed neutrino energy and lepton angle
+binning is used for the fit of the single ring reconstructed energy spectra."
+$\rightarrow$ This sentence is very hard to parse
+
+\textcolor{blue}{DONE.}
+
+-- lines 311-313 : this isn't true.. rec E binning hasn't changed, but binning
+has certainly changed for nue sample
+
+\textcolor{blue}{DONE.}
+
+-- table8 : Is some additional description needed for parameters that are not
+normalizations?  What does it mean when a parameter has best fit of 1.000?
+
+\textcolor{blue}{This values are taken directly from the BANFF fit output and we would leave their full description to TN-230.
+All the parameters set to 1 should correspond to the NEUT nominal value,
+except CC other shape which NEUT nominal value is 0.
+For all the normalization parameters, 1 is the nominal one pre-banff value.
+In the text, after line 373 of v1p0, A sentence has been added to briefly explain this.}
+
+
+-- line 345 : I don't think "proxies" is the right word here.. You mean
+"although it's written 'numu', it's actually 'numu+nue+nutau' " ?
+
+\textcolor{blue}{Yes, that's what I mean. The term has been changed.}
+
+
+-- Figs 1 + 3 : shouldn't you be using Run 1-4 flux tuning weights for nu-mode
+beam?  Or figs 1-4 are all RHC ?  (if so, that should be written somewhere.. +
+how about FHC?)
+
+\textcolor{blue}{DONE. Neutrino mode plots are added and captions are improved.}
+
+-- tables 34-37 : need FHC, RHC labels I think
+
+\textcolor{blue}{DONE. Added "neutrino mode" or "antineutrino mode", following the convention used in the note.}
+
+-- line 1009 : says table 35 twice.
+
+\textcolor{blue}{DONE.}
+
+-- line 407-408 : do we understand that this is the cause of the bias??
+
+\textcolor{blue}{It is not totally obvious to me because not easy to prove and understand for a such complicated analysis. 
+However after the checks that were done
+by the BANFF group, e.g. the flux and detector best-fit parameters of an Asimov data set are highly correlated, which could be symptom of degeneracy,
+people think that probably this is the cause. Maybe for a more detailed explanation the BANFF TN is the best place to look at.   }
+
+-- line 426 : Is it OK that the number of events from the 2015 analysis isn't
+reproduced exactly?
+
+\textcolor{blue}{Yes, as far as we understand why, which is due to different oscillation parameter values (arbitrary)
+and a better cross section model.}
+
+
+-- lines 434-438 : I am having trouble understanding what was done here...
+
+\textcolor{blue}{DONE.}
+
+
+-- line 473 : Probably good to define "marginalized" here..
+
+\textcolor{blue}{I added a reference to the section where statistical methods are described. I think it could create some confusion here, since
+marginalization and profiling need a quite long explanation.}
+
+
+-- line 479-80 : "of about" $\rightarrow$ "by about", error reduced by how much?
+
+\textcolor{blue}{DONE.}
+
+-- line 481 : Is all of the run 5+6 FHC data being used for this analysis???
+Maybe good to state how much POT is FHC from Run 5+6
+
+\textcolor{blue}{DONE.}
+
+-- fig6-17 + elsewhere : "The continuos line shows the pre-BANFF (blue) and
+post-BANFF (red) ratios" $\rightarrow$ There is no continuous line (in fig6, etc) or blue
+anything in any of these figures. Also "continuos" is spelled wrong "and the
+oscillation parameters shown in tab. 11." $\rightarrow$ oscillation parameter priors ?
+
+\textcolor{blue}{The caption has been improved in every plot. }
+
+-- line 508-509 : This choice is the most conservative case for dCP = -90deg?
+If so, should state that here.
+
+\textcolor{blue}{Exactly. My understanding is that this choice is the most conservative for $\delta_{CP} = \pm \pi /2$,
+since this are the values that give opposite effect to $\nu_e \rightarrow \nu_{\mu}$ and $\bar{\nu}_e \rightarrow \bar{\nu}_{\mu}$.
+I maybe would avoid to state again that this is the most conservative choice for $\delta_{CP} = \pm \pi/2$,
+since it is already pointed out a few sentences before. }
+
+-- table 21 : I don't understand the column labels -- it's RMS/mean of
+\#FHC/\#RHC events ?  Can you put an equation?
+
+\textcolor{blue}{Yes it is RMS / Mean of the toy MC distribution of the ratio between neutrino mode and antineutrino mode total number of Super-K events. 
+The equation has been added to the label.}
+
+-- line 542 : "likelihood ratio method over the extended maximum-likelihood
+method" $\rightarrow$ how about adding 1 sentence on what these terms mean/ what
+difference is?
+
+\textcolor{blue}{The sentence has been modified since it was misleading. By construction, this particular likelihood ratio converges to a $\chi^2$
+distribution in the large sample limit and can be used for a goodness of fit test.}
+
+-- line 652 : "+ Gaussian prior for th13"
+
+\textcolor{blue}{DONE.}
+
+-- table 22 : Maybe w/ reactors th13 Gaussian prior should be included in the
+top table.  Isn't there a boundary problem when you constrain dcp to +/- pi
+(vs +/- 2pi)?
+
+\textcolor{blue}{It is not added to the table because the 1D confidence interval for $\sin^2 \theta_{13}$ with 
+the reactor constraint is not produced, since it would be dominated by the external constraint. 
+There is not boundary problem for $\delta_{CP}$. The constraint is only in the marginalization, i.e. the 
+toys MC used to marginalize $\delta_{CP}$ is are produced for values between $-\pi$ and $+\pi$.
+There could be an issue if the minimization algorithm, based on a descent gradient, is used.
+However, as explained in section 5.3, in order to avoid a artificial local minimum at the boundary, 
+4 different fits are produced, where two of them have $\pm \pi$ as starting points.
+However when the full $\Delta \chi^2$ distribution is computed, this is not an issue at all. }
+
+-- line 710-711 : This sentence is hard to understand..
+
+\textcolor{blue}{The sentence has been improved.}
+
+-- line 761-766 : How about not using the global minimum for the IH numbers in
+this table??  Other columns wouldn't need to change + last column would be
+meaningful.
+
+\textcolor{blue}{Since the IH case is excluded at more than 90\%CL for almost all the range of parameters 
+maybe it is not meaningful to show ranges with respect the IH global minimum. 
+Those are 2D $1\sigma$ ranges, e.g. $\delta_{CP}$ Vs Mass Hierarchy.}
+
+
+-- line 771-773 : Why isn't $dm^2_32$ fit?  Why not include the $\theta_{13}$ best fit
+point?  Also, the wording is funny, since it's not a fit; it's plots of the best fit spectra
+
+\textcolor{blue}{
+The thing is for technical reason. Due to implementation of marginalization, 
+it is not possible to profile more than three oscillation parameters (mass hierarchy included) in the framework.
+Then it's not possible to profile all the oscillation parameters, which however are marginalized in any fit.
+However best-fit spectra could have been produced also marginalizing all the parameters except $\delta_{CP}$ and mass hierarchy
+or marginalizing all the oscillation parameters.
+The proposal of the OA group is to profile only $\sin^2 \theta_{23}$, $\delta_{CP}$ and mass hierarchy.   
+%For this reason with the OA group it was decided to marginalize $\delta m^2_{32}$ and not profile,
+%since it is not degenerate with $\delta_{CP}$.
+Indeed the  oscillation parameter most denerate with $\delta_{CP}$ is $\sin^2 \theta_{23}$ which is always left free and
+gives a normalization to the $e$-like samples, while $\sin^2 \theta_{13}$ is almost fixed by the reactor constraint.
+$\Delta m^2_{32}$ has the only effect to move the oscillation maximum to lower or higher energy
+so it does not have a strong degeneracy with $\delta_{CP}$, which main effect on the spectra is simply a normalization
+of the total number of events, at least with the current statistic.
+}
+
+-- line 778 : Good to explain "8-5".
+
+\textcolor{blue}{"8-5" are exactly the values of the variable in the equation just before.
+This is a quite general formula that gives the number of degrees of freedom in a fit.
+Maybe the fact that "8-5" is written just after the equation could be enough. }
+
+-- table 24 : +/- 1sigma interval for dCP doesn't match fig 23a??? This is
+the main result of the analysis, I think, so it needs to be correct +
+emphasized..
+
+\textcolor{blue}{
+To which $\delta_{CP}$ interval do you refer?
+It seems the intervals are correct. Maybe the blue line in the T2K+reactor plot is misleading
+because it is 90\% CL and not $1\sigma$ CL ($\Delta \chi^2 = 1$), the one used to set the errors. }
+
+-- fig 24 : Need to put correct description of plot in caption
+
+\textcolor{blue}{DONE.}
+
+-- fig 31 : Caption is totally wrong.  Also 13b plot legend is wrong
+
+\textcolor{blue}{DONE.}
+
+-- line 1011 : Should separate tab 42 + description from the rest of this
+sentence
+
+\textcolor{blue}{DONE.}
+
+-- tab 42 is hard to understand..
+
+\textcolor{blue}{The label has been changed adding the equation.}
+
+-- fig 37, 38 is missing pre-fit contours
+
+\textcolor{blue}{The caption has been changed.}
+
+-- line 1017 : Should clarify this sentence (bias is corrected by both a
+correction + a new additional covariance matrix? I understood it was just a
+new matrix).
+
+\textcolor{blue}{No, also a correction to the best-fit parameters is applied.}
+
+
+\newpage
+
+
+
+
+
+
+{\Large \textbf{Comments on TN266v1.2 by Megan}} \\
+
+When you make this kind of update to your TN, please put updated text in a
+different color or list the updates somewhere.  It's hard to find which parts are new..
+I only checked updates in Sec. 5.2-5.3 and Sec. 6.2.  Please let me know if
+there are other updates.
+
+\textcolor{blue}{There is also Appendix E, which does not concern the analysis
+but only the commont method used to compute the significance.}
+
+-- Table 23, fig 21 : Should put the true MH assumption
+
+\textcolor{blue}{DONE.}
+
+-- lines 755-756 : This sentence is hard to understand
+
+\textcolor{blue}{
+The point is that for higher confidence intervals the $\Delta \chi^2$ values to test are higher and 
+are placed in the tail of the distribution. For example $\Delta \chi^2$ values between 0 and 2 
+are likely to be included in the integral of eq. (17) for confidence intervals above 90\% CL.
+The sentence has been changed to:
+"In order to test confidence intervals for higher significance the tail of the $\Delta \chi^2$ distribution is more important."
+}
+
+-- line 754 : "and make the dchi2 distribution wider, as shown in fig 22" $\rightarrow$ this
+isn't shown in fig 22.
+
+\textcolor{blue}{DONE.}
+
+-- Figure 22 + explanation : Again, I think the explanation could use some
+re-wording to make it clearer.  Does it really make sense that the fit is
+almost always choosing the wrong MH?  I would think that if there's a degeneracy,
+the fitter should get the right MH at least ~1/2 of the time.
+
+\textcolor{blue}{
+I'm not sure we should expect 50\% of the times NH and IH,
+because $\delta_{CP}$ is a continuos distribution and a small
+deviation from the true value combined with systematic parameter variations, may prefer to choose IH.
+I think this is favored by the still not large sensitivity on $\delta_{CP}$.
+}
+
+-- Fig 24 : again, does this flat distribution make sense?  I'd expect our data
+to be able to do a little better... A table of the expected total event rates
+assuming different true values of dCP and the MH could help clarify these
+results.
+
+\textcolor{blue}{DONE.}
+
+-- line 882 : "which becomes clear when looking to eq. (19)" $\rightarrow$ I don't think
+this is true.
+
+\textcolor{blue}{DONE.}
+
+-- eq 20 : what are f and d?
+
+\textcolor{blue}{DONE.}
+
+-- line 895 : "dCP=0 is favored by the data wrt dCP=pi" + next sentence $\rightarrow$ This
+is backwards.
+
+\textcolor{blue}{DONE.}
+
+
+\end{document}
+
+
+
+
+
+

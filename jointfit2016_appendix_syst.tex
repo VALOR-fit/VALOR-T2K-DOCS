@@ -1,0 +1,623 @@
+
+%...........................................................
+%
+% Predicted number of events
+%
+%...........................................................
+
+\section{Effect of systematic uncertainties}
+\label{app:systematics}
+
+In \cref{tab:apply_syst_to_template_mulike_fhc},
+\cref{tab:apply_syst_to_template_elike_fhc},
+\cref{tab:apply_syst_to_template_mulike_rhc} and
+\cref{tab:apply_syst_to_template_elike_fhc}
+it is shown which systematic parameter is applied to which reaction and flavour modes 
+for all the Super-K samples.
+ 
+\afterpage{\input{tables/syst_applied_table_joint_fhc_mulike.tex}}
+\afterpage{\input{tables/syst_applied_table_joint_fhc_elike.tex}}
+\afterpage{\input{tables/syst_applied_table_joint_rhc_mulike.tex}}
+\afterpage{\input{tables/syst_applied_table_joint_rhc_elike.tex}}
+
+\clearpage
+
+% Asimov B
+
+In tab.~\ref{tab:nsk_systematic_table_summary_joint_asimov_B_fhc_mulike},
+\ref{tab:nsk_systematic_table_summary_joint_asimov_B_fhc_elike},
+\ref{tab:nsk_systematic_table_summary_joint_asimov_B_rhc_mulike},
+\ref{tab:nsk_systematic_table_summary_joint_asimov_B_rhc_elike}
+and 
+\ref{tab:ratio_systematic_table_summary_asimov_B}
+%\ref{tab:ratio_systematic_table_summary_asimov_B}
+the effect of each group of systematic uncertainties 
+on the total number of events and on the ratio 
+between neutrino and antineutrino mode is shown for the Asimov data set B.
+
+\input{./tables/nsk_systematic_table_summary_Asimov_B.tex}
+
+
+In \cref{fig:spectra_systematic_Asimov_B} and~\ref{fig:oscillated_total_envelope_ratio_Asimov_B}
+respectively the absolute error envelope and the fractional error envelopes expressed as a ratio of event count 
+are shown for the Asimov data set B (see \cref{tab:osc_params_joint_asimov}).
+
+\begin{figure*}[htb]
+\center
+%\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+%\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+%\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+%\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+\includegraphics[width=18pc]{joint_plots/systematics/Asimov_B_1Rmuoscillated_all_envelope.eps} %-eps-converted-to.pdf}
+\includegraphics[width=18pc]{joint_plots/systematics/Asimov_B_RHC1Rmuoscillated_all_envelope.eps} %-eps-converted-to.pdf}
+\includegraphics[width=18pc]{joint_plots/systematics/Asimov_B_1Reoscillated_all_envelope.eps} %-eps-converted-to.pdf}
+\includegraphics[width=18pc]{joint_plots/systematics/Asimov_B_RHC1Reoscillated_all_envelope.eps} %-eps-converted-to.pdf}
+\caption {
+%{\large{ERROR ENVELOPES ALL SYSTEMATICS}}
+Error envelopes for the energy spectrum as a result of all the systematic parameters. 
+From top to bottom and left to right the following super-K samples are shown:
+muon-like neutrino mode, muon-like antineutrino mode,
+electron-like neutrino mode and electron-like antineutrino mode. 
+10k toy MC experiments were generated for the Asimov data set B shown in tab.~\ref{tab:osc_params_joint_asimov}
+with randomized systematic parameters and the $1\sigma$ spread of bin contents was calculated. 
+BANFF tuned MC templates were used. All systematic parameters were considered and their correlations were taken into account. 
+The fractional error in each bin corresponds to the $1\sigma$ error obtained from the distribution of the extracted number of events. 
+First the median is found. Then the upper (lower) error corresponds to the number of events for which the 34\% 
+of toys is contained in the right (left) side of the median. The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+The distributions correspond to the collected statistics in the full run 1-6 data set.
+%for an exposure 
+%of $6.914 \times 10^{20}$ POT in neutrino mode
+%and
+%of $4.011 \times 10^{20}$ POT in antineutrino mode.
+The spectra were generated with the systematic parameters measured with the ND280 data 
+shown in tab.~\ref{tab:banff_uncertainties_flux_fhc},~\ref{tab:banff_uncertainties_flux_rhc}, 
+\ref{tab:banff_uncertainties_xsec},~\ref{tab:banff_uncertainties_skdetfsi}
+and the oscillation parameters shown in tab.~\ref{tab:osc_params_joint_priors}.
+Since the parameters $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$)
+will be measured,
+only the uncertainty on the parameters 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+}
+\label{fig:spectra_systematic_Asimov_B}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+%\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+%\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+%\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+%\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+\includegraphics[width=18pc]{joint_plots/systematics/Asimov_B_1Rmuoscillated_all_envelope_ratio.eps} %-eps-converted-to.pdf}
+\includegraphics[width=18pc]{joint_plots/systematics/Asimov_B_RHC1Rmuoscillated_all_envelope_ratio.eps} %-eps-converted-to.pdf}
+\includegraphics[width=18pc]{joint_plots/systematics/Asimov_B_1Reoscillated_all_envelope_ratio.eps} %-eps-converted-to.pdf}
+\includegraphics[width=18pc]{joint_plots/systematics/Asimov_B_RHC1Reoscillated_all_envelope_ratio.eps} %-eps-converted-to.pdf}
+\caption {
+%{\large{RATIO ERROR ENVELOPES ALL SYSTEMATICS}}
+Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of all the systematic parameters. 
+From top to bottom and left to right the following super-K samples are shown:
+muon-like neutrino mode, muon-like antineutrino mode,
+electron-like neutrino mode and electron-like antineutrino mode. 
+10k toy MC experiments were generated for the Asimov data set B shown in tab.~\ref{tab:osc_params_joint_asimov}
+with randomized systematic parameters and the $1\sigma$ spread of bin contents was calculated. 
+BANFF tuned MC templates were used. All systematic parameters were considered and their correlations were taken into account. 
+The fractional error in each bin corresponds to the $1\sigma$ error obtained from the distribution of the extracted number of events. 
+First the median is found. Then the upper (lower) error corresponds to the number of events for which the 34\% 
+of toys is contained in the right (left) side of the median. The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+The distributions correspond to the collected statistics in the full run 1-6 data set.
+%for an exposure 
+%of $6.914 \times 10^{20}$ POT in neutrino mode
+%and
+%of $4.011 \times 10^{20}$ POT in antineutrino mode.
+The spectra were generated with the systematic parameters measured with the ND280 data 
+shown in tab.~\ref{tab:banff_uncertainties_flux_fhc},~\ref{tab:banff_uncertainties_flux_rhc}, 
+\ref{tab:banff_uncertainties_xsec},~\ref{tab:banff_uncertainties_skdetfsi}
+and the oscillation parameters shown in tab.~\ref{tab:osc_params_joint_priors}.
+Since the parameters $\theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$)
+will be measured,
+only the uncertainty on the parameters 
+$\sin^2 \theta_{13}$,
+$\sin^2 \theta_{12}$
+and 
+$\Delta m^2_{21}$ 
+are taken into account.
+}
+\label{fig:oscillated_total_envelope_ratio_Asimov_B}
+\end{figure*}
+
+\clearpage
+
+
+%In Fig.~\ref{fig:Osc_envelope},~\ref{fig:SKDet_FSI_envelope},~\ref{fig:flux_envelope},
+%\ref{fig:xsec_envelope},~\ref{fig:flux_xsec_envelope} and~\ref{fig:all_envelope}
+%the error envelopes of reconstructed energy spectra for all the selected samples,
+%given respectively by
+%oscillations, Super-K detector + FSI/SI, flux only, cross section only, flux+cross section and all the systematics
+%are shown. 
+%
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope.eps} % 1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope.eps}\\ % RHCRmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope.eps} % 1Re
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope.eps}\\ % RHCRe
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes for the energy spectrum as a result of oscillation parameters
+%%  for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%  From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters 
+%%  and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  Existing correlations between the systematic parameters were taken into account.
+%%  The error envelopes in each bin correspond to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the expected nominal reconstructed energy distribution 
+%%  for pre-BANFF (blue) and post-BANFF (black).
+%%  The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:Osc_envelope}
+%\end{figure*}
+%
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope.eps} % 1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope.eps}\\ % RHC1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope.eps} % 1Re
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope.eps}\\ % RHC1Re
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes for the energy spectrum as a result of Super-K detector and FSI/SI parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%     From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and 
+%%  the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  Existing correlations between the systematic parameters were taken into account.
+%%  The error envelopes in each bin correspond to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the expected nominal reconstructed energy distribution 
+%%  for pre-BANFF (blue) and post-BANFF (black).
+%%    The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:SKDet_FSI_envelope}
+%\end{figure*}
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope.eps} % 1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope.eps}\\ % RHC1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope.eps} % 1Re
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope.eps}\\ % RHC1Re
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes for the energy spectrum as a result of flux systematics
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%   From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  Existing correlations between the systematic parameters were taken into account.
+%%  The error envelopes in each bin correspond to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the expected nominal reconstructed energy distribution 
+%%  for pre-BANFF (blue) and post-BANFF (black).
+%%    The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:flux_envelope}
+%\end{figure*}
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps} % 1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps}\\ % RHC1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps} % 1Re
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps}\\ % RHC1Re
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes for the energy spectrum as a result of only cross-section parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%    From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and 
+%%  the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  Existing correlations between the systematic parameters were taken into account.
+%%  The error envelopes in each bin correspond to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the expected nominal reconstructed energy distribution 
+%%  for pre-BANFF (blue) and post-BANFF (black).
+%%  The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:xsec_envelope}
+%\end{figure*}
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps} % 1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps}\\ % RHC1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps} % 1Re
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps}\\ % RHC1Re
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes for the energy spectrum as a result of only flux and cross-section parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%    From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and 
+%%  the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  Existing correlations between the systematic parameters were taken into account.
+%%  The error envelopes in each bin correspond to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the expected nominal reconstructed energy distribution 
+%%  for pre-BANFF (blue) and post-BANFF (black).
+%%  The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:flux_xsec_envelope}
+%\end{figure*}
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope.eps} % 1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope.eps}\\ % RHC1Rmu
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope.eps} % 1Re
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope.eps}\\ % RHC1Re
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes for the energy spectrum as a result of all systematic parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%  From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  Existing correlations between the systematic parameters were taken into account.
+%%  The error envelopes in each bin correspond to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the expected nominal reconstructed energy distribution 
+%%  for pre-BANFF (blue) and post-BANFF (black).
+%%  The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:all_envelope}
+%\end{figure*}
+%
+%
+%
+%\clearpage
+%
+%
+%
+%
+%%Ratio oscillated
+%
+%
+%In Fig.~\ref{fig:Osc_envelope_ratio},~\ref{fig:SKDet_FSI_envelope_ratio},~\ref{fig:flux_envelope_ratio},
+%\ref{fig:xsec_envelope_ratio},~\ref{fig:flux_xsec_envelope_ratio} and~\ref{fig:all_envelope_ratio}
+%the ratio error envelopes of reconstructed energy spectra for all the selected samples,
+%given respectively by
+%oscillations, Super-K detector + FSI/SI, flux only, cross section only, flux+cross section and all the systematics
+%are shown. 
+%
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope_ratio.eps}
+%%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of oscillation parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%  From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  All systematic parameters were considered and their correlations were taken into account.
+%%  The fractional error in each bin corresponds to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+%%   The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:Osc_envelope_ratio}
+%\end{figure*}
+%
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope_ratio.eps}
+%%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of Super-K detector and FSI/SI parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%  From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  All systematic parameters were considered and their correlations were taken into account.
+%%  The fractional error in each bin corresponds to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+%%     The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:SKDet_FSI_envelope_ratio}
+%\end{figure*}
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope_ratio.eps}
+%%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of flux systematics
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%  From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  All systematic parameters were considered and their correlations were taken into account.
+%%  The fractional error in each bin corresponds to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+%%   The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:flux_envelope_ratio}
+%\end{figure*}
+%
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of only cross-section parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%  From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  All systematic parameters were considered and their correlations were taken into account.
+%%  The fractional error in each bin corresponds to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+%%     The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:xsec_envelope_ratio}
+%\end{figure*}
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of flux and cross-section parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%  From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  All systematic parameters were considered and their correlations were taken into account.
+%%  The fractional error in each bin corresponds to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+%%     The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:flux_xsec_envelope_ratio}
+%\end{figure*}
+%
+%\begin{figure*}[htb]
+%\center
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope_ratio.eps}
+%\includegraphics[width=18pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope_ratio.eps}
+%%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+%\caption {
+%    \huge{TO UPDATE} % caption is already ok
+%%  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of all systematic parameters
+%%    for an exposure 
+%%  of \TotalPotNu POT in neutrino mode
+%%  and
+%%  of \TotalPotNuBar POT in antineutrino mode.
+%%  From top left to bottom right the following samples are shown:
+%%  $\mu$-like neutrino mode,
+%%  $\mu$-like antineutrino mode,
+%%  $e$-like neutrino mode
+%%  and 
+%%  $e$-like antineutrino mode.
+%%  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+%%  BANFF tuned MC templates were used.
+%%  All systematic parameters were considered and their correlations were taken into account.
+%%  The fractional error in each bin corresponds to the $1\sigma$ error 
+%%  obtained from the distribution of the extracted number of events.
+%%  First the median (red line) is found. 
+%%  Then the upper (lower) error corresponds
+%%  to the number of events for which the 34\% of toys is contained
+%%  in the right (left) side of the median.
+%%  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+%%   The oscillation parameters shown in Tab.~\ref{tab:osc_params_joint} are used.
+%}
+%\label{fig:all_envelope_ratio}
+%\end{figure*}
+%
+%
+%\clearpage
+%
+%
+
+
+
+
+
+
+
+% Asimov A w/o flux bias
+
+In tab.~\ref{tab:nsk_systematic_table_summary_joint_asimov_A_fhc_mulike_NoFluxBias},
+\ref{tab:nsk_systematic_table_summary_joint_asimov_A_fhc_elike_NoFluxBias},
+\ref{tab:nsk_systematic_table_summary_joint_asimov_A_rhc_mulike_NoFluxBias}
+and
+\ref{tab:nsk_systematic_table_summary_joint_asimov_A_rhc_elike_NoFluxBias}
+%\ref{tab:ratio_systematic_table_summary_asimov_B}
+the effect of each group of systematic uncertainties 
+on the total number of events and on the ratio 
+between neutrino and antineutrino mode is shown for the Asimov data set A,
+but without taking into account the correction of the post-fit BANFF systematic
+parameters as well the additional covariance matrix that take into account
+the bias in the flux parameters of the BANFF fit.
+The impact of the uncertainty due to the bias of the BANFF fit is small
+and has a small impact compared to the other systematic uncertainties.
+
+\input{./tables/nsk_systematic_table_summary_Asimov_A_NoFluxBias.tex}
+
+
+
+
+
+
+
+

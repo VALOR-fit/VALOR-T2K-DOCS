@@ -1,0 +1,36 @@
+
+Megan's Comments on TN266v1.4 + Author Replies
+
+-- Replies (http://www.t2k.org/docs/technotes/266/Comments/reply_Megan_v1p0.pdf), line 3-30
+-> Did you add this info to the note somewhere?  Can you add it?  (I couldn't
+find it..)  I think it's useful.
+
+-- Replies, line 45-48
+-> Again, can you add this to the note? I couldn't find it.
+
+-- Replies, line 128-129
+-> Does starting at the boundary of the fit range really remove possible
+local minima problems in the fit?  I would think that would actually make it
+worse, since the fitter can only start stepping in 1 direction... anyway it
+may be worth it to think about expanding the fitter range to +/-2pi in future
+fits
+
+-- Replies, line 135-137
+-> Although the IH is excluded at >90% CL, T2K doesn't actually
+have the sensitivity to actually exclude the IH (as was discussed at length last week). 
+
+Then I think it's important to include the IH-only limits in the note as well.
+
+-- TN266v1.4, line 780 + 783 + fig 20 : description doesn't match figure caption (IH
+vs NH).
+
+-- TN266v1.4, line 875-877, 878-879 : I'm suddenly worried about fitter biases pointing
+our data toward Asimov Set A.  Line 878-879 -- this may be true now (and I'm not suggesting
+
+delaying the release of this analysis), but since these things don't agree within error bars for
+
+all parameter values, may need to re-think this for later versions of this analysis
+
+(I guess it's worse if things far away from our best fit point don't make sense, right?)..
+
+-- Table 27 caption : Asimov set A has dCP=-90deg, right?

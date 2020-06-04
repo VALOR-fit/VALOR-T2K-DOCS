@@ -1,0 +1,152 @@
+%\clearpage
+
+\section {Introduction}
+\label{sec:intro}
+
+In this technical note, we report the results of a 3-flavour $\nu/\bar{\nu}$ joint analysis,
+performed by the {\em VALOR} group,        
+on the combined Run 1-6 dataset, using data taken in both 
+neutrino mode (\TotalPotNu{} POT),
+with the polarity set to forward horn current (FHC),
+and antineutrino (\TotalPotNuBar{} POT) mode
+with polarity set reverse horn current (RHC).
+%This dataset was collected in two run periods:
+%May - June 2014 (Run 5, \RunVPot{} POT in antineutrino beam mode) and November 2014 - June 2015 
+%(Run 6, 
+%\RunVIPot{} 
+%POT in antineutrino beam mode).
+This analysis builds on our other analyses presented in Refs. 
+\cite{OurRun1DisappAnalysis},
+\cite{OurRun12DisappAnalysis}, 
+\cite{OurRun12DisappAnalysis3Flavour},
+\cite{OurRun123DisappAnalysis3Flavour},
+\cite{OurRun1234aDisappAnalysis3Flavour},
+\cite{OurRun1234DisappAnalysis3Flavour},
+\cite{OurRun123JointOscillationAnalysis},
+\cite{OurRun1234JointOscillationAnalysis} 
+\cite{OurRun56AntiNumuDisappearanceAnalysis3Flavour}
+and
+\cite{OurRun56AntiNueBarAppearanceAnalysis3Flavour}.
+As in \cite{OurRun56AntiNueBarAppearanceAnalysis3Flavour},
+a hybrid frequentist-Bayesian method \cite{CousinsHighland}, 
+which consists of marginalising instead of profiling 
+the nuisance parameters, is used.
+
+The consistency of the data with the expectation is given by comparing the predicted reconstructed neutrino energy 
+and outgoing lepton angle spectra of 1 ring events at Super-K to the observed spectra. 
+The method of calculation of these predicted spectra is presented in \cref{sec:spectrum_prediction}.
+This analysis uses flux tuning based on NA61/SHINE 2009 data \cite{FluxTuning}\cite{NA61/SHINET2K}. 
+It also uses an indirect extrapolation from ND280 to Super-K, which is implemented via a fit of flux and cross-section parameters to
+ND280 measurements of the muon momentum-angle distributions of $\bar{\nu}_\mu$ and  $\nu_\mu$
+%CC0$\pi$-like, CC1$\pi$-like and CC other events whose 
+for different event topologies
+with the neutrino interaction vertex either in FGD1 or FGD2 (BANFF fit) \cite{BANFF2016}.
+
+
+% Ereco Vs Theta mu-like and e-like
+A significant difference between this and the previous analyses is that
+for $e$-like samples the analysis templates are built as a function of both 
+the reconstructed neutrino energy and lepton angle,
+in order to improve the separation of the different reaction / flavour components,
+in particular $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_e$ and $\nu_{\mu} \rightarrow \nu_e$,
+fundamental in measuring $\delta_{CP}$.
+Furthermore the $\nu_e$ intrinsic beam and NC components can also be better separated from signal.
+Though the new variable $\theta$ increases the number of template bins and so the CPU time,
+the number of reconstructed neutrino energy bins has not been reduced,
+in order to continue to have a very good sensitivity to the oscillation pattern.
+For $\mu$-like samples the templates are built as a function of the reconstructed neutrino energy
+as in the past analyses.
+
+
+
+
+Updated nominal predictions of the reconstructed neutrino energy and lepton angle spectrum 
+of single ring events in Super-K are presented 
+for Run 1-6 in \cref{sec:spectrum_prediction}.
+
+The oscillation analysis is performed using neutrino oscillation probabilities computed in a 3-flavour
+framework including constant-density matter effects. 
+Details of our oscillation probability calculations, estimates of the numerical accuracy of our
+calculations and comparisons with calculations used by the alternative T2K oscillation analyses 
+are given in Appendices A and B of Ref. \cite{OurRun123DisappAnalysis3Flavour}.
+
+As in our previous analyses, the oscillation fit is made using the likelihood-ratio method \cite{StatAnalysisCowan}.
+The mathematical details of this method are given in Sec.\ 3.2 in Ref.\ \cite{OurRun1DisappAnalysis}.
+We consider a total of \NSyst{} parameters including energy scale, neutrino flux, neutrino cross-section,
+efficiency, initial-state nuclear environment and final-state re-scattering systematics 
+plus the oscillation parameters (nuisance parameters).
+%In this Run 1-6 analysis, 
+All the nuisance parameters are marginalised~\cite{CousinsHighland}.
+The nuisance parameters and their effects 
+on the extrapolated single-ring event spectra are described in \cref{sec:systematics}.
+The analysis method is presented in detail in \cref{sec:oscfit}.
+
+\textcolor{blue}{
+Fit validations are presented in \cref{sec:validation}. 
+The following updates have been added: 
+the coverage studies study for the $\delta_{CP}$ vs mass hierarchy fit is shown in \cref{sec:coverage_deltacp}.
+The main goal of this analysis is to search for CP violation in the context of the PMNS matrix
+and new confidence intervals, produced with the Feldman-Cousins method~\cite{FeldmanCousins},
+are shown in \cref{sec:fc_significance}.
+These sections as well as appendix~\ref{app:method_significance} have been added in this new version.  
+}
+Confidence intervals of the other oscillation parameters are set using the 
+constant $\Delta \chi^2$ method.
+Sensitivity studies are shown in \cref{sec:sensi}.
+The results of the measurement using the Run 1-6 dataset is given in \cref{sec:results} of this note. 
+
+%In Sec.~\ref{sec:nuebarapp},~\ref{sec:sensitivity_nuebarapp} and~\ref{sec:results_nuebar} the $\bar{\nu}_e$ appearance analysis is shown 
+
+%while the $\bar{\nu}_{\mu}$ disappearance analysis is shown in Sec.~\ref{sec:numubardis} and~\ref{sec:oscfit_numubardis}.
+Finally, a summary is given in \cref{sec:summary}.  
+
+\textcolor{red}{
+The note has been updated with respect to the v1.3 version. \Cref{sec:posterior_predictive} has been added
+to discuss the posterior predictive method for the $\delta_{CP}$ vs mass hierarchy analysis as well as
+appendix~\ref{app:p_value_stat_error}.
+}
+
+\textcolor{ForestGreen}{
+The note has been updated with respect to the v1.5 version adding the validation (\cref{sec:validation_run17b})
+as well as the data fit result (\cref{sec:results_run17b}) of the Run 1-7b analysis.
+Feldman-Cousins procedure for $\delta_{CP}$ vs mass hierarchy has been done again using the new BANFF covariance matrix:
+since the BANFF fit has not been run again on the new data, a ``pre-fit'' Run 1+7b Super-K flux covariance matrix has been added in quadrature
+to the Run 1-6 one. Since the change of the flux errors is minor, the systematic uncertainties are almost identical.
+A new flux tuning is now used for the antineutrino mode samples (Run 5c-7b), since the amount of collected POT
+in neutrino mode is very small (less than $0.1 \times 10^{20}$ POT), the Run 1-6 flux tuning is still used. 
+The change in the flux tuning is small and negligible.
+For this reason, in order to speed the analysis reprocessing up, the Feldman-Cousins method was done using the 
+Run 1-6 tuning for antineutrino mode as well.
+}
+
+\textcolor{BurntOrange}{
+In this new version v2.2 the comparison between the Run 1-7b result 
+of the $\delta_{CP}$ vs mass hierarchy fit with sensitivity is shown in \cref{sec:comparison_data_sensi_dcp_run17b}.
+}
+
+\textcolor{Violet}{
+The note has been updated with respect to the v2.2 version adding the validation (\cref{sec:validation_run17c})
+as well as the data fit result (\cref{sec:results_run17c}) of the Run 1-7c analysis.
+Feldman-Cousins procedure for $\delta_{CP}$ vs mass hierarchy has been done again using the new BANFF covariance matrix:
+since the BANFF fit has not been run again on the new data, a ``pre-fit'' Run 1+7c Super-K flux covariance matrix has been added in quadrature
+to the Run 1-7b one. Since the change of the flux errors is minor, the systematic uncertainties are almost identical.
+A new flux tuning is now used for both the antineutrino mode samples (Run 5c-7b)
+and the neutrino mode samples (all the other Runs)
+The change in the flux tuning is small and negligible.
+For this reason, in order to speed the analysis reprocessing up, the Feldman-Cousins method was done using the 
+Run 1-6 flux tuning for neutrino mode while the flux tuning for antineutrino mode is the most up to date.
+The comparison between the Run 1-7c result 
+of the $\delta_{CP}$ vs mass hierarchy fit with sensitivity is shown in \cref{sec:comparison_data_sensi_dcp_run17c}.
+} \\
+
+\textcolor{pink}{
+Sec.~\ref{sec:sensi_new_asimov_run17c}, 
+where the sensitivity for new Asimov data sets are shown in order to better understand the Run 1-7c data fit,
+and 
+sec.~\ref{sec:results_run17c_nu_nubar},
+where the comparison between contours obtained with either $\nu$-only $\bar{\nu}$-only data
+from Run 1-7c is shown,
+are added.
+}
+
+\clearpage

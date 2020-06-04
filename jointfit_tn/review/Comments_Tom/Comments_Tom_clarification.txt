@@ -1,0 +1,56 @@
+Hi Davide,
+
+Comments on the comments :)
+
+Cheers,
+Tom
+
+I take Mark’s point on dmsq vs |dmsq|. So I guess in most places you need to remove the “|” around the dmsq’s… a (careful!) global find replace would be useful. Perhaps it’s on some plots too.
+It’d still be good to swap “dm32sq” for “dm32sq (dm13sq)” in most places too.
+
+656 - does this mean that there are no “normal MH assumed” or “inverted MH assumed” results, but the results are shown as the best fit of normal or inverted at each point along the contour (which of course will jump between normal & inverted). Reading Sec 4.5, this isn’t the case. So I’m not sure what you’re trying to say here...
+I’d remove this line entirely then. Or copy the more precise explanation from Sec 4.5
+
+657 - surely for 1D dcp reactor, you use FC?
+For that table we used const dchisq
+What table? Tab 25? That’s ok then… but remember to change this line when you add the new stuff in.
+
+689 - In the constant-dchisq case, if you draw a line @ dchisq = 1 (relative to the best fit mass hierarchy), the bits above the line are excluded @ 68% in the “global” sense, no matter if it’s the normal or inverted hierarchy. So, I’d say that the constant values hold for the “best-fit mass hierarchy in the independent sense, and global” (in better words than that…)
+(What happens for FC, I don’t know…)
+it's probably not well explained. the thing is that const deltachisq cannot be used to exclude one mh from the other. So normal hierarchy contour is correct, while inverted one is wrong.
+Unless I’m misunderstanding your definition of “global”, that’s exactly what what’s plotted, and as you say is the least conservative. But if your point is that the difference between the minima of the normal/inverted hierarchies shouldn’t be used to specify a significance of rejecting/favouring a mass hierarchy, then I’d say something like…
+“However the reader should remember that the constant critical values shown in the figures hold for the “independent” (most conservative) case for the best-fit mass hierarchy only, and the “global” (least conservative) case for both mass hierarchies. Also recall that mass hierarchy is not a gaussian distributed variable, therefore drawing conclusions on the significance of favouring/rejecting a mass hierarchy hypothesis should not be done using the plots.”
+
+830, Fig 28 - explicitly state that shape information is still used for the 1Rmu samples
+Can you explicitly state that this is for all 4 samples independently (i.e. there are 4 numbers total, one for each sample)? I assumed it was only the 1Re samples that were rate only (because I’m not sure we’ve ever done 1Rmu FHC with a single bin, even in Run 1!), so I guess other people might.
+
+Tab 25 - can you not add another interval column to the inverted hierarchy section. The 3 interval columns would then be labelled...
+±1 sigma interval (independent & global)
+±1 sigma interval (global)
+±1 sigma interval (independent)
+You’ll also have to change the text around 835
+You’ve currently got for normal hierarchy a column that corresponds to:
+±1 sigma interval (independent & global)
+And a normal hierarchy column that corresponds to:
+±1 sigma interval (global)
+Could you add a third interval column that corresponds to:
+±1 sigma interval (independent)
+
+
+And from the first set of comments...
+
+105 - Is there a sensitivity plot showing that 2D does nothing to help numu sample @ current stats? I’d reference this here.
+Didn’t Chris produce plot(s)?
+
+Tab 17-21 Style suggestion, use left alignment and some spacing to show what’s a subset of what. For example (missing bits out…):
+Ok, I used tabs and not spaces, and one of our mail clients decided to ignore them… Here’s what I meant (hline will help too of course)
+All
+  SKDet+FSI+SI
+    Flux+XSec
+      Flux
+      XSec Tot
+        XSec Corr Tot
+          MEC (corr)
+        NC 1gamma (uncorr)
+      XSec nue/numubar (is this corr or uncorr?)
+Another thing I’ve just thought of… does “corr” mean “corrected” (as in BANFF-corrected) or “correlated”? Need to define it. E.g. at the “XSec Correlated Tot” line

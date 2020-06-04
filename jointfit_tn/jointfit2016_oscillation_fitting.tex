@@ -1,0 +1,578 @@
+\clearpage
+
+\section {Analysis procedure}
+\label{sec:oscfit}
+
+%--------------------------------------------------------------------------------------------------------------------
+\subsection {Fit method}
+\label{sec:oscfit_method}
+
+The goal of this analysis is to measure the oscillation parameters
+$\sin^2 \theta_{13}$, $\sin^2 \theta_{23}$, $\Delta m^2_{32}$ and
+search for CP violation by setting limits on $\delta_{CP}$
+for a given hypothesis of mass hierarchy, which is fixed to either normal or inverted.
+All the systematics, as well as the oscillation parameters which are not measured
+in that particular analysis and treated as nuisance, are marginalised.
+The treatment of the oscillation parameters is shown in \cref{tab:osc_params_joint_priors}.
+The parameters of interest will be denoted with the vector $\vec{\theta}$,
+since more than 1 parameter at a time can be measured.
+$\vec{\theta}$ can include the combination of all the oscillation parameters listed above.
+
+%--------------------------------------------------------------------------------------------------------------------
+
+The {\em VALOR} analysis uses a binned likelihood-ratio method where
+the estimation of $\vec{\theta}$ is obtained
+by comparing the observed and predicted Super-K $E_{reco}$ vs $\theta_l$ spectra
+for 1-ring events.
+
+Let $N$ be the number of reconstructed energy and lepton angle bins and
+${\bf a}$ be a $1 \times N_{s}$ - dimensional array of systematic (nuisance) 
+parameters that affect the Super-K reconstructed energy spectrum prediction (e.g.
+parameters that control the beam, neutrino interaction simulations, 
+detector response and oscillations).
+
+
+The log-likelihood function used in the analysis is
+
+\begin{equation} \label{eq:chisquare}
+%\displaystyle
+%\chi^{2} 
+-2 \; \textrm{ln} \; \lambda (\vec{\theta},{\bf a}) = 2 \cdot \sum_{i=0}^{N-1} 
+   \Big( 
+     n^{obs}_{i} \cdot \textrm{ln} (n^{obs}_{i}/n^{exp}_{i}) +
+     (n^{exp}_{i}-n^{obs}_{i}) 
+   \Big) 
+\end{equation}
+where
+$n^{obs}_{i}$ is the observed number of events in the $i^{th}$ bin and
+$n^{exp}_{i} = n^{exp}_{i}(\vec{\theta}; {\bf a})$ 
+%$n^{exp}_{i} = n^{exp}_{i}(\sin^{2}\overline{\theta}_{23},|\overline{\Delta m}^{2}_{32}|; {\bf a})$ 
+is the corresponding expected number of events.
+
+
+The log-likelihood function obtained by adding a gaussian penatly term can be written as
+\begin{equation} \label{eq:chisquare_penalty}
+%\displaystyle
+%\chi^{2} 
+-2 \; \textrm{ln} \; \lambda (\vec{\theta},{\bf a}) = 2 \cdot \sum_{i=0}^{N-1} 
+   \Big( 
+     n^{obs}_{i} \cdot \textrm{ln} (n^{obs}_{i}/n^{exp}_{i}) +
+     (n^{exp}_{i}-n^{obs}_{i}) 
+   \Big) +
+   ({\bf a}-{\bf a_{0}})^{T} \cdot {\bf C}^{-1} \cdot ({\bf a}-{\bf a_{0}})
+\end{equation}
+where
+${\bf a_{0}}$ is an $1 \times N_{s}$ - dimensional array with the default values of 
+the systematic parameters, ${\bf a}^{T}$ is the transpose of ${\bf a}$,
+${\bf C}$ is the systematic parameter covariance matrix of dimension $N_{s} \times N_{s}$,
+$n^{obs}_{i}$ is the observed number of events in the $i^{th}$ bin, and
+$n^{exp}_{i}(\vec{\theta}; {\bf a})$ 
+%$n^{exp}_{i} = n^{exp}_{i}(\sin^{2}\overline{\theta}_{23},|\overline{\Delta m}^{2}_{32}|; {\bf a})$ 
+is the corresponding expected number of events.
+
+The total likelihood is given by the product of the likelihood terms of each selected sample,
+
+\begin{equation} \label{eq:totlike}
+\lambda(\vec{\theta}; {\bf a}) = \prod_{s=1}^{N_{samples}} \lambda_s (\vec{\theta}; {\bf a})
+\end{equation}
+where $N_{samples}$ is the number of selected samples used in the analysis, or
+by the sum of $-2 \; \textrm{ln} \; \lambda (\vec{\theta},{\bf a})$ from all the Super-K samples
+
+\begin{equation} \label{eq:totlike_2}
+-2 \; \textrm{ln} \; \lambda (\vec{\theta},{\bf a}) = \sum_{s=1}^{N_{samples}} -2 \; \textrm{ln} \; \lambda_s (\vec{\theta},{\bf a})
+\end{equation}
+
+The advantage of the used binned likelihood ratio method is that,
+in the large-sample limit, the quantity 
+$-2 \: \textrm{ln} \: \lambda (\vec{\theta}; {\bf a})$
+%$-2 \: \textrm{ln} \: \lambda (\sin^{2}\overline{\theta}_{23},|\overline{\Delta m}^{2}_{32}|; {\bf a})$
+in \cref{eq:chisquare} has a $\chi^{2}$ distribution and it can therefore be used as a goodness-of-fit test.
+
+Values of systematic parameters that give a negative predicted number of events in any reconstructed energy bin in any interaction 
+mode are not allowed. If a systematic throw gives a negative number of events, that toy experiment is rejected.
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+\subsection {Marginalization}
+\label{sec:marginalization}
+
+In the previous analyses,
+except \cite{OurRun56AntiNueBarAppearanceAnalysis3Flavour},
+ a fully frequentist approach, in which all nuisance parameters were profiled, was used.
+Now a hybrid Bayesian-frequentist method is used. 
+The nuisance parameters are marginalised over while the parameters of interest are minimized with respect to the likelihood distribution.
+The marginalization of the nuisance parameters give a so-called marginal likelihood that depends on only
+on a vector of parameters of interest, $\vec{\theta}$.
+
+The marginal likelihood is derived using the following equation:
+
+\begin{equation}\label{eq:likemarg}
+\lambda_{marg} (\vec{\theta}) = \int_{A} \lambda (\vec{\theta};{\bf a}) \pi{({\bf a})} d {\bf a} = \frac{1}{n} \sum_{i=1}^{n} 
+\lambda (\vec{\theta}; {\bf a}_i) 
+\end{equation}
+where ${\bf a}$ is the set of nuisance parameters in the parameter space $A$, $\pi{({\bf a})}$ is the prior of the nuisance parameters.
+$n$ is the number of toys MC produced for the marginalization and
+${\bf a_i}$ is the single set of nuisance parameters extracted in the ``i-th" toy MC.
+Many sets of ${\bf a}$ should be extracted in order to effectively sample the space of the nuisance parameters.
+The number of extractions depends on the number of nuisance parameters as well as the precision that is required by the measurement.
+In all the analyses shown in this note $n = 10k$ toys MC were used for the marginalisation of the systematic parameters.
+
+We use the marginal log-likelihood, which will be denoted as $\chi^2_{marg}$ from now on,
+since it follows a $\chi^2$ distribution when the Poisson statistic converges to the Gaussian:
+
+\begin{equation} \label{eq:loglikemarg}
+\chi^2_{marg} (\vec{\theta}) = - 2  \ln \lambda_{marg} (\vec{\theta})  = -2 \ln \left(\frac{1}{n} \sum_{i=1}^{n} 
+\lambda (\vec{\theta}; {\bf a}_i)  \right) 
+\end{equation}
+It is important to note that this numerical integration is a weighted average of the likelihood evaluated at the $n$ throws, 
+not a weighted average of the log-likelihood.
+%When marginalization is used the penalty term
+%$ ({\bf a}-{\bf a_{0}})^{T} \cdot {\bf C}^{-1} \cdot ({\bf a}-{\bf a_{0}}) $
+%For this reason a modified version of \cref{eq:chisquare}, which doesn't include the penalty term, is used.
+During the marginalization process, random values of the nuisance parameters are drawn according to the prior constraints which come from fits to near detector data and control samples at Super-K. Therefore, each throw is already weighted based on the prior information, and as a result the nuisance parameter values are not included in the calculation of the likelihood.
+%
+%When marginalization is used the penalty term becomes useless, 
+%since the values of the nuisance parameters are already extracted using the prior distributions
+%which replace the penalty term
+%$ ({\bf a}-{\bf a_{0}})^{T} \cdot {\bf C}^{-1} \cdot ({\bf a}-{\bf a_{0}})$
+%that also becomes constant, independent of the parameter of interest.
+%
+For this reason \cref{eq:chisquare}, which doesn't include the penalty term, is used.
+
+Sometimes the free parameters, which are not marginalised, 
+are constrained with a penalty term.
+In this case a modified version of \cref{eq:loglikemarg} is used:
+
+\begin{equation} \label{eq:chisqmarg_with_penalty}
+\chi^2_{constr} (\vec{\theta}) = \chi^2_{marg}(\vec{\theta}) + (\vec{\theta} - \vec{\theta_0})^T V^{-1} (\vec{\theta} - \vec{\theta_0}) 
+\end{equation}
+where $\vec{\theta_0}$ is the vector of nominal values of the parameters of interest,
+$\vec{\theta}$ is the vector of its fitted values 
+and $V$ is the covariance matrix which relates all the free parameters.
+If the constrained parameter $\theta_{constr}$ is not correlated with the other parameters of interest,
+$V$ is reduced to the uncertainty $\Delta \theta^{constr}$,
+and \cref{eq:chisqmarg_with_penalty} becomes
+
+\begin{equation} \label{eq:chisqmarg_with_penalty_uncorr}
+\chi^2_{constr} (\vec{\theta}) = \chi^2_{marg}(\vec{\theta}) + \frac{ (\theta^{constr} - \theta^{constr}_0)^2 }{(\Delta \theta^{constr})^2}
+\end{equation}
+This is the case of $\sin^2 \theta_{13}$ when it is measured, i.e. it is parameter of interest,
+but at the same time it is constrained with the measurement of the reactor experiments.
+When a penalty term is applied to a parameter of interest it will be specified.
+
+The toys MC used for the marginalization of the nuisance parameters are performed exactly in the same way as 
+described in \cref{sec:systematics:inputs}, taking into account the correlations, but without statistical fluctuations.
+First $n = 10k$ distributions of $E_{reco}$ vs $\theta_l$ for $e$-like and $E_{reco}$ only for $\mu$-like samples
+are produced using the extracted systematic parameters for a given point of the parameter of interest grid $\vec{\theta}$
+for $1 \times 10^{20}$ POT so that they may be scaled appropriately when comparing to datasets of differing POT.
+%and normalised to $1 \times 10^{20}$ POT, in order to be used for fits at any different number of POT. 
+Finally they are stored in output files which can be used for whatever needed fit.
+A fit on a single dataset is performed as following:
+\begin{itemize}
+\item all the $n$ toy MC distributions are read from the files,
+\item each distribution is normalised to the number of POT of the data set,
+\item for each toy distribution \cref{eq:chisquare} is calculated and $\lambda(\vec{\theta},{\bf a}) = e^{- (-2 \; \textrm{ln} \; \lambda (\vec{\theta},{\bf a})) / 2}$ is obtained,
+\item the $\chi^2$ value is finally obtained, using \cref{eq:loglikemarg}, for a given set of parameter values of interest, $\vec{\theta}$.
+	If $\vec{\theta}$ is constrained, \cref{eq:chisqmarg_with_penalty_uncorr} is used.
+\end{itemize}
+
+This procedure is followed for each point in the $\vec{\theta}$ grid, where the binning 
+is so fine that it does not impact on the precision of the measurement.
+Finally the best fit is found by looking for the $\vec{\theta}$ grid point 
+with the minimum $\chi^2$ value, $\chi^2_{bf}$.
+This point corresponds to the best-fit parameters $\vec{\theta}_{bf}$. 
+The minimization can be also performed by using a discrete descent gradient algorithm \cite{DescentGradient}
+implemented in the VALOR framework that allows the minimum $\chi^2$ 
+to be found without the need of calculating the full $\chi^2$ distribution across all grid points.
+This method is employed when a large number of fits is required, such as the calculation of critical values
+for Feldman-Cousins contours, as it drastically reduces the amount of CPU time required.
+%This will be very useful when many fits are done and a lot of CPU time is required.
+A validation of the minimization algorithm will be shown in \cref{sec:validation} %are we showing this in the note or should we reference a previous one?
+for the analyses where it is used.
+
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+\subsection{Best-fit spectra with marginalization}
+\label{sec:spectra_bestfit_method}
+
+When profiling, the best fit spectra are defined by the MC prediction that gives the largest likelihood values.
+
+%If profiling is used the nuisance parameters are fixed to their best-fit values
+%and the computation of the best-fit spectra is straightforward.
+
+However, since the nuisance parameters are marginalised, there does not exist a single set 
+of parameters
+which corresponds to the best fit. Therefore a new method has been developed to 
+represent the best fit spectra which is consistent with the oscillation results. 
+%However, since the nuisance parameters are marginalised,
+%in order to get the best-fit spectra consistent with the oscillation results,
+%the nuisance parameters cannot be set to their best-fit values and
+%a new method must be developed.
+
+%At the end of the fit the nuisance parameters have an effective value which corresponds
+%to the weighted average over all the toys MC where the weights are 
+%the likelihood values of each single toy given by \cref{eq:chisquare}.
+%This becomes clearer when considering \cref{eq:likemarg}.
+
+The following procedure is used.
+From each toy MC $i$, 
+used to marginalise the nuisance parameters, 
+a different spectrum,
+with 
+%$N^{j}(\vec{\theta}_{bf}; \bf{a})$ 
+$N^{j}(\vec{\theta}_{bf})$ 
+number of events in each bin $j$, 
+is produced
+as well as a likelihood $\lambda (\vec{\theta}_{bf},\bf{a_i}) $ value, 
+calculated using \cref{eq:likemarg},
+where 
+$\vec{\theta}_{bf}$ is the best-fit value of the free parameters vector
+and 
+$\bf{a_i}$
+is the vector of nuisance parameters corresponding to the toy $i$.
+The best-fit number of events in the bin $j$ of the spectrum is calculated as
+
+\begin{equation} \label{eq:bestfit_spectrum_marg}
+N^j_{marg} = \frac{ \sum_{i=1}^{n} \lambda (\vec{\theta}_{bf}; {\bf a_i}) \cdot N^{j}(\vec{\theta}_{bf}; {\bf a_i}) }{ \sum_{i=1}^{n} \lambda (\vec{\theta}_{bf}; {\bf a_i})  }
+\end{equation}
+where $n$ is the number of toys MC.
+
+One can easily find a relation between the profiled and marginalised best-fit spectra.
+In the limit of infinite number of toys MC, 
+i.e. the full nuisance parameters space is scanned,
+the likelihood can be written as
+\begin{equation} \label{eq:likemarg_bf}
+\lambda_{marg} (\vec{\theta}_{bf}) = \frac{1}{n} \sum_{i=1,~i \neq bf}^{n} \left[ \lambda (\vec{\theta}_{bf}; \bf{a_i}) + \lambda_{prof}  \right]
+\end{equation}
+where 
+$\lambda_{prof} =  \lambda (\vec{\theta}_{bf}; \bf{a_{bf}})$ 
+is the profiled best-fit likelihood. 
+If we denote as
+$N^j_{prof} = N_i^{j}(\vec{\theta}_{bf}; \bf{a_{bf}})$  
+the number of events in the bin $j$ obtained with profiling,
+\cref{eq:bestfit_spectrum_marg} can be written as
+
+\begin{equation} \label{eq:bestfit_spectrum}
+N^j_{marg} = \frac{ \sum_{i=1,~i \neq bf}^{n} \lambda (\vec{\theta}_{bf}; \bf{a_i}) \cdot N^{j}(\vec{\theta}_{bf}; \bf{a_i}) + \lambda_{prof} \cdot N^{j}_{prof}  }{ \sum_{i=1}^{n} \lambda (\vec{\theta}_{bf}; \bf{a_i})  }
+\end{equation}
+%In the gaussian regime, 
+%i.e. the likelihood has a linear dependence from the parameters 
+%that are also distributed as gaussian,
+%marginalization and profiling gives exactly the same result.
+%If the term $\sum_{i=1,~i \neq bf}^{n} \lambda (\vec{\theta}_{bf}; \bf{a_i}) \cdot N^{j}(\vec{\theta}_{bf}; \bf{a_i})$
+%is symmetric around $\mathcal{L}_{prof} \cdot N^{j}_{prof}$,
+%the marginalised spectrum converges to the one obtained using the profiling and
+%$N^j_{marg} = N^{j}_{prof}$.
+
+
+
+
+
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+\subsection{Confidence intervals}
+\label{sec:cl}
+
+After the fit is completed, 
+the full $\chi^2$ distribution is then shifted with respect to $\chi^2 (\vec{\theta}_{bf})$:
+\begin{equation} \label{eq:deltachisq}
+\Delta \chi^2 (\vec{\theta}) = \chi^2(\vec{\theta}) - \chi^2(\vec{\theta}_{bf})
+\end{equation}
+Confidence intervals are set on $\Delta \chi^2 (\vec{\theta})$.
+If 
+
+\begin{equation} \label{eq:condition_cl}
+\Delta \chi^2(\vec{\theta}) > \Delta \chi^2_{crit}
+\end{equation}
+where $\Delta \chi^2_{crit}$ 
+is the critical value for a certain confidence level $X\%$(CL),
+that value of $\vec{\theta}$ is excluded at the $X\%$ CL.
+In the gaussian approximation constant values of $\Delta \chi^2_{crit}$ can be used.
+It will be called ``constant $\Delta \chi^2$ method".
+
+However in some cases the gaussian approximation is not reliable
+and the ``Feldman-Cousins method" \cite{FeldmanCousins} must be used.
+In this method a different critical value for each point of the $\vec{\theta}$ grid 
+%$\Delta \chi^2 (\theta_{i..j})_{crit}$
+$\Delta \chi^2 (\vec{\theta})_{crit}$
+is calculated.
+The procedure consists of the following steps:
+
+\begin{enumerate}
+
+\item many toys MC (e.g. 10k) are produced 
+	assuming the oscillation hypothesis of the grid point $\vec{\theta}$
+ 	and taking into account both the statistical and systematic uncertainties; 
+
+\item for each toy first $\chi^2(\vec{\theta}_{fix})$ is obtained
+	by minimizing $\chi^2 (\vec{\theta})$
+	where the oscillation parameters $\vec{\theta}$ are kept 
+	fixed to the values corresponding to the grid point  
+	and the nuisance parameters are marginalised.
+	Then $\chi^2 (\vec{\theta})$ is minimized, 
+	leaving the oscillation parameters $\vec{\theta}$ as free and
+	$\chi^2 (\vec{\theta}_{bf})$ is obtained. 
+	
+\item the test statistic is calculated as
+
+	\begin{equation}
+	\Delta \chi^2 = \chi^2(\vec{\theta}_{fix}) - \chi^2 (\vec{\theta}_{bf})
+	\end{equation}
+	
+%\item $\Delta \chi^2 (\vec{\theta})$ is calculated using 
+%	\cref{eq:loglikemarg} or~\ref{eq:chisqmarg_with_penalty_uncorr}.
+
+\item The steps 2 and 3 are repeated for each toy MC 
+	and $f(\Delta \chi^2)$, the distribution of $\Delta \chi^2 (\vec{\theta})$,
+	%analogue to what is shown in fig.~\ref{fig:sterile_pvalue},	
+	is obtained.
+
+\item Several critical values for $X\%$ CL (e.g. 68\%, 90\%...),
+	%$\Delta \chi^2 (\vec{\theta})_{crit}^{X\%CL}$,
+ 	$\Delta \chi^2 (\vec{\theta})_{crit}$,
+	can be defined as:
+	
+	\begin{equation} \label{eq:def_crit_val}
+	\Delta \chi^2_{crit}: \int_{-\infty}^{\Delta \chi^2_{crit}} f(\Delta \chi^2) d( \Delta \chi^2) = X\%
+	\end{equation}		
+	
+	where $f(\Delta \chi^2)$ is the p.d.f. of $\Delta \chi^2$ and 
+	$d( \Delta \chi^2)$ is the differential of the integral.
+	
+\item This procedure is repeated for all the points of the $\vec{\theta}$ grid
+	and several critical values are computed
+	
+\end{enumerate}
+
+Once a critical value, $\Delta \chi^2 (\vec{\theta})_{crit}$,
+is computed for each oscillation hypothesis in the $\vec{\theta}$ grid,
+the confidence intervals are set by the condition of \cref{eq:condition_cl}. \\
+
+
+Several analyses are performed and confidence intervals are computed for:
+\begin{itemize}
+
+\item 
+1D $\delta_{CP}$ with reactor constraint: 
+the parameter of interest is $\delta_{CP}$ and
+all the other oscillation parameters are marginalised;
+for $\sin^2 \theta_{13}$, that is marginalised,
+the gaussian prior of reactor measurements shown in \cref{tab:osc_params_joint_priors}, is used. 
+
+\item 
+1D $\delta_{CP}$ T2K only: 
+the parameter of interest is $\delta_{CP}$ and
+all the other oscillation parameters are marginalised;
+for $\sin^2 \theta_{13}$, that is marginalised, 
+the uniform prior, shown in \cref{tab:osc_params_joint_priors}, is used. 
+
+\item 
+1D $\sin^2 \theta_{13}$ T2K only: 
+the parameter of interest is $\sin^2 \theta_{13}$ and
+all the other oscillation parameters are marginalised;
+%for $\sin^2 \theta_{13}$, that is a free parameter,
+%the gaussian prior of reactor measurements shown in \cref{tab:marg_binnning}, is used. 
+
+\item 
+1D $\Delta m^2_{32}$ ($\Delta m^2_{13}$) with reactor constraint: 
+the parameter of interest is $\Delta m^2_{32}$ ($\Delta m^2_{13}$) and
+all the other oscillation parameters are marginalised;
+for $\sin^2 \theta_{13}$, that is marginalised,
+the gaussian prior of reactor measurements shown in \cref{tab:osc_params_joint_priors}, is used. 
+
+\item 
+1D $\sin^2 \theta_{23}$ with reactor constraint: 
+the parameter of interest is $\sin^2 \theta_{23}$ and
+all the other oscillation parameters are marginalised;
+for $\sin^2 \theta_{13}$, that is marginalised,
+the gaussian prior of reactor measurements shown in \cref{tab:osc_params_joint_priors}, is used. 
+
+%
+
+\item 
+2D $\sin^2 \theta_{13}$ vs $\delta_{CP}$ with reactor constraint: 
+the parameters of interest are $\sin^2 \theta_{13}$ and $\delta_{CP}$ while
+all the other oscillation parameters are marginalised;
+for $\sin^2 \theta_{13}$, that is a free parameter, 
+the gaussian prior of reactor measurements shown in \cref{tab:osc_params_joint_priors}, 
+is used, through a penalty term as in \cref{eq:chisqmarg_with_penalty_uncorr}.
+
+\item 
+2D $\sin^2 \theta_{13}$ vs $\delta_{CP}$ T2K only: 
+the parameters of interest are $\sin^2 \theta_{13}$ and $\delta_{CP}$ while
+all the other oscillation parameters are marginalised;
+%for $\sin^2 \theta_{13}$, that is a free parameter, 
+%the uniform prior, shown in \cref{tab:marg_binnning}, is used. 
+
+\item 
+2D $\sin^2 \theta_{23}$ vs $\delta_{CP}$ T2K only: 
+the parameters of interest are $\sin^2 \theta_{23}$ and $\delta_{CP}$ while
+all the other oscillation parameters are marginalised;
+%for $\sin^2 \theta_{13}$, that is a free parameter, 
+%the uniform prior, shown in \cref{tab:marg_binnning}, is used. 
+
+\item 
+2D $\Delta m^2_{32}$ ($\Delta m^2_{13}$) vs $\delta_{CP}$ T2K only: 
+the parameters of interest are $\Delta m^2_{32}$ and $\delta_{CP}$ while
+all the other oscillation parameters are marginalised;
+%for $\sin^2 \theta_{13}$, that is a free parameter, 
+%the uniform prior, shown in \cref{tab:marg_binnning}, is used. 
+
+\item 
+2D $\sin^2 \theta_{23}$ vs $\Delta m^2_{32}$ ($\Delta m^2_{13}$) with reactor constraint: 
+the parameters of interest are $\sin^2 \theta_{23}$ and $\Delta m^2_{32}$ ($\Delta m^2_{13}$) 
+while all the other oscillation parameters are marginalised;
+for $\sin^2 \theta_{13}$, that is marginalised,
+the gaussian prior of reactor measurements shown in \cref{tab:osc_params_joint_priors}, is used. 
+
+\end{itemize}
+
+Each confidence interval is calculated for both normal and inverted hierarchy.
+
+The 1D $\chi^2$ confidence intervals with ``constant $\Delta \chi^2$ method" are used to set the $\pm 1 \sigma$ ranges.
+
+Each point of the $\vec{\theta}$ grid corresponds to the center of the histogram bins,
+i.e. the $\chi^2$ values are calculated at each histogram bin center. 
+The ranges and binnings used for the analyses listed above are shown in \cref{tab:marg_binnning}.
+All the 1-dimensional analyses, where the precision on the best-fit point is important 
+and must be quoted, are performed with a fine binning.
+Since 2-dimensional analyses are performed only to set contours with ``constant $\Delta \chi^2$ method"
+and a fit with a very high precision is not needed to find the best-fit point, 
+coarser binning are used, without affecting the contour.
+Furthermore a very fine 2-dimensional binning would require much more CPU time and storage space.
+In the future $\bar{\nu}/\nu$ joint analysis releases when the "Feldman-Cousins method" will be needed 
+also for 2-dimensional fits, a finer binning will be used.
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{| c | c | c | c | c |}
+\hline
+Parameter 					& Min 			& Max			& Step			& Bins	  	\\
+\hline
+
+& \multicolumn{4}{c|}{\bf 1-dimensional fit}  \\
+\hline
+$\delta_{CP}$ 					& $-\pi$			& $+\pi$			& $\pi / 200$		& 201		\\
+$\sin^2 \theta_{13}$ 	(reactors)	 	& 0.015			& 0.036			& 0.021 / 81		& 201 		\\
+$\sin^2 \theta_{13}$ 	(T2K only) 	& 0				& 0.113			& 0.113 / 200		& 201 		\\
+$\sin^2 \theta_{23}$ 				& 0.3				& 0.7				& 0.4 / 200 		& 201		\\
+$|\Delta m^2_{32}|~(\text{eV}^2 / \text{c}^4)$ 			& $2\times10^{-3}$	& $3\times10^{-3}$	& $10^{-3} / 200$	& 201 		\\
+\hline
+
+& \multicolumn{4}{c|}{\bf 2-dimensional fit}  \\
+\hline
+$\delta_{CP}$ 					& $-\pi$			& $+\pi$			& $\pi / 50$		& 51			\\
+$\sin^2 \theta_{13}$ 	(reactors)	 	& 0.015			& 0.036			& 0.021 / 81		& 81	 		\\
+$\sin^2 \theta_{13}$ 	(T2K only) 	& 0				& 0.113			& 0.113 / 81		& 81 			\\
+$\sin^2 \theta_{23}$ 				& 0.3				& 0.7				& 0.4 / 81 			& 81			\\
+$|\Delta m^2_{32}|~(\text{eV}^2 / \text{c}^4)$ 			& $2\times10^{-3}$	& $3\times10^{-3}$	& $10^{-3} / 21$	& 21 			\\
+\hline
+
+\end{tabular}
+\caption{
+Grid limits and spacing used for all the 1-dimensional and 2-dimensional marginalization fits and confidence regions.
+The minimum and maximum values correspond to the center of the $\chi^2$ histogram first and last bin.
+}
+\label{tab:marg_binnning}
+\end{table}
+
+
+
+
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+\subsection{Contours with profiled mass hierarchy}
+\label{sec:cl_mh}
+
+As already pointed out, the constant $\Delta \chi^2$ method gives the correct coverage 
+when the gaussian approximation is valid and is very useful because it does not require a large amount of CPU time.
+However, we know that in some cases the constant $\Delta \chi^2$ method fails to give the correct coverage
+and can provide only approximate confidence intervals.
+An example of this is the case when the constraint on a parameter is not precise enough to keep it away from a physical boundary. 
+For cases such as these a toy MC study is required in order to estimate the correct critical values
+(see \cref{sec:cl}).
+
+Also, when considering discrete parameters, such as the mass hierarchy, that is distributed as binomial,
+the $\Delta \chi^2$ is not expected to follow a 
+$\chi^2$ distribution but more likely to follow a gaussian distribution as found in \cite{cl_masshierarchy}. This is an important 
+distinction as the exclusion significance one can interpret from a constant $\Delta \chi^2$ contour is heavily dependant on the 
+distribution the $\Delta \chi^2$ is expected to take. 
+
+%\begin{equation}
+%\sigma_{\Delta \chi^2} = 2 \sqrt{\Delta \chi^2}
+%\label{eq:sigma_mh}
+%\end{equation}
+%which would not show the factor 2 in the gaussian approximation.
+
+This means that when the constant $\Delta \chi^2$ method is used in order 
+to set limits as a function of some oscillation parameters as well as the mass hierarchy,
+the constant critical values we usually use
+do not give the right coverage for the disfavored mass hierarchy hypothesis contour.
+%Indeed, since the $\sigma_{\Delta \chi^2}$ value that defines the significance is larger by a factor 2, 
+%the gaussian approximation would erroneously produce 
+%stronger limits, giving undercoverage.
+
+For this reason the data fit 2-dimensional confidence intervals, 
+which are calculated for both the hierarchy hypotheses, 
+will be computed in two different ways:
+\begin{itemize}
+\item normal and inverted hierarchy contours are obtained independently
+	with respect to their own minimum (``independent")
+\item the global minimum between the normal and inverted hierarchy hypotheses
+	is used to set both the contours (``global");
+\end{itemize}
+These different ways to show the confidence intervals correspond
+to the two extremes, where the ``independent" and ``global" contours 
+provide respectively the most and the least conservative results.
+
+Since for the 1-dimensional fits the $\Delta \chi^2$ distribution are shown,
+there is no need to provide results using both ``independent" and ``global" approaches.
+However the reader should remember that the constant critical values 
+shown in the figures hold only for the $\Delta \chi^2$ distribution corresponding to the best-fit mass hierarchy hypothesis.
+Indeed the constant $\Delta \chi^2$ method does not give the proper coverage for discrete parameters
+and consequently the contour of the disfavored hierarchy has bad coverage.
+%For the disfavored hypothesis \cref{eq:sigma_mh}
+%can be used independently for each point of the free parameter grid.
+
+
+
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+%\subsection{Goodness of fit}
+%\label{sec:method_gof}
+%
+%The goodness-of-fit tests are done by minimising the expression in \cref{eq:loglikemarg} for $\delta_{CP}$
+%as free parameter with reactor constraint.
+%%In this analysis, the same coarse binning is used for these tests as in our neutrino-mode ??-disappearance analyses [4], [5] and [6]. 
+%The choice of this binning followed a decision by the oscillation analysis group that p-values should be calculated
+%using the rate and the spectra, and that a very coarse binning scheme should be
+%used to ensure that there are sufficient numbers of events in each bin; 
+%this scheme has 5 bins from 0-0.4, 0.4-0.7, 0.7-1.0, 1.0-2.0 and 2.0-30.0 GeV. 
+%%The Asimov spectrum using this binning can be seen in figure 23.
+%1000 toy experiments are generated for each mass hierarchy, and both systematic variations and statistical
+%fluctuations are applied to them. All \NSyst{} systematic parameters are included in the fits of those datasets.
+%
+%
+%%\vspace{3mm}
+%%{\huge{
+%%TODO: DESCRIBE HOW THE P-VALUE IS CALCULATED ???
+%%}}
+%%\vspace{3mm}
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+

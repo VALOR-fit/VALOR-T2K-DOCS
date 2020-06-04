@@ -1,0 +1,121 @@
+Comments on TN266v1.0 by Megan
+
+-- It's hard to think about fitting to reconstructed energy + lepton angle,
+since reconstructed energy is calculated based on the outgoing lepton angle --
+how can you be sure that constraints, errors, etc aren't being double counted?
+-> Lines 510-513 is enough ?  How about showing those results?  Are additional
+bias checks needed?
+
+-- Although it isn't shown in a note, I saw plots at an analysis meeting where
+this analysis had (somewhat unexpectedly) better constraints on the data fit
+compared to the straight Erec analysis... Do we fully understand that
+difference (since sensitivities were close to being the same)? Do we need
+additional checks to understand the difference...?
+
+
+-- line 130 : "unique" -> "single"
+
+-- line 134 : "lepton angle bin θ" -- what's the SK systematic error on
+determining the angle (ie energy scale equivalent)?  Is that taken into
+account?
+
+-- Eq1 : what's beta?
+
+-- lines 159-161 : sentence could use a reference or additional info
+
+-- line 174 : "intensity" -> "exposure" ?
+
+-- table 1, line 178-179 : "number of events" = "number of predicted events"?
+w/ what oscillation parameter assumption?
+
+-- line 217 + later : for this analysis, "MEC" should be changed to "2p-2h" as
+far as I understand
+
+-- lines 293-295 should go below the numu binning description
+
+-- lines 306-307 : "The same reconstructed neutrino energy and lepton angle
+binning is used for the fit of the single ring reconstructed energy spectra."
+-> This sentence is very hard to parse
+
+-- lines 311-313 : this isn't true.. rec E binning hasn't changed, but binning
+has certainly changed for nue sample
+
+-- table8 : Is some additional description needed for parameters that are not
+normalizations?  What does it mean when a parameter has best fit of 1.000?
+
+-- line 345 : I don't think "proxies" is the right word here.. You mean
+"although it's written 'numu', it's actually 'numu+nue+nutau' " ?
+
+-- Figs 1 + 3 : shouldn't you be using Run 1-4 flux tuning weights for nu-mode
+beam?  Or figs 1-4 are all RHC ?  (if so, that should be written somewhere.. +
+how about FHC?)
+
+-- tables 34-37 : need FHC, RHC labels I think
+
+-- line 1009 : says table 35 twice.
+
+-- line 407-408 : do we understand that this is the cause of the bias??
+
+-- line 426 : Is it OK that the number of events from the 2015 analysis isn't
+reproduced exactly?
+
+-- lines 434-438 : I am having trouble understanding what was done here...
+
+-- line 473 : Probably good to define "marginalized" here..
+
+-- line 479-80 : "of about" -> "by about", error reduced by how much?
+
+-- line 481 : Is all of the run 5+6 FHC data being used for this analysis???
+Maybe good to state how much POT is FHC from Run 5+6
+
+-- fig6-17 + elsewhere : "The continuos line shows the pre-BANFF (blue) and
+post-BANFF (red) ratios" -> There is no continuous line (in fig6, etc) or blue
+anything in any of these figures. Also "continuos" is spelled wrong "and the
+oscillation parameters shown in tab. 11." -> oscillation parameter priors ?
+
+-- line 508-509 : This choice is the most conservative case for dCP = -90deg?
+If so, should state that here.
+
+-- table 21 : I don't understand the column labels -- it's RMS/mean of
+#FHC/#RHC events ?  Can you put an equation?
+
+-- line 542 : "likelihood ratio method over the extended maximum-likelihood
+method" -> how about adding 1 sentence on what these terms mean/ what
+difference is?
+
+-- line 652 : "+ Gaussian prior for th13"
+
+-- table 22 : Maybe w/ reactors th13 Gaussian prior should be included in the
+top table.  Isn't there a boundary problem when you constrain dcp to +/- pi
+(vs +/- 2pi)?
+
+-- line 710-711 : This sentence is hard to understand..
+
+-- line 761-766 : How about not using the global minimum for the IH numbers in
+this table??  Other columns wouldn't need to change + last column would be
+meaningful.
+
+-- line 771-773 : Why isn't dm^2_32 fit?  Why not include the th13 best fit
+point?  Also, the wording is funny, since it's not a fit; it's plots of the
+best fit spectra
+
+-- line 778 : Good to explain "8-5".
+
+-- table 24 : +/- 1sigma interval for dCP doesn't match fig 23a???  This is
+the main result of the analysis, I think, so it needs to be correct +
+emphasized..
+
+-- fig 24 : Need to put correct description of plot in caption
+
+-- fig 31 : Caption is totally wrong.  Also 13b plot legend is wrong
+
+-- line 1011 : Should separate tab 42 + description from the rest of this
+sentence
+
+-- tab 42 is hard to understand..
+
+-- fig 37, 38 is missing pre-fit contours
+
+-- line 1017 : Should clarify this sentence (bias is corrected by both a
+correction + a new additional covariance matrix? I understood it was just a
+new matrix).

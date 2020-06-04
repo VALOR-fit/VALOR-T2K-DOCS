@@ -1,0 +1,9 @@
+if [ -n $(kpsewhich subcaption.sty) ] ; then
+  export TEXINPUTS="$(readlink -m latex_package):${TEXINPUTS}"
+fi
+
+latex numuosc2015.tex
+latex numuosc2015.tex
+latex numuosc2015.tex
+dvips -t a4 -o numuosc2015.ps numuosc2015.dvi
+ps2pdf14 numuosc2015.ps

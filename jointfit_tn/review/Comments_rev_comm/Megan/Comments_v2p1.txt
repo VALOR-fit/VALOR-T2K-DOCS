@@ -1,0 +1,19 @@
+
+Megan's Comments on TN266v2.1
+
+Comments on TN266v2.1 by Megan
+
+This update looks fine to me.  What a great result! 
+
+A few cosmetic comments:
+
+-- line 1071 : "even" -> "event"
+
+-- table 38-42 captions : how about adding a reference to the relevant Run 1-6
+tables (tables 17-21?) so the reader can easily compare?
+
+-- Fig 50 b : how about including the blue 3sigma line?
+
+-- line 1176 : table 29 is for run 1-6 (not 1-7)
+
+-- Fig 52 caption : there are not red lines or green lines in this figure..

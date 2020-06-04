@@ -1,0 +1,2 @@
+
+$T2KOSCANA/macros/tn_plotting_stuffs/make_table_onesigma_errors.py -s RHC1Re -c analysis_configuration_data_theta_elike_RFGRPA_NIWG2015c_1p1h_fitbias.xml -p analysis_configuration_data_theta_elike_RFGRPA_NIWG2015c_1p1h_prefit_fitbias.xml

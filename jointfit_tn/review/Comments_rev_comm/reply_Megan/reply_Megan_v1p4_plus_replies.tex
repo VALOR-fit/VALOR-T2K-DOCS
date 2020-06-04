@@ -1,0 +1,153 @@
+
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.50cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{blkarray}                 % for correlation matrices
+\usepackage{color}
+\usepackage{rotate}                   % rotate text in tables
+\usepackage{lscape}                   % allow page to be landscape for large tables
+\usepackage{amsfonts}                 % extra symbols
+\usepackage{amsmath}
+%\usepackage{floatpag}                 % \thisfloatpagestyle{empty}, to suppress page numbers
+\usepackage{lmodern}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{caption}% Use captionof to be able to minipage figure's \& tables together, but still get correct captions
+\usepackage{enumitem}
+\usepackage[breaklinks=true,hyperfigures=true]{hyperref} % make contents and references links, but do not colour them
+
+\setenumerate{listparindent=\parindent} % Use paragraph indentation within the enumerate
+\usepackage{cleveref}
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+%\newcommand{\AmS}{{\protect\the\textfont2
+%  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+\usepackage{listings}   
+\lstset{language=C++}
+
+% Particle aliases
+\newcommand{\nue}{\nu_{e}}
+\newcommand{\numu}{\nu_{\mu}}
+\newcommand{\nutau}{\nu_{\tau}}
+\newcommand{\nueb}{\xbar{\nu}_{e}}
+\newcommand{\numub}{\xbar{\nu}_{\mu}}
+\newcommand{\nutaub}{\xbar{\nu}_{\tau}}
+\newcommand{\nub}{\xbar{\nu}}
+\newcommand{\nua}{\nu_{\alpha}}
+\newcommand{\nuab}{\xbar{\nu_{\alpha}}}
+
+\newcommand{\numuany}{\overset{(-)}{\nu_\mu}}
+\newcommand{\nueany}{\overset{(-)}{\nu_e}}
+
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+%define new fonts, smaller than tiny (for showing large covariance matrices in a page)
+\makeatletter
+\ifcase \@ptsize \relax% 10pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{4}{5}}% \tiny: 5/6
+  \newcommand{\verytiny}{\@setfontsize\miniscule{3}{4}}% \tiny: 5/6
+\or% 11pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\or% 12pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\fi
+\makeatother
+
+
+
+
+\linenumbers
+
+\begin{document}
+
+
+
+{\Large \textbf{Comments on TN266v1.4 by Megan}} \\
+
+
+--Replies (http://www.t2k.org/docs/technotes/266/Comments/reply\_Megan\_v1p0.pdf), line 3-30
+$\rightarrow$ Did you add this info to the note somewhere?  Can you add it?  (I couldn't find it..)  I think it's useful.
+
+\textcolor{blue}{DONE. Appendix E is added. Also caption of tables 18 - 21 has been improved.}
+
+
+-- Replies, line 45-48
+$\rightarrow$ Again, can you add this to the note? I couldn't find it.
+
+\textcolor{blue}{Added in appendix E.}
+
+-- Replies, line 128-129
+$\rightarrow$ Does starting at the boundary of the fit range really remove possible
+local minima problems in the fit?  I would think that would actually make it
+worse, since the fitter can only start stepping in 1 direction... anyway it
+may be worth it to think about expanding the fitter range to $\pm 2 \pi$ in future fits.
+
+\textcolor{blue}{Since all the nuisance parameters are marginalized, i.e. the fit parameters are not
+floating in n-dimensional space, using the method shown in section 5.4
+the global minimum is found almost 100\% of the times.
+However, when the number of free parameters minimized is increased (more than 2), 
+fit strategy should be revisited and optimized.}
+
+-- Replies, line 135-137
+$\rightarrow$ Although the IH is excluded at $>90\%$ CL, T2K doesn't actually
+have the sensitivity to actually exclude the IH (as was discussed at length last week). 
+Then I think it's important to include the IH-only limits in the note as well.
+
+\textcolor{blue}{DONE.}
+
+-- TN266v1.4, line 780 + 783 + fig 20 : description doesn't match figure caption (IH vs NH).
+
+\textcolor{blue}{DONE. Caption of fig 20 was wrong. Best-fit is inverted hierarchy, not normal. }
+
+-- TN266v1.4, line 875-877, 878-879 : I'm suddenly worried about fitter biases pointing
+our data toward Asimov Set A.  Line 878-879 -- this may be true now (and I'm not suggesting
+delaying the release of this analysis), but since these things don't agree within error bars for
+all parameter values, may need to re-think this for later versions of this analysis.
+(I guess it's worse if things far away from our best fit point don't make sense, right?)..
+
+\textcolor{blue}{The test values of $\sin^2 \theta_{23}$ are quite extreme, indeed 
+when performing the posterior predictive method the critical values are close enough.
+Also the difference when $\sin^2 \theta_{23}$ is fixed is not very large, though not fully negligible.
+I think it's safe for this analysis release. However we need to make more studies for when 
+higher statistic is collected.}
+
+-- Table 27 caption : Asimov set A has $\delta_{CP} = -\pi/2$, right?
+
+\textcolor{blue}{Yes it's correct. So the fake data sets were built by marginalizing all the oscillation parameters
+and fixing $\delta_{CP}=0$ and normal hierarchy.
+Then the fake data sets were weighted using the Asimov data set A, assuming it is the data set I'm fitting.}
+
+
+\end{document}
+
+

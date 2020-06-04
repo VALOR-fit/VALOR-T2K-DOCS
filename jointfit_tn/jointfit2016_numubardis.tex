@@ -1,0 +1,215 @@
+\clearpage
+
+% --------------------------------------------------------------------------------------------
+
+\section {$\bar{\nu}_{\mu}$ disappearance analysis}
+\label{sec:numubardis}
+
+%\clearpage
+
+\section {Analysis procedure: $\bar{\nu}_{\mu}$ dissapearance}
+\label{sec:oscfit_numubardis}
+
+%--------------------------------------------------------------------------------------------------------------------
+\subsection {Fit method}
+\label{sec:oscfit_method_numubardis}
+The $\bar{\nu}_{\mu}$ disappearance analysis is performed in an extension of the PMNS framework with additional antineutrino oscillation parameters $\bar{\theta}_{23}$ and $|\Delta\bar{m}^{2}_{32}|$. In this framework, neutrino oscillation probabilities are calculated with the PMNS 3 flavour hypothesis whereas the antineutrino oscillation probabilities calculated with $\bar{\theta}_{23}$ and $|\Delta\bar{m}^{2}_{32}|$ along with the standard neutrino oscillation parameters $\theta_{13}$,  $\theta_{12}$, $\Delta m^{2}_{21}$, $|\Delta m^{2}_{32}|$ and mass ordering. Testing the consistency between neutrino and antineutrino disappearance probabilities in this way provides insight into the level of CPT violation in neutrino oscillations while decoupling it from the CP violation which may appear in the appearance channels. Fits are performed using the FHC 1 ring $\mu$-like and RHC 1 ring $\mu$-like samples from the full T2K Run 1-6 dataset.
+
+
+The measurements of interest are as follows:
+\begin{itemize}
+\item 
+2D $\sin^2 \theta_{23}$ Vs $|\Delta m^2_{32}|$ with reactor constraint: 
+the parameters of interest are $\sin^2 \theta_{23}$ and $|\Delta m^2_{32}|$ while
+all the other oscillation parameters (including $\sin^2 (\bar{\theta}_{23})$ and $\bar{|\Delta m^2_{32}|}$) are marginalised;
+the gaussian prior of reactor measurements shown in Tab.~\cref{tab:osc_params_joint}, 
+is used, through a penalty term as in eq.~\cref{eq:chisqmarg_with_penalty_uncorr}.
+
+\item 
+2D $\sin^2 (\bar{\theta}_{23})$ Vs $\bar{|\Delta m^2_{32}|}$ with reactor constraint: 
+the parameters of interest are $\sin^2 (\bar{\theta}_{23})$ and $\bar{|\Delta m^2_{32}|}$while
+all the other oscillation parameters including ($\sin^2 \theta_{23}$ and $|\Delta m^2_{32}|$) are marginalised;
+the gaussian prior of reactor measurements shown in Tab.~\ref{tab:osc_params_joint}, 
+is used, through a penalty term as in eq.~\ref{eq:chisqmarg_with_penalty_uncorr}.
+
+\end{itemize}
+A comparison of contours from these fits is key to determining the amount of CPT violation.
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+\newpage
+
+\subsection{Sensitivity studies}
+\label{sec:numubar_sensi}
+All confidence level contours for sensitivity studies were were produced using the constant $\Delta \chi^2$ method described in ~\cref{sec:cl}.
+
+In Fig.~\ref{fig:validation_sensi_numubar} the sensitivity to $\sin^2 (\bar{\theta}_{23})$ 
+Vs $\bar{|\Delta m^2_{32}|}$ with reactor constraint is shown for the Asimov data set
+and compared with the result obtained by the other analysis groups is shown. 
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+\caption {
+Shown here are 68\% and 90\% constant $\Delta \chi^2$ CL contours of $\sin^2 (\bar{\theta}_{23})$ Vs $\bar{|\Delta m^2_{32}|}$
+with the reactor constraint from the 3 analysis groups from a fit to the Run 1-6 Asimov dataset. Independent contours are shown 
+for each hierarchy.
+}
+\label{fig:validation_sensi_numubar}
+\end{figure*}
+
+In Fig.~\ref{fig:validation_sensi_numubar_numu} the sensitivity to $\sin^2 (\theta_{23})$ 
+Vs $|\Delta m^2_{32}|$ with reactor constraint is shown for the Asimov data set
+and compared with the result obtained by the other analysis groups is shown. 
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+\includegraphics[width=18pc]{./images/missing_plot-eps-converted-to.pdf}
+\caption {
+Shown here are 68\% and 90\% constant $\Delta \chi^2$ CL  contours of $\sin^2 (\theta_{23})$ Vs $|\Delta m^2_{32}|$
+with the reactor constraint from the 3 analysis groups from a fit to the Run 1-6 Asimov dataset. Contours were produced 
+independently for each hierarchy hypothesis.
+}
+\label{fig:validation_sensi_numubar_numu}
+\end{figure*}
+
+
+Fig.~\ref{fig:validation_sensi_numubar_update_comparison_to_old_A,fig:validation_sensi_numubar_update_comparison_to_old_B} show a comparison of the sensitivity to $\nu$ and $\bar{\nu}$ parameters $\sin^2 (\theta_{23})$ Vs $|\Delta m^2_{32}|$ from the run 1-6 dataset to the run 1-7 dataset. There is significant improvement in the $\bar{\nu}$ parameter sensitivity in both Asimov fits with the 1-7 dataset 90\% CL inside of the run 1-6 dataset 68\% CL. Another interesting feature of the Asimov fits is that in some cases, the best fit point moves with the addition of more statistics as in Fig.~\ref{fig:validation_sensi_numubar_update_comparison_to_old_A_nubar_nh,fig:validation_sensi_numubar_update_comparison_to_old_A_nu_ih,fig:validation_sensi_numubar_update_comparison_to_old_B_nubar_nh}. Changes in the best fit point are possible when using a marginal likelihood. As seen perviously employing a marginal likelihood can lead to a best fit point away from the true parameter values because of correlations with parameters that are marginalised. In this case, the parameters marginalised are better constrained in the run 1-7 data fits than the run 1-6 and therefore have a different effect on the best fit point. 
+
+This is however a negligible effect in the sensitivity studies as the difference in the $\Delta \chi^2$ between run 1-7 and run 1-6 Asimov fits was found to be insignificant.
+
+\begin{figure*}[htb]
+\center
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/nh_a_nu_15_vs_16.pdf} %nubar 2015 vs 2016 nh
+        \caption{$\nu$ oscillation parameter fit for normal hierarchy hypothesis}
+\label{fig:validation_sensi_numubar_update_comparison_to_old_A_nu_nh}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/nh_a_nubar_15_vs_16.pdf} %nubar 2015 vs 2016 nh
+        \caption{$\bar{\nu}$ oscillation parameter fit for normal hierarchy hypothesis}
+\label{fig:validation_sensi_numubar_update_comparison_to_old_A_nubar_nh}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/ih_a_nu_15_vs_16.pdf} %nubar 2015 vs 2016 nh
+        \caption{$\nu$ oscillation parameter fit for inverted hierarchy hypothesis}
+\label{fig:validation_sensi_numubar_update_comparison_to_old_A_nu_ih}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/ih_a_nubar_15_vs_16.pdf} %nubar 2015 vs 2016 nh
+        \caption{$\bar{\nu}$ oscillation parameter fit for inverted hierarchy hypothesis}
+\label{fig:validation_sensi_numubar_update_comparison_to_old_A_nubar_ih}
+    \end{subfigure}
+
+
+\caption {
+Shown here are 68\% and 90\% constant $\Delta \chi^2$ CL contours of fits to $\nu$ and $\bar{\nu}$
+ parameters $\sin^2 (\theta_{23})$ Vs $|\Delta m^2_{32}|$ for both the Asimov run 1-6
+ and Asimov 1-7 datasets for parameter set A in tab.~\ref{tab:osc_params_joint_asimov} .
+ Contours were produced independently for each hierarchy hypothesis.
+ }
+\label{fig:validation_sensi_numubar_update_comparison_to_old_A}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/nh_b_nu_15_vs_16.pdf} %nubar 2015 vs 2016 nh
+        \caption{$\nu$ oscillation parameter fit for normal hierarchy hypothesis}
+\label{fig:validation_sensi_numubar_update_comparison_to_old_B_nu_nh}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/nh_b_nubar_15_vs_16.pdf} %nubar 2015 vs 2016 nh
+        \caption{$\bar{\nu}$ oscillation parameter fit for normal hierarchy hypothesis}
+\label{fig:validation_sensi_numubar_update_comparison_to_old_B_nubar_nh}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/ih_b_nu_15_vs_16.pdf} %nubar 2015 vs 2016 nh
+        \caption{$\nu$ oscillation parameter fit for inverted hierarchy hypothesis}
+\label{fig:validation_sensi_numubar_update_comparison_to_old_B_nu_ih}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/ih_b_nubar_15_vs_16.pdf} %nubar 2015 vs 2016 nh
+        \caption{$\bar{\nu}$ oscillation parameter fit for inverted hierarchy hypothesis}
+\label{fig:validation_sensi_numubar_update_comparison_to_old_B_nubar_ih}
+    \end{subfigure}
+\caption {
+Shown here are 68\% and 90\% constant $\Delta \chi^2$ CL contours of fits to $\nu$ and $\bar{\nu}$
+ parameters $\sin^2 (\theta_{23})$ Vs $|\Delta m^2_{32}|$ for both the Asimov run 1-6
+ and Asimov 1-7 datasets for parameter set B in tab.~\ref{tab:osc_params_joint_asimov} .
+ Contours were produced independently for each hierarchy hypothesis.
+ }
+\label{fig:validation_sensi_numubar_update_comparison_to_old_B}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/nu_vs_nubar_2016.pdf}
+        \caption{Normal hierarchy}
+\label{fig:validation_sensi_nu_vs_nubar_comparison_A_nh}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/nu_vs_nubar_2016_ih.pdf} 
+        \caption{Inverted hierarchy}
+\label{fig:validation_sensi_nu_vs_nubar_comparison_A_ih}
+    \end{subfigure}
+
+
+\caption {
+Shown here are a comparison of the 68\% and 90\% constant $\Delta \chi^2$ CL contours
+ of fits to $\nu$ and $\bar{\nu}$ parameters $\sin^2 (\theta_{23})$ Vs $|\Delta m^2_{32}|$
+ for the Asimov 1-7 dataset for parameter set A in tab.~\ref{tab:osc_params_joint_asimov} .
+ Contours were produced independently for each hierarchy hypothesis.
+ }
+\label{fig:validation_sensi_nu_vs_nubar_comparison_A}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/nu_vs_nubar_2016_B.pdf} 
+        \caption{Normal hierarchy}
+        \label{fig:validation_sensi_nu_vs_nubar_comparison_B_nh}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+\includegraphics[width=18pc]{./numubar_plots/asimov/nu_vs_nubar_2016_B_ih.pdf} 
+        \caption{Inverted hierarchy}
+        \label{fig:validation_sensi_nu_vs_nubar_comparison_B_nh_ih}
+    \end{subfigure}
+
+\caption {
+Shown here are a comparison of the 68\% and 90\% constant $\Delta \chi^2$ CL contours
+ of fits to $\nu$ and $\bar{\nu}$ parameters $\sin^2 (\theta_{23})$ Vs $|\Delta m^2_{32}|$
+ for the Asimov 1-7 dataset for parameter set B in tab.~\ref{tab:osc_params_joint_asimov} .
+ Contours were produced independently for each hierarchy hypothesis.
+ }
+\label{fig:validation_sensi_nu_vs_nubar_comparison_B}
+\end{figure*}
+
+
+%--------------------------------------------------------------------------------------------------------------------
+\subsection {Results of the $\bar{\nu}_{\mu}$ disappearance analysis}
+\label{sec:oscfit_method_numubardis}
+
+
+
+
+
+
+\clearpage

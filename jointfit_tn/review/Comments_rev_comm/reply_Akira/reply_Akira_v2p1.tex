@@ -1,0 +1,118 @@
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.50cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{blkarray}                 % for correlation matrices
+\usepackage{color}
+\usepackage{rotate}                   % rotate text in tables
+\usepackage{lscape}                   % allow page to be landscape for large tables
+\usepackage{amsfonts}                 % extra symbols
+\usepackage{amsmath}
+%\usepackage{floatpag}                 % \thisfloatpagestyle{empty}, to suppress page numbers
+\usepackage{lmodern}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{caption}% Use captionof to be able to minipage figure's \& tables together, but still get correct captions
+\usepackage{enumitem}
+\usepackage[breaklinks=true,hyperfigures=true]{hyperref} % make contents and references links, but do not colour them
+
+\setenumerate{listparindent=\parindent} % Use paragraph indentation within the enumerate
+\usepackage{cleveref}
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+%\newcommand{\AmS}{{\protect\the\textfont2
+%  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+\usepackage{listings}   
+\lstset{language=C++}
+
+% Particle aliases
+\newcommand{\nue}{\nu_{e}}
+\newcommand{\numu}{\nu_{\mu}}
+\newcommand{\nutau}{\nu_{\tau}}
+\newcommand{\nueb}{\xbar{\nu}_{e}}
+\newcommand{\numub}{\xbar{\nu}_{\mu}}
+\newcommand{\nutaub}{\xbar{\nu}_{\tau}}
+\newcommand{\nub}{\xbar{\nu}}
+\newcommand{\nua}{\nu_{\alpha}}
+\newcommand{\nuab}{\xbar{\nu_{\alpha}}}
+
+\newcommand{\numuany}{\overset{(-)}{\nu_\mu}}
+\newcommand{\nueany}{\overset{(-)}{\nu_e}}
+
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+%define new fonts, smaller than tiny (for showing large covariance matrices in a page)
+\makeatletter
+\ifcase \@ptsize \relax% 10pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{4}{5}}% \tiny: 5/6
+  \newcommand{\verytiny}{\@setfontsize\miniscule{3}{4}}% \tiny: 5/6
+\or% 11pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\or% 12pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\fi
+\makeatother
+
+
+
+
+\linenumbers
+
+\begin{document}
+
+
+
+{\Large \textbf{Comments on TN266v2.1 by Akira Konaka}} \\
+
+- There are slightly different narrations on the CP results in this technote. Could we say that CP conservation assuming the PMNS framework is excluded at 90\%CL? \\
+L1201: ``$\delta_{CP} = 0$ is still disfavored with respect to $\delta_{CP} = \pi$, which, however, 
+is excluded at 90\% CL. We can say that CP conservation is excluded at 90\% CL.'' \\
+L1217: ``With the Run 1-7 data set we still cannot exclude the hypothesis of CP conservation with a good significance.'' \\ 
+L1266: ``The Run 1-7 data do not exclude the hypothesis of CP conservation, though $\delta_{CP} = 0$ is excluded at more than $2\sigma$
+ and $\delta_{CP} = \pi$ is excluded at 90\% CL.''
+
+
+\textcolor{blue}{
+I modified the tree sentences in the text. Now I do not talk about ``good significance" which is quite subjective
+but I only state the significance to which $\delta_{CP} = 0$ and $\pi$ are excluded and that
+CP conservation with the PMNS model is excluded at 90\% CL.  
+}
+
+
+
+\end{document}
+
+
+
+
+
+

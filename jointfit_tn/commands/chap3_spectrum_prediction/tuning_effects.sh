@@ -1,0 +1,2 @@
+
+${T2KOSCANA}/macros/tn_plotting_stuffs/make_table_effects_of_tuning.py -s RHC1Re -c analysis_configuration_run1to6_test_app_4.0108E20POT_fluxJune.xml -p analysis_configuration_run1to6_test_prefit_app_4.0108E20POT_fluxJune.xml -n analysis_configuration_run1to6_test_prefit_app_nofluxtune_4.0108E20POT_fluxJune.xml

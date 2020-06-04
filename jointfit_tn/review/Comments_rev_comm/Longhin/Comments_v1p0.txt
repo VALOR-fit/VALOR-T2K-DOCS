@@ -1,0 +1,169 @@
+Dear authors,
+
+here below some comments from my first reading.  I might add something
+going through the new version containting also F&C results. In order
+not to delay the process here are my first reactions. There is nothing
+really major but rather some suggestions to improve readibility and typos.
+
+Andrea.
+
+=================================================================================================
+version: http://www.t2k.org/docs/technotes/266/joint-fit-analysis-of-the-nu-and-nubar-sk-samples
+
+31 Could you use less digits for the number of expected events (at least for the final version)?
+This recommendation also applies to several tables (i.e Tab.1). I guess you are generating them automatically.
+
+32 Super K -> Super-K
+
+32 Since the abstract should be general I would report directly the values corresponding to Asimov-A in
+place of referring to Tab. 12 (maybe just delta_CP=... and theta_23=...)
+
+41 -ized (use american english everywhere consistently)
+
+41 [55] should become [11] (reorder references)
+
+89-90 is it feasible to recall shortly the pros and cons of marginalizing vs profiling to
+put the note in a more general context?
+
+94 drop "recent"
+
+97 I would quote "BANFF" explicitly for clarity.
+
+102 increases
+
+107 add "." at the end.
+
+115-116 it seems that the marginalization is peculiar of Run 1-6.
+
+116 remove space before [55]
+
+117 single-ring
+
+118 add "." at the end
+
+Sometimes I have the impression you use too many (short) paragraphs.
+
+133 $t$
+
+136 the use of "nominal" for the templates even if they are corrected is a bit misleading
+
+137 the reaction mode ... theta and -> repetition, I would only leave \vec{f} which is introduced for the first time
+
+144 of the nominal
+
+159 "with minor tunings" sounds a bit vague
+
+Use Tab. Ref. Sec. Fig. consistently.
+
+174, 175 $I$, $L$
+
+210 granularity -> number ?
+
+section 2.2.4 cite a reference technical note ?
+
+219-258 the same structure is replicated for every incoming neutrino flavor, maybe this long 
+list could be compactified using a placeholder for the flavour x = nu, e, ...
+
+Tab. 2 use the same order and notation used for templates as in the list in the text
+
+272-275 this is repeated, probably it is not necessary to say it again.
+
+293 $e$-like
+
+294 25 50-MeV bins (for consistency)
+
+Vs -> vs ? (taste)
+
+310 add (see Fig. 32 and 33) to help the reader
+
+365, 377, 391 cross section
+
+371, 411 cite also the new BANFF TN230 and 285 (currently [28] = TN220). It could also be useful to
+explicit the TN number when quoting.
+
+394 normalize
+
+405 say (appendix D)
+
+406 The fact that certain nuisance parameters affect certain templates
+or not is codified in Tabs. 34, 35, 36, 37.  Is there some
+ambiguity/level of arbitrarity in certain particular cases? May be
+one could add a short comment on this point to help the reader (tables
+are useful but very "dense").
+
+411 section -> appendix or App.
+
+There are some repetitions which I would avoid. For example the number
+of POT is given in several different places.
+
+498 it is important
+
+538 n_i^{exp} = ... is a repetition
+
+542 recall shortly the extended maximum likelihood or use a reference
+
+560 drop "we" before will
+
+560 derive -> use
+
+560 add , after on or rephrase
+
+653 this sentence on profiling on the mass hierarchy (while marginalizing on
+other parameters) creates confusion here. I would defer this to the text
+later which explains better what has been done (global vs independent)
+
+654 '' '' -> `` ''
+
+671 Bernoulli distribution -> In that paper the do not say that the delta chi2
+follows a Bernoulli distribution but rather the fitted parameter, if I am not mistaken.
+
+caption of Fig. 18: it seems wrong. Where are the comparisons with other groups ?
+
+700-703 rephrase in a more linear way separating better Fig. 19 and 20.
+
+Section 4. This is rather general and central. Would it be reasonable to promote it
+at the beginning of the note?
+
+339 has the GloBES oscillation code ever been used as a testbench ?
+
+In the 1D plots of Fig. 5 the e-like final state contributions are
+completely invisible even zooming in the pdf. I imagine they are
+very small in the mu-like sample but could you check it ? I am not
+sure if it is worth keeping them in the legend after all (not
+a strong opinion on this).
+
+413 you say tht the correction for the bias in the fit has a small
+impact on the systematics error value referring quickly to appendix D.
+Maybe it could be useful saying that delta N_SK/N_SK for mu-like passes
+from ... to ... and also for e-like (numu or antinumu mode).
+
+414 you concentrate on the different number of expected e-like in antineutrino
+mode wrt 2015. I would also mention how it changes for neutrino mode since
+some of the reasons (i.e. theta13) affects both.
+
+The discussion starting in line 414 could be put under a subsection
+("Comparison with 2015 analysis foe e-like ...")
+
+468 Super-K
+
+Fig. 6-16. The captions are rather long and it is difficult to
+understand quickly the difference between the different inputs. Could
+you highlight in bold only the relevant information or make a
+reference for the caption only to the first figure? It could be also
+helpful to add in the same figure both the spectra and the error
+envelopes.
+
+507 it would be useful in the discussion to also mention Tab. 42
+(delta=0) besides Tab. 21 (delta = pi/2). This part is interesting but
+sounds a bit qualitative. Can you reference a table/TM when describing
+the correlation of sigma(nue) and sigma(anti-nue) to go in this
+direction ? I remember this information in the NIWG or BANFF TNs.
+
+1001 say in the text that Tab. 38 is for e-like and 39 for mu-like nueutrino mode
+while Tab. 40 ...etc (it helps).
+
+The choice of parameters for Asimov-A and Asimov-B is only briefly mentioned in
+the caption of Tab. 12 apparently. Even of this is not so critical, I would suggest
+to add a paragraph commenting on the reason for the choice (deltaCP=0,
+theta_23 in the other octant). In particular how did you choose the theta_23 values
+for B ? from T2K Run 1-4 best fit?

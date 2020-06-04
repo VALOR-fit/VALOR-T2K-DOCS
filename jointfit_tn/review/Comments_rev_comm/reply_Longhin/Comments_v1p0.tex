@@ -1,0 +1,399 @@
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.50cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{blkarray}                 % for correlation matrices
+\usepackage{color}
+\usepackage{rotate}                   % rotate text in tables
+\usepackage{lscape}                   % allow page to be landscape for large tables
+\usepackage{amsfonts}                 % extra symbols
+\usepackage{amsmath}
+%\usepackage{floatpag}                 % \thisfloatpagestyle{empty}, to suppress page numbers
+\usepackage{lmodern}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{caption}% Use captionof to be able to minipage figure's \& tables together, but still get correct captions
+\usepackage{enumitem}
+\usepackage[breaklinks=true,hyperfigures=true]{hyperref} % make contents and references links, but do not colour them
+
+\setenumerate{listparindent=\parindent} % Use paragraph indentation within the enumerate
+\usepackage{cleveref}
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+%\newcommand{\AmS}{{\protect\the\textfont2
+%  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+\usepackage{listings}   
+\lstset{language=C++}
+
+% Particle aliases
+\newcommand{\nue}{\nu_{e}}
+\newcommand{\numu}{\nu_{\mu}}
+\newcommand{\nutau}{\nu_{\tau}}
+\newcommand{\nueb}{\xbar{\nu}_{e}}
+\newcommand{\numub}{\xbar{\nu}_{\mu}}
+\newcommand{\nutaub}{\xbar{\nu}_{\tau}}
+\newcommand{\nub}{\xbar{\nu}}
+\newcommand{\nua}{\nu_{\alpha}}
+\newcommand{\nuab}{\xbar{\nu_{\alpha}}}
+
+\newcommand{\numuany}{\overset{(-)}{\nu_\mu}}
+\newcommand{\nueany}{\overset{(-)}{\nu_e}}
+
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+%define new fonts, smaller than tiny (for showing large covariance matrices in a page)
+\makeatletter
+\ifcase \@ptsize \relax% 10pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{4}{5}}% \tiny: 5/6
+  \newcommand{\verytiny}{\@setfontsize\miniscule{3}{4}}% \tiny: 5/6
+\or% 11pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\or% 12pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\fi
+\makeatother
+
+
+
+
+\linenumbers
+
+\begin{document}
+
+Dear authors,
+
+here below some comments from my first reading.  I might add something
+going through the new version containting also F\&C results. In order
+not to delay the process here are my first reactions. There is nothing
+really major but rather some suggestions to improve readibility and typos.
+
+Andrea.
+
+$=================================================================================================$
+\newline
+
+version: http://www.t2k.org/docs/technotes/266/joint-fit-analysis-of-the-nu-and-nubar-sk-samples
+\newline
+
+31 Could you use less digits for the number of expected events (at least for the final version)?
+This recommendation also applies to several tables (i.e Tab.1). I guess you are generating them automatically.
+
+\textcolor{blue}{The numbers in the abstract have been reduced to 2 digits. In table 1 the numbers have no errors and are exactly 
+the numbers used in the MC, so I would keep all the digits. The same is for the event rates, because they are also useful 
+for comparison between the oscillation analyses.}
+
+32 Super K $\rightarrow$ Super-K
+
+\textcolor{blue}{DONE.}
+
+32 Since the abstract should be general I would report directly the values corresponding to Asimov-A in
+place of referring to Tab. 12 (maybe just $\delta_{CP}$=... and $\theta_{23}$=...)
+
+\textcolor{blue}{DONE.}
+
+41 -ized (use american english everywhere consistently)
+
+\textcolor{blue}{DONE.}
+
+41 [55] should become [11] (reorder references)
+
+\textcolor{blue}{That citation is ordered in that way in order to keep all the reference about statistic together.
+The citation has been changed with a reference to the section about statistical methods.}
+
+89-90 is it feasible to recall shortly the pros and cons of marginalizing vs profiling to
+put the note in a more general context?
+
+\textcolor{blue}{DONE.}
+
+94 drop "recent"
+
+\textcolor{blue}{DONE.}
+
+97 I would quote "BANFF" explicitly for clarity.
+
+\textcolor{blue}{DONE.}
+
+102 increases
+
+\textcolor{blue}{DONE.}
+
+107 add "." at the end.
+
+\textcolor{blue}{DONE.}
+
+115-116 it seems that the marginalization is peculiar of Run 1-6.
+
+\textcolor{blue}{DONE.}
+
+116 remove space before [55]
+
+\textcolor{blue}{DONE.}
+
+117 single-ring
+
+\textcolor{blue}{DONE.}
+
+118 add "." at the end
+
+\textcolor{blue}{DONE.}
+
+Sometimes I have the impression you use too many (short) paragraphs.
+
+133 $t$
+
+\textcolor{blue}{DONE.}
+
+136 the use of "nominal" for the templates even if they are corrected is a bit misleading
+
+\textcolor{blue}{DONE.}
+
+137 the reaction mode ... $\theta$ and $\rightarrow$ repetition, I would only leave $\vec{f}$ which is introduced for the first time
+
+\textcolor{blue}{I think it is important to repeat that the systematic parameters depend on the reconstructed variables
+as well as flavor and reaction mode. I modified the sentence a little bit.}
+
+144 of the nominal
+
+\textcolor{blue}{DONE.}
+
+159 "with minor tunings" sounds a bit vague
+
+\textcolor{blue}{DONE.}
+
+Use Tab. Ref. Sec. Fig. consistently.
+
+\textcolor{blue}{Using cref everywhere now. DONE.}
+
+174, 175 $I$, $L$
+
+\textcolor{blue}{DONE.}
+
+210 granularity $\rightarrow$ number ?
+
+\textcolor{blue}{DONE.}
+
+section 2.2.4 cite a reference technical note ?
+
+\textcolor{blue}{DONE.}
+
+219-258 the same structure is replicated for every incoming neutrino flavor, maybe this long 
+list could be compactified using a placeholder for the flavour x = nu, e, ...
+
+\textcolor{blue}{The full list of the analysis templates is useful for cross checks between the oscillation analyses
+and for check with the future ones. We would like to keep the full list.}
+
+Tab. 2 uses the same order and notation used for templates as in the list in the text
+
+\textcolor{blue}{The list in the text has been adapted to the one in the tables.}
+
+272-275 this is repeated, probably it is not necessary to say it again.
+
+\textcolor{blue}{DONE.}
+
+293 $e$-like
+
+\textcolor{blue}{DONE.}
+
+294 25 50-MeV bins (for consistency)
+
+\textcolor{blue}{DONE.}
+
+Vs $\rightarrow$ vs ? (taste)
+
+\textcolor{blue}{Using "vs" everywhere. DONE.}
+
+310 add (see Fig. 32 and 33) to help the reader
+
+\textcolor{blue}{DONE.}
+
+365, 377, 391 cross section
+
+\textcolor{blue}{DONE.}
+
+371, 411 cite also the new BANFF TN230 and 285 (currently [28] = TN220). It could also be useful to
+explicit the TN number when quoting.
+
+\textcolor{blue}{DONE.}
+
+394 normalize
+
+\textcolor{blue}{Using normalisation everywhere now. DONE.}
+
+405 say (appendix D)
+
+\textcolor{blue}{DONE.}
+
+406 The fact that certain nuisance parameters affect certain templates
+or not is codified in Tabs. 34, 35, 36, 37.  Is there some
+ambiguity/level of arbitrarity in certain particular cases? May be
+one could add a short comment on this point to help the reader (tables
+are useful but very "dense").
+
+\textcolor{blue}{Maybe it is better to leave any comment about the cross sectoin systematic
+parameters to the NIWG note.
+For the case of the NC$1\gamma$ normalisation parameter, the new choice was driven by a new papers in literature.}
+
+411 section $\rightarrow$ appendix or App.
+
+\textcolor{blue}{DONE.}
+
+There are some repetitions which I would avoid. For example the number
+of POT is given in several different places.
+
+\textcolor{blue}{DONE.}
+
+498 it is important
+
+\textcolor{blue}{DONE.}
+
+538 $n_i^{exp} = ...$ is a repetition
+
+\textcolor{blue}{DONE.}
+
+542 recall shortly the extended maximum likelihood or use a reference
+
+\textcolor{blue}{DONE.}
+
+560 drop "we" before will
+
+\textcolor{blue}{DONE.}
+
+560 derive $\rightarrow$ use
+
+\textcolor{blue}{DONE.}
+
+560 add , after on or rephrase
+
+\textcolor{blue}{DONE.}
+
+653 this sentence on profiling on the mass hierarchy (while marginalizing on
+other parameters) creates confusion here. I would defer this to the text
+later which explains better what has been done (global vs independent)
+
+\textcolor{blue}{DONE.}
+
+654 '' ''  $\rightarrow$ `` ''
+
+\textcolor{blue}{DONE.}
+
+671 Bernoulli distribution $\rightarrow$ In that paper the do not say that the delta chi2
+follows a Bernoulli distribution but rather the fitted parameter, if I am not mistaken.
+
+\textcolor{blue}{DONE.}
+
+caption of Fig. 18: it seems wrong. Where are the comparisons with other groups ?
+
+\textcolor{blue}{DONE.}
+
+700-703 rephrase in a more linear way separating better Fig. 19 and 20.
+
+\textcolor{blue}{DONE.}
+
+Section 4. This is rather general and central. Would it be reasonable to promote it
+at the beginning of the note?
+
+\textcolor{blue}{Section 4 is now cited both in the abstract and in the introduction. DONE.}
+
+339 has the GloBES oscillation code ever been used as a testbench ?
+
+\textcolor{blue}{Yes it was test against GloBES as well.}
+
+In the 1D plots of Fig. 5 the e-like final state contributions are
+completely invisible even zooming in the pdf. I imagine they are
+very small in the mu-like sample but could you check it ? I am not
+sure if it is worth keeping them in the legend after all (not
+a strong opinion on this).
+
+\textcolor{blue}{As shown in table 4, the expected contamination from oscillate $\bar{\nu}_e$ is only 0.138
+events over a total of 26.594.
+I think it's good to still have it in the legend in order to be consistent with the other plots
+and make it clear that it is not included in any other contribution.}
+
+413 you say tht the correction for the bias in the fit has a small
+impact on the systematics error value referring quickly to appendix D.
+Maybe it could be useful saying that delta $N_SK / N_SK$ for mu-like passes
+from ... to ... and also for e-like (numu or antinumu mode).
+
+414 you concentrate on the different number of expected e-like in antineutrino
+mode wrt 2015. I would also mention how it changes for neutrino mode since
+some of the reasons (i.e. theta13) affects both.
+
+\textcolor{blue}{The thing is when the neutrino mode $e$-like sample
+was analyzed last time the cross section model in largely different}
+
+Mach3JointFitRun14
+The discussion starting in line 414 could be put under a subsection
+("Comparison with 2015 analysis foe e-like ...")
+
+\textcolor{blue}{DONE.}
+
+468 Super-K
+
+\textcolor{blue}{DONE.}
+
+Fig. 6-16. The captions are rather long and it is difficult to
+understand quickly the difference between the different inputs. Could
+you highlight in bold only the relevant information or make a
+reference for the caption only to the first figure? It could be also
+helpful to add in the same figure both the spectra and the error
+envelopes.
+
+\textcolor{blue}{DONE.}
+
+507 it would be useful in the discussion to also mention Tab. 42
+(delta=0) besides Tab. 21 (delta = pi/2). This part is interesting but
+sounds a bit qualitative. Can you reference a table/TM when describing
+the correlation of sigma(nue) and sigma(anti-nue) to go in this
+direction ? I remember this information in the NIWG or BANFF TNs.
+
+\textcolor{blue}{DONE.}
+
+1001 say in the text that Tab. 38 is for e-like and 39 for mu-like nueutrino mode
+while Tab. 40 ...etc (it helps).
+
+\textcolor{blue}{Described in the text in section D. DONE.}
+
+The choice of parameters for Asimov-A and Asimov-B is only briefly mentioned in
+the caption of Tab. 12 apparently. Even of this is not so critical, I would suggest
+to add a paragraph commenting on the reason for the choice ($\delta_{CP}=0$,
+$\theta_{23}$ in the other octant). In particular how did you choose the $\theta_{23}$ values
+for B ? from T2K Run 1-4 best fit?
+
+\textcolor{blue}{The Asimov A is the best-fit of the Run 1-4 data Mach3 analysis.
+The Asimov B was a variation of Asimov A useful to test the sensitivity to the opposite octant,
+which reduce the number of expected events in the $e$-like samples as well as the 
+sensitivity to $\delta_{CP}$. This is a more conservative Asimov data set.
+Both Asimov A and B were chosen by the OA group as test points.
+A small paragraph has been added.}
+
+\end{document}
+
