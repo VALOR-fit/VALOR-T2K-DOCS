@@ -1,0 +1,14 @@
+\clearpage
+
+\section {Results of the joint oscillation analysis with the Run 1+2+3 (3.010×$10^{20}$ POT) dataset}
+\label{sec:results}
+
+{\color{red} Present best-fit parameters from the joint analysis. Compare with best-fit params from stand-alone analyses. }
+
+{\color{red} Present goodness-of-fit tests for joint analysis. }
+
+{\color{red} Show various marginalised $\Delta\chi^2$ distributions: Four 1-D ones, for each of the 4 oscillation
+params in the fit and two 2-D ones (theta13,dcp) and (theta23,dmsq32). Compare with stand-alone analyses where possible. }
+
+{\color{red} Show confidence regions from the joint analysis. Compare with the ones obtained from stand-alone analyses. }
+

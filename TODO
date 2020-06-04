@@ -1,0 +1,52 @@
+Changes to be done
+(apart from general editting).
+
+
+TEXT
+
+1.- Introduction 
+    -> 
+2.- Motivation . Panos
+    -> Copied from 2010, not yet revisited to make sense in 2012 TN.
+3.- Prediction 
+    -> Re-structure following disappearance TN. 
+4.- Systematics 
+    -> Re-structure following disappearance TN. 
+    -> Revisit: changes towards 2012 analysis.
+    -> some tables included, but might be better to change the style 
+       and do like table 5 in TN141 (in 2 tables)
+5.- Neutrino oscillation fitting
+    -> Missing parts 5.2 and 5.3
+6.- Results
+    -> not yet ready
+7.- Summary
+    -> when finished...
+F.- Sensitivity studies
+    -> This section is to be completely rewritten with new results
+G.- Center of symmetry . Panos & Lorena
+    -> I want to include here some explanation about pile-up at center of symmetry
+       (it is in backup in latest presentation)
+
+
+PLOTS, ETC
+
+2.- Motivation
+    -> Fig 2 and 3: we can repeat it with 2012 (although not yet anything like that 
+    done, was in 2theta), is it ok with 2010? if so we need to make clear it is 
+    only a fake dataset fit, not a sensitivity study.
+6.- Results
+    -> To include the plots for results
+    -> Never done goodness of fit tests, I guess we want to include them? hope it is fast to do
+    -> Do we also want to do pulls for systematics?
+C.- Tables and plots tweaking each systematic
+    -> This is done, but if I have time I want to set a common Y axis (distributions are cut in some plots).
+D.- Residuals
+    -> I think this is done (plots are in previous presentations)
+       but I will change the summary of systematics' residuals 
+       to plot error on the mean as error bar instead of RMS
+F.- Sensitivity studies
+    -> The plots here will disappear, I have to include the new ones    
+H.- Solar
+    -> I guess these plots can be kept (same as for motivation)
+
+

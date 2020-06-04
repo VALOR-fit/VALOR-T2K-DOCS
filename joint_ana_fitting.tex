@@ -1,0 +1,214 @@
+\clearpage
+
+\section{Neutrino oscillation fitting}
+\label{sec:neutrino_oscillation_fitting}
+
+
+\subsection{Minimization method}
+
+The {\em VaLOR} joint 3-flavour analysis uses a binned likelihood-ratio method.
+Measurements of the oscillation parameters
+$|\Delta m^{2}|$, $\sin^{2}\theta_{23}$, $\sin^{2}\theta_{13}$ and $\delta_{CP}$\footnote{
+   A study has been made in which $\sin^{2}\theta_{12}$ and $\delta m^{2}$ were allowed to float in the fit and 
+   the results are shown in Appendix \ref{app:solar}. 
+   The effect was negligible and, in the analysis reported here, they were simply fixed to
+   $\sin^{2}\theta_{12}$ = 0.311 and $\delta m^{2}$ = 7.5$\times$10$^{-5}$ eV$^{2}$/c$^{4}$.
+}
+are obtained by comparing the observed and predicted reconstructed single $\mu$-like ring and single e-like ring energy spectra in SuperK. 
+Let $N_{\mu}$ and $N_{e}$ be the numbers of reconstructed energy bins considered for the single $\mu$-like ring and
+single e-like ring samples respectively, 
+and
+${\bf a}$ be a $1 \times N_{s}$ - dimensional array of systematic (nuisance) 
+parameters that affect the SuperK reconstructed energy spectrum prediction of either sample 
+e.g. parameters that control the beam, neutrino interaction simulations and 
+the detector response.
+Best-fit values are obtained by minimizing: 
+
+\begin{equation}
+\begin {split}
+\displaystyle
+%\chi^{2}   &=                                                                                                                                                                                       
+ -2 \, \textrm{ln} \lambda (|\Delta m^{2}|, sin^{2}\theta_{23}, \sin^{2}\theta_{13}, \delta_{CP}; {\bf a}) &=
+  2 \cdot \sum_{r=0}^{N_{\mu}-1}
+   \left[
+    (N^{exp}_{SK;\mu,r}-N^{obs}_{SK;\mu,r}) + 
+     N^{obs}_{SK;\mu,r} \cdot ln\left(\frac{N^{obs}_{SK;\mu,r}}{N^{exp}_{SK;\mu,r}}\right)  
+   \right]  \\
+    \displaystyle
+    &+ 2 \cdot \sum_{r=0}^{N_{e}-1}
+    \left[
+    (N^{exp}_{SK;e,r}-N^{obs}_{SK;e,r}) + 
+     N^{obs}_{SK;e,r} \cdot ln\left(\frac{N^{obs}_{SK;e,r}}{N^{exp}_{SK;e,r}}\right)  
+   \right]  \\
+  &+  ({\bf a}-{\bf a_{0}})^{T} \cdot {\bf C}^{-1} \cdot ({\bf a}-{\bf a_{0}})
+\label{eq:chisquare}
+\end{split}
+\end{equation}
+where
+$N^{obs}_{SK;\mu,r}$ ($N^{obs}_{SK;e,r}$) is the observed number of single $\mu$-like ring (single e-like ring) events in the $r^{th}$ bin, 
+and $N^{exp}_{SK;\mu,r}$ ($N^{exp}_{SK;e,r}$)
+is the corresponding expected number of events; this expected number is a function of 
+$|\Delta m^{2}|$, $\sin^{2}\theta_{23}$, $\sin^{2}\theta_{13}$ and $\delta_{CP}$
+and the nuisance parameter vector ${\bf a}$.
+Also ${\bf a_{0}}$ is a $1 \times N_{s}$ - dimensional array containing the nominal values of
+the systematic parameters, ${\bf a}^{T}$ is the transpose of ${\bf a}$,
+and ${\bf C}$ is the systematic parameter covariance matrix of dimension $N_{s} \times N_{s}$.
+For the stand-alone $\nu_{\mu}$-disappearance ($\nu_{e}$-appearance) fit, 
+only the single $\mu$-like ring (single e-like ring) sample is used and the 
+corresponding term in Eq.\ \ref{eq:chisquare} is dropped.
+
+The likelihood-ratio method used in this analysis is equivalent to the extended maximum likelihood
+method used in the alternative T2K oscillation analysis 
+(see \cite{OurRun1DisappAnalysis,StatAnalysisCowan} for more details).
+The advantage of the likelihood-ratio method, compared with the extended maximum-likelihood method, is that
+in the large-sample limit, the quantity $-2 \, \textrm{ln} \lambda (|\Delta m^{2}|, \sin^{2}\theta_{23}, \sin^{2}\theta_{13}, \delta_{CP}; {\bf a})$
+in Eq.\ref{eq:chisquare} has a $\chi^{2}$ distribution and it can therefore be used as a goodness-of-fit test.
+In this note
+$-2 \, \textrm{ln} \lambda (|\Delta m^{2}|, \sin^{2}\theta_{23}, \sin^{2}\theta_{13}, \delta_{CP}; {\bf a})$ and
+$\chi^{2}(|\Delta m^{2}|, \sin^{2}\theta_{23}, \sin^{2}\theta_{13}, \delta_{CP}; {\bf a})$ are used interchangeably. 
+
+In the joint 3-flavour oscillation analysis fits, all 83 systematic parameters are allowed to float, whereas 
+in the stand-alone analyses (which use a single SuperK sample) only the relevant systematics are used (see Tab.\ \ref{tab:apply_syst_to_samples}).
+
+The search for the minimum value of 
+$-2 \, \textrm{ln} \lambda(|\Delta m^{2}|, \sin^{2}\theta_{23}, \sin^{2}\theta_{13}, \delta_{CP}; {\bf a})$
+is performed in the range 
+1.0 $\times$10$^{-3}$ eV$^{2}$/c$^{4}$ $\leq$ $|\Delta m^{2}|$ $\leq$ 6.0 $\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+0.0 $\leq$ $\sin^{2}\theta_{23}$ $\leq$ 1.0,
+0.0 $\leq$ $\sin^{2}\theta_{13}$ $\leq$ 1.0 and
+$-\pi$ $\leq$ $\delta_{CP}$ $\leq$ $\pi$.
+Systematic parameters included in the oscillation fit are constrained in the range [-2$\sigma_{s}$, +2$\sigma_{s}$]
+where $\sigma_{s}$ is the one standard deviation error assigned to each systematic parameter\footnote{
+ Such an error is defined for all but one of the systematic parameters considered in this analysis. 
+ The exception is the systematic parameter $f_{SF}$ which parametrises the uncertainty on nuclear modelling, 
+ switching between the Relativistic Fermi Gas (RFG) and Spectral Function (SF) models. The allowed range of the parameter $f_{SF}$ 
+in the oscillation fit is [0,1].}. Validations studies were done with systematic parameters fitted in a wider range 
+[-5$\sigma_{s}$, +5$\sigma_{s}$] with no difference in the results. However, the Run1+2+3 data fit will be updated with
+a wider range such as [-5$\sigma_{s}$, +5$\sigma_{s}$] . 
+Values of systematic parameters that give a negative predicted number of events in any reconstructed energy bin are not allowed. 
+If this scenario arises, the number of events is changed to +1E-8 in that bin. This is done for the sum of all the interaction 
+modes rather than for each mode separately.
+
+The minimization is performed with Minuit \cite{Minuit}, using the Migrad method.
+If Migrad does not converge, the starting values of the oscillation parameters are re-initialised:
+the new initial values are randomly drawn from uniform distributions in the ranges 
+$2.0 \cdot 10^{-3}$ $\leq$ $|\Delta m^{2}|$ $\leq$ $3.0 \cdot 10^{-3}$,
+0.35 $\leq$ sin$^{2}\theta_{23}$ $\leq$ 0.65, 
+0.015 $\leq$ sin$^{2}\theta_{13}$ $\leq$ 0.035
+and the fit is retried. This is repeated 25 times.
+If the fits still fail to converge, the Simplex algorithm is used.
+
+%..................................
+%
+
+\subsection{Goodness-of-fit tests}
+\label{sec:goodness_of_fit}
+The problem of defining a general goodness-of-fit for sparsely populated distributions
+was discussed in detail during the development of the Run 1+2+3 stand-alone $\nu_\mu$-disappearance 
+and $\nu_{e}$-appearance analyses. See for example \cite{KarlenPvalue}.
+It was pointed out that, for the Run 1+2+3 statistics, the shape information is not
+as helpful in forming p-values as the rate information.
+It was decided that  p-values will be calculated using the rate and the reconstructed energy distribution,
+and that the distribution will use a very coarse binning
+scheme to ensure that there are sufficient numbers of events in each bin.
+
+A similar approach is used for the joint 3-flavour analysis presented here.
+For the single $\mu$-like ring sample, 5 reconstructed energy bins are used:
+0-0.4, 0.4-0.7, 0.7-1.0, 1.0-2.0 and 2.0-30.0 GeV.
+For the single e-like ring sample, 3 reconstructed energy bins are used:
+0-0.35, 0.35-0.80, 0.80-1.25 GeV.
+In this note, p-values for the joint 3-flavour fit are computed following 
+the 5+3 binning scheme described above. When p-values are quoted for the stand-alone
+$\nu_{\mu}$-disappearance ($\nu_{e}$-appearance) analysis, the corresponding 
+5 (3) bin scheme of the single $\mu$-like ring (single e-like ring) event sample is used.
+
+The goodness-of-fit tests that will be shown are built using 1000 toy MC experiments
+created at the best-fit point to be tested, with statistical and systematic fluctuations.
+Then, each toy MC experiment is fitted in the coarse binning described above, 
+including the four oscillation parameters and all systematics in the joint 3-flavour fit.
+For the stand-alone disappearance the fit is performed for $sin^{2}\theta_{23}, \Delta m^{2}$ 
+and the relevant systematics, being the other two oscillation parameters $sin^{2}\theta_{13}, \delta_{CP}$
+fixed to the usual values.
+For the stand-alone appearance the fit is performed for $sin^{2}\theta_{13}$
+and the relevant systematics, being the other oscillation parameters
+fixed to the usual values (with maximal mixing $sin^{2}\theta_{23} = 0.5$ and $\delta_{CP}=0$).
+
+
+%..................................
+%
+
+\subsection{Toy-MC study of fitter performance}
+
+The performance of the fitter has been evaluated using ensembles of 1k toy MC experiments
+generated at different oscillation points with an exposure of $3.010\times10^{20}$ POT.
+Two kinds of studies were performed with toy MC experiments. First, the simulated experiments
+included only statistical fluctuations and were fitted with the '4 + 0' fit, i.e. fitting only for oscillation parameters.
+A second ensemble of toy MC experiments including not only statistical fluctuations but also fluctuations of all
+systematic parameters was created. Those toy MC experiments were fitted with the '4 + 83' fit, i.e. fitting for 
+oscillation parameters and for all systematic parameters. No issue was identified regarding the fitter
+performance, the results from these studies were as expected. 
+In addition, the distributions of  residuals for the oscillation parameters
+from both studies, doing '4 + 0' or '4 + 83' fits are consistent, indicating that no unexpected features 
+appear when including fluctuations of the systematic parameters and when fitting for them. 
+ 
+%..................................
+%
+
+\subsection{Construction of confidence regions}
+
+In the analysis reported here, confidence regions are constructed using the constant $\Delta\chi^2$ method.
+68\% and 90\% CL limits will be reported for each of $|\Delta m^{2}|$, $sin^{2}\theta_{23}$, $sin^{2}\theta_{13}$ and $\delta_{CP}$
+oscillation parameters. In addition, 2-dimensional confidence regions for 68\% and 90\% CL will be shown for the following combinations of parameters: 
+($sin^{2}\theta_{23}$, $|\Delta m^{2}|$),
+($sin^{2}\theta_{13}$, $|\Delta m^{2}|$),
+($sin^{2}\theta_{13}$, $\delta_{CP}$) and
+($sin^{2}\theta_{23}$, $sin^{2}\theta_{13}$).
+
+The first step to construct confidence contours in an oscillation parameter space 
+is to build the $\Delta\chi^2$ surface in that space.
+The oscillation parameter space is divided into a regular grid.
+The following grid spacing is used in all confidence region construction methods:
+$\delta{|\Delta{m^{2}}|}=0.05\times10^{-3} eV^{2}/c^{4}$,
+$\delta{\sin^{2}\theta_{23}}=0.01$,
+$\delta{\sin^{2}\theta_{13}}=0.005$ and
+$\delta(\delta_{CP})= 2\pi/50$.
+For the joint 3-flavour analysis confidence regions,
+the $\chi^2$ is minimized at each grid point with respect to all 83 nuisance parameters considered in this analysis
+and all oscillation parameters not shown on the plot (and not considered to be fixed).
+For the stand-alone analyses, only the relevant systematics were used. 
+
+The confidence regions for the joint analysis are constructed by finding the global best-fit point
+(fitting all oscillation parameters and all systematic parameters at the same time)
+and calculating the lines of {\em constant} $\Delta{\chi^{2}}$ from this point\footnote{
+For 1 fit parameter, the critical values of $\Delta{\chi^{2}}$ used are 
+1.00 (68\% CL), 2.71 (90\% CL), 3.84 (95\% CL), 6.63 (99\% CL).
+For 2 parameters fitted simultaneously, the critical values of $\Delta{\chi^{2}}$ used are 
+2.30 (68\% CL), 4.61 (90\% CL), 5.99 (95\% CL), 9.21 (99\% CL).
+}. In the case of the stand-alone appearance analysis, a special procedure is followed 
+to construct the confidence regions in ($sin^{2}\theta_{13}$, $\delta_{CP}$) space
+ imitating the actual stand-alone analyses in T2K. In this method, called \textit{raster scan}, a best-fit
+ value of  $sin^{2}\theta_{13}$ is found for each fixed value of $\delta_{CP}$, resulting in a line
+ of best-fit points instead of a single best-fit point. Then, confidence intervals in $sin^{2}\theta_{13}$
+ at a fixed $\delta_{CP}$ are found with respect to each best-fit $sin^{2}\theta_{13}$ using the 1D
+ $\Delta{\chi^{2}}$ critical values \cite{FeldmanCousins}.
+
+A full Feldman-Cousins construction in the 4-dimensional
+($|\Delta m^{2}|$, $sin^{2}\theta_{23}$, $sin^{2}\theta_{13}$ and $\delta_{CP}$) space,
+including all 83 systematics, is computationally prohibitive.
+This analysis produces limits on each of the 4 oscillation parameters and, also,
+confidence regions in 4 2-dimensional surfaces within the 4-dimensional oscillational parameter space.
+There is no established procedure on how to sample the 4-dimensional oscillation space
+and generate a toy-MC ensemble for the calculation of the critical $\Delta{\chi^{2}}$ values
+needed for producing the limits or the 2-dimensional contours. We were confronted with
+this issue both for the Run 1+2 disappearance analysis PRD paper
+and the Run 1+2+3 disappearance analysis PRL paper, but no satisfactory solution was found.
+We are aware that the same issue has baffled other collaborations too.
+In the presence of this ambiguity over how to produce profile Feldman-Cousins contours, we propose
+that this analysis produces contours only using the constant $\Delta{\chi^{2}}$ method.
+Coverage studies are presented in Sec. \ref{app:coverage}.
+If a non-ambiguous procedure is found,
+based on our experience running the  Feldman-Cousins confidence region construction for the $\nu_{\mu}$-disappearance analysis,
+we estimate that about $\sim$50,000 CPU$\cdot$days would be needed for the joint analysis.
+The VaLOR group could prepare these contours in the time-scale of two months.
+
+

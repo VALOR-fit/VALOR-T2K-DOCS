@@ -1,0 +1,94 @@
+
+1) INTRODUCTION
+
+Almost finished.
+
+
+2) MOTIVATION
+
+Almost finished.
+
+
+3) CHOICE OF OSC PARAMS
+
+Almost finished.
+
+
+4) PREDICTION
+
+Almost finished.
+Tables 2 and 3 to be filled. 
+
+
+5) SYSTEMATIC EFFECTS
+Almost finished.
+Tables 4, 5, 7, 11 to be filled. 
+
+
+6) NEUTRINO OSCILLATION FITTING
+
+Some numbers to be added. References as well. CPU estimate. 
+I'm not running Hesse after Migrad. 
+6.3. missing. 
+
+
+7) RESULTS
+
+Question: How many digits I can include in the numbers for best fit values? 
+Missing results, comments.
+Missing explanation about pulls. 
+working on re-seeding for studying the "spurious" points in chisq vs theta23. 
+Include p-values when ready. 
+Leave comparisons between initial point in different octants only in table 12 - will remove figures 46 -53
+Coarser binning if there is time 
+Add observations. 
+
+8) SUMMARY 
+
+To be written!
+
+A) NUE APPEARANCE
+
+Almost done. Missing reference? 
+
+B) FITTER PERFORMANCE
+
+Someone else to check text. 
+Reduce plots and have 4 oscillation points per page? (16 plots per page, maybe too much?)
+Re-organize plots for summary of distribution of residuals, have two per row.
+For the three "biased" systematics I have some plots showing the checks I explained in page 57, I think with the explanation should be enough, but I can include them (they are in old presentations anyway). 
+
+C) FAKE DATASETS
+
+Working on this part now: including results with the new more realistic fake datasets. 
+Add goodness of fit tests when ready.
+Would be good if you could check these missing plots when ready, hope they are fine.
+Reduce size of table 18.
+Observations, conclusions to be added. 
+
+D) SENSITIVITY STUDIES
+
+Not really happy with the plots for theta13, deltacp, would like to run much more toys...
+The 2D will be missing for first draft anyway, so we can upload an updated version when those are ready. 
+For N I cannot give a single number, so I will say "some hundreds"
+Add observations.
+
+E) SYMMETRY
+
+Almost done. 
+I would like to include here some plots about the the pile-up at center of symmetry, has to do with this.
+
+F) SOLAR
+
+Almost done. 
+Figure 252 I will redo it if there is time (for the old plots it will take me time to find the files!)
+Figures 253 and 254 are necessary: without looking at them from 252 one can think there is really an effect of solar parameters in our contours, exactly the opposite to what we want to say!
+
+
+
+
+LORENA : 
+       Wednesday: going through sections 4,5 and 6, filling in tables, checking binning etc. Including some new plots in C
+       Thursday: including missing plots for fakedatasets and goodness of fit results in C and 7. Write conclusions in sections 7, C, D.
+       After this I will need you to correct conclusions etc. 
+

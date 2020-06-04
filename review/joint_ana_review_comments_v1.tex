@@ -1,0 +1,177 @@
+\section{Replies to comments (on version 3 of T2K-TN-154) received from the review committee}
+
+{\color{red}
+Please note that all section, figure, table, equation, footnote and citation 
+numbers mentioned in this section refer to T2K-TN-154v3. 
+The corresponding numbers in later versions of the note may be different.
+}
+
+\subsection{Major concern}
+
+\begin{itemize}
+\item{
+\textit{" The committee is concerned that the analysis is incomplete. As stated in the abstract:}
+
+`The analysis reported here, is the baseline VaLOR joint 3-flavour oscillation analysis, where all possible, but currently unknown, correlations between the single mu-like ring and single e-like ring systematics were neglected. The potential effect of these correlations on our baseline analysis will be reported on a separate note. «".
+
+As stated in the abstract, we are aware that the final joint 3-flavour oscillation analysis will need the possible correlations between the single mu-like and single e-like ring systematics that are presently unknown. 
+For that reason, it is the aim of the VaLOR group to make a public result of the joint 3-flavour oscillation analysis once the missing correlations are available. 
+Nowadays, part of the missing correlations are already available: those are the correlations between FSI systematic parameters for Run1-4 analysis, kindly found by Ikeda-san and provided to our group on August 6th.
+The other missing correlations are the ones concerning SK efficiencies. We know that the SK group is working on the calculation of those correlations and they aim to have them ready by end of August.
+
+So our plan is to use the efficiency correlations from the SK group if they are ready in time.
+If the correlations are not available by the time the result with Run1-4 is ready, then an independent study will be reported on a separate note, as stated in the abstract, in order to check the effect of those missing correlations. 
+In that case, if their effect is proved to be negligible, the result could be made public even without them. 
+But such study will be unnecessary if the efficiencies are ready in time, and will not be reported then. 
+
+In any case, even though the analysis can be incomplete now as some inputs are missing, the baseline of the analysis (choices, methodology and validation) has already been presented in TN154, and that is the reason
+to start the review process with it although a new TN will follow soon with the Run1-4 dataset result and including all inputs. Results in that latter TN will be the ones to be finally public. 
+}
+
+\item{
+\textit{ "We do not find in the technical note a list of such potential correlated systematics, nor whether these are expected to have a negligible effect on the results presented. Without this additional information, the validity of the results cannot be judged. "}
+
+The missing correlations between the single mu-like and single e-like ring are the ones between the following systematic parameters:
+\begin{itemize}
+\item{ SK efficiencies }
+\item{ FSI + SI  errors }
+\end{itemize}
+
+Equation \ref{eq:skeffcovar} can help to understand the missing parts in the global picture of the systematics for the joint analysis.
+Equation \ref{eq:skeffcovar} shows the final covariance matrix for SK efficiencies in the joint analysis
+combining the efficiencies for the single mu-like ring ($C^{SKeff}_{1R\mu}$) and the single e-like ring ($C^{SKeff}_{1R_{e}}$).
+The parts in red ({\color{red}$C^{SKeff}_{1R\mu;1R_{e}}$}) are the missing correlations between the systematics for the two samples. 
+Identically for the FSI + SI errors. 
+
+{
+\begin{equation}
+\scriptsize
+C^{SKeff} = 
+\begin{blockarray}{c ccccccc|cccccccccccc}
+     & \begin{sideways} {\color{blue} $f_{CCQERC0; r}^{SK}$ } \end{sideways} \vspace{0.2cm}
+     & \begin{sideways} {\color{blue} $f_{CCQERC1; r}^{SK}$ } \end{sideways}  
+     & \begin{sideways} {\color{blue} $f_{CCQERC2; r}^{SK}$ } \end{sideways}
+     & \begin{sideways} {\color{blue} $f_{CCQEoth; r}^{SK}$ } \end{sideways}
+     & \begin{sideways} {\color{blue} $f_{CCnonQE; r}^{SK}$ } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{NC; r}^{SK}$      } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{\nu_e; r}^{SK}$   } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re0; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re1; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re2; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re3; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re4; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re5; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re6; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re7; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re8; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re9; r}^{SK}$    } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re10; r}^{SK}$   } \end{sideways} 
+     & \begin{sideways} {\color{blue} $f_{1Re11; r}^{SK}$   } \end{sideways} \\
+  \begin{block}{c(ccccccc|cccccccccccc@{\hspace*{0pt}})}
+     {\color{blue} f_{CCQERC0; r}^{SK} } \vspace{0.2cm} & \BAmulticolumn{7}{c|}{\multirow{7}{*}{\Big{$C^{SKeff}_{1R\mu}$}}} & \BAmulticolumn{12} {c} {\multirow{7}{*}{{\color{red}\Big{$C^{SKeff}_{1R\mu;1R_{e}}$}}}} \\
+     {\color{blue} f_{CCQERC1; r}^{SK} } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{CCQERC2; r}^{SK} } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{CCQEoth; r}^{SK} } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{CCnonQE; r}^{SK} } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{NC; r}^{SK}      } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{\nu_e; r}^{SK}   } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+  \cline{1-20}
+     {\color{blue} f_{1Re0; r}^{SK}    } \vspace{0.2cm} & \BAmulticolumn{7}{c|}{\multirow{12}{*}{{\color{red}\Big{($C^{SKeff}_{1R\mu;1R_{e}})^T$}}}} & \BAmulticolumn{12} {c} {\multirow{12}{*}{\Big{$C^{SKeff}_{1R_{e}}$}}} \\
+     {\color{blue} f_{1Re1; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re2; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re3; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re4; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re5; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re6; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re7; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re8; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re9; r}^{SK}    } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re10; r}^{SK}   } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+     {\color{blue} f_{1Re11; r}^{SK}   } \vspace{0.2cm} & & & & & & & & & & & & & & & & & & & & \\
+  \end{block}
+\end{blockarray}
+\label{eq:skeffcovar}
+\normalsize
+\end{equation}
+\\
+}
+
+ 
+The study to check that the effect of possible correlations is negligible is still not finished, but will probably not be necessary since the real correlations will be soon available. 
+
+}
+
+\item{
+\textit{ 
+"  One such issue has to do with lepton identification at SK. There is a single PID variable that is used to distinguish electron from muon single ring events. A mismatch between data and simulation of this PID variable would lead to a systematic shift in efficiency and background for both the electron and muon selections. We do not necessarily expect that this will have a significant effect on the analysis (since the PID variable appears to be well described in atmospheric control samples and the separation power is quite good). This should be demonstrated, however, by including a systematic parameter that changes mu- and e-ring expectations at the same time."
+}
+
+Indeed, the effect of such PID variable would cause the correlations between  efficiencies that need to be calculated. 
+
+}
+
+\item{
+\textit{" We would be interested to know what other correlated systematic errors have been considered by the authors.What is the status of the other note? "}
+
+The other TN was started but has not been completed. Since we have been told that the real correlations will be ready soon, we are not working on that note at the moment. If after been ready for Run1-4 result they are still not available we will revisit and finish that note. 
+
+}
+
+
+\item{
+\textit{" 
+The framework appears capable of dealing with correlated systematic errors between the e-like and mu-like samples, since the SK energy scale systematic is treated that way. The abstract is incorrect to say that all such systematics are neglected."}
+
+Indeed, the framework is totally capable to treat correlated systematic errors like the SK energy scale or all SK efficiencies (FSI+SI errors) at the same time handling covariance matrices such as Eq. \ref{eq:skeffcovar}.
+
+We changed the abstract to be more accurate in the following way:  "where all possible, but currently unknown, correlations" $\rightarrow$ "where possible, but currently unknown, correlations".
+
+}
+
+\end{itemize}
+
+\subsection{Clarifications}
+
+\begin{itemize}
+
+\item{
+\textit{"The committee understands that with 4 variables it is difficult to prepare FC intervals and display them in 1 or 2D. Have there been any checks that the method used in this paper generates intervals with correct (or approximately correct) coverage? The toy MC studies in appendix B appear to focus on checking for bias. There should be a check of the frequency that the true parameter is contained in the derived intervals. It is a relatively simple additional check, so it should not represent a lot of work: The easiest way is to calculate the delta-Chi2 for the true parameters for each toy MC, show the distribution of these, and overlay the corresponding chi2 pdf having the right number of degrees of freedom. (This check can be done to check the coverage of the 4D, 2D, and 1D intervals). Even better would be to compare the cumulative distributions, so that one could directly see any problems with coverage."}
+
+We included an extra appendix in TN 154 (appendix I) with studies on the coverage. 
+
+}
+
+\item{
+\textit{" In equation (4), T is shown to depend on s. In table 4, the first item suggests that the energy scale systematic does not depend on s. Which is it? If it is because the calculation relies on the template distributions, then in fact T depends on m too (not shown). " }
+
+$f^{SK}_{E;r}$ does not depend on s because the reconstructed energy scale systematic is the same for both $1R_{\mu}$ and $1R_{e}$ samples, 2.3\%.
+This systematic is applied by scaling the reconstructed energy bin edges so it relies on the template distribution and therefore the transfer function describing the migration of events, T,
+depends on the sample s, but it is applied at the total spectrum so it does not depend on the modes m. 
+
+}
+
+\item{
+\textit{" It is not clear what the check marks in Table 1 mean. Can text be added to the caption?"}
+
+Text to explain the check marks was added to the caption in Table 1 (Table {\color{red}2} in v4). 
+
+}
+
+\item{
+\textit{" The large systematics in Table 4 (NC and nu-e efficiency) are not carefully defined. Do they really appear in reference [5]? The uncertainty for nu-e efficiency is certaintly less than 100\%... as specific modes are shown in rows below."}
+
+For the $1R_{\mu}$  sample the efficiencies for NC and $\nu_{e}$ due to PID are assumed to be 100 \% because the necessary pure $\pi^{\pm}$ or electron samples were not available to study those efficiencies.
+In the case of NC, to the PID efficiency others, such as Ring Counting efficiency, OD cut efficiency, etc., are added to finally give 111\%. 
+It can be found in reference [5], summarized in Table 7.1, but more details are in TN34, Section 2.5, so an extra reference was added ({\color{red}[6]}).
+
+The specific modes shown in the latter part of Table 4 (third entry) are relative to $1R_{e}$ sample only, whereas the 100\% quoted in the second entry of that table is relative to  $1R_{\mu}$ sample only. 
+The 100\% number corresponds to $C^{SKeff}_{1R\mu}$ in Equation \ref{eq:skeffcovar} and the specific modes detailed at the end of the table are part of $C^{SKeff}_{1R_{e}}$ in Equation \ref{eq:skeffcovar}.
+
+Nowadays those efficiencies have been updated for Run1-4.
+}
+
+\end{itemize}
+
+
+
+

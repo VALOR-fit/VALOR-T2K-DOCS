@@ -1,0 +1,5 @@
+latex joint_ana.tex
+latex joint_ana.tex
+latex joint_ana.tex
+dvips -t a4 -o joint_ana.ps joint_ana.dvi
+ps2pdf14 joint_ana.ps

@@ -1,0 +1,1007 @@
+\clearpage
+
+\section{Systematic effects in the prediction of the single $\mu$-like ring and single e-like ring event reconstructed energy spectrum}
+\label{sec:systematics}
+
+
+This analysis considers 83 systematic parameters which can be grouped into 4 categories:
+\begin{itemize}
+\item 20 SuperK detector parameters (see Tab.\ \ref{tab:input_uncertainties_skdet}).
+\item 33 correlated flux and cross-section parameters tuned by the BANFF group to ND280 data (see Tab.\ \ref{tab:input_uncertainties_banff}).
+\item 12 uncorrelated cross-section parameters (see Tab.\ \ref{tab:input_uncertainties_uncorxsec}).
+\item 18 intranuclear and secondary interaction parameters (see Tab.\ \ref{tab:input_uncertainties_fsi}).
+\end{itemize}
+A detailed description of the systematics considered in this analysis and their
+implementation may be found in Sec. 3 of  Ref.\ \cite{OurRun123DisappAnalysis3Flavour} and in 
+\cite{NueRun123AnalysisEreco, NueRun123Analysis}.
+
+These systematic parameters are applied to single $\mu$-like ring and single e-like ring MC
+as shown in Tab.\ \ref{tab:apply_syst_to_samples}.
+In particular, systematics are applies to single $\mu$-like ring (single e-like ring) MC templates
+as shown in Tab.\ \ref{tab:apply_syst_to_1Rmu_templates} (Tab.\ \ref{tab:apply_syst_to_1Re_templates}).
+Tab. \ref{tab:nsk_systematic_table_summary} shows the effect of 1$\sigma$ systematic parameter variation on
+the number of single $\mu$-like ring and single e-like ring events with typical oscillation parameters.
+In Fig. \ref{fig:error_envelope_total} the total error envelope of the single $\mu$-like ring and the single e-like ring
+event reconstructed energy spectrum are presented with typical oscillation parameters.
+In the baseline {\em VaLOR} joint 3-flavour oscillation analysis reported here,
+all possible, but currently unknown, correlations between the single $\mu$-like ring and
+single e-like ring SuperK efficiency systematics are neglected. The effect of these correlations
+will be reported in a separate technical note.
+
+% .............................................
+% table with SuperK detector systematics
+%
+
+{
+\begin{table*}[htb]
+\small
+\center
+\renewcommand{\arraystretch}{2.0} % enlarge line spacing
+\begin{tabular}{p{0.15\textwidth}p{0.80\textwidth}}
+\hline
+\multicolumn {2}{l} { {\bf SuperK detector systematics relevant both to single $\mu$-like ring and single e-like ring events} } \\
+\hline
+  \parbox{0.15\textwidth}
+  {
+    $f_{E; r}^{SK}$ 
+  }
+& 
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Reconstructed energy scale systematic.
+    The energy scale uncertainty is estimated to be 2.3\% \cite{TN065}.
+    The effect of the uncertainty is calculated by scaling the bin edges of the MC
+    templates and, assuming uniform distribution of events within the bins, 
+    calculating the number of events gained from / lost to neighboring bins. 
+    \vspace{0.2cm}
+  }
+\\
+\hline
+\multicolumn {2}{l} { {\bf SuperK detector systematics relevant only to single $\mu$-like ring events} } \\
+\hline
+  \parbox{0.15\textwidth}
+  {
+    $f_{CCQERCi; r}^{SK}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    $\nu_\mu$, $\bar{\nu}_{\mu}$ CCQE ring-counting efficiency systematic.
+    Three correlated systematic parameters are included (i=0,1,2) corresponding to different reconstructed energy ranges \cite{TN065}.\\
+    $$     
+        {
+         \renewcommand{\arraystretch}{1.0} % enlarge line spacing
+         \begin{array}{l|l|l}
+            \text{Parameter} & \text{Description} & 1\sigma \text{ fractional error}  \\
+            0 &  E_{reco} < \text{ 0.4 GeV}                          &  1.7\%   \\
+            1 &  \text{ 0.4 GeV} \leq E_{reco} \leq \text{ 1.1 GeV}  &  3.5\%   \\
+            2 &  E_{reco} > \text{ 1.1 GeV}                          &  9.3\%   \\
+         \end{array} }
+    $$\\
+%    The following covariance matrix is used:\\
+%    $$     
+%     \left(
+%        {\begin{array}{ccc}
+%           (1.7\%)^2  &   0.59 * 1.7\% * 3.5\%  &  0.33 * 1.7\% * 9.3\% \\
+%                      &   (3.5\%)^2             &  0.61 * 3.5\% * 9.3\% \\
+%                      &                         &   (9.3\%)^2           \\
+%         \end{array} }
+%     \right)
+%    $$\\
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+      $f_{CCQEoth; r}^{SK}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    $\nu_\mu$, $\bar{\nu}_{\mu}$ CCQE other (all but ring-counting) efficiency systematic.
+    Combined systematic due to fiducial volume, reduction chain, OD cut, PID cut, momentum cut and 
+    decay electron cut efficiency uncertainties. 
+    The estimated uncertainty is 1.8\% \cite{TN065},\cite{TN034}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+     $f_{CCnonQE; r}^{SK}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    $\nu_\mu$, $\bar{\nu}_{\mu}$ CCnQE efficiency systematic.
+    The estimated uncertainty is 20\% \cite{TN065},\cite{TN034}.
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+     $f_{NC; r}^{SK}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    NC efficiency systematic.
+    The estimated uncertainty is 111\% \cite{TN065},\cite{TN034}.
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+     $f_{\nu_e; r}^{SK}$
+     \vspace{0.2cm}
+  }
+&
+   \parbox{0.80\textwidth}
+  {
+     \vspace{0.2cm}
+     $\nu_e$, $\bar{\nu}_{e}$ efficiency systematic.
+     The estimated uncertainty is 100\% \cite{TN065},\cite{TN034}.
+     \vspace{0.2cm}
+  }
+\\
+\hline
+\multicolumn {2}{l} { {\bf SuperK detector systematics relevant only to single e-like ring events} } \\
+\hline
+  \parbox{0.15\textwidth}
+  {
+    $f_{1Rei; r}^{SK}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Single e-like ring event efficiency systematics.
+    Twelve correlated parameters are included (i=0,...,11) corresponding to different modes and reconstructed energy bins.\\
+    $$     
+        {
+         \renewcommand{\arraystretch}{1.0} % enlarge line spacing
+         \begin{array}{r|l|l}
+            \text{Parameter} & \text{Description} & 1\sigma \text{ fractional error}  \\
+            0 &  \text{Oscillated } \nu_e \text{ CC efficiency, } E_{reco} < \text{ 0.35 GeV}                         &  0.026  \\
+            1 &  \text{Oscillated } \nu_e \text{ CC efficiency, } \text{ 0.35 GeV} \leq E_{reco} \leq \text{ 0.8 GeV}  &  0.031   \\
+            2 &  \text{Oscillated } \nu_e \text{ CC efficiency, } E_{reco} > \text{ 0.8 GeV}                         &  0.034  \\
+            3 &  \nu_\mu \text{ CC efficiency, } E_{reco} < \text{ 0.35 GeV}                                          &  1.303  \\
+            4 &  \nu_\mu \text{ CC efficiency, } \text{ 0.35 GeV} \leq E_{reco} \leq \text{ 0.8 GeV}                   &  1.087   \\
+            5 &  \nu_\mu \text{ CC efficiency, } E_{reco} > \text{ 0.8 GeV}                                          &  1.027  \\
+            6 &  \nu_e \text{ CC efficiency, } E_{reco} < \text{ 0.35 GeV}                                            &  0.025  \\
+            7 &  \nu_e \text{ CC efficiency, } \text{ 0.35 GeV} \leq E_{reco} \leq \text{ 0.8 GeV}                     & 0.028   \\
+            8 &  \nu_e \text{ CC efficiency, } E_{reco} > \text{ 0.8 GeV}                                            &  0.054  \\
+            9 &  \text{ NC efficiency, } E_{reco} < \text{ 0.35 GeV}                                                  &  0.497  \\
+           10 &  \text{ NC efficiency, } \text{ 0.35 GeV} \leq E_{reco} \leq \text{ 0.8 GeV}                           &  0.169   \\
+           11 &  \text{ NC efficiency, } E_{reco} > \text{ 0.8 GeV}                                                  &  0.170  \\
+         \end{array} }
+    $$\\
+    \vspace{0.2cm}
+  }
+\\
+\hline
+\end{tabular}\\[2pt]
+\caption{
+   Summary table of SuperK detector systematics.
+   The nuisance parameter symbols used in this paper are shown in the first column.
+   An index r in the nuisance parameter symbol denotes dependence on reconstructed energy while an index t denotes
+   dependence on true energy.
+   An index i is used where multiple systematic parameters, typically correlated between themselves, are grouped together.
+}
+\label{tab:input_uncertainties_skdet}
+\end{table*}
+}
+
+
+% .............................................
+% table with BANFF systematics
+%
+
+{
+\begin{table*}[htb]
+\small
+\center
+\renewcommand{\arraystretch}{2.0} % enlarge line spacing
+\begin{tabular}{p{0.15\textwidth}p{0.80\textwidth}}
+\hline
+\multicolumn {2}{l} { {\bf Correlated flux and cross-section (BANFF) systematics} } \\
+\hline
+  \parbox{0.15\textwidth}
+  {
+     $f_{i; t, r}^{banff}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Flux and cross-section parameters tuned by BANFF group on ND280 data.
+    Thirty-three correlated parameters are included (i=0,...,32).\\
+    $$     
+        {
+         \renewcommand{\arraystretch}{1.0} % enlarge line spacing
+         \begin{array}{r|l|c|c}
+            \text{Parameter} & \text{Description} & \text{Best-fit} & 1\sigma \text{ (pre/post)-fit fractional error} \\
+            0 &  \nu_\mu \text{ flux normalisation, E = 0.0 - 0.4 GeV}             & 0.995   &  0.119 / 0.092 \\
+            1 &  \nu_\mu \text{ flux normalisation, E = 0.4 - 0.5 GeV}             & 1.007   &  0.129 / 0.098 \\
+            2 &  \nu_\mu \text{ flux normalisation, E = 0.5 - 0.6 GeV}             & 1.002   &  0.203 / 0.090 \\
+            3 &  \nu_\mu \text{ flux normalisation, E = 0.6 - 0.7 GeV}             & 0.963   &  0.126 / 0.081 \\
+            4 &  \nu_\mu \text{ flux normalisation, E = 0.7 - 1.0 GeV}             & 0.901   &  0.140 / 0.095 \\
+            5 &  \nu_\mu \text{ flux normalisation, E = 1.0 - 1.5 GeV}             & 0.910   &  0.120 / 0.084 \\
+            6 &  \nu_\mu \text{ flux normalisation, E = 1.5 - 2.5 GeV}             & 0.936   &  0.102 / 0.076 \\
+            7 &  \nu_\mu \text{ flux normalisation, E = 2.5 - 3.5 GeV}             & 0.967   &  0.093 / 0.070 \\
+            8 &  \nu_\mu \text{ flux normalisation, E = 3.5 - 5.0 GeV}             & 0.988   &  0.110 / 0.083 \\
+            9 &  \nu_\mu \text{ flux normalisation, E = 5.0 - 7.0 GeV}             & 0.997   &  0.152 / 0.107 \\
+           10 &  \nu_\mu \text{ flux normalisation, E = 7.0 - 30.0 GeV}            & 1.004   &  0.189 / 0.142 \\
+           11 &  \bar{\nu}_{\mu} \text{ flux normalisation, E = 0.0 - 0.7 GeV}     & 0.980   &  0.131 / 0.108 \\
+           12 &  \bar{\nu}_{\mu} \text{ flux normalisation, E = 0.7 - 1.0 GeV}     & 0.958   &  0.116 / 0.094 \\
+           13 &  \bar{\nu}_{\mu} \text{ flux normalisation, E = 1.0 - 1.5 GeV}     & 0.947   &  0.119 / 0.098 \\
+           14 &  \bar{\nu}_{\mu} \text{ flux normalisation, E = 1.5 - 2.5 GeV}     & 0.953   &  0.120 / 0.106 \\
+           15 &  \bar{\nu}_{\mu} \text{ flux normalisation, E = 2.5 -30.0 GeV}     & 0.985   &  0.120 / 0.107 \\
+           16 &  \nu_{e} \text{ flux normalisation, E = 0.0 -  0.5 GeV}            & 0.982   &  0.126 / 0.102 \\
+           17 &  \nu_{e} \text{ flux normalisation, E = 0.5 -  0.7 GeV}            & 0.985   &  0.122 / 0.098 \\
+           18 &  \nu_{e} \text{ flux normalisation, E = 0.7 -  0.8 GeV}            & 0.984   &  0.137 / 0.113 \\
+           19 &  \nu_{e} \text{ flux normalisation, E = 0.8 -  1.5 GeV}            & 0.968   &  0.104 / 0.078 \\
+           20 &  \nu_{e} \text{ flux normalisation, E = 1.5 -  2.5 GeV}            & 0.986   &  0.102 / 0.077 \\
+           21 &  \nu_{e} \text{ flux normalisation, E = 2.5 -  4.0 GeV}            & 0.997   &  0.122 / 0.085 \\
+           22 &  \nu_{e} \text{ flux normalisation, E = 4.0 - 30.0 GeV}            & 1.008   &  0.168 / 0.124 \\
+           23 &  \bar{\nu}_{e} \text{ flux normalisation, E = 0.0 - 2.5 GeV}       & 0.987   &  0.191 / 0.182 \\
+           24 &  \bar{\nu}_{e} \text{ flux normalisation, E = 0.0 - 2.5 GeV}       & 1.017   &  0.139 / 0.107 \\
+           25 &  \text{CCQE axial-mass scaling factor}                             & 1.049   &  0.372 / 0.160 \\
+           26 &  \text{Resonance-production axial-mass scaling factor}             & 1.011   &  0.183 / 0.105 \\
+           27 &  \text{CCQE normalisation, E = 0.0 - 1.5 GeV}                      & 0.951   &  0.110 / 0.086 \\
+           28 &  \text{CCQE normalisation, E = 1.5 - 3.5 GeV}                      & 0.708   &  0.300 / 0.209 \\
+           29 &  \text{CCQE normalisation, E = 3.5 - 30.0 GeV}                     & 1.347   &  0.300 / 0.225 \\
+           30 &  CC1\pi \text{ normalisation, E = 0.0 - 2.5 GeV}                   & 1.370   &  0.317 / 0.204 \\
+           31 &  CC1\pi \text{ normalisation, E = 2.5 - 30.0 GeV}                  & 1.016   &  0.400 / 0.282 \\
+           32 &  NC1\pi^{0} \text{ normalisation}                                  & 1.153   &  0.328 / 0.267 \\
+         \end{array} }
+    $$\\
+    \vspace{0.2cm}
+  }
+\\
+\hline
+\end{tabular}\\[2pt]
+\caption{
+   Summary table of BANFF systematics.
+   The nuisance parameter symbols used in this paper are shown in the first column.
+   An index r in the nuisance parameter symbol denotes dependence on reconstructed energy while an index t denotes
+   dependence on true energy.
+   An index i is used where multiple systematic parameters, typically correlated between themselves, are grouped together.
+}
+\label{tab:input_uncertainties_banff}
+\end{table*}
+}
+
+
+% .............................................
+% table with uncorrelated xsec systematics
+%
+
+{
+\begin{table*}[htb]
+\small
+\center
+\renewcommand{\arraystretch}{2.0} % enlarge line spacing
+\begin{tabular}{p{0.15\textwidth}p{0.80\textwidth}}
+\hline
+\multicolumn {2}{l} { {\bf Uncorrelated cross-section systematics} } \\
+\hline
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{pF; t, r}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Uncertainty in Fermi momentum for $^{16}O$ was taken to be 225$\pm$30 MeV \cite{MoreNIWGErr113}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{bindE; t, r}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Uncertainty in binding energy for $^{16}O$ ws taken to be 27$\pm$9 MeV \cite{MoreNIWGErr113}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{SF; t, r}$
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Nuclear environment modeling systematic;
+    switch from Fermi Gas (RFG) to Spectral Function (SF) model (CCQE only).
+    0 (RFG) - 1 (SF)
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{\pi-less\Delta; t, r}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic due to uncertainty on the fraction of $\pi$-less $\Delta$ decays in resonance neutrino-production events.
+    A 20\% uncertainty was assumed \cite{MoreNIWGErr113}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{CCothShape; t, r}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic due to the uncertainty in CC multipion, CC DIS and CC resonant $\eta$, K and photon production cross-section.
+    A 40\% uncertainty was assumed \cite{MoreNIWGErr113}.    
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{Wshape; t, r}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic due to the uncertainty in the shape of the 
+    initial pion momentum distribution (before final-state interactions) in resonance interactions. \\
+    A 52\% uncertainty was assumed \cite{MoreNIWGErr113}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{CCcoh; t}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic due to the uncertainty on the CC coherent cross-section.
+    A 100\% uncertainty was assumed \cite{MoreNIWGErr113}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{NCcoh; t}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic due to the uncertainty on the NC coherent cross-section.
+    A 30\%uncertainty was assumed \cite{MoreNIWGErr113}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{NC1\pi^\pm; t}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic due to the uncertainty on the NC1$\pi^\pm$ cross-section.
+    A 30\% uncertainty was assumed \cite{MoreNIWGErr113}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{NCoth; t}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic die to the uncertainty on the NC other (all but single $\pi^\pm$) cross-section.
+    A 30\% uncertainty was assumed \cite{MoreNIWGErr113}.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{CC\nu_e; t}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic due to the uncertainty on the $\nu_e$ / $\nu_\mu$ CC cross-section ratio \cite{MoreNIWGErr108}.
+    A 3\% uncertainty was assumed.
+    \vspace{0.2cm}
+  }
+\\
+  \parbox{0.15\textwidth}
+  {
+    \vspace{0.2cm}
+    $f_{CC\bar{\nu}; t}$
+    \vspace{0.2cm}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    Systematic due to the uncertainty on the $\bar{\nu}$ / $\nu$ CC cross-section ratio.
+    A 40\% uncertainty was assumed.
+    \vspace{0.2cm}
+  }
+\\
+\hline
+\end{tabular}\\[2pt]
+\caption{
+   Summary table of Uncorrelated cross-section systematics.
+   The nuisance parameter symbols used in this paper are shown in the first column.
+   An index r in the nuisance parameter symbol denotes dependence on reconstructed energy while an index t denotes
+   dependence on true energy.
+   An index i is used where multiple systematic parameters, typically correlated between themselves, are grouped together.
+}
+\label{tab:input_uncertainties_uncorxsec}
+\end{table*}
+}
+
+
+% .............................................
+% table with FSI+SI systematics
+%
+
+{
+\begin{table*}[htb]
+\small
+\center
+\renewcommand{\arraystretch}{2.0} % enlarge line spacing
+\begin{tabular}{p{0.15\textwidth}p{0.80\textwidth}}
+\hline
+\multicolumn {2}{l} { {\bf FSI+SI systematics relevant only to single $\mu$-like ring events} } \\
+\hline
+  \parbox{0.15\textwidth}
+  {
+     {\bf $f_{1R{\mu}i; r}^{FSI}$}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    FSI (final state interaction / intranuclear hadron transport) and
+    SI (secondary interaction / detector hadron transport) systematic parameters.
+    Six correlated parameters are included (i=0,...,5) corresponding to different modes and reconstructed energy bins.\\    
+     $$
+        {
+         \renewcommand{\arraystretch}{1.0} % enlarge line spacing
+         \begin{array}{l|l|c}
+            \text{Parameter} & \text{Description} & 1\sigma \text{ fractional error} \\
+            0 &  \nu_\mu \text{ \& } \bar{\nu}_{\mu} \text{ CCQE,} E_{reco} < \text{ 0.4 GeV}                               & 3.6\times10^{-5}   \\
+            1 &  \nu_\mu \text{ \& } \bar{\nu}_{\mu} \text{ CCQE,} \text{ 0.4 GeV} \leq E_{reco} \leq \text{ 1.1 GeV}       & 7.1\times10^{-4}   \\
+            2 &  \nu_\mu \text{ \& } \bar{\nu}_{\mu} \text{ CCQE,} E_{reco} > \text{ 1.1 GeV}                               & 2.8\times10^{-3}   \\
+            3 &  \nu_\mu \text{ \& } \bar{\nu}_{\mu} \text{ CCnonQE}                                                        & 8.7\times10^{-2}   \\
+            4 &  \nu_e \text{ \& } \bar{\nu}_{e} \text{ CC}                                                                 & 1.13\times10^{-2}   \\
+            5 &  \text{All NC}                                                                                              & 7.7\times10^{-2}   \\
+         \end{array} }
+   $$ \\
+    \vspace{0.2cm}
+  }
+\\
+\hline
+\multicolumn {2}{l} { {\bf FSI+SI systematics relevant only to single e-like ring events} } \\
+\hline
+  \parbox{0.15\textwidth}
+  {
+     {\bf $f_{1Rei; r}^{FSI}$}
+  }
+&
+  \parbox{0.80\textwidth}
+  {
+    \vspace{0.2cm}
+    FSI (final state interaction / intranuclear hadron transport) and
+    SI (secondary interaction / detector hadron transport) systematic parameters.
+    Twelve correlated parameters are included (i=0,...,11) corresponding to different modes and reconstructed energy bins.\\
+    $$     
+        {
+         \renewcommand{\arraystretch}{1.0} % enlarge line spacing
+         \begin{array}{l|l|l}
+            \text{Parameter} & \text{Description} & 1\sigma \text{ fractional error}  \\
+            6 &  \text{Oscillated } \nu_e \text{ CC, } E_{reco} < \text{ 0.35 GeV}                         &  0.11   \\
+            7 &  \text{Oscillated } \nu_e \text{ CC, } \text{ 0.035 GeV} \leq E_{reco} \leq \text{ 0.8 GeV}  &   1.2\times10^{-2} \\
+            8 &  \text{Oscillated } \nu_e \text{ CC, } E_{reco} > \text{ 0.8 GeV}                         &   7.3\times10^{-3} \\
+            9 &  \nu_\mu \text{ CC, } E_{reco} < \text{ 0.35 GeV}                                          &    3.7\times10^{-2}  \\
+           10 &  \nu_\mu \text{ CC, } \text{ 0.35 GeV} \leq E_{reco} \leq \text{ 0.8 GeV}                   & 6.2\times10^{-2}  \\
+           11 &  \nu_\mu \text{ CC, } E_{reco} > \text{ 0.8 GeV}                                          &  7.7\times10^{-2}   \\
+           12 &  \nu_e \text{ CC, } E_{reco} < \text{ 0.35 GeV}                                            &   6.0\times10^{-2}   \\
+           13 &  \nu_e \text{ CC, } \text{ 0.35 GeV} \leq E_{reco} \leq \text{ 0.8 GeV}                     &   3.1\times10^{-2}  \\
+           14 &  \nu_e \text{ CC, } E_{reco} > \text{ 0.8 GeV}                                            &   3.2\times10^{-2}  \\
+           15 &  \text{ NC, } E_{reco} < \text{ 0.35 GeV}                                                  &  8.5\times10^{-2}  \\
+           16 &  \text{ NC, } \text{ 0.35 GeV} \leq E_{reco} \leq \text{ 0.8 GeV}                           & 7.6\times10^{-2}     \\
+           17 &  \text{ NC, } E_{reco} > \text{ 0.8 GeV}                                                  &  4.3\times10^{-2}  \\
+         \end{array} }
+    $$\\
+    \vspace{0.2cm}
+  }
+\\
+\hline
+\end{tabular}\\[2pt]
+\caption{
+   Summary table of FSI+SI systematics.
+   The nuisance parameter symbols used in this paper are shown in the first column.
+   An index r in the nuisance parameter symbol denotes dependence on reconstructed energy while an index t denotes
+   dependence on true energy.
+   An index i is used where multiple systematic parameters, typically correlated between themselves, are grouped together.
+}
+\label{tab:input_uncertainties_fsi}
+\end{table*}
+}
+
+%
+% ...............................................................................
+% Table summarizing which systematics are applied to which sample
+%
+
+\begin{table}[htbp]
+\center
+\begin{tabular}{|p{1cm}|p{3cm}|p{5.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|}
+\hline 
+Type & Systematics & Comment & $1R_{\mu}$ & $1R_{e}$ & $N_{syst}$ \\
+\hline 
+\hline
+  \multirow{6}{*} { \begin{sideways} BANFF \end{sideways} } 
+       & $f_{0; t, r}^{banff}$ - $f_{24; t, r}^{banff}$          
+          & $\nu_{\mu}$, $\bar{\nu_{\mu}}$, $\nu_{e}$ and $\bar{\nu_{e}}$  flux &  \color{blue}{\ck} &  \color{blue}{\ck}  & 25 \\
+  \cline{2-6}
+       & $f_{25; t, r}^{banff}$ 
+          & CCQE axial mass                  &  \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{26; t, r}^{banff}$ 
+          & resonance-production axial mass  &  \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{27; t, r}^{banff}$ - $f_{29; t, r}^{banff}$  
+          & CCQE normalization            &  \color{blue}{\ck} &  \color{blue}{\ck} & 3 \\
+       & $f_{30; t, r}^{banff}$ - $f_{31; t, r}^{banff}$ 
+          & CC1$\pi$ normalization        &  \color{blue}{\ck} &  \color{blue}{\ck} & 2 \\
+       & $f_{32; t, r}^{banff}$ 
+          & NC1$\pi^{0}$                  &   --               &  \ck               & 1 \\
+\hline
+  \multirow{12}{*} {  \begin{sideways} Uncorrelated cross-section \end{sideways} } 
+       & $f_{pF; t, r}$ 
+          & Fermi momentum           &  \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{bindE; t, r}$ 
+         & Binding energy            &  \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{SF; t, r}$
+         & Nuclear modeling          &  \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{Wshape; t, r}$
+         & Shape of the $\pi$ momentum distribution    &  \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{\pi-less\Delta; t, r}$
+         & $\pi$-less $\Delta$ decay    &  \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{CCothShape; t, r}$
+         & CC other shape               &  \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{CCcoh; t}$
+         & CC coherent cross-section    & \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{NC1\pi^\pm; t}$
+         & NC1$\pi^{\pm}$ cross-section & \ck & -- & 1 \\
+       & $f_{NCcoh; t}$
+         & NC coherent cross-section    & -- & \ck & 1 \\
+       & $f_{NCoth; t}$
+         & NC other cross-section       & \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{CC\nu_e; t}$
+         & $\sigma_{\nu_{e}}$/ $\sigma_{\nu_{\mu}}$ ratio & \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+       & $f_{CC\bar{\nu}; t}$
+         & $\sigma_{\bar{\nu}}$/ $\sigma_{\nu}$ ratio      & \color{blue}{\ck} &  \color{blue}{\ck} & 1 \\
+\hline 
+\hline
+   \multirow{10}{*} { \begin{sideways} SuperK detector \end{sideways} } 
+      & $f_{E; r}^{SK}$  
+          & Reconstructed energy scale & \color{blue}{\ck}  &  \color{blue}{\ck}  & 1 \\
+   \cline{2-6}
+      & $f_{CCQERC0; r}^{SK}$ - $f_{CCQERC2; r}^{SK}$ 
+          & $\nu_{\mu}$,$\bar{\nu}_{\mu}$ CCQE ring-counting efficiency  & \ck & -- & 3 \\
+      & $f_{CCQEoth; r}^{SK}$ 
+          & $\nu_{\mu}$,$\bar{\nu}_{\mu}$ CCQE other efficiency & \ck & -- & 1 \\
+      & $f_{CCnonQE; r}^{SK}$ 
+          & $\nu_{\mu}$,$\bar{\nu}_{\mu}$ CCnonQE efficiency  & \ck & -- & 1 \\
+      & $f_{\nu_e; r}^{SK}$ 
+          & $\nu_{e}$, $\bar{\nu}_{e}$ CC efficiency & \ck & -- & 1 \\
+      & $f_{NC; r}^{SK}$ 
+          & NC efficiency & \ck & -- & 1 \\
+   \cline{2-6}
+      & $f_{1Re0; r}^{SK}$ - $f_{1Re2; r}^{SK}$ 
+         & Osc. $\nu_{e}$ CC efficiency & -- & \ck & 3 \\
+      & $f_{1Re3; r}^{SK}$ - $f_{1Re5; r}^{SK}$ 
+         & $\nu_{\mu}$,$\bar{\nu}_{\mu}$ CC efficiency & -- & \ck & 3 \\
+      & $f_{1Re6; r}^{SK}$ - $f_{1Re8; r}^{SK}$ 
+         & $\nu_{e}$,$\bar{\nu}_{e}$ CC efficiency & -- & \ck & 3 \\
+      & $f_{1Re9; r}^{SK}$ - $f_{1Re11; r}^{SK}$ 
+         & NC efficiency & -- & \ck & 3 \\
+ \hline 
+\hline
+ \multirow{8}{*} {  \begin{sideways} FSI+SI \end{sideways} } 
+      & $f_{1R{\mu}0; r}^{FSI}$ - $f_{1R{\mu}2; r}^{FSI}$
+         & $\nu_{\mu}$, $\bar{\nu}_{\mu}$ CCQE & \ck & -- & 3 \\
+      & $f_{1R{\mu}3; r}^{FSI}$ 
+         & $\nu_{\mu}$, $\bar{\nu}_{\mu}$ CCnonQE & \ck & -- & 1\\
+      & $f_{1R{\mu}4; r}^{FSI}$ 
+         & $\nu_{e}$, $\bar{\nu}_{e}$ CC  & \ck & -- & 1\\
+      & $f_{1R{\mu}5; r}^{FSI}$ 
+         & NC  & \ck & -- & 1\\
+ \cline{2-6}
+      & $f_{1Re0; r}^{FSI}$ - $f_{1Re2; r}^{FSI}$
+         & Osc. $\nu_{e}$  & -- & \ck & 3 \\
+      & $f_{1Re3; r}^{FSI}$ - $f_{1Re5; r}^{FSI}$
+         & $\nu_{\mu}$,$\bar{\nu}_{\mu}$ CC & -- & \ck & 3 \\
+      & $f_{1Re6; r}^{FSI}$ - $f_{1Re8; r}^{FSI}$
+         & $\nu_{e}$,$\bar{\nu}_{e}$ CC & -- & \ck & 3 \\
+      & $f_{1Re9; r}^{FSI}$ - $f_{1Re11; r}^{FSI}$ 
+         & NC  & -- & \ck & 3 \\
+\hline 
+\hline
+\bf Total &  &  & & & \bf 83 \\
+\hline
+\end{tabular}
+\caption{
+  List of all systematic parameters included in the joint oscillation analysis.
+  A \ck symbol indicates whether the systematic parameter is applied on the single $\mu$-like ring 
+  and single e-like ring MC templates.
+}
+\label{tab:apply_syst_to_samples}
+\end{table}
+
+% ........................................
+%
+% table showing which systematics are applied to which 1Rmu modes
+%
+
+{
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{table}
+\scriptsize
+\centering
+\begin{tabular}{| c || c | c | c | c | c | c || c | c | c | c | c | c || c | c | c | c | c | c || c | c | c | c | c | c || c | c | c | c |}
+\hline
+                       & \begin{sideways}   $\nu_{\mu}$ CCQE                   \end{sideways}  &   
+                         \begin{sideways}   $\nu_{\mu}$ CC1$\pi$               \end{sideways}  &   
+                         \begin{sideways}   $\nu_{\mu}$ CC coherent            \end{sideways}  &   
+                         \begin{sideways}   $\nu_{\mu}$ CC other               \end{sideways}  &   
+                         \begin{sideways}   $\nu_{\mu}$ NC1$\pi^{\pm}$         \end{sideways}  &  
+                         \begin{sideways}   $\nu_{\mu}$ NC other               \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ CCQE             \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ CC1$\pi$         \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ CC coherent      \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ CC other         \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ NC1$\pi^{\pm}$   \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ NC other         \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ CCQE                     \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ CC1$\pi$                 \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ CC coherent              \end{sideways}  &  
+                         \begin{sideways}   $\nu_{e}$ CC other                 \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ NC1$\pi^{\pm}$           \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ NC other                 \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{e}}$ CCQE               \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{e}}$ CC1$\pi$           \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{e}}$ CC coherent        \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{e}}$ CC other           \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{e}}$ NC1$\pi^{\pm}$     \end{sideways}  & 
+                         \begin{sideways}   $\bar{\nu_{e}}$ NC other           \end{sideways}  &   
+                         \begin{sideways}   Osc-$\nu_{e}$ CCQE                 \end{sideways}  &   
+                         \begin{sideways}   Osc-$\nu_{e}$ CC1$\pi$             \end{sideways}  &   
+                         \begin{sideways}   Osc-$\nu_{e}$ CC coherent          \end{sideways}  &   
+                         \begin{sideways}   Osc-$\nu_{e}$ CC other             \end{sideways}  \\
+\hline
+ $f_{E; r}^{SK}$             & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck  \\
+\hline
+ $f_{CCQERC0; r}^{SK}$       & \ck &     &     &     &     &     & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{CCQERC1; r}^{SK}$       & \ck &     &     &     &     &     & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{CCQERC2; r}^{SK}$       & \ck &     &     &     &     &     & \ck  &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{CCQEoth; r}^{SK}$       & \ck &     &     &     &     &     & \ck  &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{CCnQE; r}^{SK}$         &     & \ck & \ck & \ck &     &     &     & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{NC; r}^{SK}$            &     &     &     &     & \ck & \ck &     &     &     &     & \ck & \ck &     &     &     &     & \ck & \ck &     &     &     &     & \ck & \ck &     &     &     &      \\
+\hline
+ $f_{\nu_e; r}^{SK}$         &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck &     &     & \ck & \ck & \ck & \ck &     &     & \ck & \ck & \ck & \ck  \\
+\hline
+ $f_{0; t, r}^{banff}$ -
+ $f_{10; t, r}^{banff}$      & \ck & \ck & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\ 
+\hline
+ $f_{11; t, r}^{banff}$ -   
+ $f_{15; t, r}^{banff}$      &     &     &     &     &     &     & \ck & \ck & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{16; t, r}^{banff}$ -   
+ $f_{22; t, r}^{banff}$      &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{23; t, r}^{banff}$ -   
+ $f_{24; t, r}^{banff}$      &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &   & \ck & \ck & \ck & \ck & \ck & \ck &    &     &     &      \\
+\hline
+ $f_{25; t, r}^{banff}$      & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{26; t, r}^{banff}$      &     & \ck &     & \ck & \ck & \ck &     & \ck &     & \ck & \ck & \ck &     & \ck &     & \ck & \ck & \ck &     & \ck &     & \ck & \ck & \ck &     &\ck  &     & \ck  \\
+\hline
+ $f_{27; t, r}^{banff}$      & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{28; t, r}^{banff}$      & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{29; t, r}^{banff}$      & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{30; t, r}^{banff}$      &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &      \\
+\hline
+ $f_{31; t, r}^{banff}$      &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &      \\
+\hline
+ $f_{pF; t, r}$              & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{SF; t, r}$              & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{\pi-less\Delta; t, r}$  &     &\ck  &     &     & \ck & \ck &     & \ck &     &     & \ck & \ck &     & \ck &     &     &\ck  &\ck  &     & \ck &     &     & \ck & \ck &     & \ck &     &      \\
+\hline
+ $f_{bindE; t, r}$           & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{CCothShape; t, r}$      &     &     &     &\ck  &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck  \\
+\hline
+ $f_{Wshape; t, r}$          &     &     &     &     & \ck & \ck &     &     &     &     &\ck  & \ck &     &     &     &     & \ck & \ck &     &     &     &     &\ck  & \ck &     &     &     &      \\
+\hline
+ $f_{CCcoh; t}$              &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &      \\
+\hline
+ $f_{NC1\pi^\pm; t}$         &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &      \\
+\hline
+ $f_{NCoth; t}$              &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     & \ck &     &     &     &     &     &\ck  &     &     &     &      \\
+\hline
+ $f_{CC\nu_e; t}$            &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck &\ck  &     &     &\ck  &\ck  & \ck & \ck &     &     & \ck & \ck & \ck & \ck  \\
+\hline
+ $f_{CC\bar{\nu}; t}$        &     &     &     &     &     &     & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck &     &     &     &     &     &     \\
+\hline
+ $f _{1R\mu0; r}^{FSI}$      & \ck &     &     &     &     &     & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f _{1R\mu1; r}^{FSI}$      & \ck &     &     &     &     &     & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f _{1R\mu2; r}^{FSI}$      & \ck &     &     &     &     &     & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f _{1R\mu3; r}^{FSI}$      &     & \ck & \ck & \ck &     &     &     & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f _{1R\mu4; r}^{FSI}$      &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck &     &     & \ck & \ck & \ck & \ck &     &     & \ck & \ck & \ck & \ck  \\
+\hline
+ $f _{1R\mu5; r}^{FSI}$      &     &     &     &     & \ck & \ck &     &     &     &     & \ck & \ck &     &     &     &     & \ck & \ck &     &     &     &     & \ck & \ck &     &     &     &      \\
+\hline
+\end{tabular}
+\caption{
+  A \ck symbol denotes that the given single $\mu$-like ring MC template is modified when the given systematic parameter is tweaked.
+  The table lists all systematic parameters, relevant to single $\mu$-like ring events, considered in this analysis (first column) and 
+  all 28 MC templates used for constructing the single $\mu$-like ring event reconstructed energy spectrum p.d.f (first row).
+}
+\label{tab:apply_syst_to_1Rmu_templates}
+\end{table}
+}
+
+
+% ........................................
+%
+% table showing which systematics are applied to which 1Re modes
+%
+
+{
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{table}
+\scriptsize
+\centering
+\begin{tabular}{| c || c | c | c | c | c | c | c || c | c | c | c | c | c | c || c | c | c | c | c | c | c || c | c | c | c | c | c | c || c | c | c | c |}
+\hline
+                       & \begin{sideways}   $\nu_{\mu}$ CCQE                   \end{sideways}  &   
+                         \begin{sideways}   $\nu_{\mu}$ CC1$\pi$               \end{sideways}  &   
+                         \begin{sideways}   $\nu_{\mu}$ CC coherent            \end{sideways}  &   
+                         \begin{sideways}   $\nu_{\mu}$ CC other               \end{sideways}  &   
+                         \begin{sideways}   $\nu_{\mu}$ NC1$\pi^{0}$           \end{sideways}  &  
+                         \begin{sideways}   $\nu_{\mu}$ NC coherent            \end{sideways}  &  
+                         \begin{sideways}   $\nu_{\mu}$ NC other               \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ CCQE             \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ CC1$\pi$         \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ CC coherent      \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ CC other         \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ NC1$\pi^{0}$     \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ NC coherent      \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{\mu}}$ NC other         \end{sideways}  & 
+                         \begin{sideways}   $\nu_{e}$ CCQE                     \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ CC1$\pi$                 \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ CC coherent              \end{sideways}  &  
+                         \begin{sideways}   $\nu_{e}$ CC other                 \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ NC1$\pi^{0}$             \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ NC coherent              \end{sideways}  &   
+                         \begin{sideways}   $\nu_{e}$ NC other                 \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{e}}$ CCQE               \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{e}}$ CC1$\pi$           \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{e}}$ CC coherent        \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{e}}$ CC other           \end{sideways}  &  
+                         \begin{sideways}   $\bar{\nu_{e}}$ NC1$\pi^{0}$       \end{sideways}  & 
+                         \begin{sideways}   $\bar{\nu_{e}}$ NC coherent        \end{sideways}  &   
+                         \begin{sideways}   $\bar{\nu_{e}}$ NC other           \end{sideways}  &   
+                         \begin{sideways}   Osc-$\nu_{e}$ CCQE                 \end{sideways}  &   
+                         \begin{sideways}   Osc-$\nu_{e}$ CC1$\pi$             \end{sideways}  &   
+                         \begin{sideways}   Osc-$\nu_{e}$ CC coherent          \end{sideways}  &   
+                         \begin{sideways}   Osc-$\nu_{e}$ CC other             \end{sideways}  \\
+\hline
+ $f_{E; r}^{SK}$             & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck & \ck  \\
+\hline
+ $f_{1Re0; r}^{SK}$ - 
+ $f_{1Re2; r}^{SK}$          &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck  \\
+\hline
+ $f_{1Re3; r}^{SK}$ -         
+ $f_{1Re5; r}^{SK}$          & \ck & \ck & \ck & \ck &     &     &     & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{1Re6; r}^{SK}$ -
+ $f_{1Re8; r}^{SK}$          &     &     &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck &     &     &     & \ck & \ck & \ck & \ck &     &     &     &     &     &     &      \\
+\hline
+ $f_{1Re9; r}^{SK}$ -
+ $f_{1Re11; r}^{SK}$         &     &     &     &     & \ck & \ck & \ck &     &     &     &     & \ck & \ck & \ck &     &     &     &     & \ck & \ck & \ck &     &     &     &     & \ck & \ck & \ck  &     &     &     &      \\
+\hline
+ $f_{0; t, r}^{banff}$ -
+ $f_{10; t, r}^{banff}$      & \ck & \ck & \ck & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\ 
+\hline
+ $f_{11; t, r}^{banff}$ -   
+ $f_{15; t, r}^{banff}$      &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{16; t, r}^{banff}$ -   
+ $f_{22; t, r}^{banff}$      &     &     &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{23; t, r}^{banff}$ -   
+ $f_{24; t, r}^{banff}$      &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck &  \ck    & \ck & \ck &     &     &     &      \\
+\hline
+ $f_{25; t, r}^{banff}$      & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{26; t, r}^{banff}$      &     & \ck &     & \ck & \ck & \ck & \ck &     & \ck &     & \ck & \ck & \ck & \ck &     & \ck &     & \ck & \ck & \ck & \ck &     & \ck &     & \ck &     & \ck & \ck &     &\ck  &     & \ck  \\
+\hline
+ $f_{27; t, r}^{banff}$      & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{28; t, r}^{banff}$      & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{29; t, r}^{banff}$      & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{30; t, r}^{banff}$      &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &      \\
+\hline
+ $f_{31; t, r}^{banff}$      &     &   &     &     &     &     &   \ck  &     &  &     &     &     &     &   \ck  &     &  &     &     &     &     &   \ck  &     &  &     &     &     &     &    \ck &     &  &     &      \\
+\hline
+ $f_{32; t, r}^{banff}$      &     &  &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &      \\
+\hline
+ $f_{pF; t, r}$              & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{SF; t, r}$              & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{\pi-less\Delta; t, r}$  &     &\ck  &     &     & \ck &     & \ck &     & \ck &     &     & \ck &     & \ck &     & \ck &     &     &    \ck  & & \ck &     & \ck &     &     &     \ck & & \ck &     & \ck &     &      \\
+\hline
+ $f_{bindE; t, r}$           & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &      \\
+\hline
+ $f_{CCothShape; t, r}$      &     &     &     &\ck  &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck  \\
+\hline
+ $f_{Wshape; t, r}$          &     &     &     &     & \ck &     & \ck &     &     &     &     &\ck  &     & \ck &     &     &     &     &   \ck  &  & \ck &     &     &     &     &    \ck &  & \ck &     &     &     &      \\
+\hline
+ $f_{CCcoh; t}$              &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &      \\
+\hline
+ $f_{NC1\pi^0; t}$           &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &      \\
+\hline
+ $f_{NCoth; t}$              &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     & \ck &     &     &     &     &     &     &\ck  &     &     &     &      \\
+\hline
+ $f_{CC\nu_e; t}$            &     &     &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck &\ck  &     &     &     &\ck  &\ck  & \ck & \ck &     &     &     & \ck & \ck & \ck & \ck  \\
+\hline
+ $f_{CC\bar{\nu}; t}$        &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     \\
+\hline
+ $f_{1Re0; r}^{FSI}$ - 
+ $f_{1Re2; r}^{FSI}$          &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck  \\
+\hline
+ $f_{1Re3; r}^{FSI}$ -         
+ $f_{1Re5; r}^{FSI}$          & \ck & \ck & \ck & \ck &     &     &     & \ck & \ck & \ck & \ck &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &     &      \\
+\hline
+ $f_{1Re6; r}^{FSI}$ -
+ $f_{1Re8; r}^{FSI}$          &     &     &     &     &     &     &     &     &     &     &     &     &     &     & \ck & \ck & \ck & \ck &     &     &     & \ck & \ck & \ck & \ck &     &     &     &     &     &     &      \\
+\hline
+ $f_{1Re9; r}^{FSI}$ -
+ $f_{1Re11; r}^{FSI}$         &     &     &     &     & \ck & \ck & \ck &     &     &     &     & \ck & \ck & \ck &     &     &     &     & \ck & \ck & \ck &     &     &     &     & \ck & \ck & \ck  &     &     &     &      \\
+\hline
+\end{tabular}
+\caption{
+  A \ck symbol denotes that the given single e-like ring MC template is modified when the given systematic parameter is tweaked.
+  The table lists all systematic parameters, relevant to single e-like ring events, considered in this analysis (first column) and 
+  all 32 MC templates used for constructing the single e-like ring event reconstructed energy spectrum p.d.f (first row).
+}
+\label{tab:apply_syst_to_1Re_templates}
+\end{table}
+}
+
+\clearpage
+
+%
+% ...............................................
+% Tables showing the effect of systematics on NSK
+%
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c || c | c | }
+\hline
+  { Source of uncertainty }  & {1R$\mu$ ${\delta}N_{SK}$/$N_{SK}$} &  {1Re ${\delta}N_{SK}$/$N_{SK}$} \\
+\hline
+SuperK detector    &    10.05\%   &  3.20\% \\
+BANFF (prefit)        &    21.66\%   &  24.57\% \\
+BANFF (postfit)        &  4.13\%   &  4.71\% \\
+Uncorrelated XSec     &   6.34\%   &  4.18\% \\
+FSI+SI                  &  3.49\%   &  2.30\% \\
+\hline
+Total (BANFF prefit)    &  25.33\%   &  25.14\% \\
+Total (BANFF postfit)  &  13.32\%   &  7.52\% \\
+\hline
+\end{tabular}
+\caption{
+  Effect of 1$\sigma$ systematic parameter variation on
+  the number of single $\mu$-like ring and single e-like ring events,
+  computed
+  for oscillations with
+  $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$.
+  $\sin^{2}\theta_{23}$=0.5,
+  $\sin^{2}\theta_{13}$=0.025,
+  $\delta_{CP}$=0.
+  2012 PDG values are used for the solar parameters and 
+  the normal mass hierarchy is assumed.
+  The numbers shown were calculated for an exposure of 3.010$\times$10$^{20}$ POT and BANFF-tuned MC templates were used.
+}
+\label{tab:nsk_systematic_table_summary}
+\end{table}
+
+
+
+%..................
+% 
+% error envelopes
+% 
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=40pc]{./images/systematics/ALL_envelope_PDG.eps}
+\caption {
+  Total error envelope of the single $\mu$-like ring event reconstructed energy spectrum (top)
+  and total error envelope of the single e-like ring event reconstructed energy spectrum (bottom),
+  for oscillations with
+  $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$.
+  $\sin^{2}\theta_{23}$=0.5,
+  $\sin^{2}\theta_{13}$=0.025,
+  $\delta_{CP}$=0.
+  2012 PDG values are used for the solar parameters and the normal mass hierarchy is assumed.
+  The plot shown was calculated for an exposure of 3.010$\times$10$^{20}$ POT and BANFF-tuned MC templates were used.
+}
+\label{fig:error_envelope_total}
+\end{figure*}
+
+
+

@@ -1,0 +1,10 @@
+\clearpage
+
+\section{Fitter performance. Study of residuals.}
+\label{app:fitter_performance}
+
+\subsection{\" 4 + 0 \" fit}
+\label{app:fitter_performance_wo_syst}
+
+\subsection{\" 4 + 83 \" fit}
+\label{app:fitter_performance_w_syst}

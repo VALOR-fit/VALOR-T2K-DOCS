@@ -1,0 +1,114 @@
+
+\section {Motivation}
+\label{sec:motivation}
+
+To date, two types of T2K oscillation analyses exist \cite{OurRun1and2Analysis2F, NueRun123Analysis}:
+\begin{itemize}
+\item
+  $\nu_{e}$-appearance analyses,
+  in which a joint determination of  $\sin^{2}2\theta_{13}$ and $\delta_{CP}$ is performed
+  exploiting the characteristics of the observed single e-like ring event sample.
+  In this analysis, the values of  $|\Delta m_{32}^{2}|$ and $\sin^{2}2\theta_{23}$ are fixed
+  and a neutrino mass hierarchy is assumed.
+\item
+  $\nu_{\mu}$-disappearance analyses, 
+  in which a joint determination of  $|\Delta m_{32}^{2}|$ and  $\sin^{2}2\theta_{23}$ is performed
+  exploiting the characteristics of the observed single $\mu$-like ring event sample.
+  In this analysis, the values of  $\sin^{2}2\theta_{13}$ and $\delta_{CP}$ are fixed
+  and a neutrino mass hierarchy is assumed.
+\end{itemize}
+
+
+However, the $\nu_{\mu}$$\rightarrow$$\nu_{\mu}$ and $\nu_{\mu}$$\rightarrow$$\nu_{e}$ oscillation probabilities and, therefore, 
+the characteristics of both the single e-like ring and  single $\mu$-like ring event samples,
+depend on all the oscillation parameters.
+This dependence of the oscillation probabilities
+on parameters which are typically fixed is not negligible, and examples are shown in Fig.\ \ref{fig:oscprob}.
+In this figure, the oscillation probability $P(\nu_{\mu}$$\rightarrow$$\nu_{\mu})$ 
+is plotted for three different values of $\sin^{2}2\theta_{13}$ with fixed values of $\left(\sin^{2}2\theta_{23}, |\Delta m_{32}^{2}|, \delta_{CP}\right)$,
+while the oscillation probability $P(\nu_{\mu}\rightarrow\nu_{e})$ 
+is plotted for three different values of  $\sin^{2}2\theta_{23}$ with fixed values of  $\left(\sin^{2}2\theta_{13}, |\Delta m_{32}^{2}|, \delta_{CP}\right)$.
+
+
+Assumptions made by the stand-alone analyses when fixing values of oscillation parameters can have a significant effect on the confidence regions obtained.
+This is shown vividly in Fig.\ \ref{fig:effectpriornuecontours} for the case of the stand-alone $\nu_{e}$-appearance analysis, which 
+typically uses a fixed value of $|\Delta m_{32}^{2}|$ and maximal 23-sector mixing ($\sin^{2}2\theta_{23}$ = 1). 
+The figure compares the best-fit values and the 68\% CL and 90\% CL confidence regions (constructed with the constant-$\Delta\chi^{2}$ method) 
+for $\sin^{2}2\theta_{23}$ = 1 with those for $\sin^{2}2\theta_{23}$ = 0.96. 
+
+On the basis that the $\nu_{\mu}$$\rightarrow$$\nu_{e}$ oscillation probability is given, to first order, by
+\begin{equation}
+\displaystyle
+  P(\nu_{\mu}\rightarrow\nu_{e}) \approx \sin^{2}2\theta_{13} \sin^{2}\theta_{23} sin^{2}\left( 1.27 \Delta m^{2}_{13} \frac {L}{E}\right)
+\label{eq:p_numu_nue}
+\end{equation}
+it is claimed in our papers \cite{NuePaper} that 
+{\em
+``For non-maximal $sin^{2}2\theta_{23}$, the confidence intervals remain unchanged to first order by replacing $sin^{2}2\theta_{13}$ by $2sin^{2}\theta_{23}sin^{2}2\theta_{13}$.''}. 
+But two difficulties arise with this rescaling of $P(\nu_{\mu}\rightarrow\nu_{e})$ by $2\sin^{2}\theta_{23}$. 
+One difficulty is the unknown octant of $\theta_{23}$. 
+Since this mixing angle appears in Eq.\ \ref{eq:p_numu_nue} as $\sin^{2}\theta_{23}$, 
+a solution in the second octant ($\sin^{2}\theta_{23}>$ 0.5) would move the contours to the right  
+while a solution in the first octant ($\sin^{2}\theta_{23}<$ 0.5) would move the contours to the left. 
+The second difficulty is that Eq.\ \ref{eq:p_numu_nue} is only a first-order approximation and the effect of the subdominant terms could be important. 
+{\color{red} In Fig.\ref{fig:comparisoncontoursrescaling} one can see that there exists actually a remaining difference between the contours obtained 
+with maximal prior after re-scaling them (dashed lines), and the contours obtained with the actual true value as prior (solid lines). This plot shows 
+the same contours with stand-alone analysis presented in Fig.\ \ref{fig:effectpriornuecontours} re-scaling the contours for maximal prior $\sin^{2}2\theta_{23}$ 
+= 1.0 with the cited replacement of $\sin^{2}2\theta_{23}$ by 2$\sin^{2}\theta_{23}$$\sin^{2}2\theta_{13}$, using for $\theta_{23}$ the true value for the 
+toy experiment ($\sin^{2}2\theta_{23}$ = 0.96).}
+
+{\color{red} Edit by Nick. I'm not sure I understand what is meant by rescaling. I'm guessing that the idea is to show the effect of Eq.\ \ref{eq:p_numu_nue} 
+being only a first-order approximation (the second difficulty), and to compare it with the full 3-flavour calculation. If this is correct, I suggest:}
+
+{\color{red} In Fig.\ref{fig:comparisoncontoursrescaling}, we show confidence regions and best-fit values obtained with a fit assuming that 
+$P(\nu_{\mu}\rightarrow\nu_{e})$ is given by Eq.\ \ref{eq:p_numu_nue} with the value of $\sin^{2}\theta_{23}$ being calculated from $\sin^{2}2\theta_{23}$ 
+= 0.96, and we compare them with those obtained with a fit using the full 3-flavour calculation of $P(\nu_{\mu}\rightarrow\nu_{e})$ with $\sin^{2}2\theta_{23}$ 
+= 0.96.}
+Both fits were performed on the same toy MC experiment generated with $\sin^{2}2\theta_{23}$ = 0.96 and no statistical fluctuations.
+As shown by the figure, the two sets of plots differ significantly for larger values of $\delta_{CP}$.
+
+The motivation for the joint oscillation analysis is to avoid fixing any of $|\Delta m_{32}^{2}|$,  $\sin^{2}\theta_{23}$, $\sin^{2}\theta_{13}$ or $\delta_{CP}$
+\footnote{The effect of including the remaining 12-sector parameters, $\Delta m_{21}^{2}$ and $\sin^{2}\theta_{12}$, in the T2K fit has been studied and 
+it is negligible (see Sec.\ \ref{sec:solar}).}
+and to perform a joint determination of all four oscillation paramaters 
+with a simultaneous 3-flavour fit of the single $\mu$-like ring and single e-like ring event samples.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{images/motivation/OscProbNuMuNuMuZoom.eps}
+\includegraphics[width=0.45\textwidth]{images/motivation/OscProbNuMuNuEZoom.eps}
+\caption{Examples of the effect of the interdependence between the oscillation parameters in the oscillation probabilities $P(\nu_{\mu}\rightarrow\nu_{\mu})$(left) 
+and $P(\nu_{\mu}\rightarrow\nu_{e})$ (right). These probabilities are computed for different values of $\sin^{2}2\theta_{13}$ (left) or $\sin^{2}2\theta_{23}$ (right) 
+with the other 3 parameters being fixed at $\sin^{2}2\theta_{23} = 0.96, |\Delta m_{32}^{2}| = 2.4\times 10^{-3} (eV^{2}/c^{4})$, $\delta_{CP} = 0$ (left) or 
+$\sin^{2}2\theta_{13} = 0.1, |\Delta m_{32}^{2}| = 2.4\times 10^{-3} eV^{2}/c^{4}$, $\delta_{CP} = 0$ (right).}
+\label{fig:oscprob}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{images/motivation/ComparisonContoursStandaloneDifferentPriors.eps}
+\caption{Illustration of the effect of changing the assumed value of $\sin^{2}2\theta_{23}$ in the $\nu_{e}$-appearance contours for 7$\times 10^{21}$ POT. 
+Dashed lines are contours of the stand-alone $\nu_{e}$-appearance analysis assuming maximal mixing ($\sin^{2}2\theta_{23}$ = 1.0), and solid lines are contours 
+of the stand-alone $\nu_{e}$-appearance analysis assuming $\sin^{2}2\theta_{23}$ = 0.96, the true value with which the toy experiment was created. The other 
+parameters have the following values: $\sin^{2}2\theta_{13}$ = 0.12, $|\Delta m_{32}^{2}|$ = 2.5$\times$10$^{-3}$ eV$^{2}$/c$^{4}$, and $\delta_{CP}$ = 0.5. 
+The confidence regions were constructed using the constant $\Delta\chi^{2}$ method, which is described in Sec. \ref{sec:description}.}
+\label{fig:effectpriornuecontours}
+\end{center}
+\end{figure}
+
+ 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{images/motivation/ComparisonContoursStandaloneDifferentPriorsRescaling.eps}
+\caption{Plot of the same contours as in Fig. \ref{fig:effectpriornuecontours} rescaling the contours for maximal prior $\sin^{2}2\theta_{23}=1.0$ with the cited 
+replacement of $\sin^{2}2\theta_{13}$ by $2 \sin^{2}\theta_{23} \sin^{2}2\theta_{13}$, using for $\theta_{23}$ the true value for the toy experiment.}
+\label{fig:comparisoncontoursrescaling}
+\end{center}
+\end{figure}
+
+
+
+\clearpage

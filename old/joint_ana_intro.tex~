@@ -1,0 +1,30 @@
+\clearpage
+
+\section {Introduction }
+\label{sec:intro}
+
+This technical note describes the VaLOR joint 3-flavour oscillation analysis. The joint analysis uses both the single $\mu$-like ring and single e-like ring SuperK 
+samples, and makes a simultaneous fit of four oscillation parameters: $\sin^{2}\theta_{23}$, $|\Delta m_{32}^{2}|$, $\sin^{2}\theta_{13}$, and $\delta_{CP}$. In 
+contrast to the standalone analyses, the joint fit does not assume prior values for any of these oscillation parameters. In this way, the interdependence 
+between the oscillation parameters is taken into account when performing the joint fit of the 1 $\mu$-like ring and 1 e-like ring datasets.
+
+This work builds on the 3-flavour $\nu_{\mu}$-disappearance analysis on the Run 1+2 dataset performed by the Rutherford-Oxford-Lancs group and reported in 
+Ref.\cite{OurRun1and2Analysis3F}. In turn this was a continuation of the analyses performed by the same group in the 2-flavour $\nu_{\mu}$-disappearance framework 
+and described in Refs.\ \cite{OurRun1and2Analysis2F, OurRun1DisappAnalysis2F}. A $\nu_{e}$-appearance analysis has also been developed in the same software 
+framework in order to perform this joint analysis.
+
+The joint oscillation analysis reported in this note was performed by the VaLOR (Valencia-Lancs-Oxford-Rutherford) group using NEUT \cite{Neut:ActaP}, and the 
+results presented are from the combined Run1+2 dataset (2010b data) with an integrated exposure of 1.431$\times10^{20}$ POT. Oscillation probabilities were 
+calculated in a full 3-flavour framework including matter effects. Further details of the 3-flavour oscillation analysis framework can be found in 
+\cite{OurRun1and2Analysis3F}. The method for predicting the nominal SuperK reconstructed energy spectrum of single $\mu$-like ring events and the systematic 
+uncertainties in that spectrum are the same as those described in Ref.\ \cite{OurRun1and2Analysis3F}. Additional systematic uncertainties relating to the 
+$\nu_{e}$-appearance analysis were also included, and these were taken from Ref.\  \cite{NueRun1and2Analysis}.
+
+The structure of this note is as follows. First, a motivation for the joint oscillation analysis is presented in Sec.\ \ref{sec:motivation}. The analysis method is 
+described in detail in Sec.\ \ref{sec:description}. A study to validate the method using MC only is reported in Appendix \ref{app:fitterbias} of this note. The results 
+from the combined Run 1+2 dataset are presented in Sec.\ \ref{sec:results}, and a summary is given in Sec.\ \ref{sec:summary}. Please note that there is also an 
+appendix which reports an additional study of the $\theta_{23}$ center of symmetry. 
+
+
+
+

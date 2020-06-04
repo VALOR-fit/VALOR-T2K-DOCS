@@ -1,0 +1,76 @@
+%
+% Front matter
+%
+
+\begin{frontmatter}
+
+\title{
+  T2K 1.431$\times10^{20}$-POT Joint 3-Flavour Oscillation Analysis 
+}
+
+\vspace*{0.7cm}
+
+\author[RAL]     {Costas Andreopoulos}
+\author[IFIC]    {Anselmo Cervera}
+\author[RAL,OXF] {Thomas Dealtry}
+\author[IFIC]    {Lorena Escudero S\'anchez}
+\author[LANCS]   {Nick Grant}
+\author[IFIC]    {Michel Sorel}
+\author[IFIC]    {and Panagiotis Stamoulis}
+
+\address[RAL]{Particle Physics Dept., Rutherford Appleton Laboratory, STFC \\
+              Harwell Science and Innovation Campus\\
+              Oxfordshire OX11 0QX, UK}
+\address[OXF]{Subdepartment of Particle Physics, University of Oxford \\
+              Denys Wilkinson Building, Keble Road\\
+              Oxfordshire OX1 3RH, UK}
+\address[LANCS]{Physics Dept., Lancaster University \\
+              Lancaster, LA1 4YB, UK}
+\address[IFIC]{Instituto de Fisica Corpuscular\\
+              CSIC and University of Valencia\\
+              Valencia, Spain}
+
+%
+% Abstract
+%
+
+\begin{abstract}
+
+We report the results of a joint 3-flavour oscillation analysis
+performed by the {\em VaLOR} (Valencia-Lancaster-Oxford-Rutherford) 
+group using the latest 2012 
+T2K oscillation analysis framework on the Run 1+2+3 dataset.
+This dataset corresponds to an integrated JPARC 
+neutrino beam exposure of 3.020 $\times10^{20}$ POT.
+
+This analysis performed a joint determination of 
+$|\Delta m^{2}|$, $sin^{2}\theta_{23}$, $sin^{2}\theta_{13}$ and $\delta_{CP}$ 
+with a simultaneous oscillation fit to both the single 
+$\mu$-like ring and single e-like ring event samples.
+The oscillation fit was performed in a 3-flavour framework
+including matter effects in constant density matter.
+
+The motivation for performing a joint oscillation analysis 
+and a detailed description of the fitting method are presented.
+The results obtained by the joint analysis are compared 
+with the ones obtained by the stand-alone $\nu_{e}$-appearance and
+$\nu_{\mu}$-disappearance analyses.
+
+\end{abstract}
+
+%
+% Keywords
+%
+
+\end{frontmatter}
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+%\listoffigures
+%\listoftables
+
+

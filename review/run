@@ -1,0 +1,5 @@
+latex joint_ana_review.tex
+latex joint_ana_review.tex
+latex joint_ana_review.tex
+dvips -t a4 -o joint_ana_review.ps joint_ana_review.dvi
+ps2pdf14 joint_ana_review.ps
