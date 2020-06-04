@@ -1,0 +1,64 @@
+
+%...........................................................
+%
+% Error weighted p-values and critical values
+%
+%...........................................................
+
+\section{Statistical uncertainty on weighted p-value and critical values for confidence interval}
+\label{app:p_value_stat_error}
+
+The statistical uncertainty on the p-value is calculated assuming that the number of entries in each bin of the expected distribution of the test statistic follow a poisson distribution. The p-value uncertainty is then derived from the statistical uncertainty of the population in each bin. As the p-value is calculated from the fraction of trials which fall to the right of the data statistic, the p-value is expected to be binomially distributed. Given a sufficiently large number of trials (N), the p-value is expected to take a gaussian distribution with a mean of the p-value and a variance $\sqrt{p(1-p)/N}$. For a p-value of 0.01 and 10k trials $np = 100$. 
+
+The uncertainty is calculated from the first order Taylor series expansion assuming no correlation between bins and the number of events in each bin follows a poisson distribution. 
+The calculation of the rate only uncertainty, for the right sided p-value, is as follows:
+
+\begin{equation}
+p_{right} = \frac{ \sum^{N (right-tail)}_{i=0} W_i}{ \sum^{N (total)}_{i=0} W_i}  = \frac{p_n}{p_d}
+\end{equation}
+
+Where $p_{n}$ and $p_{d}$ are defined as the numerator and denominator of the p-value for convenience. The uncertainty due to the fluctuation of bin x is given by:
+
+\begin{equation}
+(\sigma_p)^2 = \sum_x ( \frac{\partial p}{\partial B_x}  \sigma_{B_x} )^2
+\end{equation}
+
+The uncertainty in p given uncertainty in events per bin. Considering bins to the right and left of the data statistic independently the statistical uncertainty in the number of events in each bin with bin content $B_x$ is $\sigma_{B_x} = \sqrt{B_x}$ we have:
+
+\begin{equation}
+(\sigma_p)^2 =  \sum^{N (right-tail)}_{i=0}(\frac{ W_i p_d - W_i p_n}{p_d^2} \sqrt{B_i})^2 +  \sum^{N (left-tail)}_{i=0}(\frac{ W_i p_n}{p_d^2} \sqrt{B_i} )^2
+\end{equation}
+
+Which, when using the definition of p, becomes:
+
+\begin{equation}
+(\sigma_p)^2 =  \sum^{N (right-tail)}_{i=0}(\frac{ W_i  - W_i p}{p_d} \sqrt{B_i})^2 +  \sum^{N (left-tail)}_{i=0}(\frac{ W_i p}{p_d} \sqrt{B_i} )^2
+\label{eq:pvalue_err_weight}
+\end{equation}
+
+If each bin contains no more than one event, as done in the analysis, then $B_i = 1$ and we get:
+
+\begin{equation}
+(\sigma_p)^2 =  \sum^{N (right-tail)}_{i=0} \left( \frac{ W_i  (1 - p)}{p_d} \right)^2 +  \sum^{N (left-tail)}_{i=0} \left(\frac{ W_i p}{p_d} \right)^2
+\label{eq:pvalue_err_weight_event}
+\end{equation}
+
+Finally, when the weight of each bin is 1 it simplifies to:
+
+\begin{equation}
+%(\sigma_p)^2 = \frac{p(1-p)}{N^2}
+(\sigma_p)^2 = \frac{p(1-p)}{N}
+\end{equation}
+
+Where N is the integral of the distribution. This is the expected result for a binomial process with a success rate p. 
+%In the case of a left sided p-value the left and right bins are swapped. 
+
+In the same way the error on the $\Delta \chi^2$ critical values can be estimated. 
+First \cref{eq:pvalue_err_weight} is used to estimate the error $\sigma_{coverage}$ on the coverage, analogue to p-value = 90\% for 90\% CL.
+Then the $\pm 1 \sigma$ critical values are calculated as the $\Delta \chi^2$ values corresponding
+respectively to the fraction $\pm \sigma_{coverage}$ to the left and right of the central critical value.   
+
+
+
+
+

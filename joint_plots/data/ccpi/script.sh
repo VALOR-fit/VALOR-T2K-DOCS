@@ -1,0 +1,9 @@
+#!/bin/bash
+source ~/.profile
+ccpi
+
+root2k -b -q '/Users/rajs/work/software/valor_new/trunk_20150630_2d_templates/macros/spectra/test_sk_ereco_spectrum_nominal_mainmode_joint_2D.C("ccpi","1Re","3f_osc",0.304,0.0217,0.528,-1.601,0.0000753,0.002509,1,0,"analysis_configuration_Run1-7cPOT_theta.xml",1,1,"sinsqtheta","normal","auto","two",0,0.,10.,0,"data_run1to7c_ccpi/SKdata_Run17c_ccpi.root",1,0,0)'
+root2k -b -q '/Users/rajs/work/software/valor_new/trunk_20150630_2d_templates/macros/spectra/test_sk_ereco_spectrum_nominal_mainmode_joint_2D.C("ccpi","RHC1Re","3f_osc",0.304,0.0217,0.528,-1.601,0.0000753,0.002509,1,0,"analysis_configuration_Run1-7cPOT_theta.xml",1,1,"sinsqtheta","normal","auto","two",0,0.,10.,0,"data_run1to7c_ccpi/SKdata_Run17c_ccpi.root",1,0,0)'
+root2k -b -q '/Users/rajs/work/software/valor_new/trunk_20150630_2d_templates/macros/spectra/test_sk_ereco_spectrum_nominal_mainmode_joint_2D.C("ccpi","1Rmu","3f_osc",0.304,0.0217,0.528,-1.601,0.0000753,0.002509,1,0,"analysis_configuration_Run1-7cPOT_theta.xml",1,1,"sinsqtheta","normal","auto","two",0,0.,10.,0,"data_run1to7c_ccpi/SKdata_Run17c_ccpi.root",1,0,0)'
+root2k -b -q '/Users/rajs/work/software/valor_new/trunk_20150630_2d_templates/macros/spectra/test_sk_ereco_spectrum_nominal_mainmode_joint_2D.C("ccpi","RHC1Rmu","3f_osc",0.304,0.0217,0.528,-1.601,0.0000753,0.002509,1,0,"analysis_configuration_Run1-7cPOT_theta.xml",1,1,"sinsqtheta","normal","auto","two",0,0.,10.,0,"data_run1to7c_ccpi/SKdata_Run17c_ccpi.root",1,0,0)'
+root2k -b -q '/Users/rajs/work/software/valor_new/trunk_20150630_2d_templates/macros/spectra/test_sk_ereco_spectrum_nominal_mainmode_joint_2D.C("ccpi","MultiRe","3f_osc",0.304,0.0217,0.528,-1.601,0.0000753,0.002509,1,0,"analysis_configuration_Run1-7cPOT_theta.xml",1,1,"sinsqtheta","normal","auto","two",0,0.,10.,0,"data_run1to7c_ccpi/SKdata_Run17c_ccpi.root",1,0,0)'

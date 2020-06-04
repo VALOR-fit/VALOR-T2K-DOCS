@@ -1,0 +1,99 @@
+%\clearpage
+
+\section {Introduction}
+\label{sec:intro}
+
+In this technical note, we report the results of a 3-flavour $\nu/\bar{\nu}$ joint analysis including the \nueCConepi{} sample,
+performed by the {\em VALOR} group,        
+on the combined Run 1-7c dataset, using data taken in both 
+neutrino mode (\TotalPotNuRunOneSevenC{} POT),
+with the polarity set to forward horn current (FHC),
+and antineutrino (\TotalPotNuBarRunOneSevenC{} POT) mode
+with polarity set reverse horn current (RHC).
+The Run 7a-c data set was collected in the following periods: Run 7a \( \nu \) mode (\RunSevenAPOTOne{} POT, \RunSevenAPOTTwo{} POT) (\RunSevenADatesOne{},   \RunSevenADatesTwo{}), Run 7b \( \bar{\nu} \) mode (\RunSevenBPOTOne{} POT, \RunSevenBPOTTwo{} POT) (\RunSevenBDatesOne{},   \RunSevenBDatesTwo{} ) Run 7c \( \nu \) mode (\RunSevenCPOTOne{} POT) (\RunSevenCDatesOne{})
+
+This analysis builds on our other analyses presented in Refs. 
+\cite{OurRun1DisappAnalysis},
+\cite{OurRun12DisappAnalysis}, 
+\cite{OurRun12DisappAnalysis3Flavour},
+\cite{OurRun123DisappAnalysis3Flavour},
+\cite{OurRun1234aDisappAnalysis3Flavour},
+\cite{OurRun1234DisappAnalysis3Flavour},
+\cite{OurRun123JointOscillationAnalysis},
+\cite{OurRun1234JointOscillationAnalysis},
+\cite{OurRun56AntiNumuDisappearanceAnalysis3Flavour},
+\cite{OurRun56AntiNueBarAppearanceAnalysis3Flavour},
+and
+\cite{OurRun1617b17cJointAnalysis3Flavour}.
+In this analysis a hybrid frequentist-Bayesian method \cite{CousinsHighland} is employed, which consists of marginalising instead of profiling the nuisance parameters, as was used in the analyses \cite{OurRun56AntiNueBarAppearanceAnalysis3Flavour} and \cite{OurRun1617b17cJointAnalysis3Flavour}.
+
+The consistency of the data with the expectation is given by comparing the predicted reconstructed neutrino energy 
+and outgoing lepton angle spectra of 1 ring CCQE-like events and \nueCConepi{}-like events at Super-K to the observed spectra. 
+The method of calculation of these predicted spectra is presented in \cref{sec:spectrum_prediction}.
+This analysis uses flux tuning based on NA61/SHINE 2009 data \cite{FluxTuning}\cite{NA61/SHINET2K}. 
+It also uses an indirect extrapolation from ND280 to Super-K, which is implemented via a fit of flux and cross-section parameters to
+ND280 measurements of the muon momentum-angle distributions of $\bar{\nu}_\mu$ and  $\nu_\mu$
+%CC0$\pi$-like, CC1$\pi$-like and CC other events whose 
+for different event topologies
+with the neutrino interaction vertex either in FGD1 or FGD2 (BANFF fit) \cite{BANFF2016}.
+
+
+% Ereco Vs Theta mu-like and e-like
+As in the previous analysis \cite{OurRun1617b17cJointAnalysis3Flavour},
+the $e$-like samples, which now includes the \nueCConepi{} sample, have analysis templates that are built as a function of both 
+the reconstructed neutrino energy and lepton angle,
+in order to improve the separation of the different reaction / flavour components,
+in particular $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_e$ and $\nu_{\mu} \rightarrow \nu_e$,
+fundamental in measuring $\delta_{CP}$.
+Furthermore the $\nu_e$ intrinsic beam and NC components can also be better separated from signal.
+The addition of the variable $\theta$ increases the number of template bins and so the CPU time,
+the number of reconstructed neutrino energy bins has not been reduced,
+in order to retain the previous sensitivity to oscillations.
+For $\mu$-like samples the templates are built as a function of the reconstructed neutrino energy only
+as in the past analyses.
+
+Nominal predictions of the reconstructed neutrino energy and lepton angle spectrum 
+of CC \( 0\pi \) events and \nueCConepi{}-like events in Super-K are presented for Run 1-7c in \cref{sec:spectrum_prediction}.
+
+The oscillation analysis is performed using neutrino oscillation probabilities computed in a 3-flavour
+framework including constant-density matter effects. 
+Details of our oscillation probability calculations, estimates of the numerical accuracy of our
+calculations and comparisons with calculations used by the alternative T2K oscillation analyses 
+are given in Appendices A and B of Ref. \cite{OurRun123DisappAnalysis3Flavour}.
+
+As in our previous analyses, the oscillation fit is performed using the likelihood-ratio method \cite{StatAnalysisCowan}.
+The mathematical details of this method are given in Sec.\ 3.2 in Ref.\ \cite{OurRun1DisappAnalysis}.
+We consider a total of \NSyst{} parameters including energy scale, neutrino flux, neutrino cross-section,
+efficiency, initial-state nuclear environment and final-state re-scattering systematics 
+(nuisance parameters) plus the oscillation parameters.
+%In this Run 1-7c CC1pi analysis, 
+All the nuisance parameters are marginalised~\cite{CousinsHighland}.
+The nuisance parameters and their effects 
+on the extrapolated single-ring event spectra are described in \cref{sec:systematics}.
+The analysis method is presented in detail in \cref{sec:oscfit}.
+
+
+Fit validations are presented in \cref{sec:validation}. 
+The following updates have been added: 
+the coverage studies study for the $\delta_{CP}$ vs mass hierarchy fit is shown in \cref{sec:coverage_deltacp}.
+The main goal of this analysis is to search for CP violation in the context of the PMNS matrix
+and new confidence intervals, produced with the Feldman-Cousins method~\cite{FeldmanCousins},
+are shown in \cref{sec:fc_significance}.
+These sections as well as appendix~\ref{app:method_significance} have been added in this new version.  
+
+Confidence intervals of the other oscillation parameters are set using the 
+constant $\Delta \chi^2$ method.
+Sensitivity studies are shown in \cref{sec:sensi}.
+The results of the measurement using the Run 1-7c dataset are given in \cref{sec:results} of this note. 
+
+%In Sec.~\ref{sec:nuebarapp},~\ref{sec:sensitivity_nuebarapp} and~\ref{sec:results_nuebar} the $\bar{\nu}_e$ appearance analysis is shown 
+
+%while the $\bar{\nu}_{\mu}$ disappearance analysis is shown in Sec.~\ref{sec:numubardis} and~\ref{sec:oscfit_numubardis}.
+Finally, a summary is given in \cref{sec:summary}.  
+
+\clearpage
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "jointfit_5sample2016"
+%%% End:

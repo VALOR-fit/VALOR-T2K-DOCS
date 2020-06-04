@@ -1,0 +1,10 @@
+if [ -n $(kpsewhich subcaption.sty) ] ; then
+  export TEXINPUTS="$(readlink -m latex_package):${TEXINPUTS}"
+fi
+
+latex jointfit2016.tex
+latex jointfit2016.tex
+latex jointfit2016.tex
+dvips -t a4 -o jointfit2016.ps jointfit2016.dvi
+ps2pdf14 jointfit2016.ps
+.

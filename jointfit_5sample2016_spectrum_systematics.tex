@@ -1,0 +1,350 @@
+\clearpage
+
+\section {Systematic effects in the prediction of the single $\mu$-like ring event energy spectrum}
+\label{sec:systematics}
+
+%....................................................................................................................
+%....................................................................................................................
+
+\subsection {Input systematic parameters}
+\label{sec:systematics:inputs}
+
+This analysis considers \NSyst{} flux, cross section and Super-K detector systematic parameters 
+plus 7 oscillation parameters, which can be treated as either systematic parameters or
+as parameters of interest, depending on the analysis that is performed.
+
+\begin{enumerate}
+
+\item 
+{\bf Flux and cross-section parameters} (65 parameters).\\
+
+In this analysis, all the flux and cross-section systematic parameters are included in the ND280 data (BANFF) fit.
+However, since ND280 is not sensitive to the electron neutrino cross section and the NC1$\gamma$ parameters they remain unconstrained
+The parameters fit are 
+11 $\nu_{\mu}$, 5 $\bar{\nu}_{\mu}$, 7 $\nu_{e}$ and 2 $\bar{\nu}_{e}$ neutrino mode (FHC) flux parameters, 
+5 $\nu_{\mu}$, 11 $\bar{\nu}_{\mu}$, 2 $\nu_{e}$ and 7 $\bar{\nu}_{e}$ antineutrino mode (RHC) flux parameters 
+and 15 cross-section parameters. 
+Best-fit values of these parameters and a covariance matrix giving their correlated uncertainties are obtained by the BANFF group from a fit 
+of the $\bar{\nu}_\mu$ and $\nu_\mu$ 
+%CC0$\pi$-like, CC1$\pi$-like and CC other-like 
+ND280 samples as described in Ref~\cite{BANFF2015}. 
+A list of the BANFF parameters, their best-fit values and their prefit and postfit errors,
+taken from TN-230 \cite{BANFF2016},
+is given in 
+\cref{tab:banff_uncertainties_flux_fhc},~\cref{tab:banff_uncertainties_flux_rhc},
+\cref{tab:banff_uncertainties_xsec}.
+
+The best-fit values are used to reweight the templates as described in \cref{sec:banff_weights}, and the
+postfit errors in the covariance matrix are used as prior uncertainties in this analysis.  The Super-K
+systematic parameters are shown in \cref{tab:banff_uncertainties_skdetfsi}.  All the cross section parameters
+set to 1 correspond to the NEUT nominal value, except ``CC other shape'' for which the NEUT nominal value is
+0.  For all the normalisation parameters, 1 is the nominal pre-banff fit value.
+
+The effects of these correlated uncertainties are evaluated using the Cholesky method, that allows throws of
+the systematic parameters according to their multivariate distribution taking into account existing
+correlations.
+%The covariance matrix is ``Cholesky decomposed'' 
+%into the product of a lower triangular matrix (all elements above the diagonal are zero) and its transpose (in which all elements below the 
+%diagonal are zero). Random tweaks of each parameter are independently drawn from a Gaussian distribution with mean zero and standard deviation 1, 
+%and these random numbers are put into a vector. This vector is then multiplied by the lower triangular matrix to give a vector of tweaked 
+%uncertainties that have the correct correlations between them. The BANFF parameters are then varied by these tweaked uncertainties, with all 
+%parameters being varied simultaneously. This process may be repeated as many times as necessary. 
+
+Some of the cross-section parameters have complicated, often non-linear, effects on true and reconstructed
+neutrino energy bin normalisations; the effects of uncertainties in these parameters are evaluated by
+reweighting the MC templates. Weights are calculated for tweaks from -3$\sigma$ to +3$\sigma$ in steps of
+0.5$\sigma$, and interpolations are made between those weights using cubic splines (for MaQE only, weights are
+calculated from -7$\sigma$ to +3$\sigma$). Cubic splines are made for the following cross-section
+uncertainties:
+\begin{itemize}
+\item CCQE axial-mass scaling factor (MaQE)
+\item Fermi momentum for $^{16}$O
+\item Binding energy for $^{16}$O
+\item Nucleon to $\Delta$ transition axial form factor (C$^{A}_{5}$) 
+\item Resonance-production axial-mass scaling factor (MaRes)
+\item Scale of isospin 1/2 nonresonant background
+\item CC other shape
+\end{itemize}
+The splines are made in bins of theta, true and reconstructed energy, and the binning is given in Ref.\
+\cite{splineinfo}. The $\theta$ binning is the same as for the analysis templates, shown in
+\cref{sec:mc_templates:template_binning}.
+
+The effects of the flux and cross-section normalisation uncertainties are also evaluated by reweighting the MC
+templates, but no splines are made for them since the weight is identical to the tweak for these uncertainties
+(each flux parameter is a normalisation for a limited range of true energy).  The cross section parameters
+which simply normalise the overall spectrum component are:
+\begin{itemize}
+\item 2p-2h, applied to all the 2p-2h events (both neutrino and antineutrino)
+\item 2p-2h-$\bar{\nu}$, applied to all the antineutrino 2p-2h events
+\item CC coherent for $^{16}$O normalisation
+\item NC coherent normalisation
+\item NC other normalisation
+\item NC $1\gamma$ normalisation
+\item CC $\nu_{e}$ normalisation
+\item CC $\bar{\nu}_{e}$ normalisation
+\end{itemize}
+
+Uncertainties due to ``second class currents" are implemented as an additional uncertainty on CC
+$\bar{\nu}_{e}$ and CC $\nu_{e}$ parameters with a 2\% anti-correlated constraint between them.  The BANFF
+parameters are applied to the MC templates as specified in appendix~\ref{app:systematics} in
+\cref{tab:apply_syst_to_template_mulike_fhc,%
+  tab:apply_syst_to_template_elike_fhc,%
+  tab:apply_syst_to_template_mulike_rhc,%
+  tab:apply_syst_to_template_elike_rhc}
+%      tab:apply_syst_to_template_nueCConepi_fhc }.
+The normalisation parameter of the NC$1\gamma$ component was not used in the previous analyses,
+since it was included in NC other.
+
+In the BANFF fit a bias on the best-fit flux parameters is present due to the degeneracy between the neutrino
+flux and ND280 detector parameters.  For this reason a covariance matrix that accounts for the bias of the
+flux as well as all the other parameters is summed in quadrature with the total post-fit covariance. Furthermore
+the best-fit values have been corrected in order to remove the bias. A full description of the procedure is
+given in \cite{BANFF2015}.  As shown in \cite{OurRun1617b17cJointAnalysis3Flavour} the impact of the bias on the
+systematic parameters fitted by the BANFF analysis is small compared to the other systematic uncertainties.
+
+
+%....................................................................................................................
+
+\subsection {Comparison of predicted number of events in neutrino mode $e$-like sample between current and 2015 analysis}
+\label{sec:systematics:comparison_events_elike_2015}
+
+The predicted number of events in antineutrino mode $e$-like sample is now smaller compared to the
+$\bar{\nu}_e$ appearance analysis presented at the 2015 summer conferences
+\cite{OurRun56AntiNueBarAppearanceAnalysis3Flavour}, 3.218 instead of 3.729.  The differences between the
+current and previous oscillation analyses are mainly due to:
+
+\begin{enumerate}
+
+\item new value of $\sin^2 \theta_{13}$ corresponding to the PDG 2015 release, as shown in
+  \cref{tab:osc_params_joint_asimov}, which is 0.0217 while in the previous analysis it was 0.0250. If the old
+  PDG value is used the expected number of antineutrino mode $e$-like events becomes 3.542.
+
+\item Subsequently, if the cross section parameters are set to the old post-BANFF fit values, the expected
+  number of events becomes 3.63. Indeed all the post-BANFF 2015 fit cross section parameters are higher
+  compared to the 2016 BANFF fit result. The effect of the flux parameters is smaller, indeed if they are set
+  to BANFF 2015 result, the expected number of events becomes 3.66.
+ 
+\item Finally, after all the changes listed above, if the rescaling of CC coherent and NC$1\gamma$ components
+  (see \cref{sec:mc_templates:input_mc}) is not applied, agreement between the 2015 and 2016 analysis is
+  obtained. The first one increases the number of events up to 3.772 while the latter one reduces down to
+  3.711, which is approximately the number of events expected in the 2015 analysis.
+
+%\item the total normalisation for 2p-2h events for antineutrinos is 0.894,      
+%	where the BANFF best-fit of the 2p-2h parameter applied only to $\bar{\nu}$ is $0.578$ and 
+%	the best-fit of the 2p-2h parameter applied to all the flavors is 1.546.
+%	 This reduces the expected total number 
+%	of $\bar{\nu}_e$ events, while in the past analysis a single systematic parameter was applied to all the 2p-2h events 
+%	and its BANFF best-fit was about 1.031.
+
+\end{enumerate}
+
+
+\input{tables/numuosc2015_syst_summary.tex}
+
+\item
+{\bf Super-K efficiencies \& effects of intranuclear and secondary re-interactions} (44 parameters).\\
+
+The Super-K detector uncertainties include the efficiencies of the fiducial volume and reduction chain, and
+the OD, ring-counting, PID, momentum and decay-electron cuts. These uncertainties have been evaluated by
+comparing 1632.2 days of SK-IV atmospheric data with atmospheric neutrino Monte Carlo. Ring counting errors
+are evaluated using $\nu_\mu$ CCQE, $\nu_\mu$ CCnQE, NC, and $\nu_e$ CC-enriched control samples from
+atmospheric neutrinos.  The NC PID error is evaluated using a NC-enriched control sample, obtained by not
+using the PID information during the selection. All the Monte Carlo control samples are fitted simultaneously
+to the data with a $\chi^2$ function using the selection efficiencies as fit parameters
+~\cite{SuperkErrors_numu}~\cite{SuperkErrors_nue}.
+
+Intranuclear final-state interactions (FSI) have significant effects in the T2K energy range and result in
+event topologies, for scattering from nuclear targets, which are drastically different from those created in
+neutrino scattering from free nucleons.  Uncertainties due to FSI were estimated by simultaneously varying the
+NEUT parameters that scale the interaction probabilities for quasi-elastic scattering, absorption, charge
+exchange and pion production using the method described in Sec.\ 2 in \cite{NIWGErr}. The NIWG group produced
+16 parameter sets that span the 1$\sigma$ surface in the parameter space; this was done by varying the NEUT
+parameters when running the pion scattering simulations, and comparing the results with external pion-carbon
+scattering data. These 16 parameter sets are shown in Tab.\ 2 in \cite{NIWGErr}.  Uncertainties due to
+secondary pion interactions (SI) were also evaluated. The NIWG group adapted the NEUT nuclear cascade model to
+simulate SI in the Super-K detector simulation (SKDETSIM) and to allow variations in the interaction
+probabilities. Details of this are given in \cite{SI}.  Since the same model is used for FSI and SI, it is
+possible to evaluate the uncertainties in both FSI and SI simultaneously. This was done by reweighting a
+single $e$-like or $\mu$-like ring selected SK MC with the 16 FSI parameter sets using T2KReweight. The
+reweighting method for FSI is described in Sec.\ 8 in \cite{NEUTnuclear}. Variations in the SI interaction
+probabilities were included for each FSI parameter set. Subsequently a covariance matrix was calculated using
+equation 1 in \cite{NIWGErr}; the quantity p in that equation is the average event weight for a FSI parameter
+set, and the sum is over the parameter sets.
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c | r |}
+\hline
+ Parameter & Sample        & Category                              & Energy range (GeV)                  \\
+\hline
+ 0 ~$|$ 18 & electron-like & oscillated $\nu_e$/$\bar{\nu}_e$ CC   & $E_{reco}<$ 0.35                      \\ 
+ 1 ~$|$ 19 & electron-like & oscillated $\nu_e$/$\bar{\nu}_e$ CC   & 0.35 $<E_{reco}<$ 0.80                \\ 
+ 2 ~$|$ 20 & electron-like & oscillated $\nu_e$/$\bar{\nu}_e$ CC   & 0.80 $<E_{reco}<$ 1.25                \\ 
+ 3 ~$|$ 21 & electron-like & $\nu_\mu$/$\bar{\nu}_{\mu}$ CC         & $E_{reco}<$ 0.35                      \\ 
+ 4 ~$|$ 22 & electron-like & $\nu_\mu$/$\bar{\nu}_{\mu}$ CC         & 0.35 $<E_{reco}<$ 0.80                \\ 
+ 5 ~$|$ 23 & electron-like & $\nu_\mu$/$\bar{\nu}_{\mu}$ CC         & 0.80 $<E_{reco}<$ 1.25                \\ 
+ 6 ~$|$ 24 & electron-like & $\nu_e$/$\bar{\nu}_{e}$ CC            & $E_{reco}<$ 0.35                       \\ 
+ 7 ~$|$ 25 & electron-like & $\nu_e$/$\bar{\nu}_{e}$ CC            & 0.35 $<E_{reco}<$ 0.80                 \\ 
+ 8 ~$|$ 26 & electron-like & $\nu_e$/$\bar{\nu}_{e}$ CC            & 0.80 $<E_{reco}<$ 1.25                 \\ 
+ 9 ~$|$ 27 & electron-like & all NC                                & $E_{reco}<$ 0.35                       \\ 
+ 10 $|$ 28 & electron-like & all NC                                & 0.35 $<E_{reco}<$ 0.80                 \\ 
+ 11 $|$ 29 & electron-like & all NC                                & 0.80 $<E_{reco}<$ 1.25                 \\ 
+\hline
+ 12 $|$ 30 & muon-like     & $\nu_\mu$/$\bar{\nu}_{\mu}$ CCQE       & $E_{reco}<$ 0.40                       \\ 
+ 13 $|$ 31 & muon-like     & $\nu_\mu$/$\bar{\nu}_{\mu}$ CCQE       & 0.40 $<E_{reco}<$ 1.10                 \\ 
+ 14 $|$ 32 & muon-like     & $\nu_\mu$/$\bar{\nu}_{\mu}$ CCQE       & 1.10 $<E_{reco}<$ 30.0                 \\ 
+ 15 $|$ 33 & muon-like     & all $\nu_\mu$/$\bar{\nu}_{\mu}$ CCnQE  & $E_{reco}<$ 30.0                       \\ 
+ 16 $|$ 34 & muon-like     & $\nu_e$/$\bar{\nu}_{e}$ CC             & $E_{reco}<$ 30.0                      \\ 
+ 17 $|$ 35 & muon-like     & all NC                                & $E_{reco}<$ 30.0                       \\ 
+\hline
+ 36~$|$ --  & \nueCConepi{}-like & oscillated $\nu_e$/$\bar{\nu}_e$ CC   & 0.35 $<E_{reco}<$ 0.80            \\ 
+ 37~$|$ --  & \nueCConepi{}-like & oscillated $\nu_e$/$\bar{\nu}_e$ CC   & 0.80 $<E_{reco}<$ 1.25            \\ 
+ 38~$|$ --  & \nueCConepi{}-like & $\nu_\mu$/$\bar{\nu}_{\mu}$ CC         & 0.35 $<E_{reco}<$ 0.80            \\ 
+ 39~$|$ --  & \nueCConepi{}-like & $\nu_\mu$/$\bar{\nu}_{\mu}$ CC         & 0.80 $<E_{reco}<$ 1.25            \\ 
+ 40~$|$ --  & \nueCConepi{}-like & $\nu_e$/$\bar{\nu}_{e}$ CC            & 0.35 $<E_{reco}<$ 0.80             \\ 
+ 41~$|$ --  & \nueCConepi{}-like & $\nu_e$/$\bar{\nu}_{e}$ CC             & 0.80 $<E_{reco}<$ 1.25             \\ 
+ 42~$|$ --  & \nueCConepi{}-like & all NC                                & 0.35 $<E_{reco}<$ 0.80             \\ 
+ 43~$|$ --  & \nueCConepi{}-like & all NC                                & 0.80 $<E_{reco}<$ 1.25             \\         
+\hline
+\end{tabular}
+\caption{
+Binning of Super-K selection efficiency 
+%and FSI+SI 
+systematic parameters in covariance matrices for electron-, muon-, and \nueCConepi{}-like  samples
+for each category and reconstructed neutrino energy range. The same parametrization is used for both neutrino and antineutrino mode samples.
+The parameter number is shown for both neutrino (0-17) and antineutrino (18-35) mode for the 0\( \pi \) samples, and neutrino (36-43) mode for the \nueCConepi{} sample.
+}
+\label{tab:skdet_params}
+\end{table}
+
+
+
+We consider the Super-K detector efficiency and FSI+SI systematics together, and add their covariance matrices
+linearly. Each of these covariance matrices has \textcolor{red}{\textbf{SET parameter numbers}} correlated
+parameters, corresponding to different modes and reconstructed energy bins, as shown in
+\cref{tab:skdet_params}. The effects of these uncertainties are also evaluated using the Cholesky method. \\
+
+\item
+{\bf Super-K energy scale} (1 parameter).\\
+
+The systematic parameter $f_{E; r}^{SK}$ is included to estimate the effects of uncertainty in the Super-K
+reconstructed energy scale.  This uncertainty is estimated to be 2.4\% \cite{SuperkEScale2013}; its effects
+are calculated by scaling the bin edges of the MC templates and, assuming uniform distribution of events
+within the bins, calculating the number of events gained from / lost to neighbouring bins.  The effect of the
+energy scale uncertainty is propagated to all MC templates as shown in
+\cref{tab:apply_syst_to_template_mulike_fhc,%
+      tab:apply_syst_to_template_elike_fhc,%
+      tab:apply_syst_to_template_mulike_rhc,%
+      tab:apply_syst_to_template_elike_rhc}
+%      tab:apply_syst_to_template_nuecc1pi_fhc}
+and is common to all the Super-K samples. \\
+
+
+\item 
+{\bf Oscillation parameters and mass hierarchy} (7 parameters).\\
+
+The 3-flavour oscillation probability is used.  All the nuisance oscillation parameters, i.e. those parameters
+which are not shown in a given contour, are marginalised (see \cref{sec:oscfit}) except the mass hierarchy
+which is fixed to either normal or inverted hierarchy.  The treatment of the oscillation parameters in the
+analysis is shown in \cref{tab:osc_params_joint_priors} while the nominal values are shown in
+\cref{tab:osc_params_joint_asimov}.  Two different sets of oscillation parameters were chosen. The Asimov data
+set A is the best-fit of the Run 1-4 data Mach3 analysis \cite{Mach3JointFitRun14}. The Asimov data set B is a
+variation of Asimov data set A, which is useful for testing the sensitivity to the opposite
+$\sin^2 \theta_{23}$ octant, which reduces the number of expected events in the $e$-like samples, as well as
+the sensitivity to $\delta_{CP}$.
+
+%Differently from the $\bar{\nu}_{\mu} \rightarrow \bar{\nu}_e$ appearance analysis,
+%where the prior distributions corresponded to the T2K Run 1-4 best-fit probability distributions
+%of the Mach3 Bayesian analysis, now priors from the global fit of \cite{pdg_2014} are used.
+For $\sin^2 \theta_{13}$ two different priors can be used, depending on whether the reactor constraint is
+applied, denoted as ``reactors", when applied and ``T2K only" when not applied.  In the first case a gaussian
+prior given by the combined measurement of reactor experiments is used, while in the latter case a flat prior
+which covers a large range of values is adopted.  With respect to the older global fit \cite{pdg_2013}, the
+value of $\sin^2 \theta_{13}$ has been reduced by about 10\% and the associated error is also reduced.  Since
+an excess of events was seen in the T2K Run 1-4 neutrino mode $e$-like sample and not much data are collected
+in neutrino mode during the Run 5+6 (only $0.34 \times 10^{20}$ POT), this change is expected to have an
+impact on the search for CP violation, making the confidence intervals tighter. \textcolor{red}{\textbf{UPDATE with run 7a and 7c?}}
+
+
+\input{tables/input_osc_params}
+
+
+\end{enumerate}
+
+
+
+
+%%%% SYSTEMATIC ERROR ENVELOPE PLOTS
+
+%
+%The effects of all the combined systematic uncertainties on the reconstructed energy spectrum of single ring events
+%is shown in \cref{fig:spectra_systematic_Asimov_A} 
+%for the typical oscillation scenario with parameters of Asimov datasets A.
+%In appendix~\cref{app:systematics} the same plots are shown for different oscillation scenarios.
+%These plots show the total error envelope for the reconstructed energy spectra; 
+%this is calculated
+%as the $\pm$1$\sigma$ spread with respect to the median of bin contents from \NumToys toy MC experiments generated with 
+%randomized systematic parameters.
+%All systematic parameters are considered and their correlations are taken into account.
+%The spectra were tuned with the systematic parameters measured with the ND280 data 
+%shown in \cref{tab:banff_uncertainties_flux_fhc},~\cref{tab:banff_uncertainties_flux_rhc}, 
+%\cref{tab:banff_uncertainties_xsec},
+%the nominal Super-K systematic parameters shown in \cref{tab:banff_uncertainties_skdetfsi}
+%and the oscillation parameter priors shown in \cref{tab:osc_params_joint_priors}.
+%In \cref{fig:Osc_envelope_Asimov_A},~\cref{fig:SKDet_FSI_envelope_Asimov_A},~\cref{fig:flux_envelope_Asimov_A},
+%\cref{fig:xsec_envelope_Asimov_A},~\cref{fig:flux_xsec_envelope_Asimov_A} 
+%the error envelopes and fractional errors of reconstructed energy spectra for all the selected samples,
+%given respectively by
+%oscillations, Super-K detector + FSI/SI, flux only, cross section only, flux+cross section systematics
+%are shown. 
+%
+%The effects of systematic uncertainties on the predicted number of events are summarised in 
+%\cref{tab:nsk_systematic_table_summary_joint_asimov_A_fhc_mulike},
+%\cref{tab:nsk_systematic_table_summary_joint_asimov_A_fhc_elike},
+%\cref{tab:nsk_systematic_table_summary_joint_asimov_A_rhc_mulike} and
+%\cref{tab:nsk_systematic_table_summary_joint_asimov_A_rhc_elike} 
+%\cref{tab:nsk_systematic_table_summary_joint_asimov_A_ccpi} 
+%with the typical parameter values given in \cref{tab:osc_params_joint_asimov}.
+%For the measurement of $\delta_{CP}$ it is important to understand the effect of the systematic uncertainties
+%on the ratio of the number of events between neutrino and antineutrino mode samples,
+%which is the consequence of correlations between systematic parameters.
+%If correlations do not reproduce the physics correctly, a fake asymmetry between neutrino and antineutrino oscillations can be seen.
+%On the other hand if correlations exist but are not taken into account, the measurement of $\delta_{CP}$ could be biased.
+%Depending on the value of $\delta_{CP}$, correlations or anti-correlations between parameters are more conservative.
+%If true $\delta_{CP} = \pm \pi/2$ the most conservative case is given by anti-correlation in the $e$-like samples, 
+%since the oscillation asymmetry could be hidden by the systematic uncertainties.
+%If true $\delta_{CP} \sim 0$ uncorrelated parameters reduce the sensitivity to $\delta_{CP}$.
+%The effect of the systematic parameters on the ratio between neutrino and antineutrino mode events are shown in 
+%\cref{tab:ratio_systematic_table_summary_asimov_A} and~\cref{tab:ratio_systematic_table_summary_asimov_B} in 
+%appendix~\cref{app:systematics}.
+%The most critical systematic parameters are $\sigma_{\nu_e}$ and $\sigma_{\bar{\nu}_e}$
+%which are applied respectively to $\nu_e$ and $\bar{\nu}_e$ events.
+%Their fractional error is 2.83\%
+%and are partially anti-correlated with a non-diagonal elements in the covariance matrix of -0.0004 
+%\cite{NIWG_reccomandation}.
+%
+%For the systematic effect study, in order to reduce the CPU time, the toys MC were produced using 
+%%2-dimensional templates $E_{reco}$ vs $\theta$ for $e$-like samples
+%%and the projection onto the $E_{reco}$ axis was performed
+%1-dimensional templates $E_{reco}$ $e$-like templates,
+%instead of the 2-dimensional $E_{reco}$ vs $\theta$,
+%used in the analysis.
+%However, as shown in appendix~\cref{app:comp_1d_ereco_2d_ereco_vs_theta},
+%it has been checked that using 1- or 2- dimensional 
+%templates does not make any difference in the 
+%drawing of the error envelopes and the effect of the systematic
+%uncertainties on the total number of events.
+%
+
+
+\clearpage
+
+
+%..................
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "jointfit_5sample2016"
+%%% End:

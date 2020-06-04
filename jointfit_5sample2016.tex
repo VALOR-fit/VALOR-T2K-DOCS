@@ -1,0 +1,159 @@
+
+%
+% ---------------------------------------------------------------------------------------
+% VALOR T2K joint fit with addition of the nue CC1pi analysis, Run1+2+3+4+5+6+7
+% ---------------------------------------------------------------------------------------
+%
+\documentclass{elsarticle}
+%\documentclass[draft]{elsarticle}
+
+\usepackage[margin=2.50cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{blkarray}                 % for correlation matrices
+\usepackage{color}
+\usepackage{rotate}                   % rotate text in tables
+\usepackage{lscape}                   % allow page to be landscape for large tables
+\usepackage{amsfonts}                 % extra symbols
+\usepackage{amsmath}
+%\usepackage{floatpag}                 % \thisfloatpagestyle{empty}, to suppress page numbers
+\usepackage{lmodern}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{caption}% Use captionof to be able to minipage figure's \& tables together, but still get correct captions
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{hyperref} % make contents and references links, but do not colour them
+% \hypersetup{
+%     colorlinks=true, %set true if you want colored links
+%     linktoc=all,     %set to all if you want both sections and subsections linked
+%     linkcolor=blue,  %choose some color if you want links to stand out
+% }
+%\Usepackage=true,hyperfigures=true]{hyperref} % make contents and references links, but do not colour them
+\usepackage{accents}
+\usepackage{siunitx} % easier units exponentials etc
+\DeclareSIUnit\POT{POT}
+\usepackage[table,dvipsnames]{xcolor} % fancy tables and colors
+
+\setenumerate{listparindent=\parindent} % Use paragraph indentation within the enumerate
+\usepackage{cleveref}
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+%\newcommand{\AmS}{{\protect\the\textfont2
+%  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+\usepackage{listings}   
+\lstset{language=C++}
+
+% Particle aliases
+\newcommand{\nue}{\nu_{e}}
+\newcommand{\numu}{\nu_{\mu}}
+\newcommand{\nutau}{\nu_{\tau}}
+\newcommand{\nueb}{\bar{\nu}_{e}}
+\newcommand{\numub}{\bar{\nu}_{\mu}}
+\newcommand{\nutaub}{\bar{\nu}_{\tau}}
+\newcommand{\nub}{\bar{\nu}}
+\newcommand{\nua}{\nu_{\alpha}}
+\newcommand{\nuab}{\bar{\nu_{\alpha}}}
+
+\newcommand{\numuany}{\overset{(-)}{\nu}_{\mu}}
+\newcommand{\nueany}{\overset{(-)}{\nu_e}}
+
+\newcommand{\CCzeropi}{CC \( 0\pi \)}
+\newcommand{\nueCConepi}{\(\nue\) CC\( 1\pi^{+} \)}
+\newcommand*{\pbar}[1]{\accentset{(-)}{#1}}
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+%define new fonts, smaller than tiny (for showing large covariance matrices in a page)
+\makeatletter
+\ifcase \@ptsize \relax% 10pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{4}{5}}% \tiny: 5/6
+  \newcommand{\verytiny}{\@setfontsize\miniscule{3}{4}}% \tiny: 5/6
+\or% 11pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\or% 12pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\fi
+\makeatother
+
+
+\linenumbers
+\bibliographystyle{elsart-num}
+
+\begin{document}
+
+%Numbers used in this tech note
+\input{numbers/jointfit_5sample2016_numbers}
+\input{numbers/jointfit_5sample2016_inputparameters}
+
+% Title, authors, abstract and table of contents
+\input{jointfit_5sample2016_front}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+% Main body
+\input{jointfit_5sample2016_introduction}
+\input{jointfit_5sample2016_nueinelpion_sample}
+\input{jointfit_5sample2016_spectrum_prediction}
+\input{jointfit_5sample2016_spectrum_systematics}
+\input{jointfit_5sample2016_validation_run17c_final}
+\input{jointfit_5sample2016_oscillation_fitting}
+%\input{jointfit_5sample2016_sensitivity}
+%\input{jointfit_5sample2016_fc_validation}
+%\input{jointfit_5sample2016_results_run17c_final}
+
+% Run 1-7b update
+\input{jointfit_5sample2016_conclusion}
+
+% References
+\input{jointfit_5sample2016_references}
+
+%Appendices
+\clearpage
+\begin{appendices}
+%%~\addappheadtotoc
+\input{jointfit_5sample2016_appendix_events}
+%\input{jointfit_5sample2016_appendix_templates}
+\input{jointfit_5sample2016_appendix_syst}
+\input{jointfit_5sample2016_appendix_significance}
+\end{appendices}
+
+\clearpage
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,25 @@
+
+// 1Rmu
+
+Tot # of events (expected) = 483.737
+Tot # of events (best-fit) = 125.688
+Tot # of events (observed) = 124
+
+// 1Re
+
+Tot # of events (expected) = 5.69793
+Tot # of events (best-fit) = 26.9691
+Tot # of events (observed) = 31
+
+// RHC1Rmu
+
+Tot # of events (expected) = 99.0211
+Tot # of events (best-fit) = 34.1136
+Tot # of events (observed) = 34
+
+// RHC1Re
+
+Tot # of events (expected) = 1.25271
+Tot # of events (best-fit) = 3.34443
+Tot # of events (observed) = 3
+
