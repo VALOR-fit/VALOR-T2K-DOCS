@@ -1,0 +1,30 @@
+minos_sinsq=0.5866
+minos_dmsq=0.0025
+
+root2k -q -b ${T2KOSCANA}/macros/fit/run_fit_xml_toys_joint_bar.C'('\
+'"asimov_bestfit_normal_minos_bf",0,0,0,"NOSUCHFILE",false,true,'\
+'0.304,0.0248,'${minos_sinsq}',-1.55,7.53E-5,'${minos_dmsq}','\
+'0.304,0.0248,'${minos_sinsq}',-1.55,7.53E-5,'${minos_dmsq}','\
+'"analysis_configuration_2.315E20.xml",false,0,'\
+'"nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance",'\
+'"minuit+hesse",true,true,"abs23",'\
+'"normal",'\
+'"sinsqtheta","one",'\
+'-1.55,'\
+'false,0.01,"mixing12,mixing13,deltacp,dmsq12",false,false)'
+
+
+#~ 
+#~ root2k -q -b ${T2KOSCANA}/macros/fit/run_fit_xml_toys_joint_bar.C'('\
+#~ '"asimov_bestfit_inverted",0,0,0,"NOSUCHFILE",false,true,'\
+#~ '0.304,0.0252,0.533,-1.56,7.53E-5,2.48E-3,'\
+#~ '0.304,0.0252,0.533,-1.56,7.53E-5,2.48E-3,'\
+#~ '"analysis_configuration_2.315E20.xml",false,0,'\
+#~ '"nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance",'\
+#~ '"minuit+hesse",true,true,"abs23",'\
+#~ '"inverted",'\
+#~ '"sinsqtheta","one",'\
+#~ '-1.56,'\
+#~ 'false,0.01,"mixing12,mixing13,deltacp,dmsq12",false,false)'
+#~ 
+#~ 

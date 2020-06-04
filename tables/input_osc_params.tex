@@ -1,0 +1,47 @@
+\begin{table}
+\centering
+ \begin{tabular}{| c | c | c |}
+ \hline
+ Parameter(s)                                               &                   Fixed value              &               Fixed value                    \\
+                                                            &                   in fits (NH)             &               in fits (IH)                   \\
+\hline
+$\sin^{2}\theta_{23}$                                       &              \MixingTwoThreeNH             &             \MixingTwoThreeIH                \\
+$\sin^{2}\overline{\theta}_{13}$ and $\sin^{2}\theta_{13}$  &              \MixingOneThreeNH             &             \MixingOneThreeIH                \\
+$\sin^{2}\overline{\theta}_{12}$ and $\sin^{2}\theta_{12}$  &              \MixingOneTwoNH               &             \MixingOneTwoIH                  \\
+$|\Delta m^{2}_{32}|$ (NH only)                             &              \DmsqNH                       &             -                                \\
+$|\Delta m^{2}_{31}|$ (IH only)                             &              -                             &             \DmsqIH                          \\
+$\overline{\Delta m}^{2}_{21}$ and $\Delta m^{2}_{21}$      &              \dmsqNH                       &             \dmsqIH                          \\
+$\delta_{CP}$                                               &              \DeltaCPNH                    &             \DeltaCPIH                       \\
+\hline
+\end{tabular}
+\caption{
+  Values of oscillation parameters that are fixed in fits (NH = normal mass hierarchy, IH = inverted mass hierarchy)\cite{T2KLongPaper}.
+  These are the values with the reactor constraint, and are used in the real data fits.
+}
+\label{tab:osc_params_fixed_values_reactor}
+\end{table}
+
+\begin{table}
+\centering
+ \begin{tabular}{| c | c | c |}
+ \hline
+ Parameter(s)                                               &                   Fixed value              &               Fixed value                    \\
+                                                            &                   in fits (NH)             &               in fits (IH)                   \\
+\hline
+$\sin^{2}\theta_{23}$                                       &              \NonReactorMixingTwoThreeNH             &             \NonReactorMixingTwoThreeIH                \\
+$\sin^{2}\overline{\theta}_{13}$ and $\sin^{2}\theta_{13}$  &              \NonReactorMixingOneThreeNH             &             \NonReactorMixingOneThreeIH                \\
+$\sin^{2}\overline{\theta}_{12}$ and $\sin^{2}\theta_{12}$  &              \NonReactorMixingOneTwoNH               &             \NonReactorMixingOneTwoIH                  \\
+$|\Delta m^{2}_{32}|$ (NH only)                             &              \NonReactorDmsqNH                       &             -                                \\
+$|\Delta m^{2}_{31}|$ (IH only)                             &              -                                       &             \NonReactorDmsqIH                          \\
+$\overline{\Delta m}^{2}_{21}$ and $\Delta m^{2}_{21}$      &              \NonReactordmsqNH                       &             \NonReactordmsqIH                          \\
+$\delta_{CP}$                                               &              \NonReactorDeltaCPNH                    &             \NonReactorDeltaCPIH                       \\
+\hline
+\end{tabular}
+\caption{
+  Values of oscillation parameters that are fixed in fits (NH = normal mass hierarchy, IH = inverted mass hierarchy)\cite{T2KLongPaper}.
+  These are the values without the reactor constraint, and used are for certain validation plots.
+  This is for historical reasons in the analysis - the fake-data fits in appendix~\ref{app:fake_data_fit_results}
+  were fitted before the oscillation group agreed to use the values in table~\ref{tab:osc_params_fixed_values_reactor}.
+}
+\label{tab:osc_params_fixed_values_non_reactor}
+\end{table}

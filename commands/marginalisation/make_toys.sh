@@ -1,0 +1,3 @@
+
+${T2KOSCANA}/production/submit_build_marg_toys --resource RAL --tag numudisap_4p011 --config-file analysis_configuration_4.011E20.xml --npt-freepar0 201 --npt-freepar1 201 --nexpts-marg 10000 --job-dir "${PWD}" --softw-dir "${T2KOSCANA}" --step-freepar0 51 --step-freepar1 1 --rethrow-unphysical true --dm23sq 2.51E-3 --dm12sq 7.53E-5 --mix12 0.304 --mix13  0.0248 --mix23 0.524 --deltacp -1.55  --dm23sqBar 2.51E-3 --dm12sqBar 7.53E-5 --mix12Bar 0.304 --mix13Bar  0.0248 --mix23Bar 0.524 --deltacpBar -1.55 --dmsq-scheme auto --hierarchy normal --mix-param-choice sinsqtheta --freepar0 mixing23Bar --freepar1 dmsq23Bar --minfreepar0 0 --maxfreepar0 1 --minfreepar1 2E-4 --maxfreepar1 2E-2 --fit-param-list "nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance"
+

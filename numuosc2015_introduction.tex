@@ -1,0 +1,84 @@
+%\clearpage
+
+\section {Introduction}
+\label{sec:intro}
+
+In this technical note, we report the results of a 3-flavour $\bar{\nu}_{\mu}$-disappearance analysis,
+performed by the {\em VALOR} group,        
+on the combined Run 5+6 dataset, using only data taken in antineutrino beam mode (\TotalPot{} POT).
+This dataset was collected in two run periods:
+May - June 2014 (Run 5, \RunVPot{} POT in antineutrino beam mode) and November 2014 - June 2015 
+(Run 6, \RunVIPot{} POT in antineutrino beam mode).
+This analysis builds on our $\nu_{\mu}$-disappearance analyses presented in Refs.\ \cite{OurRun1DisappAnalysis}, 
+\cite{OurRun12DisappAnalysis}, \cite{OurRun12DisappAnalysis3Flavour}, \cite{OurRun123DisappAnalysis3Flavour},
+\cite{OurRun1234aDisappAnalysis3Flavour} and \cite{OurRun1234DisappAnalysis3Flavour}, and adapts these analyses  
+to antineutrino beam mode data.
+
+One of the objectives of this analysis is to determine whether the oscillation parameters for $\bar{\nu}_{\mu}$ disappearance are different 
+from those for $\nu_{\mu}$ disappearance. For this reason, we use two separate sets of oscillation parameters in this analysis. The first set is
+$\sin^{2}\overline{\theta}_{23}$, $\sin^{2}\overline{\theta}_{12}$, $\sin^{2}\overline{\theta}_{13}$, $|\overline{\Delta m}^{2}_{32}|$ 
+(normal hierarchy) or $|\overline{\Delta m}^{2}_{31}|$ (inverted hierarchy)
+, $\overline{\Delta m}^{2}_{21}$ and $\delta_{CP}$, and these are 
+applied to the $\bar{\nu}_{\mu}$, $\bar{\nu}_{e}$ and oscillated $\bar{\nu}_{e}$ interaction modes. The second set of oscillation parameters 
+is $\sin^{2}\theta_{23}$, $\sin^{2}\theta_{12}$, $\sin^{2}\theta_{13}$, $|\Delta m^{2}_{32}|$ 
+(normal hierarchy) or $|\Delta m^{2}_{31}|$ (inverted hierarchy), 
+$\Delta m^{2}_{21}$ and $\delta_{CP}$, which are applied to the $\nu_{\mu}$, $\nu_{e}$ and oscillated $\nu_{e}$
+interaction modes. All these parameters are fixed in the fits of the Super K data except $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^{2}_{32}|$ 
+(normal hierarchy) or $|\overline{\Delta m}^{2}_{31}|$ (inverted hierarchy).
+
+These oscillation parameters are determined by fitting the predicted reconstructed energy spectrum of 1 $\mu$-like ring 
+events at SuperK to the observed spectrum. The method of calculation of this predicted spectrum is presented in Sec.~\ref{sec:spectrum_prediction}.
+This analysis uses flux tuning based on recent NA61 data \cite{FluxTuning}\cite{NA61T2K}. 
+It also uses an indirect extrapolation from ND280 to SuperK, which is implemented via a fit of flux and cross-section parameters to
+ND280 measurements of the muon momentum-angle distributions of $\bar{\nu}_\mu$ and  $\nu_\mu$
+CC0$\pi$-like, CC1$\pi$-like and CC other events whose 
+vertices are in FGD1\cite{BANFF2015}.
+Updated nominal predictions of the reconstructed energy spectrum of single $\mu$-like ring events in SuperK are presented for Run 5+6
+in Sec.~\ref{sec:spectrum_prediction}
+
+The oscillation analysis is performed using neutrino oscillation probabilities computed in a 3-flavour
+framework including constant-density matter effects. 
+Details of our oscillation probability calculations, estimates of the numerical accuracy of our
+calculations and comparisons with calculations used by the alternative T2K oscillation analyses 
+are given in Appendices A and B of Ref. \cite{OurRun123DisappAnalysis3Flavour}.
+
+As in our previous analyses, the oscillation fit is made using the likelihood-ratio method \cite{StatAnalysisCowan}.
+The mathematical details of this method are given in Sec.\ 3.2 in Ref.\ \cite{OurRun1DisappAnalysis}.
+We consider a total of \NSyst{} energy scale, neutrino flux, neutrino cross-section,
+efficiency, initial-state nuclear environment and final-state rescattering systematics (nuisance parameters).
+In this Run 5+6 analysis, we allow all these nuisance parameters to float.
+The nuisance parameters and their effects 
+on the extrapolated single $\mu$-like ring event reconstructed energy spectrum are described in Sec.~\ref{sec:systematics}.
+The oscillation fitting method is presented in detail in Sec.~\ref{sec:oscfit_method},
+while the chosen goodness-of-fit test, suitable for the current statistics, is described in Sec.~\ref{sec:gof_test}.
+The performance of the fitter was tested in detail for the Run 5+6 fit using ensembles of toy MC experiments, and
+a summary of the results of these tests is presented in Sec.~\ref{sec:validation}. 
+
+The 2D confidence regions in $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^{2}_{32}|$ 
+or $|\overline{\Delta m}^{2}_{31}|$ 
+are constructed using the constant-$\Delta \chi^{2}$
+%~ constructed using the Feldman-Cousins 
+method. 
+Systematic errors are included in the oscillation contours using the profiling method.
+%Systematic errors are included in the oscillation contours using the 
+%Cousins-Highland method (Bayesian integration) 
+%~ \cite{CousinsHighland,Kendall}.
+%%Confidence contours constructed with the constant-$\Delta\chi^{2}$ method are also shown for comparison.
+%Both of these methods are summarized in Sec.~\ref{sec:contour_construction}, and
+%the exact methodology used for incorporating systematic errors is explained in detail.
+
+The results of the measurements of $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^{2}_{32}|$ 
+or $|\overline{\Delta m}^{2}_{31}|$ 
+using the Run 5+6 dataset are given in Sec.~\ref{sec:results_bestfit} of this note, 
+while the goodness-of-fit tests are presented in Sec.~\ref{sec:results_gof}.
+The best-fit spectra are shown in Sec.~\ref{sec:results_bestfit} for each of the normal and inverted mass hierarchy assumptions for the 
+Run 5+6 dataset.
+%~ The Feldman-Cousins and constant-$\Delta\chi^{2}$ confidence regions are shown in Sec.~\ref{sec:results_contours}. 
+The confidence regions are shown in Sec.~\ref{sec:results_dchisq_contours}. 
+%~ Comparisons of our results obtained between different methods for constructing confidence regions are presented in Sec.~\ref{sec:results_contour_comparisons}.
+In that section, we also show comparisons of our T2K Run 5+6 results with results from MINOS
+as well as with the expected T2K sensitivity for an integrated exposure of \TotalPot{} POT.
+
+Finally, a summary is given in Sec.~\ref{sec:summary}.  
+
+\clearpage

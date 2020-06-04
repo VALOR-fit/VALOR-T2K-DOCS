@@ -1,0 +1,4 @@
+cp sk_ereco_spectrum_RHC1Rmu_spectrum_unoscillated_prefit_0.000000_0.000000_grouped.eps ../../images/spectrum_predictions/spectrum_unosc_grouped_prefit.eps
+cp sk_ereco_spectrum_RHC1Rmu_spectrum_unoscillated_postfit_0.000000_0.000000_grouped.eps ../../images/spectrum_predictions/spectrum_unosc_grouped_postfit.eps
+cp sk_ereco_spectrum_RHC1Rmu_spectrum_reactor_prefit_0.527000_0.002510_grouped.eps ../../images/spectrum_predictions/spectrum_osc_grouped_prefit.eps
+cp sk_ereco_spectrum_RHC1Rmu_spectrum_reactor_postfit_0.527000_0.002510_grouped.eps ../../images/spectrum_predictions/spectrum_osc_grouped_postfit.eps

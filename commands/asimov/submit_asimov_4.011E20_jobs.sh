@@ -1,0 +1,69 @@
+
+"${T2KOSCANA}/production/submit_make_toygrid_toys_joint" --resource RAL \
+  --xmlfile "NOSUCHFILE" \
+  --tag "NuOscBar_4.011E20_ASIMOV_using_reactor_normal" \
+  --config-file "analysis_configuration_4.011E20.xml" \
+  --fit-param-list "nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance" \
+  --param1 mixing23 --param2 dmsq \
+  --nbins-tot-param1 201 \
+  --nbins-tot-param2 201 \
+  --min-bin-param1 1     \
+  --max-bin-param1 201   \
+  --min-bin-param2 1     \
+  --max-bin-param2 201   \
+  --step-grid-1 201      \
+  --step-grid-2 1        \
+  --using-xmlfile false  \
+  --job-dir "${PWD}"     \
+  --reactor false        \
+  --hierarchy normal \
+  --input_mixing12 0.304 \
+  --input_mixing13 0.0248 \
+  --input_mixing23 0.527 \
+  --input_deltacp -1.55 \
+  --input_dm12sq 7.53E-5 \
+  --input_dm23sq 2.51E-3 \
+  --input_mixing12bar 0.304 \
+  --input_mixing13bar 0.0248 \
+  --input_mixing23bar 0.527 \
+  --input_deltacpbar -1.55 \
+  --input_dm12sqbar 7.53E-5 \
+  --input_dm23sqbar 2.51E-3 \
+  --tweak-systematics false \
+  --stat-fluctuations false \
+  --dmsq-scheme auto
+
+"${T2KOSCANA}/production/submit_make_toygrid_toys_joint" --resource RAL \
+  --xmlfile "NOSUCHFILE" \
+  --tag "NuOscBar_4.011E20_ASIMOV_using_reactor_inverted" \
+  --config-file "analysis_configuration_4.011E20.xml" \
+  --fit-param-list "nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance" \
+  --param1 mixing23 --param2 dmsq \
+  --nbins-tot-param1 201 \
+  --nbins-tot-param2 201 \
+  --min-bin-param1 1     \
+  --max-bin-param1 201   \
+  --min-bin-param2 1     \
+  --max-bin-param2 201   \
+  --step-grid-1 201      \
+  --step-grid-2 1        \
+  --using-xmlfile false  \
+  --job-dir "${PWD}"     \
+  --reactor false        \
+  --hierarchy inverted   \
+  --input_mixing12 0.304 \
+  --input_mixing13 0.0252 \
+  --input_mixing23 0.533 \
+  --input_deltacp -1.56 \
+  --input_dm12sq 7.53E-5 \
+  --input_dm23sq 2.48E-3 \
+  --input_mixing12bar 0.304 \
+  --input_mixing13bar 0.0252 \
+  --input_mixing23bar 0.533 \
+  --input_deltacpbar -1.56 \
+  --input_dm12sqbar 7.53E-5 \
+  --input_dm23sqbar 2.48E-3 \
+  --tweak-systematics false \
+  --stat-fluctuations false \
+  --dmsq-scheme auto
+

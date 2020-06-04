@@ -1,0 +1,133 @@
+bf_dm_nh=2.518E-3
+bf_th_nh=0.450
+
+bf_dm_ih=2.490E-3
+bf_th_ih=0.453
+
+"${T2KOSCANA}/production/submit_make_toygrid_toys_joint" --resource RAL \
+  --xmlfile "data.xml" \
+  --tag "NuOscBar_4.011E20_REAL_DATA_using_reactor_normal_mixing23" \
+  --config-file "analysis_configuration_4.011E20.xml" \
+  --fit-param-list "nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance" \
+  --param1 mixing23 --param2 none \
+  --nbins-tot-param1 201 \
+  --nbins-tot-param2 1 \
+  --min-bin-param1 1     \
+  --max-bin-param1 201   \
+  --min-bin-param2 1     \
+  --max-bin-param2 1   \
+  --step-grid-1 21      \
+  --step-grid-2 1        \
+  --using-xmlfile true   \
+  --job-dir "${PWD}"     \
+  --reactor false        \
+  --hierarchy normal \
+  --input_mixing12 0.304 \
+  --input_mixing13 0.0248 \
+  --input_mixing23 0.527 \
+  --input_deltacp -1.55 \
+  --input_dm12sq 7.53E-5 \
+  --input_dm23sq 2.51E-3 \
+  --input_mixing12bar 0.304 \
+  --input_mixing13bar 0.0248 \
+  --input_mixing23bar ${bf_th_nh} \
+  --input_deltacpbar -1.55 \
+  --input_dm12sqbar 7.53E-5 \
+  --input_dm23sqbar ${bf_dm_nh} \
+  --optfixparams "mixing12,mixing23,dmsq32,dmsq12,mixing13,deltacp,mixing12bar,dmsq12bar,mixing13bar,deltacpbar"
+
+"${T2KOSCANA}/production/submit_make_toygrid_toys_joint" --resource RAL \
+  --xmlfile "data.xml" \
+  --tag "NuOscBar_4.011E20_REAL_DATA_using_reactor_inverted_mixing23" \
+  --config-file "analysis_configuration_4.011E20.xml" \
+  --fit-param-list "nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance" \
+  --param1 mixing23 --param2 none \
+  --nbins-tot-param1 201 \
+  --nbins-tot-param2 1 \
+  --min-bin-param1 1     \
+  --max-bin-param1 201   \
+  --min-bin-param2 1     \
+  --max-bin-param2 1   \
+  --step-grid-1 21      \
+  --step-grid-2 1        \
+  --using-xmlfile true   \
+  --job-dir "${PWD}"     \
+  --reactor false        \
+  --hierarchy inverted \
+  --input_mixing12 0.304 \
+  --input_mixing13 0.0252 \
+  --input_mixing23 0.533 \
+  --input_deltacp -1.56 \
+  --input_dm12sq 7.53E-5 \
+  --input_dm23sq 2.48E-3 \
+  --input_mixing12bar 0.304 \
+  --input_mixing13bar 0.0252 \
+  --input_mixing23bar ${bf_th_ih} \
+  --input_deltacpbar  -1.56 \
+  --input_dm12sqbar 7.53E-5 \
+  --input_dm23sqbar ${bf_dm_ih} \
+  --optfixparams "mixing12,mixing23,dmsq32,dmsq12,mixing13,deltacp,mixing12bar,dmsq12bar,mixing13bar,deltacpbar"
+
+"${T2KOSCANA}/production/submit_make_toygrid_toys_joint" --resource RAL \
+  --xmlfile "data.xml" \
+  --tag "NuOscBar_4.011E20_REAL_DATA_using_reactor_normal_dm23sq" \
+  --config-file "analysis_configuration_4.011E20.xml" \
+  --fit-param-list "nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance" \
+  --param1 dmsq --param2 none \
+  --nbins-tot-param1 201 \
+  --nbins-tot-param2 1 \
+  --min-bin-param1 1     \
+  --max-bin-param1 201   \
+  --min-bin-param2 1     \
+  --max-bin-param2 1   \
+  --step-grid-1 21      \
+  --step-grid-2 1        \
+  --using-xmlfile true   \
+  --job-dir "${PWD}"     \
+  --reactor false        \
+  --hierarchy normal \
+  --input_mixing12 0.304 \
+  --input_mixing13 0.0248 \
+  --input_mixing23 0.527 \
+  --input_deltacp -1.55 \
+  --input_dm12sq 7.53E-5 \
+  --input_dm23sq 2.51E-3 \
+  --input_mixing12bar 0.304 \
+  --input_mixing13bar 0.0248 \
+  --input_mixing23bar ${bf_th_nh} \
+  --input_deltacpbar -1.55 \
+  --input_dm12sqbar 7.53E-5 \
+  --input_dm23sqbar ${bf_dm_nh} \
+  --optfixparams "mixing12,mixing23,dmsq32,dmsq12,mixing13,deltacp,mixing12bar,dmsq12bar,mixing13bar,deltacpbar"
+
+"${T2KOSCANA}/production/submit_make_toygrid_toys_joint" --resource RAL \
+  --xmlfile "data.xml" \
+  --tag "NuOscBar_4.011E20_REAL_DATA_using_reactor_inverted_dm23sq" \
+  --config-file "analysis_configuration_4.011E20.xml" \
+  --fit-param-list "nuosc3fbar_numudisapp_fixnonbar_fix4+nuisance" \
+  --param1 dmsq --param2 none \
+  --nbins-tot-param1 201 \
+  --nbins-tot-param2 1 \
+  --min-bin-param1 1     \
+  --max-bin-param1 201   \
+  --min-bin-param2 1     \
+  --max-bin-param2 1   \
+  --step-grid-1 21      \
+  --step-grid-2 1        \
+  --using-xmlfile true   \
+  --job-dir "${PWD}"     \
+  --reactor false        \
+  --hierarchy inverted \
+  --input_mixing12 0.304 \
+  --input_mixing13 0.0252 \
+  --input_mixing23 0.533 \
+  --input_deltacp -1.56 \
+  --input_dm12sq 7.53E-5 \
+  --input_dm23sq 2.48E-3 \
+  --input_mixing12bar 0.304 \
+  --input_mixing13bar 0.0252 \
+  --input_mixing23bar ${bf_th_ih} \
+  --input_deltacpbar -1.56 \
+  --input_dm12sqbar 7.53E-5 \
+  --input_dm23sqbar ${bf_dm_ih} \
+  --optfixparams "mixing12,mixing23,dmsq32,dmsq12,mixing13,deltacp,mixing12bar,dmsq12bar,mixing13bar,deltacpbar"
