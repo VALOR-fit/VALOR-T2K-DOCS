@@ -1,0 +1,102 @@
+%
+% ---------------------------------------------------------------------------------------
+% VaLOR T2K numu disappearance analysis, Run1+2+3
+% ---------------------------------------------------------------------------------------
+%
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.50cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendix
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{longtable}
+\usepackage{color} 
+\usepackage{rotate}                   % rotate text in tables
+\usepackage{amsfonts}                 % extra symbols
+\usepackage{amsmath}                 
+%\usepackage{floatpag}                 % \thisfloatpagestyle{empty}, to suppress page numbers
+\usepackage{lmodern}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{caption}% Use captionof to be able to minipage figure's \& tables together, but still get correct captions
+%%%% This must be the last usepackage
+\usepackage[breaklinks=true]{hyperref}% allow use of url; ref & cite are hyperlinks
+
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+%\newcommand{\AmS}{{\protect\the\textfont2
+%  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. This behaviour can be changed:
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\linenumbers
+\bibliographystyle{elsart-num}
+
+
+%define new fonts, smaller than tiny
+\makeatletter
+\ifcase \@ptsize \relax% 10pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{4}{5}}% \tiny: 5/6
+  \newcommand{\verytiny}{\@setfontsize\miniscule{3}{4}}% \tiny: 5/6
+\or% 11pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\or% 12pt
+  \newcommand{\miniscule}{\@setfontsize\miniscule{5}{6}}% \tiny: 6/7
+  \newcommand{\verytiny}{\@setfontsize\miniscule{4}{5}}% \tiny: 6/7
+\fi
+\makeatother
+
+
+\begin{document}
+
+% Title, authors, abstract and table of contents
+\input{numuosc2013a_front}
+
+% Main body
+\input{numuosc2013a_introduction}
+\input{numuosc2013a_changes}
+\input{numuosc2013a_systematics}
+\input{numuosc2013a_spectrum_predictions}
+\input{numuosc2013a_spectrum_uncertainties}
+%\input{numuosc2013a_fit_validation}
+\input{numuosc2013a_sensitivity}
+\input{numuosc2013a_results}
+
+% Summary and acknowledgements
+\input{numuosc2013a_back}
+
+% References
+\input{numuosc2013a_references}
+
+% Appendices
+%\clearpage
+%\appendix
+%\addappheadtotoc
+%\input{numuosc2012a_apdx_3f_osc_prob_code}
+%\clearpage
+
+\end{document}
+

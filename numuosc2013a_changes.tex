@@ -1,0 +1,69 @@
+\clearpage
+
+\section {Summary of changes compared with the Run 1+2+3 analysis in T2K-TN-141(v8) }
+\label{sec:changes}
+
+The following changes have been implemented compared with the Run 1+2+3 $\nu_{\mu}$-disappearance
+analysis described in \cite{OurRun123DisappAnalysis3Flavour} :
+
+\subsection{Changes in construction of the nominal single-ring $\mu$-like reconstructed energy spectrum p.d.f}
+
+\begin{itemize}
+\item The ND280 $\nu_{\mu}$ group updated the division of reconstructed ND280 CC events. For the 2013 analyses, these events 
+are divided into CC0$\pi$, CC1$\pi$ and CC other samples (whereas for the Run 1+2+3 analysis they were divided into CCQE and 
+CCnonQE samples). Pion tracks are identified using ionisation energy losses in the TPC or FGD, or a pion can be identified 
+by the presence of a Michel electron in FGD1. The CC0$\pi$ and CC1$\pi$ samples have exactly 0 and 1 track consistent with 
+a $\pi^{+}$ respectively. The CC other sample consists of events with more than 1 track consistent with a $\pi^{+}$ or at least 
+one negative track or with a track consistent with an electron \cite{ND280Inputs}. These three samples were used as an input to 
+the BANFF fit of the ND280 data to find the best-fit correlated flux
+and cross-section parameters \cite{BANFF2013}; these parameters (taken from \verb+postfit_banff_2013_disappearance_v4.root+) were used in 
+turn to calculate the nominal predicted single-ring $\mu$-like reconstructed energy spectrum in SuperK.
+\item An updated SuperK MC was used in this analysis, and this MC used the 11btunedv3.2 flux and the full 13a SuperK software.
+\item We updated the value of $\sin^2\theta_{12}$ to be consistent
+  with the 2013 $\nu_e$ analyses.
+\end{itemize}
+
+\subsection{Changes in the systematic effects considered by the analysis}
+
+\begin{itemize}
+\item The splines used to evaluate the uncorrelated cross-section
+  systematics were regenerated using the updated SuperK MC. The
+  oscillation weights used to generate this now use the nominal values
+  of oscillation parameters used in the analysis, as listed in Tab.~\ref{tab:pdg2012non23}
+\item The covariance matrix used to evaluate the final-state and secondary interaction
+  systematics was regenerated using the updated SuperK MC.
+\item The SuperK detector error matrix has been recreated using more
+  SuperK atmospheric data and updated SuperK MC
+  \cite{SuperkErrors2013}.
+\item The SuperK energy scale systematic has changed from 2.3\% to 2.4\% \cite{SuperkEScale2013}.
+\end{itemize}
+
+\subsection{Changes in neutrino oscillation fitting}
+
+\begin{itemize}
+\item During the review process of the T2K run 1-3 result PRL \cite{T2KRun123Disapp}, it was
+  discovered that the octant choice ($\theta_{23} \leq \pi/4$ or
+  $\theta_{23} \geq \pi/4$) has a large effect on the contour in $\sin^2(2\theta_{23})$.
+  Therefore, we now fit $\sin^2\theta_{23}$ as default
+  (the ability to fit for $\sin^2(2\theta_{23})$ has been retained).
+\item The hierarchy has a large effect, therefore we produce two
+  results. The first using normal hierarchy; the second in inverted hierarchy.
+\item In \cite{OurRun123DisappAnalysis3Flavour}, we did not consider
+  the effect of uncertainties on the \emph{non-23-sector} oscillation
+  parameters ($\delta_{CP}$, $\Delta m^2_{21}$, $\sin^2\theta_{13}$,
+  $\sin^2\theta_{12}$). In this analysis, we consider the
+  uncertainty by fitting the \emph{known} oscillation parameters ($\Delta m^2_{21}$, $\sin^2\theta_{13}$,
+  $\sin^2\theta_{12}$) using the constraints listed in
+  Tab.~\ref{tab:pdg2012non23}. The effect of $\delta_{CP}$ is handled
+  by throwing it uniformly in toys used to created the $\Delta \chi^2$
+  critical surface.
+\item The 7 SuperK detector efficiency uncertainties and the 6 FSI+SI
+  uncertainties have been combined into a single 6-parameter
+  covariance matrix.
+  This reduces the number of nuisance parameters in the fit, allowing
+  the fit to run faster.
+\item We now include oscillated $\nu_e \rightarrow \nu_\mu$ templates by
+  reweighting the $\nu_\mu$ SuperK MC with the $\nu_e$ flux.
+\end{itemize}
+
+

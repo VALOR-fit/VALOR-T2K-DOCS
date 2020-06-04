@@ -1,0 +1,660 @@
+\clearpage
+
+\section {Results of 6.3933$\times$10$^{20}$ POT fitter validation}% and sensitivity studies }
+\label{sec:sensitivity}
+
+The performance of the fitter was evaluated using an ensemble of 5.1k toy MC experiments,
+generated
+with an exposure of 6.3933$\times$10$^{20}$ POT,
+and input oscillation parameters
+$|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$
+and $\sin^{2}\theta_{23}$ = 0.37. A further 5.1k toy MC experiments were
+created for each of the two cases $\sin^{2}\theta_{23}$ = 0.513 and $\sin^{2}\theta_{23}$ = 0.65.
+A further set of toy MC experiments with the same input oscillation parameters and an exposure of
+7.8$\times$10$^{21}$ POT (the T2K ultimate POT goal) were also used.
+These simulated experiments included statistical fluctuations and
+fluctuations of all 44 systematic parameters
+and $\delta_{CP}$.
+The toy MC experiments were fitted using MINUIT and the MINUIT HESSE errors were computed.
+Residual and pull\footnote{pull = $(f_{bf} - f_{true}) / \sigma_{fit}$}
+distributions were studied for oscillation and systematic parameters.
+
+Residual distributions for $\sin^{2}\theta_{23}$ and $|\Delta m^{2}_{32}|$ are shown in
+Figs.\ \ref{fig:syst_residuals:oscparam:run1234a:0.37}, \ref{fig:syst_residuals:oscparam:run1234a:0.513}, and \ref{fig:syst_residuals:oscparam:run1234a:0.65}
+for 6.3933$\times$10$^{20}$ POT.
+A clear three peak structure is seen in $\sin^{2}\theta_{23}$, with peaks occurring at
+the input point, the mirror point, and the point where maximum disappearance occurs\footnote{
+  In the 3-flavour oscillation formula\footnotemark
+  $\:P(\nu_{\mu}\rightarrow\nu_{\mu})
+  \approx 1 - \left( \cos^4(\theta_{13})\sin^{2}(2\theta_{23}) + \sin^{2}(\theta_{23})\sin^{2}(2\theta_{13}) \right) \sin^{2}\left(\frac{\Delta m_{31}^{2} L}{4E}\right)$,
+  the maximum amount of disappearance occurs not at $\sin^{2}(\theta_{23}) = 0.5$, but it is offset slightly due to the next-to-leading order term.
+  The extremum occurs at $\sin^{2}(\theta_{23})= \frac{1}{2(1-\sin^{2}(\theta_{13}))} \approx 0.513$.
+  In addition, the oscillation probability is approximately symmetric about this point, meaning that for every input value $!= 0.513$, there exists
+  a mirror point with a similar oscillation probability.
+  More discussion of this effect can be found in Appendix E of \cite{OurRun123JointOscillationAnalysis}.
+}\footnotetext{In the fits, we use full 3-flavour oscillation formulae, and not this approximation.
+    See and Appendix A in \cite{OurRun123DisappAnalysis3Flavour} for full details.}.
+Figs.\ \ref{fig:syst_residuals:oscparam:potgoal:0.37}, \ref{fig:syst_residuals:oscparam:potgoal:0.513}, and \ref{fig:syst_residuals:oscparam:potgoal:0.65}
+are the corresponding plots for 7.8$\times$10$^{21}$ POT.
+The three-peak structure is lost with high statistics;
+there are peaks only at the input point and the mirror point.
+
+Residual distributions for the systematic parameters are shown in
+Figs.\ \ref{fig:syst_residuals1:run1234a:0.37}-\ref{fig:syst_residuals4:run1234a:0.37} for
+$\sin^{2}\theta_{23}$ = 0.37 and $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+Figs.\ \ref{fig:syst_residuals1:run1234a:0.513}-\ref{fig:syst_residuals4:run1234a:0.513} for
+$\sin^{2}\theta_{23}$ = 0.513 and $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+and
+Figs.\ \ref{fig:syst_residuals1:run1234a:0.65}-\ref{fig:syst_residuals4:run1234a:0.65} for
+$\sin^{2}\theta_{23}$ = 0.65 and $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$.
+The corresponding pull plots are shown in
+Figs.\ \ref{fig:syst_pulls1:run1234a:0.37}-\ref{fig:syst_pulls4:run1234a:0.37},
+Figs.\ \ref{fig:syst_pulls1:run1234a:0.513}-\ref{fig:syst_pulls4:run1234a:0.513}, and
+Figs.\ \ref{fig:syst_pulls1:run1234a:0.65}-\ref{fig:syst_pulls4:run1234a:0.65}.
+
+%{\color{red} Add plots with osc param residuals and also check correlations 
+%between osc param and nuisance param residuals}.
+
+No problem was identified with the fitter performance, which performed as expected.
+There are biases in the fitted - true values for 3 systematic parameters, namely spectral function, $\pi$-less 
+$\Delta$ decay and the NC bin in the SuperK detector efficiency + FSI + SI matrix,
+but these biases are understood. The bias in the spectral function 
+systematic is due to its true input values being drawn from a uniform distribution between 0 and 1 rather than 
+from a Gaussian distribution. The bias in $\pi$-less $\Delta$ decay is due to the method of calculation of event 
+weights when this parameter is varied. By default, 20\% of $\Delta$s decay in this way in NEUT, and the uncertainty 
+is 20\%. This means that it is unphysical to tweak this parameter to be more negative than -1$\sigma$, and 
+consequently there is an asymmetry in weights between positive tweaks (which change continuously as the tweak 
+increases) and negative tweaks (for which all tweaks more negative than -1$\sigma$ are assigned the same weight 
+as that for a -1$\sigma$ tweak). The bias in the NC bin in the SuperK detector efficiency + FSI + SI bin matrix
+comes from the low statistics at current POT.
+When Poisson fluctuations are made of the bin contents of the $E_{reco}$ distributions, a downward fluctuation is more likely than an upward
+fluctuation (see replies to comments and revision history for TN141 \cite{OurRun123DisappAnalysis3Flavour}).
+Adding the fact that the NC modes are distributed around the oscillation maximum, the (most likely) downwards Poisson fluctuations translate into a (most likely)
+negative value of the NC efficiency, explaining a bias to negative values for this parameter.
+As can be seen from the plots, when moving away from the point of maximal disappearance as input
+(and so reducing the depth of the oscillation dip),
+the NC bin in the SuperK detector efficiency + FSI + SI matrix bias is reduced.
+
+%
+% Osc param residuals for 0.37
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_residual_0}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{23}$ and $|\Delta m^2_{32}|$ 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals:oscparam:run1234a:0.37}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcphigh_sys_0.37_residual_0}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{23}$ and $|\Delta m^2_{32}|$ 5.1k toy MC experiments at 
+  7.8$\times$10$^{21}$ POT (the T2K ultimate POT goal), generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals:oscparam:potgoal:0.37}
+\end{minipage}
+\end{figure*}
+
+%
+% Osc param residuals for 0.513
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_residual_0}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{23}$ and $|\Delta m^2_{32}|$ 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals:oscparam:run1234a:0.513}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcphigh_sys_0.513_residual_0}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{23}$ and $|\Delta m^2_{32}|$ 5.1k toy MC experiments at 
+  7.8$\times$10$^{21}$ POT (the T2K ultimate POT goal), generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals:oscparam:potgoal:0.513}
+\end{minipage}
+\end{figure*}
+
+%
+% Osc param residuals for 0.65
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_residual_0}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{23}$ and $|\Delta m^2_{32}|$ 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals:oscparam:run1234a:0.65}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcphigh_sys_0.65_residual_0}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{23}$ and $|\Delta m^2_{32}|$ 5.1k toy MC experiments at 
+  7.8$\times$10$^{21}$ POT (the T2K ultimate POT goal), generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals:oscparam:potgoal:0.65}
+\end{minipage}
+\end{figure*}
+
+
+%
+% Systematic residuals for 0.37
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_residual_1}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$, $\Delta m^2_{21}$,
+  and $f_{0; t, r}^{banff}$-$f_{8; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals1:run1234a:0.37}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_residual_2}.eps}
+\caption {
+  Residual distributions for
+  $f_{9; t, r}^{banff}$-$f_{20; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals2:run1234a:0.37}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_residual_3}.eps}
+\caption {
+  Residual distributions for
+  $f_{21; t, r}^{banff}$-$f_{22; t, r}^{banff}$,
+  and the first 10 uncorrelated cross section parameters,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals3:run1234a:0.37}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_residual_4}.eps}
+\caption {
+  Residual distributions for
+  $f_{CC\bar{\nu}; t}$, $f_{E; r}^{SK}$, and $f _{0; r}^{SK+FSI}$-$f _{5; r}^{SK+FSI}$ 
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals4:run1234a:0.37}
+\end{minipage}
+\end{figure*}
+
+%
+% Systematic pulls for 0.37
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_pull_1_1}.eps}
+\caption {
+  Pull distributions for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$, $\Delta m^2_{21}$,
+  and $f_{0; t, r}^{banff}$-$f_{8; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls1:run1234a:0.37}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_pull_1_2}.eps}
+\caption {
+  Pull distributions for
+  $f_{9; t, r}^{banff}$-$f_{20; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls2:run1234a:0.37}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_pull_1_3}.eps}
+\caption {
+  Pull distributions for
+  $f_{21; t, r}^{banff}$-$f_{22; t, r}^{banff}$,
+  and the first 10 uncorrelated cross section parameters,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls3:run1234a:0.37}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.37_pull_1_4}.eps}
+\caption {
+  Pull distributions for
+  $f_{CC\bar{\nu}; t}$, $f_{E; r}^{SK}$, and $f _{0; r}^{SK+FSI}$-$f _{5; r}^{SK+FSI}$ 
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.37 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls4:run1234a:0.37}
+\end{minipage}
+\end{figure*}
+
+%
+% Systematic residuals for 0.513
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_residual_1}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$, $\Delta m^2_{21}$,
+  and $f_{0; t, r}^{banff}$-$f_{8; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals1:run1234a:0.513}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_residual_2}.eps}
+\caption {
+  Residual distributions for
+  $f_{9; t, r}^{banff}$-$f_{20; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals2:run1234a:0.513}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_residual_3}.eps}
+\caption {
+  Residual distributions for
+  $f_{21; t, r}^{banff}$-$f_{22; t, r}^{banff}$,
+  and the first 10 uncorrelated cross section parameters,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals3:run1234a:0.513}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_residual_4}.eps}
+\caption {
+  Residual distributions for
+  $f_{CC\bar{\nu}; t}$, $f_{E; r}^{SK}$, and $f _{0; r}^{SK+FSI}$-$f _{5; r}^{SK+FSI}$ 
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals4:run1234a:0.513}
+\end{minipage}
+\end{figure*}
+
+%
+% Systematic pulls for 0.513
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_pull_1_1}.eps}
+\caption {
+  Pull distributions for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$, $\Delta m^2_{21}$,
+  and $f_{0; t, r}^{banff}$-$f_{8; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls1:run1234a:0.513}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_pull_1_2}.eps}
+\caption {
+  Pull distributions for
+  $f_{9; t, r}^{banff}$-$f_{20; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls2:run1234a:0.513}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_pull_1_3}.eps}
+\caption {
+  Pull distributions for
+  $f_{21; t, r}^{banff}$-$f_{22; t, r}^{banff}$,
+  and the first 10 uncorrelated cross section parameters,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls3:run1234a:0.513}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.513_pull_1_4}.eps}
+\caption {
+  Pull distributions for
+  $f_{CC\bar{\nu}; t}$, $f_{E; r}^{SK}$, and $f _{0; r}^{SK+FSI}$-$f _{5; r}^{SK+FSI}$ 
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.513 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls4:run1234a:0.513}
+\end{minipage}
+\end{figure*}
+
+%
+% Systematic residuals for 0.65
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_residual_1}.eps}
+\caption {
+  Residual distributions for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$, $\Delta m^2_{21}$,
+  and $f_{0; t, r}^{banff}$-$f_{8; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals1:run1234a:0.65}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_residual_2}.eps}
+\caption {
+  Residual distributions for
+  $f_{9; t, r}^{banff}$-$f_{20; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals2:run1234a:0.65}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_residual_3}.eps}
+\caption {
+  Residual distributions for
+  $f_{21; t, r}^{banff}$-$f_{22; t, r}^{banff}$,
+  and the first 10 uncorrelated cross section parameters,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals3:run1234a:0.65}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_residual_4}.eps}
+\caption {
+  Residual distributions for
+  $f_{CC\bar{\nu}; t}$, $f_{E; r}^{SK}$, and $f _{0; r}^{SK+FSI}$-$f _{5; r}^{SK+FSI}$ 
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_residuals4:run1234a:0.65}
+\end{minipage}
+\end{figure*}
+
+%
+% Systematic pulls for 0.65
+%
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_pull_1_1}.eps}
+\caption {
+  Pull distributions for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$, $\Delta m^2_{21}$,
+  and $f_{0; t, r}^{banff}$-$f_{8; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls1:run1234a:0.65}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_pull_1_2}.eps}
+\caption {
+  Pull distributions for
+  $f_{9; t, r}^{banff}$-$f_{20; t, r}^{banff}$,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls2:run1234a:0.65}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_pull_1_3}.eps}
+\caption {
+  Pull distributions for
+  $f_{21; t, r}^{banff}$-$f_{22; t, r}^{banff}$,
+  and the first 10 uncorrelated cross section parameters,
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls3:run1234a:0.65}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=18pc]{{./images/fit_bias/fixdcp_sys_0.65_pull_1_4}.eps}
+\caption {
+  Pull distributions for
+  $f_{CC\bar{\nu}; t}$, $f_{E; r}^{SK}$, and $f _{0; r}^{SK+FSI}$-$f _{5; r}^{SK+FSI}$ 
+  computed from fits of 5.1k toy MC experiments at 
+  6.3933$\times$10$^{20}$ POT, generated at $\sin^{2}\theta_{23}$ = 0.65 and
+  $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+  including statistical fluctuations and with randomized systematic parameters.
+}
+\label{fig:syst_pulls4:run1234a:0.65}
+\end{minipage}
+\end{figure*}
+
+
+%
+%
+% Sensitivity
+%
+%
+
+% A sensitivity study was performed at various points around the 2012 MINOS \cite{MINOS2012} 
+% and 2012 T2K Run 1+2+3 90\% CL regions. 
+% These points are shown in Fig.\ \ref{fig:sensitivity_study_points}, 
+% and have the following values of sin$^22\theta_{23}$:
+% \begin{enumerate}  
+% \item 1.0   (maximal, 2012 T2K Run 1+2+3 best-fit value) 
+% \item 0.957 (2012 MINOS best-fit value)
+% \item 0.877 (smallest value in the 2012 MINOS 90\% CL region)
+% \end{enumerate}
+% The sensitivity study points have the following values of $|\Delta m_{32}^2|$:
+% \begin{enumerate}
+% \item x.xx$\times$10$^{-3}$ eV$^{2}$/c$^{4}$ (2012 T2K Run 1+2+3 best-fit value - 3$\sigma$),
+% \item x.xx$\times$10$^{-3}$ eV$^{2}$/c$^{4}$ (2012 T2K Run 1+2+3 best-fit value - 1$\sigma$),
+% \item 2.44$\times$10$^{-3}$ eV$^{2}$/c$^{4}$ (2012 T2K Run 1+2+3 best-fit value),
+% \item x.xx$\times$10$^{-3}$ eV$^{2}$/c$^{4}$ (2012 T2K Run 1+2+3 best-fit value + 1$\sigma$),
+% \item x.xx$\times$10$^{-3}$ eV$^{2}$/c$^{4}$ (2012 T2K Run 1+2+3 best-fit value + 3$\sigma$).
+% \end{enumerate}
+
+% \begin{figure*}[htb]
+% \center
+% \includegraphics[width=35pc]{./images/placeholder.eps}
+% \caption {
+%  True oscillation parameters points considered in our T2K 6.3933$\times$10$^{20}$ POT sensitivity study.
+%  The grid was constructed using the 2012 T2K Run 1+2+3 best-fit $|\Delta m_{32}^2|$ value 
+%  and $\pm$1$\sigma$, $\pm$3$\sigma$ variations, and using 
+%  sin$^22\theta_{23}$ values
+%  of 1 (maximal), 0.957 (2012 MINOS best-fit value) and 0.877 (smallest value in the 2012 MINOS 90\% confidence region).
+% }
+% \label{fig:sensitivity_study_points}
+% \end{figure*}
+
+% An average $\chi^2$ surface was constructed as a function of sin$^22\theta_{23}$ and $\Delta m_{32}^2$ by averaging the 
+% $\chi^2$ surfaces obtained from fits to 1k toy MC experiments. In each of these toy experiments, the systematic 
+% parameters were randomized and statistical fluctuations were included. The confidence contours were then drawn using 
+% the constant-$\Delta\chi^{2}$ method. {\color{red} could try to show FC sensitivity plots}
+
+% The results of the sensitivity study are shown in 
+% Figs. \ref{fig:sensitivity:bestfitdmsq32}-\ref{fig:sensitivity:bestfitdmsq32_plus_3sigma}.
+
+% %...........................................
+% %
+% %
+
+
+% \begin{figure*}[htb]
+% \center
+% \includegraphics[width=35pc]{./images/placeholder.eps}
+% \caption {
+%   T2K 68\% CL and 90\% CL sensitivity contours for 6.3933$\times$10$^{20}$ POT,
+%   generated at $\Delta m_{32}^2$ = 2.44$\times$10$^{-3}$ eV$^{2}$/c$^{4}$
+%   and for sin$^22\theta_{23}$ values of 1 (red), 0.957 (blue) and 0.877 (green).
+%   For reference, the 2012 T2K Run 1+2+3 90\% CL region is shown in solid black line
+%   and the 2012 MINOS 90\% CL regions are shown in dashed black line.
+% }
+% \label{fig:sensitivity:bestfitdmsq32}
+% \end{figure*}
+
+
+% \begin{figure*}[htb]
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=18pc]{./images/placeholder.eps}
+% \caption {
+%   T2K 68\% CL and 90\% CL sensitivity contours, for 6.3933$\times$10$^{20}$ POT,
+%   generated at $\Delta m_{32}^2$ = x.xx$\times$10$^{-3}$ eV$^{2}$/c$^{4}$
+%   and for sin$^22\theta_{23}$ values of 1 (red), 0.957 (blue) and 0.877 (green).
+%   For reference, the 2012 T2K Run 1+2+3 90\% CL region is shown in solid black line
+%   and the 2012 MINOS 90\% CL regions are shown in dashed black line.
+% }
+% \label{fig:sensitivity:bestfitdmsq32_minus_1sigma}
+% \end{minipage}
+% \hspace{0.06\linewidth}
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=18pc]{./images/placeholder.eps}
+% \caption {
+%   T2K 68\% CL and 90\% CL sensitivity contours, for 6.3933$\times$10$^{20}$ POT,
+%   generated at $\Delta m_{32}^2$ = x.xx$\times$10$^{-3}$ eV$^{2}$/c$^{4}$
+%   and for sin$^22\theta_{23}$ values of 1 (red), 0.957 (blue) and 0.877 (green).
+%   For reference, the 2012 T2K Run 1+2+3 90\% CL region is shown in solid black line
+%   and the 2012 MINOS 90\% CL regions are shown in dashed black line.
+% }
+% \label{fig:sensitivity:bestfitdmsq32_plus_1sigma}
+% \end{minipage}
+% \end{figure*}
+
+
+% \begin{figure*}[htb]
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=18pc]{./images/placeholder.eps}
+% \caption {
+%   T2K 68\% CL and 90\% CL sensitivity contours, for 6.3933$\times$10$^{20}$ POT,
+%   generated at $\Delta m_{32}^2$ = x.xx$\times$10$^{-3}$ eV$^{2}$/c$^{4}$
+%   and for sin$^22\theta_{23}$ values of 1 (red), 0.957 (blue) and 0.877 (green).
+%   For reference, the 2012 T2K Run 1+2+3 90\% CL region is shown in solid black line
+%   and the 2012 MINOS 90\% CL regions are shown in dashed black line.
+% }
+% \label{fig:sensitivity:bestfitdmsq32_minus_3sigma}
+% \end{minipage}
+% \hspace{0.06\linewidth}
+% \begin{minipage}[t]{0.48\linewidth}
+% \center
+% \includegraphics[width=18pc]{./images/placeholder.eps}
+% \caption {
+%   T2K 68\% CL and 90\% CL sensitivity contours, for 6.3933$\times$10$^{20}$ POT,
+%   generated at $\Delta m_{32}^2$ = x.xx$\times$10$^{-3}$ eV$^{2}$/c$^{4}$
+%   and for sin$^22\theta_{23}$ values of 1 (red), 0.957 (blue) and 0.877 (green).
+%   For reference, the 2012 T2K Run 1+2+3 90\% CL region is shown in solid black line
+%   and the 2012 MINOS 90\% CL regions are shown in dashed black line.
+% }
+% \label{fig:sensitivity:bestfitdmsq32_plus_3sigma}
+% \end{minipage}
+% \end{figure*}
+
+

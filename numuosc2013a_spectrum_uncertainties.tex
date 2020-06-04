@@ -1,0 +1,283 @@
+\clearpage
+
+\section {Updated estimates of the effect of systematic uncertainties in the prediction of the single-ring $\mu$-like event reconstructed energy spectrum}
+\label{sec:spectrum_uncertainties}
+
+In this section, we present the effects of the systematics described in Sec.\ \ref{sec:systematics}
+on the expected number of single-ring $\mu$-like events and the reconstructed energy spectrum in SuperK.
+These effects are shown both for no oscillations and for oscillations with
+$\sin^{2}\theta_{23}$ = 0.5 and $|\Delta m^{2}_{32}|$ = 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$.
+For the oscillation cases, the values shown in Tab.\
+\ref{tab:pdg2012non23} are used for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$ and $\Delta m^{2}_{21}$ 
+and $\delta_{CP}$=0. The normal mass hierarchy is assumed.
+All results are generated for an integrated exposure of 6.3933$\times$10$^{20}$ POT and
+the BANFF-tuned MC templates are used.
+
+The effects of systematic uncertainties on the expected number of events is summarised in Tab.\ \ref{tab:nsk_systematic_table_summary} 
+both for no oscillations and for oscillations with the typical parameter values given above.
+In this table, systematic parameters are grouped into a few categories and all parameter correlations are taken into account.
+Entries for both the BANFF prefit and postfit errors are provided.
+The effect of each parameter individually is presented in Tab.\ \ref{tab:nsk_systematic_table} in which the correlations
+between parameters are necessarily ignored.
+
+The effects of the combined systematic uncertainties on the reconstructed energy spectrum of single-ring $\mu$-like events
+is shown in Fig.\ \ref{fig:1Rmu_error_envelope_total} for the typical oscillation scenario used.
+This plot shows the total error envelope for the 1 $\mu$-like ring event reconstructed energy spectrum; this is calculated
+as the $\pm$1$\sigma$ spread of bin contents from 100k toy MC experiments generated with randomized systematic parameters.
+In Fig.\ \ref{fig:1Rmu_error_envelope_total}, all systematic parameters were considered and their correlations were taken
+into account.
+
+Error envelopes from the effects of certain groups of systematic parameters are shown in
+Figs.\ \ref{fig:1Rmu_error_envelope_skdetfsi} (SuperK detector + FSI + SI systematics only),
+\ref{fig:1Rmu_error_envelope_banff} (BANFF systematics only),
+\ref{fig:1Rmu_error_envelope_uncor_xsec} (uncorrelated cross-section systematics only), and
+\ref{fig:1Rmu_error_envelope_non23osc} (\emph{non-23-sector} oscillation parameters only).
+
+Detailed studies showing the effects of individual systematics on the expected number of
+single-ring $\mu$-like events are shown in \cite{OurRun1234DisappAnalysisSupplement}.
+
+%..................
+
+\begin{table}
+\centering
+\begin{tabular}{| c | D{.}{.}{-1} | D{.}{.}{-1} |}
+\hline
+  {\bf Source of uncertainty}   &  \multicolumn{1}{c|}{{\bf ${\delta}N_{SK}$/$N_{SK}$}}  & \multicolumn{1}{c|}{{\bf ${\delta}N_{SK}$/$N_{SK}$}} \\
+                                &  \multicolumn{1}{c|}{(no oscillation)}                & \multicolumn{1}{c|}{(oscillations with typical parameter values)} \\
+\hline
+SuperK detector + FSI + SI      &  3.63\%   &  5.69\%  \\
+BANFF (prefit)                  & 25.97\%   & 21.90\%  \\
+BANFF (postfit)                 &  2.74\%   &  2.80\%  \\
+Uncorrelated XSec               &  3.15\%   &  5.33\%  \\
+\emph{Non-23-sector} oscillation parameters   &    0.\%   &  0.22\%  \\
+\hline
+Total (BANFF prefit)            & 26.41\%   & 23.25\%  \\
+Total (BANFF postfit)           &  5.53\%   &  8.29\%  \\
+\hline
+\end{tabular}
+\caption{
+  Effect of 1$\sigma$ systematic parameter variation on
+  the number of 1-ring $\mu$-like events,
+  computed
+  for no oscillations and
+  for oscillations with
+  $\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}_{32}|$=2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$.
+  For the oscillation scenario, the values shown in Tab.\
+  \ref{tab:pdg2012non23} are used for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$ and $\Delta m^{2}_{21}$,
+  and $\delta_{CP}$=0. The normal mass hierarchy is assumed.
+  The numbers shown were calculated for an exposure of 6.3933$\times$10$^{20}$ POT and BANFF-tuned MC templates were used.
+}
+\label{tab:nsk_systematic_table_summary}
+\end{table}
+
+%..................
+
+\begin{table}
+\centering
+\begin{tabular}{| c || D{.}{.}{-1} | D{.}{.}{-1} || D{.}{.}{-1} | D{.}{.}{-1} |}
+\hline
+  Source of uncertainty        &  \multicolumn {2}{c||}{${\delta}N_{SK}$/$N_{SK}$} & \multicolumn {2}{c|}{${\delta}N_{SK}$/$N_{SK}$} \\
+                               &  \multicolumn {2}{c||}{(no oscillation)}          & \multicolumn {2}{c|}{(oscillations with typical params)} \\
+                               & \multicolumn {1}{c|}{BANFF prefit} & \multicolumn {1}{c||}{BANFF postfit} & \multicolumn {1}{c|}{BANFF prefit} & \multicolumn {1}{c|}{BANFF postfit} \\
+\hline
+$f_{E; r}^{SK}$               &     0.0\% &     0.0\% &     0.0\% &     0.0\% \\
+$f_{0; r}^{SK+FSI}$           &   0.074\% &   0.081\% &    0.13\% &    0.15\% \\
+$f_{1; r}^{SK+FSI}$           &     2.1\% &     2.2\% &    0.81\% &    0.88\% \\
+$f_{2; r}^{SK+FSI}$           &    0.43\% &    0.45\% &    0.98\% &     1.1\% \\
+$f_{3; r}^{SK+FSI}$           &     2.4\% &     2.0\% &     4.6\% &     4.0\% \\
+$f_{4; r}^{SK+FSI}$           &   0.017\% &   0.016\% &    0.25\% &    0.27\% \\
+$f_{5; r}^{SK+FSI}$           &     1.1\% &    0.92\% &     3.8\% &     3.3\% \\
+\hline
+$f_{0; t, r}^{banff}$         &    0.36\% &    0.28\% &    0.84\% &    0.68\% \\
+$f_{1; t, r}^{banff}$         &     1.0\% &    0.76\% &    0.66\% &    0.52\% \\
+$f_{2; t, r}^{banff}$         &     1.9\% &     1.4\% &    0.12\% &   0.088\% \\
+$f_{3; t, r}^{banff}$         &     2.3\% &     1.6\% &    0.30\% &    0.22\% \\
+$f_{4; t, r}^{banff}$         &     3.4\% &     2.4\% &     2.2\% &     1.6\% \\
+$f_{5; t, r}^{banff}$         &     1.0\% &    0.67\% &     1.8\% &     1.3\% \\
+$f_{6; t, r}^{banff}$         &    0.64\% &    0.39\% &     1.7\% &     1.1\% \\
+$f_{7; t, r}^{banff}$         &    0.33\% &     0.2\% &     1.0\% &    0.64\% \\
+$f_{8; t, r}^{banff}$         &    0.41\% &    0.22\% &     1.3\% &    0.74\% \\
+$f_{9; t, r}^{banff}$         &    0.20\% &   0.076\% &    0.65\% &    0.27\% \\
+$f_{10; t, r}^{banff}$        &   0.051\% &   0.019\% &    0.17\% &   0.066\% \\
+$f_{11; t, r}^{banff}$        &   0.061\% &   0.051\% &   0.034\% &   0.030\% \\
+$f_{12; t, r}^{banff}$        &   0.061\% &   0.049\% &   0.049\% &   0.041\% \\
+$f_{13; t, r}^{banff}$        &   0.085\% &   0.068\% &    0.16\% &    0.13\% \\
+$f_{14; t, r}^{banff}$        &    0.10\% &   0.080\% &    0.27\% &    0.23\% \\
+$f_{15; t, r}^{banff}$        &   0.079\% &   0.061\% &    0.25\% &     0.2\% \\
+$f_{16; t, r}^{banff}$        &    25.0\% &     3.6\% &    18.0\% &     2.9\% \\
+$f_{17; t, r}^{banff}$        &     2.8\% &     1.0\% &     6.7\% &     2.3\% \\
+$f_{18; t, r}^{banff}$        &     7.9\% &     6.0\% &     4.2\% &     3.4\% \\
+$f_{19; t, r}^{banff}$        &     1.4\% &    0.55\% &     3.9\% &     1.6\% \\
+$f_{20; t, r}^{banff}$        &    0.36\% &    0.16\% &     1.2\% &    0.54\% \\
+$f_{21; t, r}^{banff}$        &     3.7\% &     1.5\% &     4.9\% &     2.0\% \\
+$f_{22; t, r}^{banff}$        &     1.7\% &    0.47\% &     5.4\% &     1.6\% \\
+\hline
+$f_{pF; t, r}$                &   0.063\% &    0.06\% &    0.13\% &    0.12\% \\
+$f_{SF; t, r}$                &     2.8\% &     3.0\% &    0.85\% &    0.93\% \\
+$f_{Wshape; t, r}$            &    0.12\% &   0.079\% &    0.40\% &    0.27\% \\
+$f_{CCothShape; t, r}$        &    0.28\% &    0.31\% &    0.78\% &    0.90\% \\
+$f_{\pi-less\Delta; t, r}$    &     3.2\% &     2.5\% &     5.6\% &     4.4\% \\
+$f_{bindE; t, r}$             &    0.50\% &    0.42\% &     0.25\% &    0.19\% \\
+$f_{CCcoh; t}$                &    0.54\% &    0.59\% &    0.81\% &    0.96\% \\
+$f_{NC1\pi^\pm; t}$           &    0.31\% &    0.22\% &     1.1\% &    0.78\% \\
+$f_{NCoth; t}$                &    0.25\% &    0.24\% &    0.85\% &    0.87\% \\
+$f_{CC\nu_e; t}$              & 0.00051\% & 0.00049\% &  0.0076\% &  0.0081\% \\
+$f_{CC\bar{\nu}; t}$          &     1.2\% &     1.2\% &     2.4\% &     2.4\% \\
+\hline
+$\sin^2\theta_{13}$         &     - &     - &   0.070\% &   0.079\% \\
+$\sin^2\theta_{12}$         &     - &     - &   0.040\% &   0.036\% \\
+$\Delta m^2_{21}$             &   - &     - &   0.027\% &   0.025\% \\
+$\delta_{CP}$                 &   - &     - &    0.21\% &    0.19\% \\
+\hline
+\end{tabular}
+\caption{
+  Effects of 1$\sigma$ systematic parameter variations on
+  the number of 1-ring $\mu$-like events,
+  computed
+  for no oscillations and
+  for oscillations with
+  $\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}_{32}|$=2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$.
+  Correlations are ignored for this table.
+  For the oscillation scenario, the values shown in Tab.\
+  \ref{tab:pdg2012non23} are used for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$ and $\Delta m^{2}_{21}$,
+  and $\delta_{CP}$=0. The normal mass hierarchy is assumed.
+  The numbers shown were calculated for an exposure of 6.3933$\times$10$^{20}$ POT and BANFF-tuned MC templates were used.
+}
+\label{tab:nsk_systematic_table}
+\end{table}
+
+%..................
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=30pc]{{./images/spectrum_tweaked/all_envelope_sinsqtheta12_0.306,13_0.025,23_0.500,dcp_0.000,dmsq_Normal12_0.00007500,23_0.002400eV2}.eps}
+\caption {
+  Total error envelope of the 1 $\mu$-like ring event reconstructed energy spectrum,
+  for oscillations with
+  $\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}_{32}|$=2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$.
+  The values shown in Tab.\
+  \ref{tab:pdg2012non23} are used for $\sin^{2}\theta_{13}$, $\sin^{2}\theta_{12}$ and $\Delta m^{2}_{21}$,
+  and $\delta_{CP}$=0. The normal mass hierarchy is assumed.
+  The numbers shown were calculated for an exposure of 6.3933$\times$10$^{20}$ POT.
+  BANFF-tuned MC templates were used.
+  The error envelope was calculated as the $\pm$1$\sigma$ spread of bin contents using an ensemble of 100k toy MC experiments
+  generated with randomized systematic parameters.
+  All systematic parameters were considered and their correlations were taken into account.
+}
+\label{fig:1Rmu_error_envelope_total}
+\end{figure*}
+
+%..................
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/spectrum_tweaked/SKDet_FSI_envelope_sinsqtheta12_0.306,13_0.025,23_0.500,dcp_0.000,dmsq_Normal12_0.00007500,23_0.002400eV2}.eps}
+\caption {
+  As in Fig.\ \ref{fig:1Rmu_error_envelope_total},
+  but considering only SuperK detector + FSI + SI systematics.
+}
+\label{fig:1Rmu_error_envelope_skdetfsi}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/spectrum_tweaked/BANFF_envelope_sinsqtheta12_0.306,13_0.025,23_0.500,dcp_0.000,dmsq_Normal12_0.00007500,23_0.002400eV2}.eps}
+\caption {
+  As in Fig.\ \ref{fig:1Rmu_error_envelope_total},
+  but considering only BANFF systematics.
+}
+\label{fig:1Rmu_error_envelope_banff}
+\end{minipage}
+\end{figure*}
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/spectrum_tweaked/unconstrained_xsec_envelope_sinsqtheta12_0.306,13_0.025,23_0.500,dcp_0.000,dmsq_Normal12_0.00007500,23_0.002400eV2}.eps}
+\caption {
+  As in Fig.\ \ref{fig:1Rmu_error_envelope_total},
+  but considering only uncorrelated cross-section systematics.
+}
+\label{fig:1Rmu_error_envelope_uncor_xsec}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{{./images/spectrum_tweaked/Osc_param_envelope_sinsqtheta12_0.306,13_0.025,23_0.500,dcp_0.000,dmsq_Normal12_0.00007500,23_0.002400eV2}.eps}
+\caption {
+  As in Fig.\ \ref{fig:1Rmu_error_envelope_total},
+  but considering only \emph{non-23-sector} oscillation parameter uncertainties.
+ }
+\label{fig:1Rmu_error_envelope_non23osc}
+\end{minipage}
+\end{figure*}
+
+%..................
+
+
+%
+% 'Star plot' table
+%
+
+% \begin{table}
+%   \centering
+%   \begin{tabular}{| c | c | c |}
+%     \hline
+%     Parameter               &  $\frac{\delta_{syst}
+%       \sin^2\theta_{23}}{\delta_{stat} \sin^2\theta_{23}}$  
+%     &  $\frac{\delta_{syst}|\Delta m^2_{32}| (eV^{2}/c^{4})}{\delta_{stat} |\Delta m^2_{32}| (eV^{2}/c^{4})}$ \\
+%     \hline
+%     $f_{E; r}^{SK}$  	 & 0.18326685	 & 0.16778642 \\
+%     $f_{0; r}^{SK+FSI}$	 & 0.15988564	 & 0.05295850 \\
+%     $f_{1; r}^{SK+FSI}$	 & 0.18359077	 & 0.07786291 \\
+%     $f_{2; r}^{SK+FSI}$	 & 0.15968555	 & 0.07376101 \\
+%     $f_{3; r}^{SK+FSI}$	 & 0.17075157	 & 0.08673934 \\
+%     $f_{4; r}^{SK+FSI}$	 & 0.03076427	 & 0.02074722 \\
+%     {\color{red}$f_{5; r}^{SK+FSI}$}	 & 0.29048963	 & 0.30449305 \\
+%     $f_{0; t, r}^{banff}$	 & 0.08322252	 & 0.10224393 \\
+%     $f_{1; t, r}^{banff}$	 & 0.09270264	 & 0.16811492 \\
+%     $f_{2; t, r}^{banff}$	 & 0.08077863	 & 0.09401006 \\
+%     $f_{3; t, r}^{banff}$	 & 0.07781343	 & 0.03560604 \\
+%     $f_{4; t, r}^{banff}$	 & 0.18302829	 & 0.15931498 \\
+%     $f_{5; t, r}^{banff}$	 & 0.09118791	 & 0.08305820 \\
+%     $f_{6; t, r}^{banff}$	 & 0.06160191	 & 0.04300800 \\
+%     $f_{7; t, r}^{banff}$	 & 0.05546312	 & 0.02116875 \\
+%     $f_{8; t, r}^{banff}$	 & 0.03925336	 & 0.02256047 \\
+%     $f_{9; t, r}^{banff}$	 & 0.04919050	 & 0.00399703 \\
+%     $f_{10; t, r}^{banff}$	 & 0.03618620	 & 0.01023239 \\
+%     $f_{11; t, r}^{banff}$	 & 0.06781026	 & 0.06163414 \\
+%     $f_{12; t, r}^{banff}$	 & 0.05955682	 & 0.02493836 \\
+%     $f_{13; t, r}^{banff}$	 & 0.05232681	 & 0.01135348 \\
+%     $f_{14; t, r}^{banff}$	 & 0.04879434	 & 0.01091565 \\
+%     $f_{15; t, r}^{banff}$	 & 0.02892005	 & 0.01486940 \\
+%     $f_{16; t, r}^{banff}$	 & 0.24112092	 & 0.14613029 \\
+%     $f_{17; t, r}^{banff}$	 & 0.09696719	 & 0.03910053 \\
+%     {\color{red}$f_{18; t, r}^{banff}$}	 & 0.42686792	 & 0.14832774 \\
+%     $f_{19; t, r}^{banff}$	 & 0.03382195	 & 0.04188883 \\
+%     $f_{20; t, r}^{banff}$	 & 0.01796175	 & 0.03205615 \\
+%     $f_{21; t, r}^{banff}$	 & 0.14618493	 & 0.05498013 \\
+%     $f_{22; t, r}^{banff}$	 & 0.01533480	 & 0.02478156 \\
+%     $f_{pF; t, r}$	 & 0.03610850	 & 0.07040210 \\
+%     {\color{red}$f_{bindE; t, r}$}	 & 0.20685629	 & 0.47060987 \\
+%     {\color{red}$f_{SF; t, r}$}	 & 0.33436037	 & 0.36820605 \\
+%     {\color{red}$f_{\pi-less\Delta; t, r}$}	 & 0.26650380	 & 0.14898099 \\
+%     $f_{CCothShape; t, r}$	 & 0.03277117	 & 0.02310281 \\
+%     $f_{Wshape; t, r}$	 & 0.05189763	 & 0.03621306 \\
+%     $f_{CCcoh; t}$	 & 0.03927286	 & 0.02737037 \\
+%     $f_{NC1\pi^\pm; t}$	 & 0.08062790	 & 0.07786291 \\
+%     $f_{NCoth; t}$	 & 0.08330901	 & 0.07976736 \\
+%     $f_{CC\nu_e; t}$	 & 0.00127151	 & 0.00102829 \\
+%     $f_{CC\bar{\nu}; t}$	 & 0.09434024	 & 0.08042017 \\
+%     \hline
+%   \end{tabular}
+%   \caption{
+%     Maximum deviations, as a fraction of statistical error at the oscillation parameter grid point, from the input values of 2+0 fits to datasets 
+%     with $\pm$1 sigma individual systematic variations at a 
+%     range of oscillation points. The {\color{red}xx} most important systematics, with an effect one of both of
+%     $\sin^2\theta_{23}$ and $|\Delta m^2_{32}$ of more than 25\%, are highlighted in red.
+%   }
+%   \label{tab:star_summary}
+% \end{table}
+
+%..................
