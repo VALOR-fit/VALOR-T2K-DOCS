@@ -1,0 +1,160 @@
+%use this to make sure we don't forget to update any numbers in the tech note.
+%  (when starting a new analysis, just clear all values)
+%also makes the hassle of updating abstract/conclusion trivial
+
+\RequirePackage{xspace}
+
+%normal hierarchy best-fit values (come mostly from analyse_output_new.C)
+\input{numbers/bestfit_normal}
+\def\resultNormalPvalue      {0.93}
+
+%inverted hierarchy best-fit values (come mostly from analyse_output_new.C)
+\input{numbers/bestfit_inverted31}
+\def\resultInvertedPvalue      {0.93}
+
+%normal hierarchy run 1-3 best-fit values (come mostly from analyse_output_new.C)
+\input{numbers/bestfit_run123}
+\def\resultNormalRunITIIIPvalue      {0.80}
+
+%normal hierarchy run 4 best-fit values (come mostly from analyse_output_new.C)
+\input{numbers/bestfit_run4}
+\def\resultNormalRunIVPvalue      {0.72}
+
+
+%important numbers
+\def\ChisqNdf{70}
+\def\NskObserved{120\xspace}
+
+%no oscillation prediction (come mostly from analyse_output_new.C, need to do error by hand from NskNoOscExpectation * no osc total error in table)
+\input{numbers/no_osc_ratio}
+\def\NskNoOscExpectationError{23.46}
+
+% 1-parameter errors  const dchisq %%%%%%%%%%%%%
+\input{numbers/limits_Dmsq}
+\input{numbers/limits_Mixing}
+\input{numbers/limits_Dmsq_sepruns}
+\input{numbers/limits_Mixing_sepruns}
+
+
+% 1-parameter errors  FC %%%%%%%%%%%%%
+
+%1-sigma (use the change relative to best-fit value)
+\def\resultNormalMixingRelOneSigmaFCHi{0.049}
+\def\resultNormalMixingRelOneSigmaFCLo{0.050}
+%1-sigma (use the actual value of parameter)
+\def\resultNormalMixingOneSigmaFCHi{0.563}
+\def\resultNormalMixingOneSigmaFCLo{0.464}
+%2-sigma (use the actual value of parameter)
+\def\resultNormalMixingTwoSigmaFCHi{0.593}
+\def\resultNormalMixingTwoSigmaFCLo{0.433}
+
+%1-sigma (use the change relative to best-fit value)
+\def\resultInvertedMixingRelOneSigmaFCHi{0.050}
+\def\resultInvertedMixingRelOneSigmaFCLo{0.049}
+%1-sigma (use the actual value of parameter)
+\def\resultInvertedMixingOneSigmaFCHi{0.561}
+\def\resultInvertedMixingOneSigmaFCLo{0.462}
+%2-sigma (use the actual value of parameter)
+\def\resultInvertedMixingTwoSigmaFCHi{0.591}
+\def\resultInvertedMixingTwoSigmaFCLo{0.431}
+
+%1-sigma (use the change relative to best-fit value)
+\def\resultNormalDmsqRelOneSigmaFCHi{0.10}
+\def\resultNormalDmsqRelOneSigmaFCLo{0.10}
+%1-sigma (use the actual value of parameter)
+\def\resultNormalDmsqOneSigmaFCHi{2.61}
+\def\resultNormalDmsqOneSigmaFCLo{2.41}
+%2-sigma (use the actual value of parameter)
+\def\resultNormalDmsqTwoSigmaFCHi{2.68}
+\def\resultNormalDmsqTwoSigmaFCLo{2.34}
+
+%1-sigma (use the change relative to best-fit value)
+\def\resultInvertedDmsqRelOneSigmaFCHi{0.10}
+\def\resultInvertedDmsqRelOneSigmaFCLo{0.10}
+%1-sigma (use the actual value of parameter)
+\def\resultInvertedDmsqOneSigmaFCHi{2.58}
+\def\resultInvertedDmsqOneSigmaFCLo{2.38}
+%2-sigma (use the actual value of parameter)
+\def\resultInvertedDmsqTwoSigmaFCHi{2.65}
+\def\resultInvertedDmsqTwoSigmaFCLo{2.32}
+
+
+%%%%%%%%%%%%%%%
+
+
+\def\resultNormalChisq  {\resultNormalChisqNumber/\ChisqNdf\xspace}
+\def\resultNormalMixing {\ensuremath{\sin^2\theta_{23} = \resultNormalMixingNumber}\xspace}
+\def\resultNormalDmsq   {\ensuremath{|\Delta m^{2}_{32}|} = \resultNormalDmsqNumber\ensuremath{\times10^{-3}} eV\ensuremath{^{2}}/c\ensuremath{^{4}}\xspace}
+\def\resultInvertedChisq  {\resultInvertedChisqNumber/\ChisqNdf\xspace}
+\def\resultInvertedMixing {\ensuremath{\sin^2\theta_{23} = \resultInvertedMixingNumber}\xspace}
+\def\resultInvertedDmsq   {\ensuremath{|\Delta m^{2}_{31}|} = \resultInvertedDmsqNumber\ensuremath{\times10^{-3}} eV\ensuremath{^{2}}/c\ensuremath{^{4}}\xspace}
+\def\resultNormalRunITIIIChisq  {\resultNormalRunITIIIChisqNumber/\ChisqNdf\xspace}
+\def\resultNormalRunITIIIMixing {\ensuremath{\sin^2\theta_{23} = \resultNormalRunITIIIMixingNumber}\xspace}
+\def\resultNormalRunITIIIDmsq   {\ensuremath{|\Delta m^{2}_{32}|} = \resultNormalRunITIIIDmsqNumber\ensuremath{\times10^{-3}} eV\ensuremath{^{2}}/c\ensuremath{^{4}}\xspace}
+\def\resultNormalRunIVChisq  {\resultNormalRunIVChisqNumber/\ChisqNdf\xspace}
+\def\resultNormalRunIVMixing {\ensuremath{\sin^2\theta_{23} = \resultNormalRunIVMixingNumber}\xspace}
+\def\resultNormalRunIVDmsq   {\ensuremath{|\Delta m^{2}_{32}|} = \resultNormalRunIVDmsqNumber\ensuremath{\times10^{-3}} eV\ensuremath{^{2}}/c\ensuremath{^{4}}\xspace}
+
+
+%%%%
+%CONST DCHISQ
+
+%best-fit value plus/minus normal hierarchy
+\ifthenelse{\equal{\resultNormalMixingRelOneSigmaHi}{\resultNormalMixingRelOneSigmaLo}}{\newcommand{\resultNormalMixingErrors}{\ensuremath{\sin^2\theta_{23} = \resultNormalMixingNumber \pm \resultNormalMixingRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalMixingErrors}{\ensuremath{\sin^2\theta_{23} = \resultNormalMixingNumber^{+\resultNormalMixingRelOneSigmaHi}_{-\resultNormalMixingRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalMixingRelOneSigmaHi}{\resultNormalMixingRelOneSigmaLo}}{\newcommand{\resultNormalMixingErrorsShort}{\ensuremath{\resultNormalMixingNumber \pm \resultNormalMixingRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalMixingErrorsShort}{\ensuremath{\resultNormalMixingNumber^{+\resultNormalMixingRelOneSigmaHi}_{-\resultNormalMixingRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalDmsqRelOneSigmaHi}{\resultNormalDmsqRelOneSigmaLo}}{\newcommand{\resultNormalDmsqErrors}{\ensuremath{|\Delta m^{2}_{32}| = \resultNormalDmsqNumber \pm \resultNormalDmsqRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalDmsqErrors}{\ensuremath{|\Delta m^{2}_{32}| = \resultNormalDmsqNumber^{+\resultNormalDmsqRelOneSigmaHi}_{-\resultNormalDmsqRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalDmsqRelOneSigmaHi}{\resultNormalDmsqRelOneSigmaLo}}{\newcommand{\resultNormalDmsqErrorsShort}{\ensuremath{\resultNormalDmsqNumber \pm \resultNormalDmsqRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalDmsqErrorsShort}{\ensuremath{\resultNormalDmsqNumber^{+\resultNormalDmsqRelOneSigmaHi}_{-\resultNormalDmsqRelOneSigmaLo}}\xspace}}
+
+% best-fit value plus/minus inverted hierarchy
+\ifthenelse{\equal{\resultInvertedMixingRelOneSigmaHi}{\resultInvertedMixingRelOneSigmaLo}}{\newcommand{\resultInvertedMixingErrors}{\ensuremath{\sin^2\theta_{23} = \resultInvertedMixingNumber \pm \resultInvertedMixingRelOneSigmaHi}\xspace}}{\newcommand{\resultInvertedMixingErrors}{\ensuremath{\sin^2\theta_{23} = \resultInvertedMixingNumber^{+\resultInvertedMixingRelOneSigmaHi}_{-\resultInvertedMixingRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultInvertedMixingRelOneSigmaHi}{\resultInvertedMixingRelOneSigmaLo}}{\newcommand{\resultInvertedMixingErrorsShort}{\ensuremath{\resultInvertedMixingNumber \pm \resultInvertedMixingRelOneSigmaHi}\xspace}}{\newcommand{\resultInvertedMixingErrorsShort}{\ensuremath{\resultInvertedMixingNumber^{+\resultInvertedMixingRelOneSigmaHi}_{-\resultInvertedMixingRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultInvertedDmsqRelOneSigmaHi}{\resultInvertedDmsqRelOneSigmaLo}}{\newcommand{\resultInvertedDmsqErrors}{\ensuremath{|\Delta m^{2}_{31}| = \resultInvertedDmsqNumber \pm \resultInvertedDmsqRelOneSigmaHi}\xspace}}{\newcommand{\resultInvertedDmsqErrors}{\ensuremath{|\Delta m^{2}_{31}| = \resultInvertedDmsqNumber^{+\resultInvertedDmsqRelOneSigmaHi}_{-\resultInvertedDmsqRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultInvertedDmsqRelOneSigmaHi}{\resultInvertedDmsqRelOneSigmaLo}}{\newcommand{\resultInvertedDmsqErrorsShort}{\ensuremath{\resultInvertedDmsqNumber \pm \resultInvertedDmsqRelOneSigmaHi}\xspace}}{\newcommand{\resultInvertedDmsqErrorsShort}{\ensuremath{\resultInvertedDmsqNumber^{+\resultInvertedDmsqRelOneSigmaHi}_{-\resultInvertedDmsqRelOneSigmaLo}}\xspace}}
+
+%best-fit value plus/minus run 1-3 normal hierarchy
+\ifthenelse{\equal{\resultNormalRunITIIIMixingRelOneSigmaHi}{\resultNormalRunITIIIMixingRelOneSigmaLo}}{\newcommand{\resultNormalRunITIIIMixingErrors}{\ensuremath{\sin^2\theta_{23} = \resultNormalRunITIIIMixingNumber \pm \resultNormalRunITIIIMixingRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalRunITIIIMixingErrors}{\ensuremath{\sin^2\theta_{23} = \resultNormalRunITIIIMixingNumber^{+\resultNormalRunITIIIMixingRelOneSigmaHi}_{-\resultNormalRunITIIIMixingRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalRunITIIIMixingRelOneSigmaHi}{\resultNormalRunITIIIMixingRelOneSigmaLo}}{\newcommand{\resultNormalRunITIIIMixingErrorsShort}{\ensuremath{\resultNormalRunITIIIMixingNumber \pm \resultNormalRunITIIIMixingRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalRunITIIIMixingErrorsShort}{\ensuremath{\resultNormalRunITIIIMixingNumber^{+\resultNormalRunITIIIMixingRelOneSigmaHi}_{-\resultNormalRunITIIIMixingRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalRunITIIIDmsqRelOneSigmaHi}{\resultNormalRunITIIIDmsqRelOneSigmaLo}}{\newcommand{\resultNormalRunITIIIDmsqErrors}{\ensuremath{|\Delta m^{2}_{32}| = \resultNormalRunITIIIDmsqNumber \pm \resultNormalRunITIIIDmsqRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalRunITIIIDmsqErrors}{\ensuremath{|\Delta m^{2}_{32}| = \resultNormalRunITIIIDmsqNumber^{+\resultNormalRunITIIIDmsqRelOneSigmaHi}_{-\resultNormalRunITIIIDmsqRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalRunITIIIDmsqRelOneSigmaHi}{\resultNormalRunITIIIDmsqRelOneSigmaLo}}{\newcommand{\resultNormalRunITIIIDmsqErrorsShort}{\ensuremath{\resultNormalRunITIIIDmsqNumber \pm \resultNormalRunITIIIDmsqRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalRunITIIIDmsqErrorsShort}{\ensuremath{\resultNormalRunITIIIDmsqNumber^{+\resultNormalRunITIIIDmsqRelOneSigmaHi}_{-\resultNormalRunITIIIDmsqRelOneSigmaLo}}\xspace}}
+
+%best-fit value plus/minus run 4 normal hierarchy
+\ifthenelse{\equal{\resultNormalRunIVMixingRelOneSigmaHi}{\resultNormalRunIVMixingRelOneSigmaLo}}{\newcommand{\resultNormalRunIVMixingErrors}{\ensuremath{\sin^2\theta_{23} = \resultNormalRunIVMixingNumber \pm \resultNormalRunIVMixingRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalRunIVMixingErrors}{\ensuremath{\sin^2\theta_{23} = \resultNormalRunIVMixingNumber^{+\resultNormalRunIVMixingRelOneSigmaHi}_{-\resultNormalRunIVMixingRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalRunIVMixingRelOneSigmaHi}{\resultNormalRunIVMixingRelOneSigmaLo}}{\newcommand{\resultNormalRunIVMixingErrorsShort}{\ensuremath{\resultNormalRunIVMixingNumber \pm \resultNormalRunIVMixingRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalRunIVMixingErrorsShort}{\ensuremath{\resultNormalRunIVMixingNumber^{+\resultNormalRunIVMixingRelOneSigmaHi}_{-\resultNormalRunIVMixingRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalRunIVDmsqRelOneSigmaHi}{\resultNormalRunIVDmsqRelOneSigmaLo}}{\newcommand{\resultNormalRunIVDmsqErrors}{\ensuremath{|\Delta m^{2}_{32}| = \resultNormalRunIVDmsqNumber \pm \resultNormalRunIVDmsqRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalRunIVDmsqErrors}{\ensuremath{|\Delta m^{2}_{32}| = \resultNormalRunIVDmsqNumber^{+\resultNormalRunIVDmsqRelOneSigmaHi}_{-\resultNormalRunIVDmsqRelOneSigmaLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalRunIVDmsqRelOneSigmaHi}{\resultNormalRunIVDmsqRelOneSigmaLo}}{\newcommand{\resultNormalRunIVDmsqErrorsShort}{\ensuremath{\resultNormalRunIVDmsqNumber \pm \resultNormalRunIVDmsqRelOneSigmaHi}\xspace}}{\newcommand{\resultNormalRunIVDmsqErrorsShort}{\ensuremath{\resultNormalRunIVDmsqNumber^{+\resultNormalRunIVDmsqRelOneSigmaHi}_{-\resultNormalRunIVDmsqRelOneSigmaLo}}\xspace}}
+
+
+
+%%%%%%%
+%FC
+
+%best-fit value plus/minus normal hierarchy
+\ifthenelse{\equal{\resultNormalMixingRelOneSigmaFCHi}{\resultNormalMixingRelOneSigmaFCLo}}{\newcommand{\resultNormalMixingFCErrors}{\ensuremath{\sin^2\theta_{23} = \resultNormalMixingNumber \pm \resultNormalMixingRelOneSigmaFCHi}\xspace}}{\newcommand{\resultNormalMixingFCErrors}{\ensuremath{\sin^2\theta_{23} = \resultNormalMixingNumber^{+\resultNormalMixingRelOneSigmaFCHi}_{-\resultNormalMixingRelOneSigmaFCLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalMixingRelOneSigmaFCHi}{\resultNormalMixingRelOneSigmaFCLo}}{\newcommand{\resultNormalMixingFCErrorsShort}{\ensuremath{\resultNormalMixingNumber \pm \resultNormalMixingRelOneSigmaFCHi}\xspace}}{\newcommand{\resultNormalMixingFCErrorsShort}{\ensuremath{\resultNormalMixingNumber^{+\resultNormalMixingRelOneSigmaFCHi}_{-\resultNormalMixingRelOneSigmaFCLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalDmsqRelOneSigmaFCHi}{\resultNormalDmsqRelOneSigmaFCLo}}{\newcommand{\resultNormalDmsqFCErrors}{\ensuremath{|\Delta m^{2}_{32}| = \resultNormalDmsqNumber \pm \resultNormalDmsqRelOneSigmaFCHi}\xspace}}{\newcommand{\resultNormalDmsqFCErrors}{\ensuremath{|\Delta m^{2}_{32}| = \resultNormalDmsqNumber^{+\resultNormalDmsqRelOneSigmaFCHi}_{-\resultNormalDmsqRelOneSigmaFCLo}}\xspace}}
+
+\ifthenelse{\equal{\resultNormalDmsqRelOneSigmaFCHi}{\resultNormalDmsqRelOneSigmaFCLo}}{\newcommand{\resultNormalDmsqFCErrorsShort}{\ensuremath{\resultNormalDmsqNumber \pm \resultNormalDmsqRelOneSigmaFCHi}\xspace}}{\newcommand{\resultNormalDmsqFCErrorsShort}{\ensuremath{\resultNormalDmsqNumber^{+\resultNormalDmsqRelOneSigmaFCHi}_{-\resultNormalDmsqRelOneSigmaFCLo}}\xspace}}
+
+% best-fit value plus/minus inverted hierarchy
+\ifthenelse{\equal{\resultInvertedMixingRelOneSigmaFCHi}{\resultInvertedMixingRelOneSigmaFCLo}}{\newcommand{\resultInvertedMixingFCErrors}{\ensuremath{\sin^2\theta_{23} = \resultInvertedMixingNumber \pm \resultInvertedMixingRelOneSigmaFCHi}\xspace}}{\newcommand{\resultInvertedMixingFCErrors}{\ensuremath{\sin^2\theta_{23} = \resultInvertedMixingNumber^{+\resultInvertedMixingRelOneSigmaFCHi}_{-\resultInvertedMixingRelOneSigmaFCLo}}\xspace}}
+
+\ifthenelse{\equal{\resultInvertedMixingRelOneSigmaFCHi}{\resultInvertedMixingRelOneSigmaFCLo}}{\newcommand{\resultInvertedMixingFCErrorsShort}{\ensuremath{\resultInvertedMixingNumber \pm \resultInvertedMixingRelOneSigmaFCHi}\xspace}}{\newcommand{\resultInvertedMixingFCErrorsShort}{\ensuremath{\resultInvertedMixingNumber^{+\resultInvertedMixingRelOneSigmaFCHi}_{-\resultInvertedMixingRelOneSigmaFCLo}}\xspace}}
+
+\ifthenelse{\equal{\resultInvertedDmsqRelOneSigmaFCHi}{\resultInvertedDmsqRelOneSigmaFCLo}}{\newcommand{\resultInvertedDmsqFCErrors}{\ensuremath{|\Delta m^{2}_{31}| = \resultInvertedDmsqNumber \pm \resultInvertedDmsqRelOneSigmaFCHi}\xspace}}{\newcommand{\resultInvertedDmsqFCErrors}{\ensuremath{|\Delta m^{2}_{31}| = \resultInvertedDmsqNumber^{+\resultInvertedDmsqRelOneSigmaFCHi}_{-\resultInvertedDmsqRelOneSigmaFCLo}}\xspace}}
+
+\ifthenelse{\equal{\resultInvertedDmsqRelOneSigmaFCHi}{\resultInvertedDmsqRelOneSigmaFCLo}}{\newcommand{\resultInvertedDmsqFCErrorsShort}{\ensuremath{\resultInvertedDmsqNumber \pm \resultInvertedDmsqRelOneSigmaFCHi}\xspace}}{\newcommand{\resultInvertedDmsqFCErrorsShort}{\ensuremath{\resultInvertedDmsqNumber^{+\resultInvertedDmsqRelOneSigmaFCHi}_{-\resultInvertedDmsqRelOneSigmaFCLo}}\xspace}}
+

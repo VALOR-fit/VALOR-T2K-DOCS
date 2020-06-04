@@ -1,0 +1,5 @@
+latex numuosc2013b_supplement.tex
+latex numuosc2013b_supplement.tex
+latex numuosc2013b_supplement.tex
+dvips -t a4 -o numuosc2013b_supplement.ps numuosc2013b_supplement.dvi
+ps2pdf14 numuosc2013b_supplement.ps

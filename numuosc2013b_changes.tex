@@ -1,0 +1,127 @@
+
+\section {Summary of changes with respect to the {\em VALOR} Run 1+2+3  $\nu_{\mu}$-disappearance analysis }
+\label{sec:changes}
+
+This analysis is primarily a statistics update of our Run 1+2+3 $\nu_{\mu}$-disappearance analysis,
+although certain analysis inputs and the fitting methodology have also been updated.
+The following changes have been implemented with respect to our Run 1+2+3 analysis described in \cite{OurRun123DisappAnalysis3Flavour}:
+
+\begin{itemize}
+
+\item
+Added the Run 4 SuperK data. Run 4 adds 3.5600$\times$10$^{20}$ POT (61 observed events) to the Run 1+2+3 exposure
+of 3.010$\times$10$^{20}$ POT (59 observed events). The total Run 1+2+3+4 exposure is 6.5700$\times$10$^{20}$ POT
+(\NskObserved observed events).
+
+\item
+The current analysis uses the most recent official SuperK MC samples (2013a) 
+generated using the 11btunedv3.2 JNUBEAM flux.
+All MC templates, systematic parameter response functions (cubic splines)
+and systematic parameter covariance matrices have been regenerated with the new MC samples.
+
+\item
+The following 4 MC templates have been added for completeness.
+{
+\begin{itemize}
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CCQE,
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC1$\pi$,
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC coherent and
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC other
+\end{itemize}
+}
+Since a separate official oscillated $\nu_{e} \rightarrow \nu_{\mu}$ SuperK sample is not available,
+we emulated it by reweighting the $\nu_\mu$ SuperK MC sample with the $\nu_e$ flux
+(the oscillated $\nu_{e} \rightarrow \nu_{\mu}$ are not statistically independent of the $\nu_\mu$ templates).
+In the oscillation fit, the contents of those 4 newly-added MC templates are weighted 
+with P($\nu_{e}\rightarrow\nu_{\mu}$).
+The contribution of these additional templates at the typical oscillation point used in Sec.\ \ref{sec:spectrum_prediction}
+is $\approx$0.13\%.
+
+\item
+SuperK events with reconstructed energy $>$30 GeV are now included in the 10-30 GeV bin after discussion with the T2K-SK group 
+(the reconstructed energy binning is unchanged with respect to the Run 1+2+3 analysis).
+These events appear infrequently in MC;
+only 14 out of 448463 events (0.003\%) after 1 $\mu$-like ring selections 
+(the highest proportion occur in the $\nu_e$ CCQE \& $\nu_e$ CC other
+modes, 1.0\% and 0.5\% respectively).
+% 1 out of 38281 numu CC1pi
+% 1 out of 1766 numubar NC oth
+% 6 out of 1218 nue CCQE
+% 2 out of 201 nue CC oth
+% 1 out of 3824 nue NC oth
+% 3 out of 1343 osc nue
+In the Run 1+2+3+4 dataset, the highest energy 1 $\mu$-like ring event is 6.99 GeV.
+
+\item 
+The BANFF fit has been updated.
+This analysis uses version 5 of the Run 1+2+3+4 BANFF 2013 fit \cite{BANFF2013} (as does the other $\nu_{\mu}$-disappearance 
+analysis \cite{KDIRun1234DisappAnalysis}).
+Besides adding the Run 4 ND280 data, the BANFF fit method was also updated.
+For the 2013 analyses, the ND280 $\nu_{\mu}$ group updated the division of reconstructed ND280 CC events that are used as 
+inputs to the BANFF fit.
+These events are now divided into CC0$\pi$-like, CC1$\pi$-like and CC other samples,
+whereas for the Run 1+2+3 analysis they were divided into CCQE-like and CCnonQE samples.
+
+\item 
+The SuperK detector error matrix has been recreated using more SuperK atmospheric data \cite{SuperkErrors2013}.
+
+\item 
+  The 7 SuperK detector efficiency uncertainties and the 6 FSI+SI uncertainties have been combined into a single 6-parameter
+  covariance matrix\footnote{
+    In \cite{OurRun123DisappAnalysis3Flavour}, the 7 SuperK efficiency parameters included 4 parameters for $\nu_\mu$+$\bar{\nu_\mu}$ CCQE;
+    3 energy-dependent parameters for ring counting efficiencies, and 1 energy-independent parameter for all other efficiencies.
+    In this analysis, these 4 parameters are combined giving a total of 6 SuperK detector efficiency uncertainties,
+    which are then combined with the 6 FSI+SI uncertainties to create the single 6-parameter
+    covariance matrix.
+  }.
+  This reduces the number of nuisance parameters in the fit, allowing the fit to run faster.
+  This method is used by all the other official T2K analyses, both $\nu_\mu$ disappearance and $\nu_e$ appearance.
+
+\item 
+The response functions (cubic splines) for the uncorrelated cross-section systematic parameters have been regenerated using the
+following oscillation parameters: $\sin^2(2\theta_{12})$ = 0.8495, $\sin^2(2\theta_{13})$ = 0.098, $\sin^2(2\theta_{23})$ = 1.0, 
+$\Delta m^2_{21}$ = 7.5 $\times$ 10$^{-5}$ eV$^{2}$/c$^{4}$, $|\Delta m^2_{32}|$ = 2.44 $\times$ 10$^{-3}$ eV$^{2}$/c$^{4}$, 
+$\delta_{CP}$ = 0.0 and the normal mass hierarchy.
+
+\item 
+The SuperK energy scale systematic has changed from 2.3\% to 2.4\% \cite{SuperkEScale2013}.
+
+\item 
+The CC $\nu/\bar{\nu}$ cross section normalisation systematic has changed from 40\% to 20\% \cite{NIWGNuBarErr}.
+
+\item 
+During the review process of the T2K Run 1+2+3 $\nu_{\mu}$-disappearance PRL \cite{T2KRun123Disapp}, it was discovered that the 
+choice of octant ($\theta_{23} \leq \pi/4$ or $\theta_{23} \geq \pi/4$) has a large effect on the confidence contour in 
+$\sin^2(2\theta_{23})$. Therefore, we now fit $\sin^2\theta_{23}$ by default (though the ability to fit $\sin^2(2\theta_{23})$ 
+has been retained).
+
+\item 
+The neutrino mass hierarchy assumption also has a large effect on the confidence contour in $|\Delta m^2_{32}|$ or $|\Delta m^2_{31}|$, 
+and we therefore produce two results: one assumes the normal hierarchy and fits $|\Delta m^2_{32}|$, and the other assumes the inverted 
+hierarchy and fits $|\Delta m^2_{31}|$.
+% The inputs to the calculation of the oscillation probabilities are +$|\Delta m^{2}_{32}|$ for the normal
+% hierarchy and -$|\Delta m^{2}_{31}|$ for the inverted hierarchy. 
+
+\item 
+In this analysis, all four \emph{non-23-sector} oscillation parameters are allowed to float in the fit, whereas they were fixed in our 
+Run 1+2+3 analysis. 
+We use constraints from the the 2012 PDG for $\Delta m^2_{21}$, $\sin^2\theta_{13}$ and $\sin^2\theta_{12}$ (see Tab.\ \ref{tab:pdg2012non23}), 
+while $\delta_{CP}$ is allowed to float freely in the range [-$\pi$, +$\pi$].
+When generating toy MC experiments, values of $\Delta m^2_{21}$, $\sin^2\theta_{13}$ and $\sin^2\theta_{12}$ are
+thrown from a normal distribution with mean and standard deviation taken from Tab.\ \ref{tab:pdg2012non23},
+whereas $\delta_{CP}$ is thrown uniformly within its allowed range. 
+
+\item
+  In this analysis, the spectral function systematic is restricted in the fit to the range [0,1], with a Gaussian constraint that
+  favoured 0 (relativistic Fermi gas).
+  This was also done in our Run 1+2+3 analysis, but, in that analysis,
+  the spectral function systematic was thrown uniformly within its allowed range when generating toy MC experiments.
+  In this analysis, toy MC experiments are generated using a Gaussian constraint, centered at 0, and bounded in the range [0,1],
+  as per the NIWG recommendation.
+  
+\item
+We have added 1D confidence intervals in $\sin^2\theta_{23}$ and $|\Delta m^2_{32}|$ (normal hierarchy) or $|\Delta m^2_{31}|$ 
+(inverted hierarchy) using a new procedure that is an extension of the Feldman-Cousins method.
+\end{itemize}
+
+
