@@ -1,0 +1,149 @@
+\section{Variations in Feldman-Cousins critical values}
+\label{app:fc_critical_values}
+
+Given the presence of physical boundaries for \deltacp, the discrete nature of the mass ordering and degeneracy between different values of \deltacp and mass ordering, it is expected that critical $\Delta\chi^2$ values determined through the Feldman-Cousins method can deviate from the critical values expected for a gaussian distribution. In this section we provide explanations for the various features that are exhibited in the observed Feldman-Cousins critical values.
+
+In particular, \cref{fig:fc_critval_glob} shows that the critical values typically exceed the gaussian value for a single degree of freedom at low confidence levels, but are generally lower than the gaussian value at higher confidence levels. Furthermore, within a fixed confidence level and mass ordering, the Feldman-Cousins critical value decreases as the maximally CP-violating points are approached, with the magnitude of this effect at each point depending upon the true mass ordering.
+
+\subsection{Mass ordering effect}
+
+There is significant degeneracy between the two mass orderings, as evidenced by the bi-event plot, reproduced in \cref{fig:bievent_rep} for reference.
+
+\begin{figure*}[htb]
+	\center
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\textwidth]{images/fc/FC_critical_values}
+		\caption{Global critical $\Delta\chi^2$ values}
+		\label{fig:fc_critval_glob}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\textwidth]{images/fc/FC_critical_values_fixed}
+		\caption{Critical $\Delta\chi^2$ values for fixed mass order}
+		\label{fig:fc_critval_fix}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+	\includegraphics[width=\textwidth]{images/bievent/ellipse_cc1pi_all}
+	\caption {
+		Bi-event plot.
+	}
+	\label{fig:bievent_rep}
+	\end{subfigure}
+	\caption{Critical $\Delta\chi^2$ values computed with respect to global best-fit (a) and best-fit in the true mass ordering (b) and the plot of candidate RHC one-ring $e$-like event rate vs the candidate FHC one-ring $e$-like event rate for a variety of different oscillation parameter values (c)}
+\end{figure*}
+
+As a result of this degeneracy it is possible to find a fit for a given toy in the wrong mass ordering. Given the definition of $\Delta\chi^2$ is
+
+\begin{equation*}
+	\Delta\chi^2 = \chi^2_\text{true} - \chi^2_\text{min}
+\end{equation*}
+
+where $\chi^2_\text{true}$ is the $\chi^2$ value at the true value of \deltacp and in the true mass ordering and $\chi^2_\text{min}$ is the minimum $\chi^2$ value across all values of \deltacp in both hierarchies, it follows that finding a best-fit in the incorrect mass ordering leads to a higher value of $\Delta\chi^2$ than would be the case for a fit in the true mass ordering. This effect can be clearly demonstrated by recomputing the critical $\Delta\chi^2$ values while prohibiting fits to the wrong mass ordering (\cref{fig:fc_critval_fix}), where the critical values largely converge for the two true mass orderings and shift to lower values of $\Delta\chi^2$. Furthermore, \cref{fig:dchisq_cutoff_true_mpi2_nh} shows how best-fits from the wrong mass ordering provide global best-fits, with the region $-\pi < \delta_{CP} < 0$ being populated almost exclusively by best-fits from the wrong mass ordering for higher values of $\Delta\chi^2$.
+
+\begin{figure}
+	\center
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/extreme/fc_bestfit_distributions_mpi2_nh}
+		\caption*{Fixed normal order}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/extreme/fc_bestfit_distributions_mpi2_ih}
+		\caption*{Fixed inverted order}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/extreme/fc_bestfit_distributions_mpi2_global}
+		\caption*{Global}
+	\end{subfigure}
+	\caption{Distribution of best-fit values in $\delta_{CP}$ for true $\delta_{CP} = -\pi/2$ for the specified ranges of $\Delta\chi^2$.}
+	\label{fig:dchisq_cutoff_true_mpi2_nh}
+\end{figure}
+
+The ability to fit the wrong mass ordering is particularly relevant near physical boundaries; take true $\delta_{CP} = +\pi/2$ and true normal ordering, even a small downward fluctuation in the $\nu_e$ event rate goes beyond the physical boundary in normal ordering (see \cref{fig:bievent_rep}), but the inverted ordering toys can still cover such a fluctuation, thus driving up the $\Delta\chi^2$ values for such fluctuations.
+
+\begin{figure}
+	\center
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/fc_cv_mpi2}
+		\caption{True $\delta_{CP} = -\pi/2$.}
+		\label{fig:dchisq_dist_true_mpi2_nh}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/fc_cv_ppi2}
+		\caption{True $\delta_{CP} = +\pi/2$.}
+		\label{fig:dchisq_dist_true_ppi2_nh}
+	\end{subfigure}
+	\caption{$\Delta\chi^2$ vs $\nu_e$ event rate for true normal ordering}
+\end{figure}
+
+This effect can be observed in \cref{fig:dchisq_dist_true_ppi2_nh}. If the inverted ordering was unavailable to fit fluctuations below the physical boundary we would expect to see a narrowing of the $\Delta\chi^2$ distribution as the rate of $\nu_e$ events decreases due to the inability to fluctuate to lower values of $\chi^2$ within the normal ordering, much as is seen for upward fluctuations with true $\delta_{CP} = -\pi/2$ (\cref{fig:dchisq_dist_true_mpi2_nh}), where inverted ordering toys do not cover such fluctuations. Instead we see the width of the $\Delta\chi^2$ distribution is maintained below the physical boundary. As a result, it is reasonable to expect lower critical $\Delta\chi^2$ values for true $\delta_{CP} < 0$ than for true $\delta_{CP} > 0$ in true normal ordering and vice versa for true inverted ordering.
+
+\subsection{Effect of the physical boundaries}
+
+For a given set of true oscillation parameters the $\nu_e$ event rate reaches a maximum for $\delta_{CP} = -\pi/2$ and a minimum for $\delta_{CP} = +\pi/2$ (see \cref{fig:bievent_rep}). Considering true normal ordering, fluctuations above this maximum are therefore unable to produce downward fluctuations in $\Delta\chi^2$, as can be seen in \cref{fig:dchisq_dist_true_mpi2_nh,fig:dchisq_cutoff_true_mpi2_nh_mod}, where, as noted above, best-fits pile up at the physical boundary and the $\Delta\chi^2$ distribution narrows as the event rate increases.
+
+Considering in turn the other maximally CP-violating point (\cref{fig:dchisq_dist_true_ppi2_nh,fig:dchisq_cutoff_true_ppi2_nh_mod}) it can be seen, as noted earlier, that downward fluctuations hit the physical boundary, but with two additional effects; the previously noted ability to fit in the wrong mass ordering, which causes some pileup at nearby non-maximal values of \deltacp, along with a lower $\nu_e$ event rate in the region of $\delta_{CP} = +\pi/2$ leading to lower sensitivity and therefore producing a more even spread of best-fits in the region around the true value within the normal ordering (\cref{fig:dchisq_cutoff_true_ppi2_nh_mod_nh}).
+
+\begin{figure}
+	\center
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/moderate/fc_bestfit_distributions_mpi2_global}
+		\caption{True $\delta_{CP} = -\pi/2$}
+		\label{fig:dchisq_cutoff_true_mpi2_nh_mod}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/moderate/fc_bestfit_distributions_ppi2_global}
+		\caption{True $\delta_{CP} = +\pi/2$}
+		\label{fig:dchisq_cutoff_true_ppi2_nh_mod}
+	\end{subfigure}
+	\caption{Distributions of best-fit values for different ranges of $\Delta\chi^2$.}
+	\label{fig:dchisq_cutoff_true_nh}
+\end{figure}
+
+It remains to consider two additional features in the pattern of critical $\Delta\chi^2$ values; the elevated critical values for true $\delta_{CP} = 0$ at only $1\sigma$ confidence levels (even for fixed mass ordering) relative to the gaussian approximation and the apparent increasing deficit in critical values relative to the gaussian approximation at $3\sigma$ confidence levels.
+
+\begin{figure}
+	\center
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/moderate/fc_bestfit_distributions_0_nh}
+		\caption{True $\delta_{CP} = 0$}
+		\label{fig:dchisq_cutoff_true_0_nh_mod_nh}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/moderate/fc_bestfit_distributions_ppi2_nh}
+		\caption{True $\delta_{CP} = +\pi/2$}
+		\label{fig:dchisq_cutoff_true_ppi2_nh_mod_nh}
+	\end{subfigure}
+	\caption{Distributions of best-fit values for different ranges of $\Delta\chi^2$ in fixed normal ordering.}
+	\label{fig:dchisq_cutoff_true_nh_mod_nh}
+\end{figure}
+
+\Cref{fig:dchisq_cutoff_true_0_nh_mod_nh} highlights that for fixed normal ordering, the degeneracy between $0$ and $\pm\pi$ for lower significance levels, pushing up the critical value, whereas at $2\sigma$ significance there is greater sensitivity to distinguish these points and so the critical value agrees with the gaussian approximation.
+
+\begin{figure}
+	\center
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/extreme/fc_bestfit_distributions_mpi2_nh}
+		\caption{True $\delta_{CP} = +\pi/2$}
+		\label{fig:dchisq_cutoff_true_mpi2_nh_ext_nh}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/extreme/fc_bestfit_distributions_ppi2_nh}
+		\caption{True $\delta_{CP} = +\pi/2$}
+		\label{fig:dchisq_cutoff_true_ppi2_nh_ext_nh}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=\linewidth] {images/fc/studies/cv_var/extreme/fc_bestfit_distributions_0_nh}
+		\caption{True $\delta_{CP} = 0$}
+		\label{fig:dchisq_cutoff_true_0_nh_ext_nh}
+	\end{subfigure}
+	\caption{Distributions of best-fit values for different ranges of $\Delta\chi^2$ in fixed normal ordering.}
+	\label{fig:dchisq_cutoff_true_nh_nh}
+\end{figure}
+
+Finally, at higher significance levels the physical boundary begins to play a role even at the point furthest from both physical boundaries, with the pileup at the boundaries evident in \cref{fig:dchisq_cutoff_true_nh_nh}, acting to lower the critical values relative to the gaussian approximation.
+
+\FloatBarrier
+
+\subsection{Summary}
+Therefore, taken together the effects of the physical boundaries in lowering critical values, and \deltacp and mass hierarchy degeneracy in raising them provide the explanations for the behaviour observed in the critical $\Delta\chi^2$ values relative to that expected in the gaussian approximation.
+
+\clearpage

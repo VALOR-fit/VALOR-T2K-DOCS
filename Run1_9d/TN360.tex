@@ -1,0 +1,128 @@
+%
+% ---------------------------------------------------------------------------------------
+% VALOR T2K 5 sample joint fit analysis, Run 1-9d
+% ---------------------------------------------------------------------------------------
+%
+\documentclass[11pt]{elsarticle}
+
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{\centerline{\thepage}}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+
+\usepackage{adjustbox}
+\usepackage[toc,page]{appendix}       	% Appendix
+\usepackage{amsfonts}                 	% Extra symbols
+\usepackage{amsmath}
+\usepackage{appendix}
+\usepackage{booktabs}
+\usepackage{caption}			% Use when minipaging figures & tables together
+\usepackage{color}
+\usepackage{dcolumn}					% align table columns on decimal point
+\usepackage[figuresright]{rotating}		% if you have landscape tables
+\usepackage{float}
+\usepackage[margin=2.50cm]{geometry}  	% Tweak margins
+\usepackage{graphicx}                 	% PostScript figures
+\usepackage{hyperref} 			% Linkable contents and reference without colour
+\usepackage{lineno}                   	% For printing the line numbers
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{multirow}                 	% Fancy tables
+\usepackage{natbib}                   	% For building bibliography with \cite{}
+\usepackage{pdflscape}                   	% allow page to be landscape for large tables
+\usepackage{placeins}         	% Ensures floats remain in section
+\usepackage{rotate}                     % rotate text in tables
+\usepackage{siunitx}					% Easier units exponentials etc
+\usepackage{subcaption}					% Allows use of subfigure
+\usepackage{tabularx}					% Allows text wrapping tables
+\usepackage[table,dvipsnames]{xcolor}	% Fancy tables and colors
+\usepackage{xspace}		        % Appropriate insertion of spaces after commands
+\usepackage{cleveref}                   % Load after the hyperref package
+\usepackage{pdflscape}
+\usepackage{setspace}
+\onehalfspacing
+\DeclareSIUnit\POT{POT}
+
+\crefname{appsec}{Appendix}{Appendices}
+
+\lstset{language=C++}
+
+\input{includes/particles}
+\input{includes/fit_variables}
+\input{includes/run_details}
+\input{includes/doc_formatting}
+
+\linenumbers
+\bibliographystyle{elsart-num}
+
+\begin{document}
+
+%Numbers used in this tech note
+\input{numbers/numbers}
+\input{numbers/inputparameters}
+
+% Title, authors, abstract and table of contents
+\input{chapters/front}
+
+\newpage
+
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\linewidth}{ c c X }
+ 	\hline
+	Version	& Date	& Content \\
+	\hline
+	1.0 & 2018/11/19 & Equivalent to Run 1-9d statistical update v1 with the addition of mass hierarchy sensitivity studies (\cref{sec:mh}), a comparison of \disappearance fits separately applying appearance and disappearance channels and a CC$1\pi$ sample p-value (\cref{app:cc1pi_pvalue}). \\
+	\hline
+	\end{tabularx}
+\caption{Update history for this note}
+\label{tab:update_history}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+% Main body
+\input{chapters/introduction}
+\input{chapters/spectra}
+\input{chapters/systematics}
+\input{chapters/sensitivity}
+\input{chapters/data_fit}
+\input{chapters/comparison}
+\input{chapters/mh_sensitivity}
+\input{chapters/conclusion}
+
+% References
+\input{chapters/references}
+
+%Appendices
+\clearpage
+\begin{appendices}
+	\crefalias{section}{appsec}
+	\input{appendix/event_rates}
+	\input{appendix/systematics}
+	\input{appendix/asimovb_spectra}
+	\input{appendix/data_asimov_comparisons}
+	\input{appendix/asimov_comparisons}
+	\input{appendix/group_comparisons}
+	\input{appendix/high_sensitivity_fits}
+	\input{appendix/fc_compare}
+	\input{appendix/fc_critical_values}
+	\input{appendix/atmos}
+	\input{appendix/cc1pi_pvalue}
+\end{appendices}
+
+\clearpage
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
