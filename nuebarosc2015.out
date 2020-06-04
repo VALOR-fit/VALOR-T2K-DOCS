@@ -1,0 +1,32 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Predictions of single e-like ring event reconstructed energy spectrum in SuperK}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Methodology}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Construction of nominal SuperK Monte Carlo templates}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Input Monte Carlo samples}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Normalization of Monte Carlo samples}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Single e-like ring event selection cuts}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.4}{List of Monte Carlo templates}{subsection.2.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.2.5}{Binning of Monte Carlo templates}{subsection.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.3}{Applying flux tuning based on NA61 data}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.4}{Applying flux and cross-section \(BANFF\) tuning based on ND280 data}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.5}{Applying neutrino oscillations}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.6}{Predictions of nominal and tuned-MC single e-like ring spectra}{section.2}% 13
+\BOOKMARK [1][-]{section.3}{Systematic effects in the prediction of the single -like ring event energy spectrum}{}% 14
+\BOOKMARK [2][-]{subsection.3.1}{Input systematic parameters}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.2}{Evaluation of effects of systematic parameters on the predicted single e-like ring reconstructed energy spectrum}{section.3}% 16
+\BOOKMARK [1][-]{section.4}{Analysis procedure}{}% 17
+\BOOKMARK [2][-]{subsection.4.1}{Fit method}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.2}{Marginalization}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.3}{P-value}{section.4}% 20
+\BOOKMARK [1][-]{section.5}{Sensitivity to e appearance}{}% 21
+\BOOKMARK [2][-]{subsection.5.1}{Asimov rate-only p-value}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.2}{Asimov rate+shape p-value}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.3}{Mean p-value}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.4}{Summary of expected significance to e appearance}{section.5}% 25
+\BOOKMARK [1][-]{section.6}{Results of the e-appearance analysis with the Run 5+6 dataset}{}% 26
+\BOOKMARK [2][-]{subsection.6.1}{Significance to e appearance}{section.6}% 27
+\BOOKMARK [1][-]{section.7}{Summary}{}% 28
+\BOOKMARK [1][-]{section*.49}{Appendices}{}% 29
+\BOOKMARK [1][-]{Appendix.a.A}{Details of mean p-value}{}% 30
+\BOOKMARK [1][-]{Appendix.a.B}{Effect of MEC on the reconstructed energy distribution}{}% 31
+\BOOKMARK [1][-]{Appendix.a.C}{Sensitivity study for larger number of POT}{}% 32

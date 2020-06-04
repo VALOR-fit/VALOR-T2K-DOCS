@@ -1,0 +1,195 @@
+\clearpage
+
+\section {Analysis procedure}
+\label{sec:oscfit}
+
+%--------------------------------------------------------------------------------------------------------------------
+\subsection {Fit method}
+\label{sec:oscfit_method}
+
+The objective of this analysis is to search for $\bar{\nu}_e$ appearance from a $\bar{\nu}_{\mu}$ beam.
+The parameter of interest is $\beta$, a not physical parameter which was introduced to normalize the $\bar{\nu}_e$ appearance signal component
+(please see figure~\ref{fig:1Re_spectrum_and_components_default_osc_postfit}).
+The hypothesis of null $\bar{\nu}_e$ appearance is obtained by setting $\beta = 0$, 
+while $\bar{\nu}_e$ appearance corresponding to the current best knowledge of the PMNS matrix is given by $\beta = 1$.
+All the systematic parameters are marginalized.
+Only the solar parameters 
+$\sin^2 \theta_{12}$ 
+and 
+$\Delta m^2_{21}$ 
+are fixed because they have a negligible 
+impact on the oscillations at the T2K energy. 
+The other oscillation parameters are marginalized using the prior distributions which correspond to 
+the posterior of the T2K+reactor joint fit bayesian analysis, which are shown in section~\ref{sec:systematics:inputs}. 
+The treatment of the oscillation parameters is shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+
+%--------------------------------------------------------------------------------------------------------------------
+
+The {\em VALOR} appearance analysis uses a binned likelihood-ratio method where
+the estimation of the $\beta$ parameter is obtained
+by comparing the observed and predicted SuperK reconstructed energy spectra
+for 1-ring $e$-like events.
+
+Let $N$ be the number of reconstructed energy bins and
+${\bf a}$ be a $1 \times N_{s}$ - dimensional array of systematic (nuisance) 
+parameters that affect the SuperK reconstructed energy spectrum prediction (e.g.
+parameters that control the beam, neutrino interaction simulations, 
+detector response and oscillations).
+The log-likelihood function used in the analysis is
+\begin{equation}
+\displaystyle
+%\chi^{2} 
+-2 \; \textrm{ln} \; \lambda (\beta,{\bf a}) = 2 \cdot \sum_{i=0}^{N-1} 
+   \Big( 
+     n^{obs}_{i} \cdot \textrm{ln} (n^{obs}_{i}/n^{exp}_{i}) +
+     (n^{exp}_{i}-n^{obs}_{i}) 
+   \Big) +
+   ({\bf a}-{\bf a_{0}})^{T} \cdot {\bf C}^{-1} \cdot ({\bf a}-{\bf a_{0}})
+\label{eq:chisquare}
+\end{equation}
+where
+${\bf a_{0}}$ is an $1 \times N_{s}$ - dimensional array with the default values of 
+the systematic parameters, ${\bf a}^{T}$ is the transpose of ${\bf a}$,
+${\bf C}$ is the systematic parameter covariance matrix of dimension $N_{s} \times N_{s}$,
+$n^{obs}_{i}$ is the observed number of events in the $i^{th}$ bin, and
+$n^{exp}_{i} = n^{exp}_{i}(\beta; {\bf a})$ 
+%$n^{exp}_{i} = n^{exp}_{i}(\sin^{2}\overline{\theta}_{23},|\overline{\Delta m}^{2}_{32}|; {\bf a})$ 
+is the corresponding expected number of events.
+
+The advantage of the likelihood ratio method over the extended maximum-likelihood method is that,
+in the large-sample limit, the quantity 
+$-2 \: \textrm{ln} \: \lambda (\beta; {\bf a})$
+%$-2 \: \textrm{ln} \: \lambda (\sin^{2}\overline{\theta}_{23},|\overline{\Delta m}^{2}_{32}|; {\bf a})$
+in Eq.\ref{eq:chisquare} has a $\chi^{2}$ distribution and it can therefore be used as a goodness-of-fit test.
+
+Values of systematic parameters that give a negative predicted number of events in any reconstructed energy bin in any interaction 
+mode are not allowed. If a systematic throw gives a negative number of events, that toy experiment is rejected.
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+\subsection {Marginalization}
+\label{sec:marginalization}
+
+In the previous analyses a fully frequentist approach, where all the nuisance parameters are profiled, was used.
+Now a hybrid bayesian-frequentist method is used. The nuisance parameters are marginalized while the parameter of interest is minimized.
+The marginalization of the nuisances gives a so-called marginal likelihood that depends only on $\beta$:
+
+\begin{equation}
+\lambda_{marg} (\beta) = \int_{A} \lambda (\beta;{\bf a}) \pi{({\bf a})} d {\bf a} = \sum_{i=0}^{n} \lambda (\beta; {\bf a}_i) \pi({ {\bf a}_i})  
+\label{eq:likemarg}
+\end{equation}
+
+where $n$ is the number of toys, ${\bf a}$ is a single extracted set of nuisance parameter, $\pi{({\bf a})}$ is the prior of the nuisance parameters and 
+$\pi( {\bf a}_i)$ is the weight of a particular set of nuisance parameters (e.g. $w=1/n$ if flat prior).
+Many sets of ${\bf a}$ ($n = 10k$), should be extracted in order to sample the space of the nuisance parameters.
+The number of extractions depends on the number of nuisance parameters as well as the precision that is required by the measurement.
+
+We derive the marginal log-likelihood, which we will denoted as $\chi^2$ from now on:
+
+\begin{equation}
+%\chi^2 (\beta) = - 2 \textrm{\ln} \lambda_{marg} (\beta)  = -2 \textrm{\ln} \left( \sum_{i=0}^{n} \lambda ({\bf \beta}; {\bf a}_i) \pi({\bf a_i})  \right) 
+\chi^2 (\beta) = - 2  \ln \lambda_{marg} (\beta)  = -2 \ln \left( \sum_{i=0}^{n} \lambda ({\bf \beta}; {\bf a}_i) \pi({\bf a_i})  \right) 
+\label{eq:loglikemarg}
+\end{equation}
+
+It is important to note that this numerical integration is a weighted average of the likelihood evaluated at the $n$ throws, 
+not a weighted average of the log-likelihood.
+When marginalization is used the penalty term
+$ ({\bf a}-{\bf a_{0}})^{T} \cdot {\bf C}^{-1} \cdot ({\bf a}-{\bf a_{0}}) $
+becomes constant, independent of the parameter of interest.
+For this reason a modified version of eq.~\ref{eq:chisquare}, which doesn't include the penalty term, is used.
+
+The toys used for the marginalization of the nuisance parameters are performed exactly in the same way as 
+described in 
+sec.~\ref{sec:systematics:inputs}
+, taking into account the correlations, but without statistical fluctuations.
+First $n$ reconstructed energy distributions ($E_{reco}^{marg}$) are produced using the randomized systematic parameters
+and normalized to $1 \times 10^{20}$ POT, in order to be used for fits at any different number of POT. 
+Finally they are stored in output files which can be used for whatever needed fit.
+A fit on a single data set is performed as following:
+\begin{itemize}
+\item all the $n$ toy reconstructed energy distributions ($E_{reco}^{marg}$) are read from the files,
+\item each $E_{reco}^{marg}$ distribution is normalized to the number of POT of the data set,
+\item for each $E_{reco}^{marg}$ eq.~\ref{eq:chisquare} is calculated and $\lambda(\beta,{\bf a}) = e^{- (-2 \; \textrm{ln} \; \lambda (\beta,{\bf a})) / 2}$ is obtained,
+\item the $\chi^2$ value is finally obtained, using eq.~\ref{eq:loglikemarg}, for a given value of $\beta$. 
+\end{itemize}
+
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+\subsection {P-value}
+\label{sec:pvalue}
+
+% Describe the p-values used for the analysis
+
+There are different test statistics which can be used to quote a p-value,
+as described in 
+~\cite{slides_davide_pvalue_asg} % ASG talk
+.
+As proposed by the OA group, for this $\bar{\nu}_e$ appearance search two different p-values are quoted.
+In order to quote the significance given null $\bar{\nu}_e$ appearance, the parameter of interest is set to $\beta=0$
+and $n=10k$ toys are performed.
+The systematic parameters are randomized taking into account the correlations as described in sec.~\ref{sec:systematics:inputs}.
+Then the reconstructed energy distribution is fluctuated with Poisson. 
+Then the following p-values are calculated:
+\begin{itemize}
+
+\item p-value with rate-only analysis: the number of events is used as test statistics, without using the shape information of the reconstructed energy 
+	distribution. The distribution $f(N_{SK})$ of the total number of superK events in a toy ($N_{SK}$) is obtained from the performed toys. 
+	Then the number of events is measured from the data set ($N_{SK}^{obs}$) and
+	the 1-sided (right tail) p-value is computed in the following way: 	
+	
+	\begin{equation}
+	\text{p-value (right tail)} = \int_{N_{SK}^{obs}}^{+\infty} f(N_{SK}) d N_{SK}  = 
+		\frac{ \sum_{ itoy=1 }^{n} w(N_{SK} \geq N_{SK}^{obs} )^{itoy} }{ n }
+	\label{eq:pvalue_rateonly}
+	\end{equation}
+	
+	where $w(N_{SK} \geq N_{SK}^{obs})$ is 1 if $N_{SK} \geq N_{SK}^{obs}$ otherwise 0.
+	The distribution $f(N_{tot}^{toy})$ is expected to be discrete since it follows the Poisson distribution.
+			 
+	In an analogous way the left tail 1-sided p-value is computed as following:
+		
+	\begin{equation}
+	\text{p-value (left tail)} = \int^{N_{SK}^{obs}}_{-\infty} f(N_{SK}) d N_{SK}  = 
+		\frac{ \sum_{ itoy=1 }^{n} w(N_{SK} \leq N_{SK}^{obs} )^{itoy} }{ n }
+	\label{eq:pvalue_rateonly}
+	\end{equation}
+		 
+\item p-value with rate+shape analysis: the shape information of the reconstructed energy distribution is used.
+	In this case the test statistic is used to compare the case of $\beta=0$ with $\beta=1$:
+	
+	\begin{equation}
+	\Delta \chi^2 = \chi^2(\beta=0) - \chi^2(\beta=1)
+	\label{eq:deltachisq_rateshape}
+	\end{equation}
+
+	where $\chi^2(\beta=0)$ and $\chi^2(\beta=1)$ are computed using eq.~\ref{eq:loglikemarg}.
+	It is worth to note that the parameter $\beta$ is not fitted but fixed either to 0 or 1.
+	The 1-sided p-value (right tail) is calculated as:
+
+	\begin{equation}
+	\text{p-value (right tail)} = \int_{\Delta \chi^2_{obs}}^{+\infty} f(\Delta \chi^2) d \Delta \chi^2  = 
+		\frac{ \sum_{ itoy=1 }^{n} w(\Delta \chi^2 \geq \Delta \chi^2_{obs} )^{itoy} }{ n }
+	\label{eq:pvalue_rateonly}
+	\end{equation}
+	
+	where $w(\Delta \chi^2  \geq \Delta \chi^2 _{obs})$ is 1 if $\Delta \chi^2  \geq \Delta \chi^2 _{obs}$ otherwise 0.
+
+	The 1-sided p-value (left tail) is calculated as:
+
+	\begin{equation}
+	\text{p-value (left tail)} = \int^{\Delta \chi^2_{obs}}_{-\infty} f(\Delta \chi^2) d \Delta \chi^2  = 
+		\frac{ \sum_{ itoy=1 }^{n} w(\Delta \chi^2 \leq \Delta \chi^2_{obs} )^{itoy} }{ n }
+	\label{eq:pvalue_rateonly}
+	\end{equation}
+	
+\end{itemize}
+
+The p-value will be calculated on the left or right tail depending on the position of the observed test statistic
+in the expected distribution. For example, if the observed test statistic is on the left tail of the expected distribution of the
+test statistic, a 1-sided p-value is computed on the left tail. Otherwise a 1-sided p-value on the right tail is computed. 
+
+%--------------------------------------------------------------------------------------------------------------------                                                                                    
+
+

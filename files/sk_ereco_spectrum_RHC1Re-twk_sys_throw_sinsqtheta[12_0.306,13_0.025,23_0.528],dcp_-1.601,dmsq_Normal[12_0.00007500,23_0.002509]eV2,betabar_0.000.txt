@@ -1,0 +1,16 @@
+all & & 0.127509 \\ \hline
+allprefit & & 0.149624 \\ \hline
+BANFF & & 0.0972404 \\ \hline
+BANFFprefit & & 0.123723 \\ \hline
+BANFF_unconstrained & & 0.0923817 \\ \hline
+BANFF_unconstrainedprefit & & 0.0777002 \\ \hline
+BANFF_constrained & & 0.033951 \\ \hline
+BANFF_constrainedprefit & & 0.0984193 \\ \hline
+BANFF_flux & & 0.0332013 \\ \hline
+BANFF_fluxprefit & & 0.0707957 \\ \hline
+BANFF_xsec & & 0.0962341 \\ \hline
+BANFF_xsecprefit & & 0.101452 \\ \hline
+SKDet_FSI & & 0.066613 \\ \hline
+SKDet_FSIprefit & & 0.0755821 \\ \hline
+Osc_param & & 0.0472267 \\ \hline
+Osc_paramprefit & & 0.0456468 \\ \hline

@@ -1,0 +1,290 @@
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c |}
+\hline
+\# of observed events	                                          	& P-value    		    	\\
+\hline
+$N_{obs} = 2$      		                    	& 0.525                    	\\
+$ N_{obs} = 3$      		                    	& 0.264                     	\\
+$ \bf N_{obs} = 4$      		                 & \bf 0.109                      	\\
+$N_{obs} = 5$      		                    	& 0.0352                      	\\
+$N_{obs} = 6$      		                    	& 0.0108                     	\\
+\hline
+\end{tabular}
+\caption{
+Summary of the expected rate-only p-values for different number of 
+observed events. The simulated number of POT is 
+\TotalPot POT.
+%\FakePotLow.
+\NumToysLarge toys are used to get the distribution of the test statistic and the 
+Asimov data is used to compute the p-value.
+The Asimov dataset for $\beta=1$ is in bold.
+}
+\label{tab:summary_sensi_rateonly_highpot}
+\end{table}
+
+
+
+%\begin{table}
+%\centering
+%\begin{tabular}{| c | c |}
+%\hline
+%\# of observed events	                                          	& P-value    		    	\\
+%\hline
+%$N_{obs} = 2$      		                    	& 0.595                      	\\
+%$N_{obs} = 3$      		                    	& 0.322                      	\\
+%$N_{obs} = 4$      		                    	& 0.144                    	\\
+%$\bf N_{obs} = 5$      		                    	& \bf 0.0538                      	\\
+%$N_{obs} = 6$      		                    	& 0.0174                     	\\
+%\hline
+%\end{tabular}
+%\caption{
+%Summary of the expected rate-only p-values for different number of 
+%observed events. The simulated number of POT is \FakePotHigh.
+%\NumToys toys are used to get the distribution of the test statistic and the 
+%Asimov data is used to compute the p-value.
+%The Asimov dataset for $\beta=1$ is in bold.
+%}
+%\label{tab:summary_sensi_rateonly_lowpot}
+%\end{table}
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c |}
+\hline
+P-value	                                          	& Asimov    	& Mean 		    	\\
+\hline
+Rate-only                          			& 0.109           	& 0.203                  	\\
+Rate+shape                          		& 0.0699          	& 0.139                  	\\
+\hline
+\end{tabular}
+\caption{
+Summary of the expected rate-only and rate+shape p-values for 
+\TotalPot POT.
+%\FakePotLow POT.
+The Asimov p-value is calculated using the Asimov dataset while the 
+mean p-value is calculated making \NumToysLarge toys and taking the mean 
+of the p-value distribution.
+}
+\label{tab:summary_sensi_lowpot}
+\end{table}
+
+%\begin{table}
+%\centering
+%\begin{tabular}{| c | c | c |}
+%\hline
+%P-value	                                          	& Asimov    	& Mean 		    	\\
+%\hline
+%Rate-only                          			& 0.0538           & 0.188                   	\\
+%Rate+shape                          		& 0.0572          	& 0.127                  	\\
+%\hline
+%\end{tabular}
+%\caption{
+%Summary of the expected rate-only and rate+shape p-values for \FakePotHigh POT.
+%The Asimov p-value is calculated using the Asimov dataset while the 
+%mean p-value is calculated making \NumToys toys and taking the mean 
+%of the p-value distribution.
+%}
+%\label{tab:summary_sensi_highpot}
+%\end{table}
+%
+
+
+
+
+
+
+% Comparison with many toys
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c |}
+\hline
+P-value	                                          	& Asimov    	& Mean 		    	\\
+\hline
+Rate-only (\NumToys toys)         			& 0.110           	& 0.207                  	\\
+Rate+shape (\NumToys toys)              		& 0.0726          	& 0.143                  	\\
+\hline
+Rate-only (\NumToysLarge toys)        			& 0.109           & 0.203                	\\
+Rate+shape (\NumToysLarge toys)             		& 0.0699          	& 0.139                	\\
+\hline
+\end{tabular}
+\caption{
+Summary of the expected rate-only and rate+shape p-values for 
+\TotalPot POT, using \NumToys (up) and \NumToysLarge (bottom) toys for fake datasets (both $\beta=0$ and $\beta=1$).
+The Asimov p-value is calculated using the Asimov dataset while the mean one
+from \NumToys (up) and \NumToysLarge (bottom) toys and taking the mean 
+of the p-value distribution.
+}
+\label{tab:summary_sensi_manytoys}
+\end{table}
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c |}
+\hline
+P-value	                                          	& Asimov    	& Mean 		    	\\
+\hline
+Rate-only (\NumToys toys)        			& 0.0343           & 0.1004                   	\\
+Rate+shape (\NumToys toys)             		& 0.0249          	& 0.0649                 	\\
+\hline
+Rate-only (\NumToysLarge toys)        			& 0.0331           & 0.1007                   	\\
+Rate+shape (\NumToysLarge toys)             		& 0.0243          	& 0.0660                 	\\
+\hline
+\end{tabular}
+\caption{
+Summary of the expected rate-only and rate+shape p-values for 
+$8 \times 10^{20}$ POT, using \NumToys (up) and \NumToysLarge (bottom) toys for fake datasets (both $\beta=0$ and $\beta=1$).
+The Asimov p-value is calculated using the Asimov dataset while the mean one
+from \NumToys (up) and \NumToysLarge (bottom) toys and taking the mean 
+of the p-value distribution.
+}
+\label{tab:summary_sensi_manytoys}
+\end{table}
+
+%
+
+
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c |}
+\hline
+		                                          	& p-value $\leq 0.10$    		& p-value $\leq 0.05$ 		\\
+\hline
+Fraction of toys	(rate-only)			& 44.3\%					& 44.3\%				\\
+Fraction of toys	(rate+shape) 		& 64.0\%					& 52.8\%				\\
+\hline
+\end{tabular}
+\caption{
+The probability to have a p-value smaller than 0.05 and 0.10 is shown.
+\NumToysLarge toys for
+%\FakePotLow POT 
+\TotalPot POT
+are produced.
+Then for each toy the p-value is computed as described in section~\ref{subsec:pvalue_mean}.
+}
+\label{tab:pvalue_mean_0p05_lowpot}
+\end{table}
+
+%
+%\begin{table}
+%\centering
+%\begin{tabular}{| c | c | c |}
+%\hline
+%		                                          	& p-value $\leq 0.10$    		& p-value $\leq 0.05$     	\\
+%\hline
+%%Mean p-value (rate-only) 			&  0.0213     				&  0.00809                  	\\
+%Fraction of toys	(rate-only)			& 53.0\%					&  37.7\%				\\
+%%Mean p-value (rate+shape)       		&  0.0214    				&  0.0118                  	\\
+%Fraction of toys	(rate+shape) 		& 67.1\%					&  56.6\%				\\
+%\hline
+%\end{tabular}
+%\caption{
+%The probability to have a p-value smaller than 0.05 and 0.10 is shown.
+%\NumToys toys for \FakePotHigh POT are produced.
+%Then for each toy the p-value is computed as described in~\ref{subsec:pvalue_mean}.
+%}
+%\label{tab:pvalue_mean_0p05_highpot}
+%\end{table}
+%
+%
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c |}
+\hline
+\# obs events $>$ \# exp bkg		& p-value    	 & Fraction of toys    	\\
+\hline
+Rate-only                          			&   0.149    	& 92.4\%             	\\
+Rate+shape                          		&   0.0927   	& 92.4\%                 	\\
+\hline
+\end{tabular}
+\caption{
+Summary of the expected rate-only and rate+shape mean p-values for 
+\TotalPot POT.
+%\FakePotLow POT.
+The Asimov p-value is calculated using the Asimov dataset while the 
+mean p-value is calculated making \NumToysLarge toys and taking the mean 
+of the p-value distribution.
+Only fake datasets with number of observed events higher than the
+expected background are considered.
+The fraction of selected toys is shown as well. 
+}
+\label{tab:pvalue_mean_bkg_lowpot}
+\end{table}
+
+%
+%\begin{table}
+%\centering
+%\begin{tabular}{| c | c | c |}
+%\hline
+% \# obs events $>$ \# exp bkg           & P-value  	 & Fraction of toys    	\\
+%\hline
+%Rate-only                          			&  0.151      	&   95\%               	\\
+%Rate+shape                          		&  0.0947    	&   95\%             	\\
+%\hline
+%\end{tabular}
+%\caption{
+%Summary of the expected rate-only and rate+shape mean p-values for \FakePotHigh POT.
+%The Asimov p-value is calculated using the Asimov dataset while the 
+%mean p-value is calculated making \NumToys toys and taking the mean 
+%of the p-value distribution.
+%Only fake datasets with number of observed events higher than the
+%expected background are considered.
+%The fraction of selected toys is shown as well. 
+%}
+%\label{tab:pvalue_mean_bkg_highpot}
+%\end{table}
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c |}
+\hline
+p-value (rate-only) $>$ p-value (rate+shape)		& Probability          	\\
+\hline
+All toys									& 85.0\%									\\
+Toys w/ \# obs. events $>$ \# exp. bkg 			& 77.4\%									\\
+\hline
+\end{tabular}
+\caption{
+The probability to have a rate-only p-value larger than the rate+shape p-value is shown.
+\NumToysLarge toys for 
+\TotalPot POT.
+%\FakePotLow POT are produced.
+Then for each toy the p-value is computed as described in section~\ref{subsec:pvalue_mean}.
+Both all toys are considered as well as the toys with the number of observed events larger
+than the number of expected background.
+}
+\label{tab:pvalue_mean_rate_large_shape_lowpot}
+\end{table}
+
+
+%\begin{table}
+%\centering
+%\begin{tabular}{| c | c |}
+%\hline
+%p-value (rate-only) $>$ p-value (rate+shape)		& Probability          	\\
+%\hline
+%All toys									& 81.4\%									\\
+%Toys w/ \# obs. events $>$ \# exp. bkg 			& 77.4\%									\\
+%\hline
+%\end{tabular}
+%\caption{
+%The probability to have a rate-only p-value larger than the rate+shape p-value is shown.
+%\NumToys toys for \FakePotHigh POT are produced.
+%Then for each toy the p-value is computed as described in~\ref{subsec:pvalue_mean}.
+%Both all toys are considered as well as the toys with the number of observed events larger
+%than the number of expected background.
+%}
+%\label{tab:pvalue_mean_rate_large_shape_highpot}
+%\end{table}
+

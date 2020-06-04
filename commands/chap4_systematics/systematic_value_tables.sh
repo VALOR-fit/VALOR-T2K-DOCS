@@ -1,0 +1,2 @@
+
+${T2KOSCANA}/macros/tn_plotting_stuffs/make_table_onesigma_errors.py -s RHC1Re -c analysis_configuration_run1to6_test_app_4p5E20POT.xml -p analysis_configuration_run1to6_test_prefit_app_4p5E20POT.xml

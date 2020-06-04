@@ -1,0 +1,725 @@
+\clearpage
+
+\section {Systematic effects in the prediction of the single $\mu$-like ring event energy spectrum}
+\label{sec:systematics}
+
+%....................................................................................................................
+%....................................................................................................................
+
+\subsection {Input systematic parameters}
+
+\label{sec:systematics:inputs}
+
+This analysis considers \NSyst{} systematic parameters which can be grouped into 3 categories:
+
+\begin{enumerate}
+
+\item 
+{\bf Correlated flux and cross-section (BANFF) parameters} (37 parameters).\\
+
+In this analysis, all the flux and cross-section systematic parameters are included in the ND280 data (BANFF) fit (in previous 
+$\nu_{\mu}$-disappearance analyses, all the flux parameters but only a subset of the cross-section parameters were included).
+There are 5 $\nu_{\mu}$, 11 $\bar{\nu}_{\mu}$, 2 $\nu_{e}$ and 7 $\bar{\nu}_{e}$ flux parameters as well as 12 cross-section parameters. 
+Best-fit values of these parameters and a covariance matrix giving their correlated uncertainties are obtained by the BANFF group from a fit 
+of the $\bar{\nu}_\mu$ and $\nu_\mu$ CC0$\pi$-like, CC1$\pi$-like and CC other-like ND280 samples as described in Ref~\cite{BANFF2015}. A list of the BANFF parameters, their best-fit values and their prefit and postfit errors is given in Tab.~\ref{tab:banff_uncertainties}. 
+The best-fit values are used to reweight the templates as described in Sec.~\ref{sec:banff_weights}, and the postfit errors in the 
+covariance matrix are used as prior uncertainties in this analysis. 
+
+The effects of these correlated uncertainties are evaluated using the Cholesky method. The covariance matrix is ``Cholesky decomposed'' 
+into the product of a lower triangular matrix (all elements above the diagonal are zero) and its transpose (in which all elements below the 
+diagonal are zero). Random tweaks of each parameter are independently drawn from a Gaussian distribution with mean zero and standard deviation 1, 
+and these random numbers are put into a vector. This vector is then multiplied by the lower triangular matrix to give a vector of tweaked 
+uncertainties that have the correct correlations between them. The BANFF parameters are then varied by these tweaked uncertainties, with all 
+parameters being varied simultaneously. This process may be repeated as many times as necessary. 
+
+Some of the cross-section parameters have a complicated, often non-linear, dependence on true and reconstructed neutrino energy; the effects of 
+uncertainties in these parameters are evaluated by reweighting the MC templates. Weights are calculated for tweaks from -3$\sigma$ to +3$\sigma$ 
+in steps of 0.5$\sigma$, and interpolations are made between those weights using cubic splines (for MaQE only, weights are calculated from 
+-7$\sigma$ to +3$\sigma$). Cubic splines are made for the following cross-section uncertainties:
+\begin{itemize}
+\item CCQE axial-mass scaling factor (MaQE)
+\item Fermi momentum for $^{16}$O
+\item Binding energy for $^{16}$O
+\item Nucleon to $\Delta$ transition axial form factor (C$^{A}_{5}$) 
+\item Resonance-production axial-mass scaling factor (MaRes)
+\item Scale of isospin 1/2 nonresonant background
+\item CC other shape
+\end{itemize}
+The splines are made in bins of true and reconstructed energy, and the binning is given in Ref.\ \cite{splineinfo}.
+
+The effects of the flux and cross-section normalization uncertainties are also evaluated by reweighting the MC templates, but no splines are made for them
+since the weight is identical to the tweak for these uncertainties (each flux parameter is a normalization for a limited range of true energy). 
+
+The BANFF parameters are applied to the MC templates as specified in Tab.~\ref{tab:apply_syst_to_template}.
+
+\input{tables/numuosc2015_syst_summary.tex}
+
+\item
+{\bf SuperK efficiencies \& effects of intranuclear and secondary re-interactions} (12 parameters).\\
+
+There are uncertainties in the efficiencies of the fiducial volume and reduction chain,
+and the OD, ring-counting, PID, momentum and decay-electron cuts.
+These uncertainties have been evaluated by comparing 1412 days of SK-IV atmospheric data
+with atmospheric neutrino Monte Carlo.
+Ring counting errors are evaluated using $\nu_\mu$ CCQE, $\nu_\mu$ CCnQE, NC, and $\nu_e$ CC-enriched control samples.
+The NC PID error is evaluated using a NC-enriched control sample, which
+does not use PID information.
+Each Monte Carlo control sample is fitted to the data using the efficiency as a fit parameter, and the uncertainties in the
+efficiencies are estimated by adding the covariance matrix containing the differences between the best-fit and nominal efficiencies to
+the covariance matrix containing the statistical errors in the fitted efficiencies \cite{SuperkErrors2013}.
+
+Intranuclear final-state interactions (FSI) have significant effects in the T2K energy range and
+result in event topologies, for scattering from nuclear targets, which are drastically different from
+those created in neutrino scattering from free nucleons.
+Uncertainties due to FSI were estimated by simultaneously varying the NEUT parameters that scale the interaction probabilities for quasi-elastic
+scattering, absorption, charge exchange and pion production using the method described in Sec.\ 2 in \cite{NIWGErr}. The NIWG group produced 16
+parameter sets that span the 1$\sigma$ surface in the parameter space; this was done by varying the NEUT parameters when running the pion scattering
+simulations, and comparing the results with external pion-carbon scattering data. These 16 parameter sets are shown in Tab.\ 2 in \cite{NIWGErr}.
+Uncertainties due to secondary pion interactions (SI) were also evaluated. The NIWG group adapted the NEUT nuclear cascade model to simulate SI in the
+SuperK detector simulation (SKDETSIM) and to allow variations in the interaction probabilities. Details of this are given in \cite{SI}.
+Since the same model is used for FSI and SI, it is possible to evaluate the uncertainties in both FSI and SI simultaneously. This was done by
+reweighting a single $e$-like ring selected SK MC with the 16 FSI parameter sets using T2KReweight. The reweighting method for FSI is described
+in Sec.\ 8 in \cite{NEUTnuclear}. Variations in the SI interaction probabilities were included for each FSI parameter set.  Subsequently a covariance
+matrix was calculated using equation 1 in \cite{NIWGErr}; the quantity p in that equation is the average event weight for a FSI parameter set, and
+the sum is over the parameter sets.
+
+
+
+
+{
+\renewcommand{\arraystretch}{1.5}
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c |}
+\hline
+ Parameter               &  Definition  &  1$\sigma$ error   \\
+\hline
+%   1       &  $\nu_\mu$ and $\bar{\nu}_{\mu}$ CCQE, $E_{reco}<$ 0.4 GeV                    &  0.018    \\
+%   2       &  $\nu_\mu$ and $\bar{\nu}_{\mu}$ CCQE, 0.4 GeV $\leq E_{reco} \leq$ 1.1 GeV   &  0.016    \\
+%   3       &  $\nu_\mu$ and $\bar{\nu}_{\mu}$ CCQE, $E_{reco}>$ 1.1 GeV                    &  0.016    \\
+%   4       &  $\nu_\mu$ and $\bar{\nu}_{\mu}$ CCnonQE                                      &  0.093    \\
+%   5       &  $\nu_e$   and $\bar{\nu}_{e}$ CC                                             &  1.006    \\
+%   6       &  All NC                                                                       &  0.598    \\
+
+1           & oscillated $\nu_e$ CC, $E_{reco}<$ 0.35 GeV              & 0.059      \\ 
+2           & oscillated $\nu_e$ CC, 0.35 $<E_{reco}<$ 0.80 GeV                & 0.027      \\ 
+3           & oscillated $\nu_e$ CC, 0.80 $<E_{reco}<$ 1.25 GeV                & 0.056      \\ 
+4           & $\nu_\mu$ and $\bar{\nu}_{\mu}$ CC, $E_{reco}<$ 0.35 GeV                & 1.241      \\ 
+5           & $\nu_\mu$ and $\bar{\nu}_{\mu}$ CC, 0.35 $<E_{reco}<$ 0.80 GeV       & 1.129       \\ 
+6           & $\nu_\mu$ and $\bar{\nu}_{\mu}$ CC, 0.80 $<E_{reco}<$ 1.25 GeV       & 0.917        \\ 
+7           & $\nu_e$   and $\bar{\nu}_{e}$ CC, $E_{reco}<$ 0.35 GeV    		   & 0.044        \\ 
+8           & $\nu_e$   and $\bar{\nu}_{e}$ CC, 0.35 $<E_{reco}<$ 0.80 GeV      	 & 0.032        \\ 
+9           & $\nu_e$   and $\bar{\nu}_{e}$ CC, 0.80 $<E_{reco}<$ 1.25 GeV      	 & 0.068        \\ 
+10         & all NC, $E_{reco}<$ 0.35 GeV      	 & 0.476        \\ 
+11         & all NC, 0.35 $<E_{reco}<$ 0.80 GeV      	 & 0.301        \\ 
+12         & all NC, 0.80 $<E_{reco}<$ 1.25 GeV      	 & 0.608        \\ 
+\hline
+\end{tabular}
+\caption{
+  Binning of SuperK selection efficiency and FSI+SI systematic parameters in covariance matrices
+}
+\label{tab:fsi_si_params}
+\end{table}
+}
+
+We consider the SuperK detector efficiency and FSI+SI systematics together, and add their covariance matrices linearly. Each of
+these covariance matrices has 12 correlated parameters, corresponding to different modes and reconstructed energy bins, as shown in
+Tab.~\ref{tab:fsi_si_params}. The effects of these uncertainties are also evaluated using the Cholesky method. \\
+
+\item
+{\bf SuperK energy scale} (1 parameter).\\
+
+The systematic parameter $f_{E; r}^{SK}$ is included to estimate the effects of uncertainty in the SuperK reconstructed energy scale.
+This uncertainty is estimated to be 2.4\% \cite{SuperkEScale2013}; its effects are calculated by scaling the bin edges of
+the MC templates and, assuming uniform distribution of events within the bins, calculating the number
+of events gained from / lost to neighbouring bins.
+The effect of the energy scale uncertainty is propagated to all MC templates as shown in Tab.~\ref{tab:apply_syst_to_template}. \\
+
+
+\item 
+{\bf Oscillation parameters and mass hierarchy} (7 parameters).\\
+
+The 3-flavour oscillation probability is used. 
+The mass hierarchy and the following oscillation parameters are randomly extracted from
+the posterior distribution of the T2K+reactor joint Mach3 bayesian analysis ~\cite{Mach3JointFitRun14}.
+A discrete prior is used for the mass hierarchy:  the probability for normal hierarchy (NH) and 
+inverted hierarchy (IH) is respectively 0.684 and 0.326.
+Different priors of the oscillation parameters are used for NH and IH.
+$\sin^{2}\theta_{23}$ and $|\Delta m^{2}_{32}|$ for NH ($|\Delta m^{2}_{31}|$ for IH)
+are randomly extracted from the 2D prior distribution shown in Fig.~\ref{fig:prior_mix23_dmsq},
+taking into account the existing correlations.
+$\sin^{2}\theta_{13}$ and $\delta_{CP}$ are extracted from the 2D prior distribution shown
+in Fig.~\ref{fig:prior_mix13_dcp} taking into account the correlations.
+
+\begin{figure}
+\center
+\includegraphics[width=0.48\linewidth]{./nuebar_plots/osc_prior/mix13_dcp_nh.pdf}
+\includegraphics[width=0.48\linewidth]{./nuebar_plots/osc_prior/mix13_dcp_ih.pdf}
+\caption {
+Prior distributions used to randomly extract $\sin^{2}\theta_{13}$ and $\delta_{CP}$
+for NH (left) and IH (right).
+The correlations between the parameters are taken into account. 
+The distributions are from the T2K+reactor joint Mach3 bayesian analysis ~\cite{Mach3JointFitRun14}.
+}
+\label{fig:prior_mix13_dcp}
+\end{figure}
+
+\begin{figure}
+\center
+\includegraphics[width=0.48\linewidth]{./nuebar_plots/osc_prior/mix23_dmsq_nh.pdf}
+\includegraphics[width=0.48\linewidth]{./nuebar_plots/osc_prior/mix23_dmsq_ih.pdf}
+\caption {
+Prior distributions used to randomly extract $\sin^{2}\theta_{23}$ and $|\Delta m^{2}_{32}|$ for NH (left),
+$\sin^{2}\theta_{23}$ and $|\Delta m^{2}_{31}|$ for IH (right).
+The correlations between the parameters are taken into account. 
+The distributions are from the T2K+reactor joint Mach3 bayesian analysis ~\cite{Mach3JointFitRun14}.
+}
+\label{fig:prior_mix23_dmsq}
+\end{figure}
+
+The treatment of the oscillation parameters in the analysis as well as the nominal values
+are shown in Tab.~\ref{tab:osc_params_fixed_values_reactor}.
+
+\input{tables/input_osc_params}
+
+The effect of the oscillation parameters on the total number of superK events is shown in Tab.~\ref{tab:osc_params_systeffect}.
+How the effect of each single oscillation parameter is mixed with the others is not trivial.
+Indeed priors with correlations for $\sin^{2}\theta_{23}$ and $|\Delta m^{2}_{32}|$ (NH) / $|\Delta m^{2}_{31}|$ (IH)
+and for $\sin^{2}\theta_{13}$ and $\delta_{CP}$  are used.
+Furthermore, since a 3-flavour oscillation probability is used, when the oscillation parameters are 
+randomly extracted together additional correlations are introduced as well.
+
+\begin{table}
+\centering
+ \begin{tabular}{| c | c |}
+ \hline
+ Parameter(s)                                               								&     1$\sigma$ effect (Std. Dev. / Mean)                    \\
+\hline
+$\sin^{2}\theta_{12}$  												&      -              	    	\\
+$\Delta m^{2}_{21}$      												&      -                        	\\
+$\sin^{2}\theta_{23}$                                       								&      0.082            	\\
+$|\Delta m^{2}_{32}|$ (NH) / $|\Delta m^{2}_{31}|$ (IH)     						 &      0.044              	\\
+$\sin^{2}\theta_{13}$  												&      0.086         	\\
+$\delta_{CP}$                                               								&      0.085              	\\
+\hline
+$\sin^{2}\theta_{13}$  \& $\delta_{CP}$                              						 &      0.117              	\\
+$\sin^{2}\theta_{23}$  \& $|\Delta m^{2}_{32}|$ (NH) / $|\Delta m^{2}_{31}|$ (IH)    	&     0.082             	\\
+\hline
+all																&     0.135 		\\
+\hline
+\end{tabular}
+\caption{
+1$\sigma$ effect on the total number of superK events as the standard deviation divided by the mean of the distribution
+given by the oscillation parameters.
+$\sin^{2}\theta_{12}$ and $\Delta m^{2}_{21}$ are kept fixed.
+The mass hierarchy is always randomly extracted. The priors described above are used and
+correlations between parameters are taken into account when existing.
+\NumToys toys are performed setting $\beta=1$.
+}
+\label{tab:osc_params_systeffect}
+\end{table}
+
+
+
+
+\end{enumerate}
+
+%\afterpage{\input{tables/syst_applied_table.tex}}
+\afterpage{\input{tables/syst_applied_table_nuebar.tex}}
+
+
+\clearpage
+
+\subsection {Evaluation of effects of systematic parameters on the predicted single $e$-like ring reconstructed energy spectrum}
+\label{sec:systematics:evaluation}
+
+In this section, we present the effects of the systematics described in Sec.~\ref{sec:systematics:inputs}
+on the predicted number of single $e$-like ring events and the predicted reconstructed energy spectrum in SuperK.
+These effects are shown both 
+for $\beta=0$ and $\beta=1$
+%without oscillations and with oscillations 
+with the values shown in Tab.~\ref{tab:osc_params_fixed_values_reactor}.
+%The normal mass hierarchy is assumed.
+All results are generated for an integrated exposure of \TotalPot and
+the BANFF-tuned MC templates are used.
+
+The effects of systematic uncertainties on the predicted number of events are summarised in Tab.~\ref{tab:nsk_systematic_table_summary}, 
+both for 
+$\beta=0$ and $\beta=1$
+%no oscillations and for oscillations 
+with the typical parameter values given above.
+In this table, systematic parameters are grouped into five categories and all parameter correlations are taken into account.
+Percentage uncertainties are given for both the BANFF prefit and postfit errors.
+%~ The individual effect of each parameter is also presented in Tab.~\ref{tab:nsk_systematic_table}, in which the correlations
+%~ between parameters are necessarily ignored.
+
+The effects of the combined systematic uncertainties on the reconstructed energy spectrum of single $e$-like ring events
+is shown in Fig.
+\ref{fig:RHC1Re_unoscillated_SKDet_FSI_envelope},
+\ref{fig:RHC1Re_unoscillated_BANFF_flux_envelope}, 
+\ref{fig:RHC1Re_unoscillated_BANFF_xsec_envelope} and 
+\ref{fig:RHC1Re_unoscillated_all_envelope}
+for null oscillations
+and Fig.
+\ref{fig:RHC1Re_oscillated_SKDet_FSI_envelope},
+\ref{fig:RHC1Re_oscillated_BANFF_flux_envelope}, 
+\ref{fig:RHC1Re_oscillated_BANFF_xsec_envelope} and 
+\ref{fig:RHC1Re_oscillated_all_envelope}
+for the typical oscillation scenario.
+This plot shows the total error envelope for the 1 $e$-like ring event reconstructed energy spectrum; this is calculated
+as the $\pm$1$\sigma$ spread with respect to the median of bin contents from \NumToys toy MC experiments generated with randomized systematic parameters.
+All systematic parameters were considered and their correlations were taken
+into account.
+
+%~ Figs.~\ref{fig:1Rmu_error_ratio_to_nominal_unosc} and~\ref{fig:1Rmu_error_ratio_to_nominal_osc}
+%~ show the effect of the systematic error, relative to the statistical error
+%~ at the Run 1-4 exposure, for the no oscillation and oscillation cases respectively.
+%~ It can be seen that the statistical error dominates at all energies.
+
+%~ Figs.~\ref{fig:1Rmu_systematics_spread_by_group_unosc} and~\ref{fig:1Rmu_systematics_spread_by_group_osc}
+%~ show the effect of the four categories of systematic error,
+%~ relative to the total systematic error, for the no oscillation and oscillation cases respectively.
+%~ It can be seen that the SuperK detector + FSI + SI and
+%~ uncorrelated cross section systematics dominate the oscillation dip region.
+
+%~ Detailed studies showing the effects of individual systematics on the expected number of
+%~ single $\mu$-like ring events are shown in \cite{OurRun1234DisappAnalysisSupplement}.
+
+%The individual effect of each systematic parameter on the best-fit values of $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^2_{32}|$ 
+%for the normal hierarchy was quantified by making a toy MC experiment with no statistical fluctuations and a +1$\sigma$ tweak of a 
+%single systematic parameter. A fit for only $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^2_{32}|$, with systematics fixed
+%are their nominal values,
+%was made of that experiment, and the +1$\sigma$ effect of that systematic parameter on the 
+%best-fit values of $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m^2}_{32}|$ was taken to be the difference between the best-fit values from 
+%the experiment with the +1$\sigma$ tweak and an experiment with nominal values of the systematics. Similarly, the -1$\sigma$ effect of that 
+%parameter was the difference between the best-fit values from an experiment with a -1$\sigma$ tweak and an experiment with 
+%nominal values of the systematics. This procedure was repeated for each systematic parameter in turn.
+%For systematic parameters which are correlated, this procedure was repeated twice, both respecting and ignoring correlations.
+%The study is repeated at multiple input points in the $\sin^{2}\overline{\theta}_{23}$-$|\overline{\Delta m}^2_{32}|$ plane.
+
+%An estimate of the order of the effect of systematics is given in Tabs.~\ref{tab:star_summary_by_mixing}
+%and~\ref{tab:star_summary_by_mass}, ordered by the effect on $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^2_{32}|$ respectively.
+%To make this estimate, the systematic effect is compared with the statistical error for the
+%specific values of $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^2_{32}|$.
+%The statistical error was evaluated using 10k toy MC datasets with no systematic fluctuations at each input point, 
+%with each dataset being fitted for only $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^2_{32}|$.
+%For each systematic, the largest effect seen in the study is given, 
+%whether that is from +1$\sigma$ or -1$\sigma$, including or neglecting correlations,
+%and from any true values of $\sin^{2}\overline{\theta}_{23}$ and $|\overline{\Delta m}^2_{32}|$ in the study.
+
+%One of the largest uncertainties is the SuperK detector efficiency/FSI parameter for NC events. The uncertainty in this parameter has a large 
+%effect on the oscillation parameters since the uncertainty itself is large (please see Tab.~\ref{tab:fsi_si_params}) 
+%and NC events constitute a significant fraction of the number of events near the oscillation maximum (please see
+%figure~\ref{fig:1Re_spectrum_and_components_default_osc_postfit}). 
+One of the largest uncertainties is given by the MEC normalization parameter; this has a large 
+effect on the oscillation parameters since the uncertainty itself is large at 102\% (please see table~\ref{tab:banff_uncertainties}); the reason 
+for the size of this uncertainty is that the rate of MEC events on oxygen is not constrained by the BANFF fit of ND280 data.
+The uncertainty on the oscillation parameters given by the priors from where they are extracted has an impact larger than
+the full BANFF post-fit covariance matrix.
+
+
+\input{tables/systematic_tables-3f+3fbar-RHC1Re}
+
+
+
+
+
+% Error envelopes
+
+The error envelope of the reconstructed energy distribution is shown in
+figures~\ref{fig:RHC1Re_oscillated_Osc_envelope_beta0} 
+to~\ref{fig:RHC1Re_oscillated_all_envelope}.
+In figure~\ref{fig:RHC1Re_oscillated_all_envelope} it is clear that the effect of the 
+systematic uncertainties is highly asymmetric.
+The first reason is that the oscillations have an asymmetric effect.
+Indeed the nominal values shown in table~\ref{tab:osc_params_fixed_values_reactor}
+correspond to minimum $\bar{\nu}_e$ appearance ($\delta_{CP} = -1.601$)
+and every random extraction of $\delta_{CP}$ increases the number of events.
+This is also shown in figure~\ref{fig:RHC1Re_oscillated_Osc_envelope_beta0} and
+figure~\ref{fig:RHC1Re_oscillated_Osc_envelope_beta1}:
+if $\beta=0$ the effect of oscillations corresponds to downward fluctuations since 
+$\delta_{CP} = -1.601$ maximizes the number of $\nu_e$ appearance events,
+while $\beta=1$ gives upward fluctuations.
+
+The second reason is given by the MEC systematic parameter.
+As written above, the uncertainty on MEC is as large as 102\%.
+If the pre-BANFF systematics are used the nominal value is 0.27
+and large fraction of the possible random extraction within $1\sigma$ 
+is not allowed because in the unphysical region. 
+Indeed the MEC parameter is a normalization parameter which cannot
+have negative values. 
+This is also shown in appendix~\ref{app:effect_mec_ereco}.
+
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/unoscillated_Osc_param_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of oscillation parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is disabled setting $\beta=0$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_oscillated_Osc_envelope_beta0}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of oscillation parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is enabled setting $\beta=1$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_oscillated_Osc_envelope_beta1}
+\end{minipage}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/unoscillated_SKDet_FSI_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of SuperK detector and FSI/SI parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is disabled setting $\beta=0$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_unoscillated_SKDet_FSI_envelope}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/unoscillated_BANFF_flux_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of BANFF flux systematics.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is enabled setting $\beta=0$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_unoscillated_BANFF_flux_envelope}
+\end{minipage}
+\end{figure*}
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/unoscillated_BANFF_xsec_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of only cross-section BANFF parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is disabled setting $\beta=0$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_unoscillated_BANFF_xsec_envelope}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/unoscillated_all_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of all systematic parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is disabled setting $\beta=0$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_unoscillated_all_envelope}
+\end{minipage}
+\end{figure*}
+
+\clearpage
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of SuperK detector and FSI/SI parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  Oscillations were fixed to the parameter values shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is enabled setting $\beta=1$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_oscillated_SKDet_FSI_envelope}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of BANFF flux systematics.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  Oscillations were fixed to the parameter values shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is enabled setting $\beta=1$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_oscillated_BANFF_flux_envelope}
+\end{minipage}
+\end{figure*}
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of only cross-section BANFF parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  Oscillations were fixed to the parameter values shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is enabled setting $\beta=1$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_oscillated_BANFF_xsec_envelope}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope.eps}
+\caption {
+  Error envelopes for the energy spectrum as a result of all systematic parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  Existing correlations between the systematic parameters were taken into account.
+  Oscillations were treated as shown in table~\ref{tab:osc_params_fixed_values_reactor}:
+  $\sin^2 \theta_{23}$, $\sin^2 \theta_{13}$, $\Delta m^2_{23}$ and $\delta_{CP}$ were randomly extracted.
+  The $\bar{\nu}_{\mu} \to \bar{\nu}_e$ signal is enabled setting $\beta=1$. 
+  The error envelopes in each bin correspond to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the expected nominal reconstructed energy distribution 
+  for pre-BANFF (blue) and post-BANFF (black).
+}
+\label{fig:RHC1Re_oscillated_all_envelope}
+\end{minipage}
+\end{figure*}
+
+
+
+\clearpage
+
+
+
+
+%Ratio oscillated
+
+In Figs.~\ref{fig:RHC1Re_oscillated_SKDet_FSI_envelope_ratio} to ~\ref{fig:RHC1Re_oscillated_all_envelope_ratio}
+the error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of oscillation parameters,
+SK detector and FSI/SI systematics, BANFF flux systematics, BANFF cross section systematics and 
+all the systematic parameters.
+
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_Osc_param_envelope_ratio.eps}
+%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+\caption {
+  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of oscillation parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  All systematic parameters were considered and their correlations were taken into account.
+  Oscillations were applied with the parameter values shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+  The fractional error in each bin corresponds to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+}
+\label{fig:RHC1Re_oscillated_SKDet_FSI_envelope_ratio}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_SKDet_FSI_envelope_ratio.eps}
+%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+\caption {
+  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of SuperK detector and FSI/SI parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  All systematic parameters were considered and their correlations were taken into account.
+  Oscillations were applied with the parameter values shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+  The fractional error in each bin corresponds to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+}
+\label{fig:RHC1Re_oscillated_SKDet_FSI_envelope_ratio}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_flux_envelope_ratio.eps}
+%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+\caption {
+  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of BANFF flux systematics.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  All systematic parameters were considered and their correlations were taken into account.
+  Oscillations were applied with the parameter values shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+  The fractional error in each bin corresponds to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+}
+\label{fig:RHC1Re_oscillated_BANFF_flux_envelope_ratio}
+\end{minipage}
+\end{figure*}
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_BANFF_xsec_envelope_ratio.eps}
+%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+\caption {
+  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of only cross-section BANFF parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  All systematic parameters were considered and their correlations were taken into account.
+  Oscillations were applied with the parameter values shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+  The fractional error in each bin corresponds to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+}
+\label{fig:RHC1Re_oscillated_BANFF_xsec_envelope_ratio}
+\end{minipage}
+\hspace{0.06\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
+\center
+\includegraphics[width=20pc]{./nuebar_plots/spectrum_tweaked/oscillated_all_envelope_ratio.eps}
+%\includegraphics[width=20pc]{./images/missing_plot-eps-converted-to.pdf}
+\caption {
+  Error envelopes, expressed as a ratio of event count, for the energy spectrum as a result of all systematic parameters.
+  \NumToys toy MC experiments were generated with randomized systematic parameters and the 1$\sigma$ spread of bin contents was calculated.
+  BANFF tuned MC templates were used.
+  All systematic parameters were considered and their correlations were taken into account.
+  Oscillations were applied with the parameter values shown in table~\ref{tab:osc_params_fixed_values_reactor}.
+  The fractional error in each bin corresponds to the $1\sigma$ error 
+  obtained from the distribution of the extracted number of events.
+  First the median (red line) is found. 
+  Then the upper (lower) error corresponds
+  to the number of events for which the 34\% of toys is contained
+  in the right (left) side of the median.
+  The continuos line shows the pre-BANFF (blue) and post-BANFF (red) ratios.
+}
+\label{fig:RHC1Re_oscillated_all_envelope_ratio}
+\end{minipage}
+\end{figure*}
+
+
+% ..................
+
+\input{./tables/nsk_systematic_table_summary.tex}
+%\input{./tables/nsk_systematic_table_summary_PROVA.tex}
+
+%..................
+
+\input{./tables/effects_of_systematic_variations.tex}
+
+%..................
+
+%\input{./tables/star_plot_table.tex}  DON'T NEED TO SHOW THIS
+
+%..................
+
