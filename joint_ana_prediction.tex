@@ -1,0 +1,765 @@
+%\clearpage
+
+
+\section{Predictions of single $\mu$-like ring and single e-like ring event reconstructed energy spectra in SuperK}
+%\section{Updated predictions of single $\mu$-like ring and single e-like ring event reconstructed energy spectrum in SuperK}
+\label{sec:prediction}
+
+\subsection{Methodology}
+\label{sec:prediction:methodology}
+
+In this analysis, the oscillation parameters are determined by fitting the reconstructed energy ($E_{r}$) spectra of the single $\mu$-like ring and single e-like ring events observed at SuperK with the predicted spectra of each sample.
+
+The predicted number $N_{SK;s,r}$
+of events
+in the $r^{th}$ reconstructed energy bin
+in the SuperK sample $s$ (single $\mu$-like ring or single e-like ring)
+is computed as follows:
+
+\begin{equation}
+\displaystyle
+  N^{exp}_{SK;s,r} =
+    \sum_{m} \sum_{t} \sum_{r\prime}
+        \color{green}{P_{m,t}} \cdot
+        \color{blue}{T_{s,r,r\prime,f_{{\Delta}E},s}} \cdot
+        \color{red}{S_{s,m,t,r\prime,\textbf{f}}} \cdot
+        \color{orange}{N_{SK;s,m,r\prime,t}^{MC}} 
+\label{eq:far_prediction}
+\end{equation}
+
+In Eq.\ \ref{eq:far_prediction}, $N_{SK;s,m,r\prime,t}^{MC}$ is the input SuperK Monte Carlo (MC) template
+containing the number of events in the sample $s$ (single $\mu$-like ring or single e-like ring), with true reaction mode $m$,
+and found in the true energy bin t and in the reconstructed energy bin $r\prime$.
+Notice that $r\prime$ index indicates a SuperK reconstructed energy bin in absence of a shift in
+reconstructed energy scale and the index r indicates a SuperK reconstructed energy bin after a shift in the
+reconstructed energy scale is applied.
+The construction of the nominal MC templates is presented in detail in 
+Sec. \ref{sec:prediction:nominal}.
+The nominal MC templates are reweighted using both
+flux-tuning weights based on NA61 hadron-production data (described in Sec.\ref{sec:prediction:NA61})
+and flux and cross-section tuning weights based on ND280 data (described in Sec.\ref{sec:prediction:BANFF}).
+
+
+The term $S_{s,m,t,r\prime,\vec{f}}$ in Eq.\ \ref{eq:far_prediction} is an overall, multiplicative, systematic error factor
+depending on the sample $s$, the reaction mode $m$, the true energy bin $t$, the reconstructed energy bin $r\prime$
+and a vector of nuisance (systematic) parameters $\vec{f}$.
+A complete description of the nuisance parameters considered in this analysis is given in Sec.\ \ref{sec:systematics} of this technical note.
+$T_{r;r\prime;f_{{\Delta}E}}$ is a transfer function describing the migration of events
+between the reconstructed energy bins $r$ and $r\prime$ due to the uncertainty in the SuperK reconstructed energy
+scale, expressed here in terms of the nuisance parameter $f_{{\Delta}E}$.
+Finally, $P_{m;t}$ is the 3-flavour oscillation probability applied in the true energy
+bin $t$ of the SuperK MC template which corresponds to mode $m$; application of the term
+$P_{m;t}$ is discussed in Sec. \ref{sec:prediction:oscillations}.
+
+% ----------------------------------------------------------
+
+\subsection{Construction of nominal SuperK Monte Carlo templates}
+\label{sec:prediction:nominal}
+
+The nominal SuperK single $\mu$-like ring (single e-like ring)
+MC templates $N_{SK;s,m,r\prime,t}^{MC}$, indicating $s$ if the sample is single $\mu$-like ring or single e-like ring,
+ are constructed by applying the corresponding selection cuts for the single $\mu$-like ring (single e-like ring) events 
+to the official SuperK MC files. Details of the input official MC files are given in Sec. \ref{sec:prediction:nominal:input}.
+The calculation of the normalization of each MC file is described in Sec. \ref{sec:prediction:nominal:normalization}.
+The official single $\mu$-like ring (single e-like ring) selection cuts are listed in Sec. \ref{sec:prediction:nominal:cuts}.
+In Sec. \ref{sec:prediction:nominal:templates}, the list of MC templates used in this analysis is presented and the true and 
+reconstructed energy binning of the templates is discussed in Sec. \ref{sec:prediction:nominal:binning}.
+
+% ----------------------------------------------------------
+
+\subsubsection{Input Monte Carlo files}
+\label{sec:prediction:nominal:input}
+
+This analysis uses the official 2013a SuperK MC files, based on NEUT and generated using the 11btunedv3.2 JNUBEAM flux.
+There are five official MC files: $\nu_{\mu}$,$\bar{\nu_{\mu}}$, $\nu_{e}$ and $\bar{\nu_{e}}$ selections generated using
+the nominal JNUBEAM flux without oscillations, and a fifth file of $\nu_{e}$ interactions generated with the $\nu_{\mu}$ flux 
+($\nu_{\mu}\rightarrow\nu_{e}$). The latest selection will be denoted the "oscillated $\nu_{e}$" sample (it corresponds to the sample called "signal-$\nu_{e}$" 
+in the $\nu_{e}$-appearance analyses). The addition of the other interaction channels ($\bar{\nu_{\mu}}\rightarrow\bar{\nu_{e}}$, $\nu_{e}\rightarrow\nu_{\mu}$ and $\bar{\nu_{e}}\rightarrow\bar{\nu_{\mu}}$) has been studied for this analysis. 
+In the Run1+2+3+4 stand-alone disappearance analysis \cite{OurRun1234DisappAnalysis3Flavour}, the templates for the channel  
+$\nu_{e}\rightarrow\nu_{\mu}$ were already included. In this joint analysis, the other two, $\bar{\nu_{\mu}}\rightarrow\bar{\nu_{e}}$ and 
+$\bar{\nu_{e}}\rightarrow\bar{\nu_{\mu}}$ were also considered. Since separate official SuperK files are not available for these extra 
+channels, they were emulated by reweighting the SuperK MC sample of the final flavour with the flux corresponding to the initial flavour:
+for instance, templates for the $\nu_{e}\rightarrow\nu_{\mu}$ channel were obtained reweighting the $\nu_{\mu}$ SuperK MC selection
+with the $\nu_{e}$ flux. The contribution of the extra templates at typical oscillation parameters can be found in Tab. \ref{tab:prediction:all_extra_templates}. 
+From this table it is clear that the contribution from the channel  $\bar{\nu_{e}}\rightarrow\bar{\nu_{\mu}}$ is negligible in both
+the single $\mu$-like ring and the single e-like ring samples, and therefore it was decided to keep only the new templates for
+$\nu_{e}\rightarrow\nu_{\mu}$, whose contribution is not negligible in the single $\mu$-like ring sample, and for 
+$\bar{\nu_{\mu}}\rightarrow\bar{\nu_{e}}$, whose contribution is not negligible in the single e-like ring sample.
+All samples were generated including the neutrino flux estimates up to 30 GeV. 
+
+% ----------------------------------------------------------
+
+\subsubsection{Normalization of Monte Carlo samples}
+\label{sec:prediction:nominal:normalization}
+
+The normalization (integrated exposure in terms of POT) of each event selection ($\nu_{\mu}$,$\bar{\nu_{\mu}}$, $\nu_{e}$, $\bar{\nu_{e}}$ and oscillated $\nu_{e}$) is calculated from the number of events with a MC truth interaction vertex within the 22.5 kt fiducial volume, defined by:
+
+\begin{equation}
+\displaystyle
+  N = \int  dS dI dE \cdot
+            \frac{d^{3}\Phi_{SK}}{dS dI dE_{\nu}} \cdot
+            \sigma_{H_{2}O} \cdot
+            \frac{N_{A}}{A} \cdot \rho \cdot L 
+\end{equation}
+where 
+$d^{3}\Phi_{SK}$/$dS dI dE$ is the number of flux particles for the given neutrino species 
+per neutrino energy bin $dE_{\nu}$, per unit area $dS$ and per POT,
+$\sigma_{H_{2}O}$ is the total interaction cross section in water
+for the given neutrino species,
+I is the beam intensity in terms of POT,
+$N_{A}$ is  Avogadro's number,
+$A$ is the mass number for water,
+$\rho$ is the water density
+and L is the neutrino path length in the water volume.
+%The results of this calculation are shown in Tab.\ \ref{tab:SKMCSummary} for all 5 SuperK MC samples along with 
+%the generated statistics, the numbers of events within the 22.5 kt fiducial volume and the
+%derived POT normalization of each sample in terms of POT.
+The derived POT normalization of each MC file is shown in Tab.\ \ref{tab:SKMCSummary}.
+This normalization depends only on the neutrino specie, being the same for each neutrino specie
+($\nu_{\mu}$,$\bar{\nu_{\mu}}$, $\nu_{e}$, $\bar{\nu_{e}}$ or oscillated $\nu_{e}$) for the two event samples
+(single $\mu$-like ring or single e-like ring).
+After being generated from a MC selection corresponding to a calculated integrated beam exposure I,
+each MC template is normalized to the integrated beam exposure of the Run 1+2+3+4 dataset (6.5700$\times$10$^{20}$ POT)
+by scaling the bin contents of the template with 6.5700$\times$10$^{20}$/I.
+
+\begin{table}
+\centering
+% \begin{tabular}{| c | c | c | c | c |}
+% \hline
+% Sample             &  Number of events   &  Number of events  & Number of events  & POT normalization \\
+%                    & /22.5 kt fiducial /$10^{21}$ POT  & generated  & in fiducial volume  &               \\  
+% \hline             
+% $\nu_{\mu}$            &          &            &             &     x.xxxx $\times 10^{2?}$  \\
+% $\bar{\nu_{\mu}}$      &          &            &             &     x.xxxx $\times 10^{2?}$ \\
+% $\nu_{e}$              &          &            &             &     x.xxxx $\times 10^{2?}$ \\
+% $\bar{\nu_{e}}$        &          &            &             &     x.xxxx $\times 10^{2?}$ \\
+% Oscillated $\nu_{e}$   &          &            &             &     x.xxxx $\times 10^{2?}$ \\
+\begin{tabular}{| c | c |}
+\hline
+Sample             &  POT normalization \\
+\hline             
+$\nu_{\mu}$            & 4.47598 $\times 10^{23}$ \\
+$\bar{\nu}_{\mu}$      & 6.57643 $\times 10^{24}$ \\
+$\nu_{e}$              & 2.23833 $\times 10^{25}$ \\
+$\bar{\nu}_{e}$        & 1.06961 $\times 10^{26}$ \\
+Oscillated $\nu_{e}$   & 2.14913 $\times 10^{23}$ \\
+\hline
+\end{tabular}
+\caption{
+  Normalization of input SuperK MC neutrino species.
+  %Statistics and normalization of input SuperK MC samples.
+}
+\label{tab:SKMCSummary}
+\end{table}
+
+
+% ----------------------------------------------------------
+
+\subsubsection{single $\mu$-like ring and single e-like ring event selection cuts}
+\label{sec:prediction:nominal:cuts}
+
+
+The SuperK MC templates contain events from the 
+$\nu_{\mu}$, $\bar{\nu}_{\mu}$, $\nu_{e}$, $\bar{\nu}_{e}$, oscillated $\nu_{e}$, oscillated $\nu_{\mu}$ and oscillated $\bar{\nu}_{e}$ neutrino species
+passing the standard SuperK selection cuts for single $\mu$-like ring events or single e-like ring events.
+
+The following cuts are the ones for the single $\mu$-like ring events:
+
+\begin{itemize}
+\item
+the number of PMT hits in the highest-charge OD cluster is less than or
+equal to 15, and the event passes the flasher rejection cuts
+({\tt evclass == 1}),
+\item
+the reconstructed vertex is at least 2 metres away from the ID wall 
+({\tt wall $>$ 200}),
+\item
+the visible energy in the event is above 30 MeV 
+({\tt evis  $>$ 30}),
+\item
+there is exactly 1 reconstructed ring in the event 
+({\tt nring == 1}),
+\item
+the reconstructed ring is $\mu$-like 
+({\tt ip[0] == 3}),
+\item
+the reconstructed muon momentum is above 200 MeV 
+({\tt amomm[0] $>$ 200}), and
+\item
+there is at most 1 decay e$^{-}$ in the event 
+({\tt nmue $<$= 1}).
+\end{itemize}
+
+For the single e-like ring events, the cuts are the following ones:
+
+\begin{itemize}
+\item
+the number of PMT hits in the highest-charge OD cluster is less than or
+equal to 15, and the event passes the flasher rejection cuts
+({\tt evclass == 1}),
+\item
+the reconstructed vertex is at least 2 metres away from the ID wall 
+({\tt wall $>$ 200}),
+\item
+the visible energy in the event is above 100 MeV 
+({\tt evis  $>$ 100}),
+\item
+there is exactly 1 reconstructed ring in the event 
+({\tt nring == 1}),
+\item
+the reconstructed ring is e-like 
+({\tt ip[0] == 2}),
+\item
+number of detected decay e$^{-}$ in the event is zero
+({\tt nmue == 0}), 
+\item
+reconstructed neutrino energy is less than 1250 MeV
+({\tt $E^{rec}_{\nu} < 1250$}) and
+\item
+fiTQun $\pi^{0}$ rejection cut
+({\tt ln($L_{\pi^{0}}/L_{e}<175-0.875\times m_{\gamma\gamma}$}).
+
+\end{itemize}
+
+Notice that the first four cuts in the single $\mu$-like ring selection are common for
+both single $\mu$-like ring and single e-like ring events, being the first three ones
+grouped under the name FCFV (full contained in fiducial volume) cut. 
+A study was made to remove the cut in the reconstructed neutrino energy in the single e-like ring event
+selection in \cite{2013nuenergy}, but it was finally decided not to include the high energy tail events ($E^{rec}_{\nu}>1250$ MeV) for this Run1+2+3+4 analysis. More details about the new fiTQun algorithm to reject $\pi^{0}$ are given in \cite{fiTQun}.
+
+
+
+% ----------------------------------------------------------
+
+\subsubsection{List of Monte Carlo templates}
+\label{sec:prediction:nominal:templates}
+
+
+For each SuperK MC sample, a number of different MC templates is constructed 
+corresponding to different true reaction modes.
+
+The template granularity depends on the type of oscillation analysis and the specific 
+systematic parameters considered in the analysis.
+For the {\em VALOR} stand-alone disappearance analyses, different number of templates were used depending on the analysis:
+12 MC templates were used for the 2010 Run 1+2 2-flavour disappearance analysis \cite{OurRun12DisappAnalysis}, 
+15 MC templates were used for the 2010 Run 1+2 3-flavour disappearance analysis \cite{OurRun12DisappAnalysis3Flavour},
+28 MC templates were used for the 2012 Run 1+2+3 3-flavour disappearance analysis \cite{OurRun123DisappAnalysis3Flavour} and
+32 MC templates were used for the 2013 Run 1+2+3+4 3-flavour disappearance analysis \cite{OurRun1234DisappAnalysis3Flavour}.
+
+This joint oscillation analysis uses a different number of MC templates depending on the sample, 
+single $\mu$-like ring or single e-like ring, due to the different separation of NC modes.
+
+For the single $\mu$-like ring sample, the following 36 MC templates are used:
+
+\begin{itemize}
+\item  $\nu_{\mu}$ CCQE
+\item  $\nu_{\mu}$ CC1$\pi$, 
+\item  $\nu_{\mu}$ CC coherent, 
+\item  $\nu_{\mu}$ CC other, 
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC1$\pi^{\pm}$, 
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC other, 
+\item  $\bar{\nu}_{\mu}$ CCQE, 
+\item  $\bar{\nu}_{\mu}$ CC1$\pi$, 
+\item  $\bar{\nu}_{\mu}$ CC coherent, 
+\item  $\bar{\nu}_{\mu}$ CC other, 
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC1$\pi^{\pm}$, 
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC other, 
+\item  $\nu_{e}$ CCQE, 
+\item  $\nu_{e}$ CC1$\pi$,
+\item  $\nu_{e}$ CC coherent,
+\item  $\nu_{e}$ CC other,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC1$\pi^{\pm}$,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC other,
+\item  $\bar{\nu}_{e}$ CCQE, 
+\item  $\bar{\nu}_{e}$ CC1$\pi$,
+\item  $\bar{\nu}_{e}$ CC coherent,
+\item  $\bar{\nu}_{e}$ CC other,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC1$\pi^{\pm}$,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC other,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CCQE,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC1$\pi$,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC coherent,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC other,
+\item  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CCQE,
+\item  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC1$\pi$,
+\item  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC coherent,
+\item  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC other,
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CCQE,
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC1$\pi$,
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC coherent, and
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC other.
+\end{itemize}
+
+
+For the single e-like ring sample, the following 40 MC templates are used:
+
+\begin{itemize}
+\item  $\nu_{\mu}$ CCQE
+\item  $\nu_{\mu}$ CC1$\pi$, 
+\item  $\nu_{\mu}$ CC coherent, 
+\item  $\nu_{\mu}$ CC other, 
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC1$\pi^{0}$, 
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC coherent, 
+\item  $\nu_{\mu}$ (and $\rightarrow$ $\nu_{e}$, $\nu_{\tau}$) NC other, 
+\item  $\bar{\nu}_{\mu}$ CCQE, 
+\item  $\bar{\nu}_{\mu}$ CC1$\pi$, 
+\item  $\bar{\nu}_{\mu}$ CC coherent, 
+\item  $\bar{\nu}_{\mu}$ CC other, 
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC1$\pi^{0}$, 
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC coherent, 
+\item  $\bar{\nu}_{\mu}$(and $\rightarrow$ $\bar{\nu}_{e}$, $\bar{\nu}_{\tau}$) NC other, 
+\item  $\nu_{e}$ CCQE, 
+\item  $\nu_{e}$ CC1$\pi$,
+\item  $\nu_{e}$ CC coherent,
+\item  $\nu_{e}$ CC other,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC1$\pi^{0}$,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC coherent,
+\item  $\nu_{e}$ (and $\rightarrow$ $\nu_{\mu}$, $\nu_{\tau}$) NC other,
+\item  $\bar{\nu}_{e}$ CCQE, 
+\item  $\bar{\nu}_{e}$ CC1$\pi$,
+\item  $\bar{\nu}_{e}$ CC coherent,
+\item  $\bar{\nu}_{e}$ CC other,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC1$\pi^{0}$,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC coherent,
+\item  $\bar{\nu}_{e}$ (and $\rightarrow$ $\bar{\nu}_{\mu}$, $\bar{\nu}_{\tau}$) NC other,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CCQE,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC1$\pi$,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC coherent,
+\item  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC other,
+\item  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CCQE,
+\item  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC1$\pi$,
+\item  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC coherent,
+\item  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC other,
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CCQE,
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC1$\pi$,
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC coherent, and
+\item  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC other.
+\end{itemize}
+
+
+% ----------------------------------------------------------
+
+\subsubsection{Binning of Monte Carlo templates}
+\label{sec:prediction:nominal:binning}
+
+Each of the MC templates previously described in Sec. \ref{sec:prediction:nominal:templates}
+for the single $\mu$-like ring sample
+has 6132 2-dimensional bins (= 84 true energy bins $\times$ 73 reconstructed energy bins),
+and each of the MC templates for the single e-like ring sample
+has 2100 2-dimensional bins (= 84 true energy bins $\times$ 25 reconstructed energy bins).
+The 84 true energy bins, common for both the single $\mu$-like ring and the single e-like ring samples, are arranged as follows:
+\begin{itemize}
+ \item   6 50-MeV bins from 0-0.3 GeV, 
+ \item   28 25-MeV bins from 0.3-1 GeV, 
+ \item   40 50-MeV bins from 1-3 GeV, 
+ \item   5 100-MeV bin from 3-3.5 GeV, 
+ \item   1 bin from 3.5-4 GeV, 
+ \item   1 bin from 4-5 GeV, 
+ \item   1 bin from 5-7 GeV, 
+ \item   1 bin from 7-10 GeV and
+ \item   1 bin from 10-30 GeV.
+\end{itemize}
+
+For the single $\mu$-like ring sample the 73 reconstructed energy bins are the following:
+\begin{itemize}
+ \item   60 50-MeV bins from 0-3 GeV, 
+ \item   4 250-MeV bins from 3-4 GeV, 
+ \item   4 500-MeV bins from 4-6 GeV, 
+ \item   4 1000-MeV bins from 6-10 GeV and
+ \item   1 bin from 10-30 GeV.
+\end{itemize}
+while for the single e-like ring sample the 25 reconstructed energy bins used are 
+uniform 50-MeV bins from 0 to 1.25 GeV.
+
+The same reconstructed neutrino energy binning is used for the fit of the single $\mu$-like ring reconstructed energy spectrum (73 reconstructed energy bins) and for the single e-like ring reconstructed energy spectrum (25 reconstructed energy bins).
+
+A study was performed to decide the optimum binning scheme balancing the needs for accuracy and speed.
+Details are given in Appendix I of Ref.\ \cite{OurRun123DisappAnalysis3Flavour}.
+
+The binning described here is unchanged with respect to the Run 1+2+3 analysis,
+but, after discussion with T2K-SK, events with reconstructed energy $>$30 GeV are now included in
+the 10-30 GeV bin.
+
+
+% ----------------------------------------------------------
+
+\subsection{Applying flux tuning based on NA61 data}
+\label{sec:prediction:NA61}
+
+In this analysis, as in the {\em VALOR} stand-alone disappearance analysis in \cite{OurRun1234DisappAnalysis3Flavour},
+ the nominal MC templates, which were constructed using a MC event sample generated with the 11a flux,
+are reweighted to the 11bv3.2 flux which was tuned on NA61 hadron production measurements \cite{FluxTuning}\cite{NA61T2K}.
+The reweighted MC templates are denoted the {\em NA61-tuned} MC templates in this document.
+The applied weights were obtained from \cite{FluxTuningHistograms} and are shown as a function of the true neutrino energy 
+in Figs.\ 1-4 in Ref.\ \cite{OurRun123DisappAnalysis3Flavour}.
+The effect of this flux tune on the predicted reconstructed energy spectrum of 
+single $\mu$-like ring events and single e-like ring events is discussed in Sec.\ \ref{sec:prediction:predictions} 
+%(see Figs.\ \ref{fig:nsk_vs_osc_params_effect_of_na61_tune} and \ref{fig:1Rmu_spectrum_w_and_wo_na61_weights}, and 
+%Tabs.\ \ref{tab:nsk_nominal_x3_no_osc} and \ref{tab:nsk_nominal_x3_default_osc})
+
+
+
+% ----------------------------------------------------------
+
+\subsection{Applying flux and cross-section (BANFF) tuning based on ND280 data}
+\label{sec:prediction:BANFF}
+
+In this analysis, the BANFF flux and cross-section parameter tuning is used to reweight the NA61-tuned MC templates.
+The MC templates obtained after this second reweighting will be denoted the {\em BANFF-tuned} MC templates
+in this document. Updated BANFF weights were used in this analysis with respect to the Run 1+2+3 one reported in \cite{OurJointAnalysis}-
+
+For the 2013 analyses, the division made to the ND280 CC events was updated, such that now those events are divided 
+into the following samples: CC0$\pi$-like, CC1$\pi$-like and CC other. 
+For the 2012 analyses (Run 1+2+3 analyses), the division of ND280 CC events was into the two samples: CCQE-like and CCnonQE. 
+In the tracker, the ionisation energy loss in the TPC and/or FGD can be used to identify a track as a pion. Also the presence of a Michel electron in the FGD1 serves to identify a pion track. Using this information, CC0$\pi$-like and CC1$\pi$-like samples are selected such as they have exactly 0 and 1 track consistent with a $\pi^{+}$ respectively. If more than 1 track is consistent with a $\pi^{+}$, the event is included in the CC other sample. Events with at least one negative track or with a track consistent with an electron are also included in the CC other sample. More details about the selection are given in \cite{ND280Inputs}.
+
+The fundamental update on the BANFF fit with respect to the previous 2012 analysis is the use of these three ND280 samples
+(CC0$\pi$-like, CC1$\pi$-like and CC other) to find the best-fit values of the flux normalization parameters and the cross-section parameters and their correlations \cite{BANFF2013}. The postfit values of these 
+parameters (taken from version 5 of the 2013 Run 1+2+3+4 BANFF fit in \verb+postfit_banff_2013_disappearance_v5.root+) are used in
+turn to calculate the nominal predicted single $\mu$-like ring and single e-like ring reconstructed energy spectra in SuperK.
+A list of BANFF parameters and their best-fit values is shown in Tab.\ \ref{tab:input_uncertainties}.
+
+%This analysis reweights the NA61-tuned MC templates to the BANFF best-fit parameters
+%\footnote{
+%  The BANFF group performed its fit using an NA61-tuned flux ({\em 2011b\_v3.2\_run1-3c}),
+%  the same one used for reweighting our nominal MC templates in Sec.\ \ref{sec:na61_weights}.
+%}
+%\footnote{
+%  Reweighting the MC templates to the BANFF best-fit parameters is, in effect, a ``special''
+%  systematic variation. Therefore, more details on 
+%  are presented in the section detailing the systematic parameters considered in this analysis
+%  (Sec.\ \ref{sec:systematics}).
+%}.
+
+The effect of the BANFF tune on the predicted reconstructed energy spectra of
+single $\mu$-like ring and single e-like ring events is discussed in Sec.\ \ref{sec:prediction:predictions} 
+%(see 
+%Figs.\ \ref{fig:nsk_vs_osc_params_effect_of_banff_tune} and \ref{fig:1Rmu_spectrum_w_and_wo_banff_weights}, and
+%Tabs.\ \ref{tab:nsk_nominal_x3_no_osc} and \ref{tab:nsk_nominal_x3_default_osc}).
+
+
+
+% ----------------------------------------------------------
+
+\subsection{Applying neutrino oscillations}
+\label{sec:prediction:oscillations}
+
+Oscillation probabilities are computed in a 3-flavour framework including matter effects in constant-density matter
+(assuming an Earth crust density of 2.6 g/cm$^{3}$).
+Custom oscillation probability calculation code was developed within the {\em VALOR} analysis framework.
+Details and estimates of the numerical accuracy of this code were first presented in \cite{OurRun12DisappAnalysis3Flavour},
+and is also shown in Appendix A of \cite{OurRun123DisappAnalysis3Flavour}.
+Comparisons between the {\em VALOR} oscillation probability calculation code and Prob3++ \cite{Prob3}, 
+which is typically used by the alternative T2K oscillation analyses, are shown in Appendix B of \cite{OurRun123DisappAnalysis3Flavour}.
+
+Oscillations are applied as a function of true energy to the 
+  $\nu_{\mu}$ CCQE,
+  $\nu_{\mu}$ CC1$\pi$, 
+  $\nu_{\mu}$ CC coherent, 
+  $\nu_{\mu}$ CC other, 
+  $\bar{\nu}_{\mu}$ CCQE, 
+  $\bar{\nu}_{\mu}$ CC1$\pi$, 
+  $\bar{\nu}_{\mu}$ CC coherent, 
+  $\bar{\nu}_{\mu}$ CC other, 
+  $\nu_{e}$ CCQE, 
+  $\nu_{e}$ CC1$\pi$,
+  $\nu_{e}$ CC coherent,
+  $\nu_{e}$ CC other,
+  $\bar{\nu}_{e}$ CCQE, 
+  $\bar{\nu}_{e}$ CC1$\pi$,
+  $\bar{\nu}_{e}$ CC coherent,
+  $\bar{\nu}_{e}$ CC other,
+  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CCQE,
+  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC1$\pi$,
+  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC coherent,
+  oscillated $\nu_{\mu} \rightarrow \nu_{e}$ CC other,
+  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CCQE,
+  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC1$\pi$,
+  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC coherent,
+  oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ CC other,
+  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CCQE,
+  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC1$\pi$,
+  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC coherent and
+  oscillated $\nu_{e} \rightarrow \nu_{\mu}$ CC other
+MC templates.
+
+The MC templates constructed from the unoscillated MC samples are weighted 
+with the corresponding survival probability:
+The $\nu_{\mu}$ templates are weighted with P($\nu_{\mu}\rightarrow\nu_{\mu}$),
+the $\bar{\nu}_{\mu}$ templates with P($\bar{\nu}_{\mu}\rightarrow\bar{\nu}_{\mu}$),
+the $\nu_{e}$ templates with P($\nu_{e}\rightarrow\nu_{e}$) and
+the $\bar{\nu}_{e}$ templates with P($\bar{\nu}_{e}\rightarrow\bar{\nu}_{e}$).
+The MC templates made from the oscillated $\nu_{\mu} \rightarrow \nu_{e}$ MC sample are weighted with 
+P($\nu_{\mu}\rightarrow\nu_{e}$) (the sample was generated assuming 100\% of 
+$\nu_{\mu}$ transform to $\nu_{e}$), 
+the MC templates made from the oscillated $\bar{\nu_{\mu} }\rightarrow \bar{\nu_{e}}$ MC sample are weighted with 
+P($\bar{\nu_{\mu}}\rightarrow\bar{\nu_{e}}$)
+and the MC templates made from the oscillated  $\nu_{e} \rightarrow \nu_{\mu}$ MC sample are weighted with
+P($\nu_{e}\rightarrow\nu_{\mu}$).
+
+In the standard 3-flavour oscillation framework,
+oscillations of $\nu_{e}$ and $\nu_{\mu}$ can yield $\nu_{\tau}$, while
+oscillations of $\bar{\nu}_{e}$ and $\bar{\nu}_{\mu}$ can yield $\bar{\nu}_{\tau}$.
+In this analysis, contributions from $\nu_{\tau}$-CC and $\bar{\nu}_{\tau}$-CC were neglected as their
+energy threshold is around 3.5 GeV and their effect is negligible\footnote{
+A back-of-the-envelope calculation can be found in the replies to
+comments and revision history document of
+\cite{OurRun123DisappAnalysis3Flavour} that gives $\ll 1\%$ $\nu_\tau$
+contamination in the 1-ring $\mu$-like SuperK sample. A SuperK MC study is required
+to determine whether the SuperK efficiency assumptions made there are valid.
+  }.
+Accordingly, this analysis, similarly to the stand-alone disappearance analysis \cite{OurRun1234DisappAnalysis3Flavour}, uses no $\nu_{\tau}$-CC and $\bar{\nu}_{\tau}$-CC MC templates
+(and, in fact, no $\nu_{\tau}$ and $\bar{\nu}_{\tau}$ SuperK MC samples are available).
+
+As it has been emphasized in \cite{OurRun1234DisappAnalysis3Flavour},
+the $\nu_{\mu}$ NC MC templates for a mode $m$ are proxies for the
+NC MC templates for the mixture of $\nu_{e}$+$\nu_{\mu}$+$\nu_{\tau}$ resulting from
+3-flavour $\nu_{\mu}$ oscillations for that mode $m$. The same applies to the $\bar{\nu}_{\mu}$, $\nu_{e}$ and $\bar{\nu}_{e}$ NC MC templates.
+These NC MC templates are unchanged under standard 3-flavour oscillations.% (see also Sec.\ \ref{sec:}).
+
+Also it should be noted that there are no explicit NC MC templates made from the oscillated $\nu_{e}$ sample.
+If they were used, the oscillated $\nu_{e}$ (i.e.\ $\nu_{e}$ coming from $\nu_{\mu}$ oscillations) would be double counted
+since they are already included in the $\nu_{\mu}$ NC MC templates.
+
+The same oscillation parameters are used for neutrinos and antineutrinos.
+% The same oscillation parameters are used for $\nu_{\mu}$, $\bar{\nu}_{\mu}$, $\nu_{e}$ and $\bar{\nu}_{e}$ 
+% oscillations, and these are $\sin^{2}{\theta_{23}}$, $|\Delta m^{2}_{32}|$ (normal hierarchy) or $|\Delta m^{2}_{31}|$ (inverted hierarchy),
+% $\sin^{2}{\theta_{13}}$, $\sin^{2}{\theta_{12}}$, $\Delta m^{2}_{21}$ and $\delta_{CP}$.
+
+
+% ----------------------------------------------------------
+
+
+\subsection{Predictions of nominal and tuned-MC single $\mu$-like ring and single e-like ring spectra}
+\label{sec:prediction:predictions}
+
+
+In this section, the expected numbers of events and single $\mu$-like ring and single e-like ring 
+reconstructed energy spectra in SuperK are presented for various oscillation scenarios.
+
+Estimates of the effect of the NA61 and BANFF tunings and of assumptions made in the 3-flavour
+neutrino oscillation framework used in this analysis are also presented.
+
+Unless otherwise stated, the normal hierarchy is assumed.
+All plots were generated for an integrated exposure of 6.5700$\times$10$^{20}$ POT.
+
+
+The expected number of single $\mu$-like ring events and single e-like ring events 
+is shown in Fig.\ \ref{fig:nsk_vs_osc_params_disap}
+as a function of the oscillation parameters $\sin^{2}{\theta_{23}}$ and $\Delta m^{2}$ 
+with $\sin^{2}{\theta_{13}}$ = 0.0251 and $\delta_{CP}$ = 0
+and in Fig. \ \ref{fig:nsk_vs_osc_params_app}
+as a function of the oscillation parameters $\sin^{2}{\theta_{13}}$ and $\delta_{CP}$
+with $\sin^{2}{\theta_{23}}$ = 0.513 and $\Delta m^{2} = 2.4375 \times 10^{-3} eV^2/c^4$.
+In both figures the solar parameters were fixed to the values in Tab. \ref{tab:solarparameters} and 
+the normal hierarchy was assumed.  
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=20pc]{./images/prediction/nsk_1Rmu_vs_osc_params_disap_normal.eps}\includegraphics[width=20pc]{./images/prediction/nsk_1Re_vs_osc_params_disap_normal.eps}
+\caption {
+  Predicted number of single $\mu$-like ring events (left) and single e-like ring events (right)
+as a function of the oscillation parameters $\sin^{2}{\theta_{23}}$ and $\Delta m^{2}$ 
+with $\sin^{2}{\theta_{13}}$ = 0.0251 and $\delta_{CP}$ = 0.
+The solar parameters were fixed to the values in Tab. \ref{tab:solarparameters} and 
+the normal hierarchy was assumed.
+}
+\label{fig:nsk_vs_osc_params_disap}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=20pc]{./images/prediction/nsk_1Rmu_vs_osc_params_app_normal.eps}\includegraphics[width=20pc]{./images/prediction/nsk_1Re_vs_osc_params_app_normal.eps}
+\caption {
+  Predicted number of single $\mu$-like ring events (left) and single e-like ring events (right)
+as a function of the oscillation parameters $\sin^{2}{\theta_{13}}$ and $\delta_{CP}$
+with $\sin^{2}{\theta_{23}}$ = 0.513 and $\Delta m^{2} = 2.4375 \times 10^{-3} eV^2/c^4$.
+The solar parameters were fixed to the values in Tab. \ref{tab:solarparameters} and 
+the normal hierarchy was assumed.
+}
+\label{fig:nsk_vs_osc_params_app}
+\end{figure*}
+
+
+
+Predicted single $\mu$-like ring and single e-like ring SuperK reconstructed energy spectra are shown in
+Fig. \ref{fig:spectra_breakdown} for an exposure of 6.570 $\times 10^{20}$ POT
+after BANFF tuning applied to the MC templates, for oscillations with
+$\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}|$=2.4375$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+$\sin^{2}\theta_{13}$=0.0251, $\delta_{CP}$=0 and the values for the solar parameters in Tab. \ref{tab:solarparameters},
+and normal mass hierarchy assumed, 
+and in Fig. \ref{fig:spectra_breakdown_no_osc} for no oscillations.
+
+Table \ref{tab:prediction:all_extra_templates} shows the predicted number of single $\mu$-like ring 
+and single e-like ring events for an exposure of 6.570 $\times 10^{20}$ POT
+after BANFF tuning applied to the MC templates, for oscillations
+with $sin^{2}(\theta_{12}) = 0.306$, $\Delta m_{21}^{2} = 7.5 \times 10^{-5}$,
+$sin^{2}(\theta_{23}) =  0.5$, $|\Delta m^{2}| = 2.4375 \times 10^{-3}$, $sin^{2}(\theta_{13}) =  0.0251$,$\delta_{CP} = 0$ and normal hierarchy assumed. All the extra templates considered, as explained in Sec. \ref{sec:changes}
+are included in this table, although for the analysis the templates corresponding to 
+$\bar{\nu_{e}}\rightarrow \bar{\nu_{\mu}}$ were finally not used due to its negligible contribution to both samples
+as can be observed in Tab. \ref{tab:prediction:all_extra_templates}.
+
+A MC tune derived using NA61 data is applied to the nominal MC templates, and another tune derived using the ND280 data is 
+applied to the NA61-tuned templates as described in Secs.\ \ref{sec:prediction:NA61} and \ref{sec:prediction:BANFF}.
+The effects of the NA61 and BANFF tunes on the total expected number of single $\mu$-like ring events
+and single e-like ring events, and in the expected number for each interaction mode of each sample 
+are shown in Tab. \ref{tab:nsk_nominal_osc_1Rmu} and Tab. \ref{tab:nsk_nominal_osc_1Re}
+respectively for single $\mu$-like ring events and single e-like ring events
+with $\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}|$=2.4375$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+$\sin^{2}\theta_{13}$=0.0251, $\delta_{CP}$=0 and the values for the solar parameters in Tab. \ref{tab:solarparameters},
+and normal mass hierarchy assumed.
+Tables \ref{tab:nsk_nominal_no_osc_1Rmu} and \ref{tab:nsk_nominal_no_osc_1Re} show the same effect for no oscillations. 
+
+Finally, the effects of the NA61 and BANFF tunes on the reconstructed energy spectrum of
+single $\mu$-like ring events and single e-like ring events are shown in Figs.\
+\ref{fig:comparison_spectra_nominal_flux} and
+\ref{fig:comparison_spectra_banff_flux} respectively 
+for oscillations with $\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}|$=2.4375$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+$\sin^{2}\theta_{13}$=0.0251, $\delta_{CP}$=0 and the values for the solar parameters in Tab. \ref{tab:solarparameters},
+and normal mass hierarchy assumed.
+For the case of no oscillations the effects are shown in 
+Figs.\
+\ref{fig:comparison_spectra_nominal_flux_no_osc} and
+\ref{fig:comparison_spectra_banff_flux_no_osc}.
+Figures \ref{fig:comparison_spectra_nominal_flux}  and \ref{fig:comparison_spectra_nominal_flux_no_osc}
+show the ratio of flux-tuned spectra to nominal spectra,
+and Figs. \ref{fig:comparison_spectra_banff_flux} and \ref{fig:comparison_spectra_banff_flux_no_osc}
+show the ratio of BANFF-tuned spectra to flux-tuned spectra.
+
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=20pc]{./images/prediction/Spectrum_breakdown_1Rmu.eps}\includegraphics[width=20pc]{./images/prediction/Spectrum_breakdown_1Re.eps}
+\caption {
+Predicted single $\mu$-like ring (left) and single e-like ring (right) SuperK reconstructed energy spectra 
+showing contributions from various true neutrino interaction modes, for an exposure of 6.570 $\times 10^{20}$ POT
+after BANFF tuning applied to the MC templates, for oscillations with
+$\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}|$=2.4375$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+$\sin^{2}\theta_{13}$=0.0251, $\delta_{CP}$=0 and the values for the solar parameters in Tab. \ref{tab:solarparameters},
+and normal mass hierarchy assumed. Notice that they are stacked plots.
+}
+\label{fig:specta_breakdown}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=20pc]{./images/prediction/Spectrum_breakdown_1Rmu_no_osc.eps}\includegraphics[width=20pc]{./images/prediction/Spectrum_breakdown_1Re_no_osc.eps}
+\caption {
+Predicted single $\mu$-like ring (left) and single e-like ring (right) SuperK reconstructed energy spectra 
+showing contributions from various true neutrino interaction modes, for an exposure of 6.570 $\times 10^{20}$ POT
+after BANFF tuning applied to the MC templates, for no oscillations. Notice that they are stacked plots.
+}
+\label{fig:spectra_breakdown_no_osc}
+\end{figure*}
+
+
+
+\begin{table}[htbp]
+\center
+\begin{tabular} {|p{2cm}|p{3.0cm}||p{3.0cm}|}
+\hline
+Events  & $1R_{\mu}$ & $1R_{e}$ \\
+\hline \hline
+\textbf{Total}  & \textbf{125.009} &\textbf{ 21.575}  \\
+\hline
+$\nu_{\mu}$  & 116.473 & 0.944 \\
+\hline
+$\nu_{e} \rightarrow \nu_{\mu}$  & 0.162 & 0.0002\\
+\hline
+$\bar{\nu_{\mu}}$  & 7.808 & 0.055 \\
+\hline
+$\bar{\nu_{e}}\rightarrow \bar{\nu_{\mu}}$  & 0.009 & $2.8\times10^{-6}$\\
+\hline
+$\nu_{e}$  & 0.261 & 3.127 \\
+\hline
+ $ \nu_{\mu} \rightarrow \nu_{e}$ & 0.268  & 17.069 \\
+\hline
+$\bar{\nu_{e}}$  & 0.024 & 0.152 \\
+\hline
+$\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$  & 0.003 & 0.229 \\
+\hline
+\end{tabular}
+\caption{Predicted number of single $\mu$-like ring and single e-like ring events for an exposure of 6.570 $\times 10^{20}$ POT
+after BANFF tuning applied to the MC templates with oscillations
+using $sin^{2}(\theta_{12}) = 0.306$, $\Delta m_{21}^{2} = 7.5 \times 10^{-5}$,
+$sin^{2}(\theta_{23}) =  0.5$, $|\Delta m^{2}| = 2.4375 \times 10^{-3}$, $sin^{2}(\theta_{13}) =  0.0251$,$\delta_{CP} = 0$ and normal hierarchy assumed. All the extra templates considered are included in this table, although for the analysis the templates corresponding to 
+$\bar{\nu_{e}}\rightarrow \bar{\nu_{\mu}}$ were finally not used due to its negligible contribution to both samples. }
+\label{tab:prediction:all_extra_templates}
+\end{table}
+
+
+%...........
+%
+% tables showing the effect of tunes on nsk and nsk components
+%
+
+
+\input{tables/nsk_nominal_osc_1Rmu}
+
+\input{tables/nsk_nominal_osc_1Re}
+
+
+\input{tables/nsk_nominal_no_osc_1Rmu}
+
+\input{tables/nsk_nominal_no_osc_1Re}
+
+
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=25pc]{./images/prediction/Comparison_spectra_nominal_flux.eps}
+\caption {
+Top: Reconstructed-energy spectrum of single $\mu$-like ring events (left) and single e-like ring events (right),
+for an exposure of 6.5700$\times$10$^{20}$ POT,
+both with and without the effect of the NA61 flux tuning of the nominal MC templates.
+The spectra are shown for oscillations with $\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}|$=2.4375$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+$\sin^{2}\theta_{13}$=0.0251, $\delta_{CP}$=0 and the values for the solar parameters in Tab. \ref{tab:solarparameters},
+and normal mass hierarchy assumed.
+Bottom: Ratio of flux-tuned spectrum to the nominal MC spectrum.
+}
+\label{fig:comparison_spectra_nominal_flux}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=25pc]{./images/prediction/Comparison_spectra_banff_flux.eps}
+\caption {
+ Top: Reconstructed-energy spectrum of single $\mu$-like ring events (left) and single e-like ring events (right),
+for an exposure of 6.5700$\times$10$^{20}$ POT,
+both with and without the effect of BANFF flux and cross-section tuning on the NA61-tuned flux MC templates.
+The spectra are shown for oscillations with $\sin^{2}\theta_{23}$=0.5 and $|\Delta m^{2}|$=2.4375$\times$10$^{-3}$ eV$^{2}$/c$^{4}$,
+$\sin^{2}\theta_{13}$=0.0251, $\delta_{CP}$=0 and the values for the solar parameters in Tab. \ref{tab:solarparameters},
+and normal mass hierarchy assumed.
+Bottom: Ratio of flux-tuned spectrum to the nominal MC spectrum.
+}
+\label{fig:comparison_spectra_banff_flux}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=25pc]{./images/prediction/Comparison_spectra_nominal_flux_no_osc.eps}
+\caption {
+ Top: Reconstructed-energy spectrum of single $\mu$-like ring events (left) and single e-like ring events (right),
+for an exposure of 6.5700$\times$10$^{20}$ POT,
+both with and without the effect of the NA61 flux tuning of the nominal MC templates.
+The spectra are shown for no oscillations (therefore setting $\sin^{2}\theta_{23}$=0,
+$\sin^{2}\theta_{13}$=0.0 and $\sin^{2}\theta_{12}$ = 0, rest of parametes as in Fig. \ref{fig:comparison_spectra_nominal_flux}).
+Bottom: Ratio of flux-tuned spectrum to the nominal MC spectrum.
+}
+\label{fig:comparison_spectra_nominal_flux_no_osc}
+\end{figure*}
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=25pc]{./images/prediction/Comparison_spectra_banff_flux_no_osc.eps}
+\caption {
+ Top: Reconstructed-energy spectrum of single $\mu$-like ring events (left) and single e-like ring events (right),
+for an exposure of 6.5700$\times$10$^{20}$ POT,
+both with and without the effect of BANFF flux and cross-section tuning on the NA61-tuned flux MC templates.
+The spectra are shown for no oscillations (therefore setting $\sin^{2}\theta_{23}$=0,
+$\sin^{2}\theta_{13}$=0.0 and $\sin^{2}\theta_{12}$ = 0, rest of parametes as in Fig. \ref{fig:comparison_spectra_nominal_flux}).
+Bottom: Ratio of flux-tuned spectrum to the nominal MC spectrum.
+}
+\label{fig:comparison_spectra_banff_flux_no_osc}
+\end{figure*}

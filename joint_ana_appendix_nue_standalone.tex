@@ -1,0 +1,414 @@
+\clearpage
+
+\section {Validation of the $\nu_{e}$-appearance analysis implementation in the {\em VALOR} analysis framework}
+\label{app:standalone}
+
+This section contains the validation of the {\em VALOR} $\nu_{e}$-appearance implementation, which has been made reproducing results from the official 2013 $\nu_{e}$-appearance analyses in \cite{2013nueptheta} and \cite{2013nuenergy} (mainly in \cite{2013nuenergy}, the $\nu_{e}$-appearance analysis using reconstructed energy spectrum). 
+Notice that although the framework used is the one for the joint oscillation analysis, the results in this section
+were made with stand-alone appearance analysis mode only. 
+For the following comparisons, the values of the oscillation parameters used are indicated in \ref{tab:app:nue:fixedvalues}. Digitalized plots used to compare with official results were taken mainly from \cite{2013nuenergy} using fiTQun cut and "number of events + $E_{reco}$ shape" information. However, additional checks were done comparing with results in \cite{2013nueptheta} as well.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Parameter & Value \\
+\hline
+\hline
+$\sin^{2}2\theta_{12}$ & 0.8495 \\
+\hline 
+$\sin^{2}2\theta_{23}$ & 1.0 \\
+\hline 
+$\Delta m_{21}^{2}$ & 7.6$\times$10$^{-5}$ eV$^{2}$/c$^{4}$ \\
+\hline
+$\Delta m_{32}^{2}$ & 2.4$\times$10$^{-3}$ eV$^{2}$/c$^{4}$ \\
+\hline
+$\delta_{CP}$ & 0\\
+\hline
+\end{tabular}
+\caption{Fixed values of the oscillation parameters used for the comparison with the official stand-alone appearance analysis.}
+\label{tab:app:nue:fixedvalues}
+\end{table}
+
+\subsection{Differences with respect to the official analyses}
+
+For the following comparisons it is necessary to keep in mind that some differences between the analysis presented here and the official 2013 $\nu_{e}$-appearance exist. Those differences are:
+
+\begin{itemize}
+\item{The response functions (splines) for the systematic errors that need them are different since they were created by each group independently.}
+\item{{\em VALOR} analysis framework uses its own package to compute the oscillation probabilities, while the probability for the official analyses was found with the Prob3++ package\footnote{A detailed comparison of the two oscillation probability codes can be found in Appendix B of \cite{OurRun123DisappAnalysis3Flavour}}.}
+\item{Unless otherwise stated, the spectral function was tweaked in a limited range between 0 (off) and 1 (on) in the {\em VALOR} analysis, whereas a normal distribution was used in the official analyses.}
+\item{The addition of extra templates, oscillated $\nu_{e} \rightarrow \nu_{\mu}$ and oscillated $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ as explained in \ref{sec:changes}, was considered in order to see the effect in the results.}
+\end{itemize}
+
+\subsection{Validation of the predicted $\nu_{e}$ candidate events}
+\label{app:sub:valevents}
+
+Table\ref{tab:nuepredictednominal} shows the nominal predicted number of $\nu_{e}$ candidate events corresponding to Run1+2+3+4 POT for the {\em VALOR} $\nu_{e}$-appearance analysis and from the official analyses in references \cite{2013nueptheta} and \cite{2013nuenergy}, and table \ref{tab:nuepredictedbanff} shows the predicted number of $\nu_{e}$ candidate events after the BANFF tuning. There is a very good agreement in the predicted number of events between the different analyses.
+
+\begin{table}[htbp]
+\center
+\begin{tabular} {|p{2cm}|p{2.5cm}|p{2.5cm}||p{2.5cm}|p{2.5cm}|}
+\hline
+Events  & $sin^{2}(2\theta_{13})$ = 0 (official) & $sin^{2}(2\theta_{13})$ = 0  ({\em VALOR}) & $sin^{2}(2\theta_{13})$ = 0.1 (official) & $sin^{2}(2\theta_{13})$ = 0.1 ({\em VALOR}) \\
+\hline \hline
+\textbf{Total}  & -- &\textbf{ 5.081} & -- & \textbf{22.476}  \\
+\hline
+\textbf{Total}  & \textbf{\color{blue}{5.07}} &\textbf{ 5.074} & \textbf{\color{blue}{22.26}} & \textbf{22.247}  \\
+(without extra templates) & & & & \\
+\hline
+$\nu_{\mu}$  & \color{blue}{1.08}  & 1.078 & \color{blue}{1.09}  & 1.079   \\
+\hline
+$\nu_{e}\rightarrow\nu_{\mu}$  & -- & 3.E-6 & -- & 0.0002   \\
+\hline
+$\bar{\nu_{\mu}}$  & \color{blue}{0.06} & 0.062 & \color{blue}{0.06}  & 0.062 \\
+\hline
+$\nu_{e}$  & \color{blue}{3.37} & 3.368 & \color{blue}{3.12} & 3.118 \\
+\hline
+ $\nu_{\mu} \rightarrow \nu_{e}$ & \color{blue}{0.41} & 0.406 & \color{blue}{17.85} & 17.838 \\
+\hline
+$\bar{\nu_{e}}$  & \color{blue}{0.16} & 0.161 & \color{blue}{0.15} & 0.151 \\
+\hline
+$\bar{\nu_{\mu}} \rightarrow\bar{\nu_{e}}$  & -- & 0.007 & -- & 0.228 \\
+\hline
+\end{tabular}
+\caption{Predicted number of $\nu_{e}$ candidate events for the Run1+2+3+4 POT before BANFF tuning (that is, after external flux re-weighting using default 13a SK MC with the 11b tuned version 3.2), for {\em VALOR} appearance 
+analysis (black) compared to official appearance analysis (blue) as in Tables 11 and 12 of \cite{2013nueptheta} and Table 8 of \cite{2013nuenergy}, 
+using $sin^{2}(2\theta_{12}) = 0.8495$, $\Delta m_{21}^{2} = 7.6 \times 10^{-5}$, 
+$sin^{2}(2\theta_{23}) =  1.0$, $|\Delta m_{32}^{2}| = 2.4 \times 10^{-3}$, $\delta_{CP} = 0$ and normal hierarchy.}
+\label{tab:nuepredictednominal}
+\end{table}
+
+\begin{table}[htbp]
+\center
+\begin{tabular} {|p{2cm}|p{2.5cm}|p{2.5cm}||p{2.5cm}|p{2.5cm}|}
+\hline
+Events  & $sin^{2}(2\theta_{13})$ = 0 (official) & $sin^{2}(2\theta_{13})$ = 0  ({\em VALOR}) & $sin^{2}(2\theta_{13})$ = 0.1 (official) & $sin^{2}(2\theta_{13})$ = 0.1 ({\em VALOR}) \\
+\hline \hline
+\textbf{Total}  & -- &\textbf{ 4.937} & -- & \textbf{21.818}  \\
+\hline
+\textbf{Total}  & \textbf{\color{blue}{4.92}} &\textbf{ 4.930} & \textbf{\color{blue}{21.56}} & \textbf{21.586}  \\
+(without extra templates) & & & & \\
+\hline
+$\nu_{\mu}$  & \color{blue}{0.94}  & 0.944 & \color{blue}{0.94}  & 0.944   \\
+\hline
+$\nu_{e}\rightarrow\nu_{\mu}$  & -- & 3.E-6 & -- & 0.0002   \\
+\hline
+$\bar{\nu_{\mu}}$  & \color{blue}{0.05} & 0.055 & \color{blue}{0.05}  & 0.055 \\
+\hline
+$\nu_{e}$  & \color{blue}{3.37} & 3.371 & \color{blue}{3.12} & 3.120 \\
+\hline
+ $\nu_{\mu} \rightarrow \nu_{e}$ & \color{blue}{0.40} & 0.399 & \color{blue}{17.30} & 17.315 \\
+\hline
+$\bar{\nu_{e}}$  & \color{blue}{0.16} & 0.161 & \color{blue}{0.15} & 0.152 \\
+\hline
+$\bar{\nu_{\mu}} \rightarrow\bar{\nu_{e}}$  & -- & 0.007 & -- & 0.232 \\
+\hline
+\end{tabular}
+\caption{Predicted number of $\nu_{e}$ candidate events for the Run1+2+3+4 POT applying BANFF tuning, for {\em VALOR} appearance 
+analysis (black) compared to official appearance analysis (blue) as in Tables 11 and 12 of \cite{2013nueptheta} and Table 8 of \cite{2013nuenergy}, 
+using $sin^{2}(2\theta_{12}) = 0.8495$, $\Delta m_{21}^{2} = 7.6 \times 10^{-5}$, 
+$sin^{2}(2\theta_{23}) =  1.0$, $|\Delta m_{32}^{2}| = 2.4 \times 10^{-3}$, $\delta_{CP} = 0$ and normal hierarchy.}
+\label{tab:nuepredictedbanff}
+\end{table}
+
+
+\subsection{Validation of the effect of systematics}
+
+The validation of the effect of systematics was performed with the Run1+2+3+4a POT, comparing results with the corresponding ones for the official analyses, that can be found in early versions of the referenced technical notes, and was not re-done with full Run4 since there were almost no differences. Table \ref{tab:systnuenskcat} shows the effect of the different categories of systematic parameters in the predicted number of events for the 2013 {\em VALOR} appearance analysis (black) compared with the official results (blue) taken from Table 14 in \cite{2013nueptheta}. The errors in the predicted number of events are given in percentage and they were calculated throwing 20k toy experiments varying only the systematics in the selected category (fixed the rest to nominal), and finding the RMS/mean of the distribution of number of events of the 20k toy experiments. The effects of the different systematics on the predicted number of events are similar, only small differences exist due to the different treatment of the spectral function systematic as shown in Tab.\ref{tab:systnuensk}. The effect due to the spectral function is still different between both analyses even when using the same treatment of the spectral function (a gaussian distribution without limits) as can be observed in Tab.\ref{tab:systnuensk}, because the response functions for this parameter were created in different ways in both analyses, as it was reported in \cite{OAtalk21nov} and presented in Tab. \ref{tab:specfunc}: the peculiarity about this systematic is that only weights at values 0 and +1$\sigma$ are available by definition, so the {\em VALOR} response functions are simply a linear function calculated with these two weight values and extrapolated to any other tweaking value; however, in the official analyses, although only weights at values 0 and +1$\sigma$ were used, the extrapolation was performed using a cubic spline, i.e. a three degree polynomial function. 
+
+
+\begin{table}[htbp]
+\center
+\begin{tabular} {|p{2cm}|p{2.5cm}|p{2.5cm}||p{2.5cm}|p{2.5cm}|}
+\hline
+Category  & $sin^{2}(2\theta_{13})$ = 0 (official) & $sin^{2}(2\theta_{13})$ = 0  ({\em VALOR}) & $sin^{2}(2\theta_{13})$ = 0.1 (official) & $sin^{2}(2\theta_{13})$ = 0.1 ({\em VALOR}) \\
+\hline \hline
+\textbf{Total}  & \textbf{\color{blue}{ 11.4\%}} &\textbf{ 10.291 \%} & \textbf{\color{blue}{ 8.9\%}} & \textbf{6.553 \%}  \\
+\hline
+BANFF  & \color{blue}{ 4.8\%}  & 4.799 \% & \color{blue}{ 2.9\%}  & 2.926 \% \\
+\hline
+ Uncorrelated  & \multirow{2}{*}{\color{blue}{ 7.1\%}} & \multirow{2}{*}{4.886 \%} & \multirow{2}{*}{\color{blue}{ 7.6\%}}  & \multirow{2}{*}{4.575 \%} \\
+ cross sections & & & & \\
+\hline
+SK+FSI+PN  & \color{blue}{ 7.3\%} & 7.331 \% & \color{blue}{ 3.5\%} & 3.454 \%\\
+\hline
+\end{tabular}
+\caption{Effect of the different categories of systematic parameters in the predicted number of events for the 2013 {\em VALOR} appearance analysis (black) compared with the official results (blue) taken from Table 14 in \cite{2013nueptheta}.The errors in the predicted number of events are given in percentage and they were calculated throwing 20k toy experiments, varying only the systematics in the selected category (fixed the rest to nominal), and finding the RMS/mean of the distribution of number of events of the 20k toy experiments.}
+\label{tab:systnuenskcat}
+\end{table}
+
+
+
+\begin{table}[htbp]
+\center
+\begin{tabular} {|p{1.5cm}|p{3.5cm}||p{2.5cm}||p{3.5cm}|p{3.2cm}|}
+\hline
+\multicolumn{2}{|c||}{Category}  & $sin^{2}(2\theta_{13})$ = 0.1  & $sin^{2}(2\theta_{13})$ = 0.1&  $sin^{2}(2\theta_{13})$ = 0.1 \\
+ \multicolumn{2}{|c||}{ \ } &  (official) & ({\em VALOR} - SF whole gaussian) & ({\em VALOR} - SF uniform [0,1])\\
+\hline \hline
+\multicolumn{2}{|c||}{{\textbf{Total}}}  & {\textbf{\color{blue}{ 8.9\%}}} & {\textbf{ 7.355 \%}}  & {\textbf{6.553 \%}} \\
+\hline
+\multicolumn{2}{|c||}{BANFF}  &  \color{blue}{ 2.9\%}  & \multicolumn{2}{c|} {2.926 \% } \\
+\hline
+\multicolumn{2}{|c||}{SK+FSI+PN}  & \color{blue}{ 3.5\%} & \multicolumn{2}{c|} {3.454 \% }\\
+\hline
+ \multicolumn{2}{|c||}{Uncorrelated cross sections}  & {\color{blue}{ 7.6\%}}  & { 5.832\%} & {4.575 \%} \\
+\hline
+&Spectral function &  \color{blue}{ 6.0\%}  &  3.833\%  &  1.132\% \\
+\cline{2-5}
+&CC other shape &  \color{blue}{ 0.1\%}  & \multicolumn{2}{c|} {0.124 \% }  \\
+\cline{2-5}
+&Fermi momentum &  \color{blue}{ 0.1\%}   &  \multicolumn{2}{c|} {0.094\%}  \\
+\cline{2-5}
+&W shape &  \color{blue}{ 0.2\%}   &  \multicolumn{2}{c|} {0.229\%  } \\
+\cline{2-5}
+&$\pi$-less $\Delta$ decay & \color{blue}{ 3.7\%}  &  \multicolumn{2}{c|} {3.235\%} \\
+\cline{2-5}
+&CC coh norm &  \color{blue}{ 0.2\%}  & \multicolumn{2}{c|} { 0.274\% } \\
+\cline{2-5}
+&NC coh norm & \color{blue}{ 0.2\%}   &  \multicolumn{2}{c|} {0.242\% } \\
+\cline{2-5}
+&NC other norm & \color{blue}{ 0.5\%}  &  \multicolumn{2}{c|} {0.499\% }\\  
+\cline{2-5}
+&$\sigma_{\nu_{e}/\nu_{\mu}}$ & \color{blue}{ 2.9\%}  &  \multicolumn{2}{c|} {2.847\% }\\
+\hline
+\end{tabular}
+\caption{Effect of the different categories of systematic parameters in the predicted number of events for the 2013 {\em VALOR} appearance analysis (black) compared with the official results (blue) taken from Table 14 in \cite{2013nueptheta}.The errors in the predicted number of events are given in percentage and they were calculated throwing 20k toy experiments, varying only the systematics in the selected category (fixed the rest to nominal), and finding the RMS/mean of the distribution of number of events of the 20k toy experiments.}
+\label{tab:systnuensk}
+\end{table}
+
+
+\begin{table}[htbp]
+\center
+\begin{tabular} {|p{2cm}||p{2.cm}||p{2.3cm}|p{2.cm}||p{2.3cm}|p{2.cm}|}
+\hline
+ & Official & \multicolumn{2}{|c||}{Official splines} & \multicolumn{2}{|c|}{VALOR splines} \\
+\hline
+ & & whole gaussian & bounded gaussian & whole gaussian & bounded gaussian \\
+\hline
+Total & \color{blue}{8.9 \%} & \color{red}{8.77 \%}  & \color{red}{6.57} \% &  7.56 \%  & 6.55 \% \\
+\hline 
+SF & \color{blue}{6.0\%} & \color{red}{5.82 \%}  & \color{red}{1.10\%} & 3.83 \% & 1.11 \%  \\
+\hline
+\end{tabular}
+\caption{Effect of the systematic parameter related to the spectral function in the different treatments followed by the {\em VALOR} group, matching the recommendation for disapperance analysis, and the official appearance analysis, comparing as well the effect of the different extrapolation methods used to create each set of response functions (splines) in the different groups.}
+\label{tab:specfunc}
+\end{table}
+
+
+Figure \ref{fig:app:nue:envelope} shows the total error envelope of the single e-like ring
+event reconstructed energy spectrum with $sin^{2}(2\theta_{13})$ = 0.1 and $\delta_{CP}$ = 0. 
+This figure is compared with the digitalization of Fig. 9 in \cite{2013nuenergy}.
+
+\begin{figure*}[htb]
+\center
+\includegraphics[width=27pc]{./images/appendix/nue_standalone_validation/ErrorEnvelopeCompareOfficialAppearanceGausSF.eps}
+\caption {
+  Total error envelope of the single e-like ring event reconstructed energy spectrum 
+  for oscillations with
+  $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$.
+  $\sin^{2}2\theta_{23}$=1.0,
+  $\sin^{2}2\theta_{13}$=0.1,
+  $\delta_{CP}$=0,
+   calculated for an exposure of 6.3933$\times$10$^{20}$ POT with BANFF-tuned MC templates.
+}
+\label{fig:app:nue:envelope}
+\end{figure*}
+
+\subsection{Validation of the 2013 official results}
+
+In this subsection the results of the validation of the 2013 {\em VALOR} appearance analysis with Run1+2+3+4 dataset are presented compared with official results from \cite{2013nuenergy} when possible. A uniform distribution was assumed to tweak the spectral function systematic and the extra templates were also included in order to match the final treatment and inputs to be used for the joint analysis\footnote{A later discussion within the oscillation analysis group and people from the NIWG group finally concluded in the change of the treatment of the spectral function to a gaussian distribution limited between 0 and 1 for the final joint oscillation analysis result}. There is an excellent agreement between best-fit values and spectra and confidence intervals are almost identical.
+
+Table \ref{tab:app:nue:bf} shows the best-fit points and confidence intervals for $\sin^{2}2\theta_{13}$ for the Run1+2+3+4 dataset assuming $\delta_{CP}$=0, $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.0 for the {\em VALOR} analysis with and without the extra templates, compared with the official results from Table 17 in \cite{2013nuenergy}.
+
+%\begin{table}[htbp]
+%\center
+%\begin{tabular} {|p{3cm}||p{2.5cm}|p{2.5cm}||p{2.cm}|p{2.cm}|p{2.cm}|}
+%\hline
+ % & Official (TN162) & {\em VALOR} & $\chi^{2}$ & $N^{obs}_{SK}$ & $N^{exp}_{SK}$ \\
+%\hline \hline
+%\textbf{Best-fit Normal}  & \textbf{\color{blue}{0.152}} &\textbf{ 0.153} & 22.36 & 28 &28.01  \\
+%\hline
+%68 \% C.L. (normal)& \color{blue}{0.118 - 0.193} & 0.120-0.192 &  - & -  & -  \\
+%\hline
+%90 \% C.L. (normal) & \color{blue}{0.099 - 0.222} &  0.100-0.220 & - & - & - \\
+%\hline \hline
+%\textbf{Best-fit Inverted}  & \textbf{\color{blue}{0.184}} &\textbf{ 0.186} & 22.59 & 28 &28.02  \\
+%\hline
+%68 \% C.L. (inverted)& \color{blue}{0.143 - 0.230} &  0.144-0.232 &  -& - &-  \\
+%\hline
+%90 \% C.L. (inverted) & \color{blue}{0.120 - 0.264} & 0.120-0.264  &  -&  -& - \\
+%\hline
+%\end{tabular}
+%\caption{Best-fit points and confidence intervals for $\sin^{2}2\theta_{13}$ for the Run1+2+3+4 dataset assuming $\delta_{CP}$=0, $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and %$\sin^{2}2\theta_{23}$=1.0.}
+%\label{tab:app:nue:bf}
+%\end{table}
+
+
+
+%\begin{table}[htbp]
+%\center
+%\begin{tabular} {|p{3cm}||p{2.5cm}|p{2.5cm}||p{2.cm}|p{2.cm}|p{2.cm}|}
+%\hline
+ % & Official (TN162) & {\em VALOR extra templates} & $\chi^{2}$ & $N^{obs}_{SK}$ & $N^{exp}_{SK}$ \\
+%\hline \hline
+%\textbf{Best-fit Normal}  & \textbf{\color{blue}{0.152}} &\textbf{ 0.151} & 22.33 & 28 &28.00  \\
+%\hline
+%\textbf{Best-fit Inverted}  & \textbf{\color{blue}{0.184}} &\textbf{ 0.183} & 22.55 & 28 &28.04  \\
+%\hline
+%\end{tabular}
+%\caption{Best-fit points and confidence intervals for $\sin^{2}2\theta_{13}$ for the Run1+2+3+4a dataset assuming $\delta_{CP}$=0, $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.0.}
+%\label{tab:app:nue:bf}
+%\end{table}
+
+
+\begin{table}[htbp]
+\center
+\begin{tabular} {|p{3cm}||p{2.cm}|p{2.cm}|p{2.cm}|}
+\hline
+  & Official (TN162) & {\em VALOR} & {\em VALOR extra templates} \\
+\hline \hline
+\textbf{Best-fit Normal}  & \textbf{\color{blue}{0.144}} &\textbf{ 0.143} &  \textbf{ 0.141}\\
+\hline
+68 \% C.L. (normal)& \color{blue}{0.110 - 0.181} & 0.111-0.181 &  0.109-0.179  \\
+\hline
+90 \% C.L. (normal) & \color{blue}{0.092 - 0.209} &  0.092-0.209 & 0.091-0.206 \\
+\hline \hline
+\textbf{Best-fit Inverted}  & \textbf{\color{blue}{0.172}} &\textbf{ 0.174} & \textbf{ 0.172}  \\
+\hline
+68 \% C.L. (inverted)& \color{blue}{0.134 - 0.217} &  0.136-0.219 &   0.134-0.215 \\
+\hline
+90 \% C.L. (inverted) & \color{blue}{0.112 - 0.249} & 0.114-0.251  &  0.112-0.247 \\
+\hline
+\end{tabular}
+\caption{Best-fit points and confidence intervals for $\sin^{2}2\theta_{13}$ for the Run1+2+3+4 dataset assuming $\delta_{CP}$=0, $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.0.}
+\label{tab:app:nue:bf}
+\end{table}
+
+
+
+
+Figure \ref{fig:app:nue:pullsnormal} (\ref{fig:app:nue:pullsinverted}) shows the systematic parameter pulls for the 51 systematics included in the stand-alone analysis for the Run 1+2+3+4 dataset fit with Normal (Inverted) Hierarchy.
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.45\linewidth}
+\center
+\includegraphics[width=40pc,angle=270]{./images/appendix/nue_standalone_validation/pulls_appearance_validation_2013b_normal.eps}
+\center
+\caption {
+  Systematic parameter pulls for the 51 systematics included in the stand-alone analysis 
+  for the Run 1+2+3+4 dataset fit with Normal Hierarchy.
+}
+\label{fig:app:nue:pullsnormal}
+\end{minipage}
+\begin{minipage}[t]{0.45\linewidth}
+\center
+\includegraphics[width=40pc,angle=270]{./images/appendix/nue_standalone_validation/pulls_appearance_validation_2013b_inverted.eps}
+\center
+\caption {
+  Systematic parameter pulls for the 51 systematics included in the stand-alone analysis 
+  for the Run 1+2+3+4 dataset fit with Inverted Hierarchy.
+}
+\label{fig:app:nue:pullsinverted}
+\end{minipage}
+\end{figure*}
+
+
+Figure \ref{fig:app:nue:bestfit_spectrum_nh} (\ref{fig:app:nue:bestfit_spectrum_ih}) shows the  Run 1+2+3+4 best-fit single e-like ring event reconstructed energy spectrum for the fit with Normal (Inverted) Hierarchy 
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 19 in \cite{2013nuenergy}.
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.98\linewidth}
+\center
+\includegraphics[width=28pc]{./images/appendix/nue_standalone_validation/appearance_validation_2013b_normal_extra_templates_1Re.eps}
+\caption {
+  Run 1+2+3+4 best-fit single e-like ring event reconstructed energy spectrum for the fit with Normal Hierarchy 
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 19 in \cite{2013nuenergy} (blue).
+}
+\label{fig:app:nue:bestfit_spectrum_nh}
+\end{minipage}
+
+\vfill
+\vspace*{0.7cm}
+
+\begin{minipage}[t]{0.98\linewidth}
+\center
+\includegraphics[width=28pc]{./images/appendix/nue_standalone_validation/appearance_validation_2013b_inverted_extra_templates_1Re.eps}
+\caption {
+   Run 1+2+3+4 best-fit single e-like ring event reconstructed energy spectrum for the fit with Inverted Hierarchy 
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 19 in \cite{2013nuenergy} (blue).
+}
+\label{fig:app:nue:bestfit_spectrum_ih}
+\end{minipage}
+\end{figure*}
+
+
+Figure \ref{fig:app:nue:marg_chisq_nh} (\ref{fig:app:nue:marg_chisq_ih}) shows the $\Delta\chi^{2}$ distribution as a result of the  Run 1+2+3+4 data fit with Normal (Inverted) Hierarchy vs different values of $\sin^{2}2\theta_{13}$ fixing 
+$\delta_{CP}$=0, $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.0
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) with (solid lines) and without extra templates (dashed lines), compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 18 in \cite{2013nuenergy} (blue).
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.98\linewidth}
+\center
+\includegraphics[width=28pc]{./images/appendix/nue_standalone_validation/marg_chisq_app_off_normal_Run4.eps}
+\caption {
+  $\Delta\chi^{2}$ distribution as a result of the  Run 1+2+3+4 data fit with Normal Hierarchy 
+vs different values of $\sin^{2}2\theta_{13}$ fixing 
+$\delta_{CP}$=0, $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.0
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) with (solid lines) and without (dashed lines), compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 18 in \cite{2013nuenergy} (blue).
+}
+\label{fig:app:nue:marg_chisq_nh}
+\end{minipage}
+
+\vfill
+\vspace*{0.7cm}
+
+\begin{minipage}[t]{0.98\linewidth}
+\center
+\includegraphics[width=28pc]{./images/appendix/nue_standalone_validation/marg_chisq_app_off_inverted_Run4.eps}
+\caption {
+  $\Delta\chi^{2}$ distribution as a result of the  Run 1+2+3+4 data fit with Inverted Hierarchy 
+vs different values of $\sin^{2}2\theta_{13}$ fixing 
+$\delta_{CP}$=0, $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.0
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) with (solid lines) and without (dashed lines), compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 18 in \cite{2013nuenergy} (blue).
+}
+\label{fig:app:nue:marg_chisq_ih}
+\end{minipage}
+\end{figure*}
+
+
+Figure \ref{fig:app:nue:contours_app_nh} (\ref{fig:app:nue:contours_app_ih}) shows the 68 \% (dashed lines) and 90\% (solid lines) C.L. in the ($\sin^{2}2\theta_{13}$,$\delta_{CP}$) parameter space as a result of the  Run 1+2+3+4 data fit with Normal (Inverted) Hierarchy fixing $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.0
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 20 in \cite{2013nuenergy} using the constant $\Delta\chi^{2}$ method and raster scan in both analyses.
+
+\begin{figure*}[htb]
+\begin{minipage}[t]{0.98\linewidth}
+\center
+\includegraphics[width=28pc]{./images/appendix/nue_standalone_validation/appearance_2D_normal_2013b.eps}
+\caption {
+ 68 \% (dashed lines) and 90\% (solid lines) C.L. in the ($\sin^{2}2\theta_{13}$,$\delta_{CP}$) parameter space as a result of the  Run 1+2+3+4 data fit with Normal Hierarchy fixing $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 20 in \cite{2013nuenergy} (blue) using the constant $\Delta\chi^{2}$ method and raster scan in both analyses.
+}
+\label{fig:app:nue:contours_app_nh}
+\end{minipage}
+
+\vfill
+\vspace*{0.7cm}
+
+\begin{minipage}[t]{0.98\linewidth}
+\center
+\includegraphics[width=28pc]{./images/appendix/nue_standalone_validation/appearance_2D_inverted_2013b.eps}
+\caption {
+  68 \% (dashed lines) and 90\% (solid lines) C.L. in the ($\sin^{2}2\theta_{13}$,$\delta_{CP}$) parameter space as a result of the  Run 1+2+3+4 data fit with Inverted Hierarchy fixing $|\Delta m^{2}|$=2.36$\times10^{-3}$ $eV^{2}/c^{4}$ and $\sin^{2}2\theta_{23}$=1.0
+for the {\em VALOR} stand-alone $\nu_{e}$ appearance analysis (black) compared to the official stand-alone $\nu_{e}$ appearance analysis digitalized from Fig. 20 in \cite{2013nuenergy} (blue) using the constant $\Delta\chi^{2}$ method and raster scan in both analyses.
+}
+\label{fig:app:nue:contours_app_ih}
+\end{minipage}
+\end{figure*}
+
+
+
+
+
+
+

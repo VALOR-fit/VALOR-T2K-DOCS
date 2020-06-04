@@ -1,0 +1,108 @@
+%
+% ---------------------------------------------------------------------------------------
+% VaLOR T2K 2012 6.5700 E+20 POT Joint 3-Flavour Oscillation Analysis  - TN 175
+% ---------------------------------------------------------------------------------------
+%
+
+\documentclass[final]{elsarticle}
+
+\usepackage[margin=2.00cm]{geometry}  % tweak margins
+%\usepackage{draftcopy}                % uncomment to print a "DRAFT-COPY" in background
+\usepackage{graphicx}                 % if you want to include PostScript figures
+\usepackage[figuresright]{rotating}   % if you have landscape tables
+\usepackage{multirow}                 % fancy tables
+\usepackage[toc,page]{appendix}       % appendixen 
+\usepackage{lineno}                   % for printing the line numbers
+\usepackage{natbib}                   % for building bibliography with \cite{}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{longtable}
+\usepackage{blkarray}                 % for correlation matrices
+\usepackage{color} 
+\usepackage{rotate}                   % rotate text in tables
+\usepackage{rotating}                 % rotate tables
+\usepackage{amsfonts}                 % extra symbols
+\usepackage{amsmath}                 
+%\usepackage{floatpag}                 % \thisfloatpagestyle{empty}, to suppress page numbers
+\usepackage[usenames,dvipsnames]{xcolor}
+
+
+\usepackage[breaklinks]{hyperref} % for url references, needing the
+                                % breaklinks for long captions in list
+                                % of figures
+\usepackage{url}
+
+\usepackage{dcolumn}
+\usepackage[cm]{fullpage}
+
+% use to fix date
+% \def \today { February 1st, 2009 }
+% put your own definitions here:
+\newcommand{\ck}{$\checkmark$}
+\newcommand{\ttbs}{\char'134}
+%\newcommand{\AmS}{{\protect\the\textfont2
+%  A\kern-.1667em\lower.5ex\hbox{M}\kern-.125emS}}
+% add words to TeX's hyphenation exception list
+\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+\linenumbers
+\bibliographystyle{elsart-num}
+
+\setlength{\oddsidemargin}{-6mm}
+\setlength{\evensidemargin}{-6mm}
+\setlength{\textwidth}{7in} 
+
+% By default, LaTeX doesn't like to fill more than 0.7 of a text page with tables and graphics, 
+% nor does it like too many figures per page. Change this behaviour:
+\renewcommand\floatpagefraction{.95}
+\renewcommand\topfraction{.9}
+
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+
+\setcounter{bottomnumber}{50}
+
+
+\begin{document}
+%\raggedright
+% Title, authors, abstract and table of contents
+\input{joint_ana_front}
+
+% Main body 
+\input{joint_ana_intro}
+\input{joint_ana_changes}
+\input{joint_ana_osc_params_choice}
+\input{joint_ana_prediction}
+
+\input{joint_ana_systematics}
+\input{joint_ana_fitting_method}
+\input{joint_ana_validation}
+\input{joint_ana_fake_datasets}
+\input{joint_ana_results}
+
+% Summary
+\input{joint_ana_summary}
+
+% References
+\input{joint_ana_references}
+
+%
+% Appendices
+%
+
+\appendix
+\addappheadtotoc
+
+\input{joint_ana_appendix_nue_standalone}
+\input{joint_ana_appendix_solar}
+
+%\addappheadtotoc
+
+
+\end{document}
+

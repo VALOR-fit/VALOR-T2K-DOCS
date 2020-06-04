@@ -1,0 +1,82 @@
+%\clearpage
+
+\section {Summary of updates with respect to Run1+2+3 joint 3-flavour oscillation analysis in TN154}
+\label{sec:changes}
+
+The following changes constitute the updates that have been implemented in the present analysis compared with the Run1+2+3 joint 3-flavour oscillation analysis described in Ref. \cite{OurJointAnalysis}.
+
+\subsection{Changes in the analysis inputs}
+
+\begin{itemize}
+
+\item{The dataset has increased from an exposure of $3.010\times10^{20}$ POT corresponding to Run 1+2+3 to an exposure of $6.5700\times10^{20}$ POT corresponding to Run 1+2+3+4, when adding Run4 with $3.560\times10^{20}$ POT. This addition means a change in the observed number of single $\mu$-like ring events from 58 for the Run 1+2+3 dataset to 120 for the Run 1+2+3+4 dataset, and the observed number of single e-like ring events from 11 for the Run 1+2+3 dataset to 28 for the Run 1+2+3+4 dataset.}
+
+\item{An updated SuperK MC based on NEUT has been used in this analysis, being the current SuperK software version 13a  (previous version used in Ref. \cite{OurJointAnalysis} was 11c). The JNUBEAM flux tuning version used for the creation of this new MC was \textit{11btunedv3.2}. Consequently, MC templates, systematic response functions (splines) and systematic covariance matrices were redone with the updated SuperK MC. }
+
+\item{The new fiTQun (v3r1) cut for rejection of NC $\pi^{0}$ events has been used in the SuperK MC for single ring e-like sample \cite{fiTQun}.}
+
+\item{A new BANFF version is used in this analysis \cite{ND280Inputs}, \cite{BANFF2013}. The actual file used is \textit{postfit\_banff\_2013\_joint\_v5.root}. The list of parameters included in the BANFF post-fit files varies depending on the different versions produced for each oscillation analysis. Table \ref{tab:banff} in Sec. \ref{sec:systematics:banff} presents a summary of the different lists of parameters and binning used in each oscillation analysis in the latest version. In Sec. \ref{sec:systematics:banff} the best-fit values used for the BANFF parameters will be shown. }
+
+
+\item{As a consequence of the updated SuperK MC and the new BANFF version, the response functions (splines) necessary to evaluate some of the cross-section systematics had to be regenerated. The true energy binning used to create these splines is the BANFF flux binning for both samples. However, for the oscillated $\nu_{e}$ modes the true energy binning used is the same one used for $\nu_{\mu}$ (11 bins) for the single $\mu$-like ring event sample and the one used for $\nu_{e}$ (7 bins) for the single e-like ring event sample in order to match both stand-alone disappearance and appearance analyses respectively. The reconstructed energy binning used in the splines is different for the single ring $\mu$-like and the single ring e-like samples. For the single ring $\mu$-like sample the following reconstructed energy binning is used: an initial bin from 0 to 0.3 GeV followed by 50 MeV bins up to 1 GeV (14 bins), 100 MeV bins up to 3 GeV (20 bins), 3.0-3.5 GeV, 3.5-4.0 GeV, 4.0-5.0 GeV, 5.0-7.0 GeV, 7.0-10.0 GeV and 10.0-30.0 GeV (41 bins in total). For the single ring e-like sample a uniform reconstructed binning was used with 50 MeV bins from 0 to 1.25 GeV  (25 bins). }
+
+
+\item{The covariance matrix used to evaluate the FSI+SI systematic errors was redone for both $\nu_{\mu}$-disappearance and $\nu_{e}$-appearance analyses \cite{OurRun1234DisappAnalysis3Flavour}, \cite{2013nuenergy}. Built on those covariance matrices, a new FSI+SI covariance matrix has been produced for the joint analysis including correlations between the single ring $\mu$-like and the single ring e-like samples \cite{ikeda}.}
+
+\item{Systematic errors due to Photo-Nuclear (PN) effects have been also considered in the $\nu_{e}$-appearance analyses. Those errors were added to the FSI+SI ones in the corresponding covariance matrix for the single ring e-like sample. }
+
+\item{The SuperK detector error matrix was recreated for both $\nu_{\mu}$-disappearance and $\nu_{e}$-appearance analyses \cite{SuperkErrors2013},\cite{SuperkErrorsNuE2013}. In addition, a new SuperK detector error matrix has been implemented including correlations between the single ring $\mu$-like and the single ring e-like samples \cite{fi}. The analysis presented in this technical note was performed using the latest SuperK detector error matrix including correlations between the two samples. More details are given in Sec. \ref{sec:systematics}.}
+
+\item{After discussion with the T2K-SK group for the $\nu_{\mu}$ disappearance analysis, now SuperK events with reconstructed energy larger than 30 GeV are included in the 10-30 GeV bin.}
+
+\item{Following the recommendations agreed after discussion within the oscillation analysis and NIWG groups for the $\nu_{\mu}$ disappearance analysis, the spectral function systematic is tweaked using a Gaussian distribution centered at 0 and bounded in the range [0,1] when generating toy MC experiments, and it is 
+restricted in the fit to the range [0,1] with a Gaussian constraint (penalty term) that favours 0 (relativistic Fermi gas) 
+with respect to 1 (spectral function) in the present analysis. The difference with respect to the previous analysis in \cite{OurJointAnalysis} is that this parameter was previously thrown uniformly within the allowed region when generating toy MC experiments.}
+
+\item{The value of the oscillation parameter $sin^{2}\theta_{12}$ has been updated to be consistent with the official 2013 $\nu_{e}$-appearance analyses. The value used in the present analysis is shown in Tab. \ref{tab:solarparameters}.}
+
+\item{The value and error for $sin^{2}2\theta_{13}$ from the reactor experiments to be used as a constraint has been updated. The new value used, coming from PDG2013, is $sin^{2}2\theta_{13} = 0.095 \pm 0.010$ and it is a weighted average of the results of the three reactor experiments Daya Bay, RENO and Double Chooz \cite{PDG2013}}.
+
+\item{The SuperK reconstructed energy scale error has changed from 2.3\% to 2.4\%\cite{SuperkEScale2013}.}
+
+\item{The value of the CC $\nu$/$\bar{\nu}$ cross section normalisation systematic has changed from 40\% to 20\%}
+
+
+\end{itemize}
+
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Parameter & Value \\
+\hline
+\hline
+$\sin^{2}2\theta_{12}$ & 0.8495 \\
+\hline 
+$\sin^{2}\theta_{12}$ & 0.306 \\
+\hline 
+$\Delta m_{21}^{2}$ & 7.5$\times$10$^{-5}$ eV$^{2}$/c$^{4}$ \\
+\hline
+\end{tabular}
+\caption{Values used for $\sin^{2}2\theta_{12}$ and $\Delta m_{21}^{2}$ in the joint oscillation analysis}
+\label{tab:solarparameters}
+\end{table}
+
+
+
+\subsection{Changes in the methodology}
+
+\begin{itemize}
+
+\item{Since the missing correlations between the single ring $\mu$-like and the single ring e-like samples concerning the FSI+SI and SuperK detector systematic errors were calculated, it was possible for this analysis to combine the SuperK detector and FSI+SI errors like the rest of oscillation analyses do. Therefore the present analysis followed this prescription and used SK+FSI combined errors, reducing in this way the number of total systematic errors by 18.}
+
+\item{The oscillated $\nu_{e} \rightarrow \nu_{\mu}$,  $\bar{\nu_{e}} \rightarrow \bar{\nu_{\mu}}$ and $\bar{\nu_{\mu}} \rightarrow \bar{\nu_{e}}$ templates were introduced. The way they were constructed, re-weighting the $\nu_{\mu}$ SuperK MC with the $\nu_{e}$ flux for $\nu_{e} \rightarrow \nu_{\mu}$ for instance, will be explained in Sec. \ref{prediction}. The $\bar{\nu_{e}} \rightarrow \bar{\nu_{\mu}}$ templates were also considered, but finally not included since their contribution is negligible in both samples as it can be clearly seen in Tab. \ref{tab:prediction:all_extra_templates}.}
+
+\item{After some discussion within the oscillation analysis group about using $\sin^{2}2\theta_{13}$ or $\sin^{2}\theta_{13}$ for the final results, the framework has been updated to fit $\sin^{2}\theta_{23}$ but $\sin^{2}2\theta_{13}$ as well. However, tests made using toy datasets or the final result for Run 1+2+3+4 dataset fit show no difference at all between results obtained fitting $\sin^{2}2\theta_{13}$ or $\sin^{2}\theta_{13}$ compared after the proper re-scale.}
+
+\end{itemize}
+
+
+
